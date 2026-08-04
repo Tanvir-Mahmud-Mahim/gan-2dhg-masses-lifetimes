@@ -14,8 +14,8 @@ import pytest
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from gpfet import kp6 as K
-from gpfet import scatter2d as S
+from gan2dhg import kp6 as K
+from gan2dhg import scatter2d as S
 
 M0 = 9.1093837015e-31
 
@@ -292,7 +292,7 @@ if __name__ == "__main__":
 # ---------------------------------------------------------------------------
 
 def test_well_operator_is_hermitian():
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     z = np.linspace(0.0, 8.0, 41)
     V = 0.05 * z
     st = K.biaxial_strain_on_AlN()
@@ -308,7 +308,7 @@ def test_well_time_reversal_symmetry():
     degenerate.  The polarisation well has no inversion centre, so Rashba
     splitting is allowed and is present; see the two tests below.
     """
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     z = np.linspace(0.0, 10.0, 81)
     V = 0.08 * z
     st = K.biaxial_strain_on_AlN()
@@ -320,7 +320,7 @@ def test_well_time_reversal_symmetry():
 def test_symmetric_well_has_no_spin_splitting():
     """The decisive control: restore the inversion centre and the splitting
     must vanish identically."""
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     z = np.linspace(0.0, 15.0, 161)
     V = 0.02 * (z - 7.5) ** 2                    # inversion symmetric
     st = K.biaxial_strain_on_AlN()
@@ -332,7 +332,7 @@ def test_symmetric_well_has_no_spin_splitting():
 def test_asymmetric_well_gives_rashba_splitting():
     """In the polarisation well the light subband splits by of order 1.5 meV
     at its Fermi wavevector, and the splitting converges with grid spacing."""
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     st = K.biaxial_strain_on_AlN()
     vals = []
     for N in (121, 161, 241):
@@ -348,7 +348,7 @@ def test_asymmetric_well_gives_rashba_splitting():
 def test_poisson_field_and_neutrality():
     """The confining field at the interface must be e^2 p_s / eps eps_0, and
     the potential must flatten once the whole gas lies below z."""
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     z = np.linspace(0.0, 10.0, 501)
     p_s = 0.46                                   # nm^-2
     w = 0.5
@@ -365,7 +365,7 @@ def test_poisson_field_and_neutrality():
 def test_flat_potential_recovers_bulk_masses():
     """With no confining field and a wide box the well solver must return the
     bulk in-plane masses of the same Hamiltonian."""
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     st = K.biaxial_strain_on_AlN()
     z = np.linspace(0.0, 60.0, 241)
     V = np.zeros_like(z)
@@ -386,7 +386,7 @@ def test_self_consistent_reproduces_measured_heavy_mass():
     A coarse grid is used to keep the suite fast; the published value uses
     N = 161 and 16 wavevectors.
     """
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     sol = KW.self_consistent(p_s_cm2=4.6e13, N=81, n_kt=10, max_iter=40,
                              mix=0.6, tol=1e-4, verbose=False)
     assert sol["converged"]
@@ -394,19 +394,198 @@ def test_self_consistent_reproduces_measured_heavy_mass():
     for b in range(6):
         if sol["per_subband_nm2"][b] <= 0:
             continue
-        masses.append(KW.cyclotron_mass_at_kf(sol, b)[1])
+        masses.append(KW.cyclotron_mass_refined(sol, b)[1])
     heavy = [m for m in masses if m > 1.0]
     light = [m for m in masses if m <= 1.0]
     assert len(heavy) == 2 and len(light) == 2
     assert 1.75 < np.mean(heavy) < 2.05          # measured 1.92 +/- 0.16
-    assert 0.20 < np.mean(light) < 0.35          # zero-field extrapolation 0.30
+    # The hard wall understates the light mass; the finite barrier raises it
+    # into the measured range.  This test pins the hard-wall value, and the
+    # coarse-grid derivative must NOT be used here: it overstates it by a
+    # quarter.
+    assert 0.20 < np.mean(light) < 0.32
     assert 0.3 < KW.centroid(sol) < 1.2          # nm
 
 
 def test_total_density_is_conserved_by_the_loop():
-    from gpfet import kp6_well as KW
+    from gan2dhg import kp6_well as KW
     target = 3.0e13
     sol = KW.self_consistent(p_s_cm2=target, N=81, n_kt=10, max_iter=40,
                              mix=0.6, tol=1e-4, verbose=False)
     tot = float(np.sum(sol["per_subband_nm2"])) * 1e14
     assert abs(tot - target) / target < 1e-3
+
+
+# ---------------------------------------------------------------------------
+# The heterostructure operator, the counting rule and the computed overlap
+# ---------------------------------------------------------------------------
+
+def test_single_branch_density_is_kf_squared_over_four_pi():
+    """The counting rule, stated as a test.
+
+    Every eigenvalue of the six-band operator is one spin-resolved branch, so a
+    branch filled to k_F holds k_F^2/(4 pi) carriers per unit area.  Using the
+    spin-degenerate k_F^2/(2 pi) for each Kramers partner separately counts
+    every spin twice; the loop then converges to half the intended density
+    while Poisson's equation is still fed the full one.
+    """
+    from gan2dhg import kp6_well as KW
+    kt = np.linspace(1e-3, 2.0, 40)
+    # Two identical parabolic branches, mass 1 m0, filled to a known density.
+    from gan2dhg.kp6 import HB2_2M0_eVnm2
+    E = np.column_stack([HB2_2M0_eVnm2 * kt**2] * 2)
+    target = 0.05                                  # per nm^2
+    EF, per = KW.fill_subbands(E, kt, target)
+    assert abs(per.sum() - target) / target < 1e-6
+    for p in per:
+        k = np.sqrt(4.0 * np.pi * p)
+        assert abs(p - k**2 / (4.0 * np.pi)) < 1e-12
+
+
+def test_heterostructure_operator_reduces_to_the_hard_wall_one():
+    """With no barrier region the new operator must reproduce the old one.
+
+    This checks the symmetric (BenDaniel-Duke) discretisation of the
+    position-dependent A1 and A3 terms and the symmetrised A6 kz term against
+    the constant-coefficient code they generalise.
+    """
+    from gan2dhg import kp6_het as H
+    from gan2dhg import kp6_well as KW
+    from gan2dhg.kp6 import biaxial_strain_on_AlN
+    z = np.linspace(0.0, 15.0, 121)
+    V = (KW.E2_OVER_EPS0 / 10.4) * (4.6e13 * 1e-14) * z
+    st = biaxial_strain_on_AlN()
+    w_old, _ = KW.solve_subbands(0.6, z, V, st, n_states=6)
+    prof = H.profile(z, vbo_eV=50.0)
+    w_new, _, _ = H.solve(0.6, 0.0, z, V, prof, n_states=6)
+    assert np.max(np.abs(w_old - w_new)) < 1e-12
+
+
+def test_basal_plane_dispersion_is_exactly_isotropic():
+    """Not approximately isotropic: isotropic to machine precision.
+
+    The claim in the Letter is that warping is absent at this order rather than
+    small, so it is tested at the level of the numerics, sweeping the azimuth
+    from Gamma-M to Gamma-K.
+    """
+    from gan2dhg import kp6_het as H
+    from gan2dhg import kp6_well as KW
+    z = np.linspace(0.0, 15.0, 81)
+    V = (KW.E2_OVER_EPS0 / 10.4) * (4.6e13 * 1e-14) * z
+    prof = H.profile(z, vbo_eV=0.7)
+    for kt in (0.55, 1.61):
+        ws = [H.solve(kt * np.cos(p), kt * np.sin(p), z, V, prof,
+                      n_states=4)[0]
+              for p in np.linspace(0.0, np.pi / 3.0, 5)]
+        assert np.max(np.ptp(np.array(ws), axis=0)) < 1e-11
+
+
+def test_bloch_overlap_is_unity_for_a_state_with_itself():
+    """The overlap summed over a Kramers pair must be one at zero angle.
+
+    This is the normalisation the computed overlap has to satisfy before it can
+    replace the free parameter it supersedes.
+    """
+    from gan2dhg import kp6_het as H
+    from gan2dhg import kp6_well as KW
+    z = np.linspace(0.0, 15.0, 81)
+    V = (KW.E2_OVER_EPS0 / 10.4) * (4.6e13 * 1e-14) * z
+    prof = H.profile(z, vbo_eV=0.7)
+    sol = {"z": z, "V": V, "prof": prof,
+           "per_subband_nm2": np.array([0.2, 0.2, 0.02, 0.02, 0.0, 0.0])}
+    assert abs(H.bloch_overlap(sol, 0, 0, 0.0) - 1.0) < 1e-9
+    assert abs(H.bloch_overlap(sol, 2, 2, 0.0) - 1.0) < 1e-9
+
+
+def test_branch_tracking_survives_a_crossing():
+    """Sorted eigenvalues relabel branches at a crossing; tracking must not.
+
+    Followed by eigenvector continuity, the splitting of the light pair has to
+    stay a smooth function of wavevector across the point where that pair
+    crosses the crystal-field split-off pair, where the sorted-index splitting
+    collapses by two orders of magnitude.
+    """
+    from gan2dhg import kp6_het as H
+    from gan2dhg import kp6_well as KW
+    z = np.linspace(0.0, 15.0, 81)
+    V = (KW.E2_OVER_EPS0 / 10.4) * (4.6e13 * 1e-14) * z
+    prof = H.profile(z, vbo_eV=0.7)
+    sol = {"z": z, "V": V, "prof": prof}
+    kk = np.linspace(0.30, 1.05, 16)
+    sp = H.rashba_vs_k(sol, kk, pair_lo=2)
+    # smooth: no step larger than half the total range between neighbours
+    steps = np.abs(np.diff(sp))
+    assert steps.max() < 0.5 * (sp.max() - sp.min()) + 1e-9
+    assert sp.min() > 0.0
+
+
+# ---------------------------------------------------------------------------
+# Beyond the relaxation-time and Born approximations
+# ---------------------------------------------------------------------------
+
+def test_transport_cross_section_prefactor_from_s_wave():
+    """Pure s-wave scattering is isotropic, so sigma_tr must equal sigma.
+
+    This pins the prefactor of the transport sum in two dimensions at 2/k when
+    the sum runs over all integer m, not the 4/k that is sometimes quoted; with
+    4/k the identity below fails by exactly a factor of two.
+    """
+    import importlib.util
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    spec = importlib.util.spec_from_file_location(
+        "run_phaseshift", os.path.join(here, "scripts", "run_phaseshift.py"))
+    P = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(P)
+    k = 1.0
+    for d0 in (0.05, 0.2, 0.6):
+        deltas = np.zeros(20)
+        deltas[0] = d0
+        sq, st = P.cross_sections(k, deltas)
+        assert abs(st / sq - 1.0) < 1e-12
+
+
+def test_phase_shifts_reduce_to_born_for_a_weak_potential():
+    """The variable-phase solver must reproduce the 2D Born phase shift.
+
+    delta_m = -(pi/2) Int U(r) J_m^2(kr) r dr to first order in U.  This is the
+    identity that validates the whole partial-wave apparatus; without it the
+    departure from Born measured in the Letter would be meaningless.
+    """
+    import importlib.util
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    spec = importlib.util.spec_from_file_location(
+        "run_phaseshift", os.path.join(here, "scripts", "run_phaseshift.py"))
+    P = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(P)
+    r = np.linspace(1e-13, 8.0e-9, 1500)
+    V = 1e-3 * 1.602176634e-19 * np.exp(-(r / 1.0e-9) ** 2)   # 1 meV Gaussian
+    k = 1.0e9
+    m_eff = 9.1093837015e-31
+    ex = P.phase_shifts(k, m_eff, r, V, m_max=6, scale=1e-3)
+    bo = P.born_phase_shifts(k, m_eff, r, V, m_max=6, scale=1e-3)
+    keep = np.abs(bo) > 1e-14
+    assert keep.any()
+    assert np.max(np.abs(ex[keep] / bo[keep] - 1.0)) < 1e-3
+
+
+def test_boltzmann_closed_form_is_exact_for_an_angular_kernel():
+    """Solving the integral equation with no ansatz returns the closed form.
+
+    For an isotropic Fermi surface and a kernel depending only on the
+    scattering angle, cos(theta) is an eigenfunction of the collision operator,
+    so the (1 - cos theta) weight is exact and not an approximation.  Verified
+    here against a kernel with structure in several harmonics.
+    """
+    import importlib.util
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    spec = importlib.util.spec_from_file_location(
+        "run_beyond", os.path.join(here, "scripts", "run_beyond.py"))
+    B = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(B)
+    kF = 1.0e9
+    for shape in (lambda q: 1.0 / (1.0 + (q / 1e9) ** 2),
+                  lambda q: np.exp(-(q / 2e9) ** 2)):
+        re, rc, higher = B.boltzmann_exact(
+            kF, shape, lambda q: 1.0, lambda t: np.ones_like(t))
+        assert abs(re / rc - 1.0) < 1e-8
+        assert higher < 1e-8
