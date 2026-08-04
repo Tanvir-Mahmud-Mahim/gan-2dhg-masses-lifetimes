@@ -1,0 +1,102 @@
+{
+  "measured": {
+    "light hole": {
+      "ratio": 3.8169530147228876
+    },
+    "heavy hole": {
+      "ratio": 2.130031183162141
+    }
+  },
+  "mechanisms": [
+    {
+      "mechanism": "remote ionised charge, d = 2 nm",
+      "lh_ratio": 9.459981808125915,
+      "hh_ratio": 50.11110204932284,
+      "lh_over_hh": 0.18878015891198605,
+      "lh_mu_tr": 31217.62870349368,
+      "hh_mu_tr": 28116.336519888264
+    },
+    {
+      "mechanism": "remote ionised charge, d = 5 nm",
+      "lh_ratio": 55.49756393738282,
+      "hh_ratio": 268.9406160790796,
+      "lh_over_hh": 0.20635620140419497,
+      "lh_mu_tr": 430099.0440310321,
+      "hh_mu_tr": 347405.1809822749
+    },
+    {
+      "mechanism": "remote ionised charge, d = 10 nm",
+      "lh_ratio": 212.62010794435955,
+      "hh_ratio": 1014.4883212046174,
+      "lh_over_hh": 0.20958359352219205,
+      "lh_mu_tr": 3208744.470829968,
+      "hh_mu_tr": 2544980.9465225716
+    },
+    {
+      "mechanism": "remote ionised charge, d = 15 nm",
+      "lh_ratio": 470.1692219280974,
+      "hh_ratio": 2227.847824568418,
+      "lh_over_hh": 0.2110418928721845,
+      "lh_mu_tr": 10542658.142735984,
+      "hh_mu_tr": 8297603.722791732
+    },
+    {
+      "mechanism": "interface roughness, Lambda = 0.5 nm",
+      "lh_ratio": 0.6635102179486176,
+      "hh_ratio": 0.692362503466504,
+      "lh_over_hh": 0.9583277757339119,
+      "lh_mu_tr": 1136.5963524193164,
+      "hh_mu_tr": 19.97300240058081
+    },
+    {
+      "mechanism": "interface roughness, Lambda = 1.0 nm",
+      "lh_ratio": 0.6853256949704025,
+      "hh_ratio": 0.8493676976740197,
+      "lh_over_hh": 0.8068657388868877,
+      "lh_mu_tr": 388.1854327010726,
+      "hh_mu_tr": 19.91935372575775
+    },
+    {
+      "mechanism": "interface roughness, Lambda = 2.0 nm",
+      "lh_ratio": 0.8140744459026313,
+      "hh_ratio": 2.6011546495895606,
+      "lh_over_hh": 0.31296656891626384,
+      "lh_mu_tr": 318.63116550064734,
+      "hh_mu_tr": 184.88369010067882
+    },
+    {
+      "mechanism": "interface roughness, Lambda = 4.0 nm",
+      "lh_ratio": 2.2816471272117798,
+      "hh_ratio": 11.931536672158117,
+      "lh_over_hh": 0.19122827091802305,
+      "lh_mu_tr": 2267.1024436238235,
+      "hh_mu_tr": 2198.313235571982
+    },
+    {
+      "mechanism": "interface roughness, Lambda = 8.0 nm",
+      "lh_ratio": 10.203339260942132,
+      "hh_ratio": 49.17766732109412,
+      "lh_over_hh": 0.2074791224708119,
+      "lh_mu_tr": 24626.182496314235,
+      "hh_mu_tr": 20112.649394136355
+    },
+    {
+      "mechanism": "background impurities in channel",
+      "lh_ratio": 1.105684167740441,
+      "hh_ratio": 1.2243562864696411,
+      "lh_over_hh": 0.9030738682517128,
+      "lh_mu_tr": 2667876.8329791003,
+      "hh_mu_tr": 279723.1264660195
+    },
+    {
+      "mechanism": "threading dislocations",
+      "lh_ratio": 356.86808274026134,
+      "hh_ratio": 442.00593695816855,
+      "lh_over_hh": 0.8073830075590939,
+      "lh_mu_tr": 11400628.866790107,
+      "hh_mu_tr": 5127530.957081985
+    }
+  ],
+  "b_fh_per_m": 5720095100.019326,
+  "F_eff_V_per_m": 400180719.35936546
+}

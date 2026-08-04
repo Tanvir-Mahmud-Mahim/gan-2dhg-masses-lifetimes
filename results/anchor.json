@@ -1,0 +1,68 @@
+{
+  "tau_tr_lh_ps": 0.5725429522084331,
+  "tau_tr_hh_ps": 0.43665639254823885,
+  "tau_q_lh_ps": 0.15,
+  "lh_ratio_target": 3.8169530147228876,
+  "rows": [
+    {
+      "mechanism": "interface roughness, correlation length Lambda",
+      "overlap": 0.0,
+      "param_nm": 5.016618133172315,
+      "lh_ratio": 3.8169654378630757,
+      "hh_ratio": 18.987598579146944,
+      "tau_q_hh_ps": 0.022996925636915196,
+      "mu_q_hh_cm2Vs": 21.066381740305935,
+      "B_onset_omega_tau_1_T": 474.6899638325096
+    },
+    {
+      "mechanism": "interface roughness, correlation length Lambda",
+      "overlap": 0.2,
+      "param_nm": 4.409857233675118,
+      "lh_ratio": 3.8169528465201212,
+      "hh_ratio": 13.216937998803946,
+      "tau_q_hh_ps": 0.03303763644709188,
+      "mu_q_hh_cm2Vs": 30.264195839928856,
+      "B_onset_omega_tau_1_T": 330.4234495203151
+    },
+    {
+      "mechanism": "interface roughness, correlation length Lambda",
+      "overlap": 0.5,
+      "param_nm": 3.678702422137797,
+      "lh_ratio": 3.816952505924183,
+      "hh_ratio": 8.209224910315577,
+      "tau_q_hh_ps": 0.05319094035291244,
+      "mu_q_hh_cm2Vs": 48.72567195684536,
+      "B_onset_omega_tau_1_T": 205.2306224785226
+    },
+    {
+      "mechanism": "remote ionised charge, standoff d",
+      "overlap": 0.0,
+      "param_nm": 1.112836606495383,
+      "lh_ratio": 3.8169488398727913,
+      "hh_ratio": 17.554685797325792,
+      "tau_q_hh_ps": 0.02487406482745235,
+      "mu_q_hh_cm2Vs": 22.785939014695117,
+      "B_onset_omega_tau_1_T": 438.8671443357442
+    },
+    {
+      "mechanism": "remote ionised charge, standoff d",
+      "overlap": 0.2,
+      "param_nm": 1.013345710391258,
+      "lh_ratio": 3.8169464834572535,
+      "hh_ratio": 13.180604627133473,
+      "tau_q_hh_ps": 0.03312870728626075,
+      "mu_q_hh_cm2Vs": 30.34762147227781,
+      "B_onset_omega_tau_1_T": 329.5151152297898
+    },
+    {
+      "mechanism": "remote ionised charge, standoff d",
+      "overlap": 0.5,
+      "param_nm": 0.9603734444261183,
+      "lh_ratio": 3.8169514156682913,
+      "hh_ratio": 10.580441492420036,
+      "tau_q_hh_ps": 0.04127014859078093,
+      "mu_q_hh_cm2Vs": 37.805605776145086,
+      "B_onset_omega_tau_1_T": 264.5110369504396
+    }
+  ]
+}

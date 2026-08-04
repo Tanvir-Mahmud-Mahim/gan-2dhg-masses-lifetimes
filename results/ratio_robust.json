@@ -1,0 +1,383 @@
+{
+  "target": 1.7934272300469483,
+  "rows": [
+    {
+      "case": "as published, spin degenerate",
+      "n_lh": 8000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 9.459981808125915,
+      "hh_ratio": 50.11110204932284,
+      "lh_over_hh": 0.18878015891198605
+    },
+    {
+      "case": "as published, spin degenerate",
+      "n_lh": 8000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 78.90965074805423,
+      "hh_ratio": 379.9095534671939,
+      "lh_over_hh": 0.20770641334995613
+    },
+    {
+      "case": "as published, spin degenerate",
+      "n_lh": 8000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.6853256949704025,
+      "hh_ratio": 0.8493676976740197,
+      "lh_over_hh": 0.8068657388868877
+    },
+    {
+      "case": "as published, spin degenerate",
+      "n_lh": 8000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 1.2441581926735525,
+      "hh_ratio": 6.505329388556826,
+      "lh_over_hh": 0.1912521439517089
+    },
+    {
+      "case": "as published, spin degenerate",
+      "n_lh": 8000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 1.105684167740441,
+      "hh_ratio": 1.2243562864696411,
+      "lh_over_hh": 0.9030738682517128
+    },
+    {
+      "case": "as published, spin degenerate",
+      "n_lh": 8000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 356.86808274026134,
+      "hh_ratio": 442.00593695816855,
+      "lh_over_hh": 0.8073830075590939
+    },
+    {
+      "case": "both halved, spin resolved",
+      "n_lh": 4000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 4.940676769906484,
+      "hh_ratio": 24.605522972529094,
+      "lh_over_hh": 0.20079543830149502
+    },
+    {
+      "case": "both halved, spin resolved",
+      "n_lh": 4000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 39.32811320907519,
+      "hh_ratio": 192.51247373596559,
+      "lh_over_hh": 0.2042886491761278
+    },
+    {
+      "case": "both halved, spin resolved",
+      "n_lh": 4000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.6676217137170921,
+      "hh_ratio": 0.7187410125581646,
+      "lh_over_hh": 0.9288766079187173
+    },
+    {
+      "case": "both halved, spin resolved",
+      "n_lh": 4000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 0.8374397619889563,
+      "hh_ratio": 2.9194792494383894,
+      "lh_over_hh": 0.28684559486081357
+    },
+    {
+      "case": "both halved, spin resolved",
+      "n_lh": 4000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 1.0718195899729213,
+      "hh_ratio": 1.1117893444003275,
+      "lh_over_hh": 0.9640491657626338
+    },
+    {
+      "case": "both halved, spin resolved",
+      "n_lh": 4000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 332.34162445395793,
+      "hh_ratio": 367.6353884444488,
+      "lh_over_hh": 0.9039979145102788
+    },
+    {
+      "case": "light halved only",
+      "n_lh": 4000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 4.760865646348955,
+      "hh_ratio": 48.924304768467266,
+      "lh_over_hh": 0.09731084925743148
+    },
+    {
+      "case": "light halved only",
+      "n_lh": 4000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 38.7270352203698,
+      "hh_ratio": 380.64218788234314,
+      "lh_over_hh": 0.1017413110087008
+    },
+    {
+      "case": "light halved only",
+      "n_lh": 4000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.6706925946387693,
+      "hh_ratio": 0.8663908039543563,
+      "lh_over_hh": 0.7741224763439468
+    },
+    {
+      "case": "light halved only",
+      "n_lh": 4000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 0.8450614413669281,
+      "hh_ratio": 6.18159145492879,
+      "lh_over_hh": 0.13670612940509555
+    },
+    {
+      "case": "light halved only",
+      "n_lh": 4000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 1.0672136377954005,
+      "hh_ratio": 1.242995321836163,
+      "lh_over_hh": 0.858582183735739
+    },
+    {
+      "case": "light halved only",
+      "n_lh": 4000000000000.0,
+      "n_hh": 38000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 329.8321004063562,
+      "hh_ratio": 423.5382556429999,
+      "lh_over_hh": 0.7787539756134129
+    },
+    {
+      "case": "heavy halved only",
+      "n_lh": 8000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 9.828488041017803,
+      "hh_ratio": 25.099781343297177,
+      "lh_over_hh": 0.3915766399153302
+    },
+    {
+      "case": "heavy halved only",
+      "n_lh": 8000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 79.92234530830784,
+      "hh_ratio": 191.70825124114583,
+      "lh_over_hh": 0.41689569849435004
+    },
+    {
+      "case": "heavy halved only",
+      "n_lh": 8000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.6821845721269476,
+      "hh_ratio": 0.7104058410876419,
+      "lh_over_hh": 0.960274441272207
+    },
+    {
+      "case": "heavy halved only",
+      "n_lh": 8000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 1.2278111493801,
+      "hh_ratio": 3.0489342594409305,
+      "lh_over_hh": 0.40270174588980423
+    },
+    {
+      "case": "heavy halved only",
+      "n_lh": 8000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 1.1136664465068458,
+      "hh_ratio": 1.1192172753736256,
+      "lh_over_hh": 0.9950404367508294
+    },
+    {
+      "case": "heavy halved only",
+      "n_lh": 8000000000000.0,
+      "n_hh": 19000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 361.1557784359036,
+      "hh_ratio": 389.0177413414696,
+      "lh_over_hh": 0.9283786831688235
+    },
+    {
+      "case": "cyclotron-resonance densities",
+      "n_lh": 6500000000000.0,
+      "n_hh": 46000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 7.530014548551838,
+      "hh_ratio": 60.118585777208075,
+      "lh_over_hh": 0.12525268935062986
+    },
+    {
+      "case": "cyclotron-resonance densities",
+      "n_lh": 6500000000000.0,
+      "n_hh": 46000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 63.652104268680596,
+      "hh_ratio": 458.86848909962043,
+      "lh_over_hh": 0.13871535261350604
+    },
+    {
+      "case": "cyclotron-resonance densities",
+      "n_lh": 6500000000000.0,
+      "n_hh": 46000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.68035782049131,
+      "hh_ratio": 0.935963804438599,
+      "lh_over_hh": 0.7269061231479949
+    },
+    {
+      "case": "cyclotron-resonance densities",
+      "n_lh": 6500000000000.0,
+      "n_hh": 46000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 1.0680815194002349,
+      "hh_ratio": 7.8332665522253935,
+      "lh_over_hh": 0.13635199469840562
+    },
+    {
+      "case": "cyclotron-resonance densities",
+      "n_lh": 6500000000000.0,
+      "n_hh": 46000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 1.0903343628294986,
+      "hh_ratio": 1.2713736772206532,
+      "lh_over_hh": 0.8576033800016025
+    },
+    {
+      "case": "cyclotron-resonance densities",
+      "n_lh": 6500000000000.0,
+      "n_hh": 46000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 346.4619085304021,
+      "hh_ratio": 457.9285796312473,
+      "lh_over_hh": 0.7565850308128723
+    },
+    {
+      "case": "equal densities, extreme test",
+      "n_lh": 23000000000000.0,
+      "n_hh": 23000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 29.861721362821278,
+      "hh_ratio": 29.86172136282128,
+      "lh_over_hh": 0.9999999999999999
+    },
+    {
+      "case": "equal densities, extreme test",
+      "n_lh": 23000000000000.0,
+      "n_hh": 23000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 229.43669470227798,
+      "hh_ratio": 229.43669470227795,
+      "lh_over_hh": 1.0000000000000002
+    },
+    {
+      "case": "equal densities, extreme test",
+      "n_lh": 23000000000000.0,
+      "n_hh": 23000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.7616179558784111,
+      "hh_ratio": 0.7616179558784111,
+      "lh_over_hh": 1.0
+    },
+    {
+      "case": "equal densities, extreme test",
+      "n_lh": 23000000000000.0,
+      "n_hh": 23000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 3.892304849958689,
+      "hh_ratio": 3.8923048499586894,
+      "lh_over_hh": 0.9999999999999999
+    },
+    {
+      "case": "equal densities, extreme test",
+      "n_lh": 23000000000000.0,
+      "n_hh": 23000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 1.2270022223179828,
+      "hh_ratio": 1.2270022223179826,
+      "lh_over_hh": 1.0000000000000002
+    },
+    {
+      "case": "equal densities, extreme test",
+      "n_lh": 23000000000000.0,
+      "n_hh": 23000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 436.6898038452118,
+      "hh_ratio": 436.6898038452119,
+      "lh_over_hh": 0.9999999999999999
+    },
+    {
+      "case": "light denser than heavy, extreme",
+      "n_lh": 38000000000000.0,
+      "n_hh": 8000000000000.0,
+      "mechanism": "remote charge d=2nm",
+      "lh_ratio": 47.92774235442741,
+      "hh_ratio": 9.459981808125915,
+      "lh_over_hh": 5.066367285533101
+    },
+    {
+      "case": "light denser than heavy, extreme",
+      "n_lh": 38000000000000.0,
+      "n_hh": 8000000000000.0,
+      "mechanism": "remote charge d=6nm",
+      "lh_ratio": 379.9092074941294,
+      "hh_ratio": 78.90965074805425,
+      "lh_over_hh": 4.814483449015864
+    },
+    {
+      "case": "light denser than heavy, extreme",
+      "n_lh": 38000000000000.0,
+      "n_hh": 8000000000000.0,
+      "mechanism": "roughness L=1nm",
+      "lh_ratio": 0.788114703726959,
+      "hh_ratio": 0.6853256949704025,
+      "lh_over_hh": 1.149985633853982
+    },
+    {
+      "case": "light denser than heavy, extreme",
+      "n_lh": 38000000000000.0,
+      "n_hh": 8000000000000.0,
+      "mechanism": "roughness L=3nm",
+      "lh_ratio": 6.11896120618184,
+      "hh_ratio": 1.2441581926735525,
+      "lh_over_hh": 4.918153689952319
+    },
+    {
+      "case": "light denser than heavy, extreme",
+      "n_lh": 38000000000000.0,
+      "n_hh": 8000000000000.0,
+      "mechanism": "background impurity",
+      "lh_ratio": 0.9663739610292787,
+      "hh_ratio": 1.105684167740441,
+      "lh_over_hh": 0.8740054250791577
+    },
+    {
+      "case": "light denser than heavy, extreme",
+      "n_lh": 38000000000000.0,
+      "n_hh": 8000000000000.0,
+      "mechanism": "dislocations",
+      "lh_ratio": 262.9684242996452,
+      "hh_ratio": 356.86808274026134,
+      "lh_over_hh": 0.7368785190325946
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "implied_tau_q": [
+    {
+      "mechanism": "remote charge d=10nm",
+      "tau_q_LH_ps": 0.0026927977684888652,
+      "tau_q_HH_ps": 0.00043042032463197515,
+      "hh_in_range": false
+    },
+    {
+      "mechanism": "remote charge d=2nm",
+      "tau_q_LH_ps": 0.06052262719116768,
+      "tau_q_HH_ps": 0.008713765506862158,
+      "hh_in_range": false
+    },
+    {
+      "mechanism": "roughness L=1nm",
+      "tau_q_LH_ps": 0.8354319069171334,
+      "tau_q_HH_ps": 0.5140958312212905,
+      "hh_in_range": false
+    },
+    {
+      "mechanism": "roughness L=3nm",
+      "tau_q_LH_ps": 0.4601850115041274,
+      "tau_q_HH_ps": 0.06712287210488334,
+      "hh_in_range": false
+    },
+    {
+      "mechanism": "background impurity",
+      "tau_q_LH_ps": 0.5178178081164652,
+      "tau_q_HH_ps": 0.3566416061841866,
+      "hh_in_range": false
+    },
+    {
+      "mechanism": "dislocations",
+      "tau_q_LH_ps": 0.0016043546058030244,
+      "tau_q_HH_ps": 0.0009878971209148354,
+      "hh_in_range": false
+    }
+  ],
+  "best_pair": {
+    "mechanisms": [
+      "remote charge d=2nm",
+      "background impurity"
+    ],
+    "worst_rel_error": 0.4172764817301868
+  }
+}

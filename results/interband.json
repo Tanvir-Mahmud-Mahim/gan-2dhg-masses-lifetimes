@@ -1,0 +1,341 @@
+{
+  "measured": {
+    "light hole": {
+      "tau_tr": 5.725429522084331e-13,
+      "tau_q": 1.5e-13,
+      "ratio": 3.8169530147228876
+    },
+    "heavy hole": {
+      "tau_tr": 4.3665639254823886e-13,
+      "tau_q": 2.05e-13,
+      "ratio": 2.130031183162141
+    }
+  },
+  "rows": [
+    {
+      "mechanism": "remote charge d=2nm",
+      "overlap": 0.0,
+      "lh_ratio": 9.45998180812591,
+      "hh_ratio": 49.988484341066865,
+      "lh_over_hh": 0.1892432213703724,
+      "lh_interband_frac": 0.0,
+      "hh_interband_frac": 0.0,
+      "mu": [
+        31217.628703493618,
+        28047.538177652008
+      ]
+    },
+    {
+      "mechanism": "remote charge d=2nm",
+      "overlap": 0.05,
+      "lh_ratio": 9.895643254392569,
+      "hh_ratio": 48.57421085118314,
+      "lh_over_hh": 0.20372216204829063,
+      "lh_interband_frac": 0.006731188292191881,
+      "hh_interband_frac": 0.0011509063580580348,
+      "mu": [
+        32435.488187736948,
+        27222.650803220495
+      ]
+    },
+    {
+      "mechanism": "remote charge d=2nm",
+      "overlap": 0.2,
+      "lh_ratio": 10.778781711531156,
+      "hh_ratio": 45.43351663381424,
+      "lh_over_hh": 0.23724295432392228,
+      "lh_interband_frac": 0.02639180847217426,
+      "hh_interband_frac": 0.00458778509911173,
+      "mu": [
+        34630.8782618259,
+        25374.885882916067
+      ]
+    },
+    {
+      "mechanism": "remote charge d=2nm",
+      "overlap": 0.5,
+      "lh_ratio": 11.655786151378804,
+      "hh_ratio": 41.52490409534305,
+      "lh_over_hh": 0.2806938728772641,
+      "lh_interband_frac": 0.06346700752027035,
+      "hh_interband_frac": 0.011391073054943024,
+      "mu": [
+        36022.534165523946,
+        23033.394428265838
+      ]
+    },
+    {
+      "mechanism": "remote charge d=2nm",
+      "overlap": 1.0,
+      "lh_ratio": 12.232017739419746,
+      "hh_ratio": 37.564968628972075,
+      "lh_over_hh": 0.3256229989231449,
+      "lh_interband_frac": 0.1193586769903826,
+      "hh_interband_frac": 0.022525555857509705,
+      "mu": [
+        35547.312507357514,
+        20602.182072485146
+      ]
+    },
+    {
+      "mechanism": "remote charge d=10nm",
+      "overlap": 0.0,
+      "lh_ratio": 212.62010794435724,
+      "hh_ratio": 1014.4883212042638,
+      "lh_over_hh": 0.20958359352226283,
+      "lh_interband_frac": 0.0,
+      "hh_interband_frac": 0.0,
+      "mu": [
+        3208744.4708299157,
+        2544980.9465223267
+      ]
+    },
+    {
+      "mechanism": "remote charge d=10nm",
+      "overlap": 0.05,
+      "lh_ratio": 212.62075997820045,
+      "hh_ratio": 1014.4867936071436,
+      "lh_over_hh": 0.20958455183255653,
+      "lh_interband_frac": 2.0657150878733432e-08,
+      "hh_interband_frac": 3.433816786468924e-09,
+      "mu": [
+        3208754.244678481,
+        2544977.1055996846
+      ]
+    },
+    {
+      "mechanism": "remote charge d=10nm",
+      "overlap": 0.2,
+      "lh_ratio": 212.62271601712266,
+      "hh_ratio": 1014.4822109531025,
+      "lh_over_hh": 0.20958742669067046,
+      "lh_interband_frac": 8.262859807484091e-08,
+      "hh_interband_frac": 1.3735266701786486e-08,
+      "mu": [
+        3208783.56527692,
+        2544965.5831764014
+      ]
+    },
+    {
+      "mechanism": "remote charge d=10nm",
+      "overlap": 0.5,
+      "lh_ratio": 212.62662781321478,
+      "hh_ratio": 1014.4730462619667,
+      "lh_over_hh": 0.20959317607962188,
+      "lh_interband_frac": 2.0657146992952846e-07,
+      "hh_interband_frac": 3.43381661993547e-08,
+      "mu": [
+        3208842.2022108473,
+        2544942.5398782394
+      ]
+    },
+    {
+      "mechanism": "remote charge d=10nm",
+      "overlap": 1.0,
+      "lh_ratio": 212.63314663872063,
+      "hh_ratio": 1014.4577736050221,
+      "lh_over_hh": 0.2096027574248833,
+      "lh_interband_frac": 4.131428542608617e-07,
+      "hh_interband_frac": 6.867633006724105e-08,
+      "mu": [
+        3208939.9178057243,
+        2544904.1389699043
+      ]
+    },
+    {
+      "mechanism": "roughness L=1nm",
+      "overlap": 0.0,
+      "lh_ratio": 0.6853256949704026,
+      "hh_ratio": 0.8507802560060038,
+      "lh_over_hh": 0.805526092234052,
+      "lh_interband_frac": 0.0,
+      "hh_interband_frac": 0.0,
+      "mu": [
+        388.1854327010726,
+        19.952481014622293
+      ]
+    },
+    {
+      "mechanism": "roughness L=1nm",
+      "overlap": 0.05,
+      "lh_ratio": 0.7470187250883564,
+      "hh_ratio": 0.8324990719726505,
+      "lh_over_hh": 0.8973207901820913,
+      "lh_interband_frac": 0.2833617623878314,
+      "hh_interband_frac": 0.01610742931220377,
+      "mu": [
+        303.23105980844724,
+        19.209273623593464
+      ]
+    },
+    {
+      "mechanism": "roughness L=1nm",
+      "overlap": 0.2,
+      "lh_ratio": 0.8263975460065658,
+      "hh_ratio": 0.8096950762494662,
+      "lh_over_hh": 1.0206280984620357,
+      "lh_interband_frac": 0.6126458371489993,
+      "hh_interband_frac": 0.06145983729453153,
+      "mu": [
+        181.3173925799782,
+        17.821894312214027
+      ]
+    },
+    {
+      "mechanism": "roughness L=1nm",
+      "overlap": 0.5,
+      "lh_ratio": 0.8599511777507185,
+      "hh_ratio": 0.8018476415188837,
+      "lh_over_hh": 1.0724620653890973,
+      "lh_interband_frac": 0.7981446223677787,
+      "hh_interband_frac": 0.14068030980920188,
+      "mu": [
+        98.32327552865955,
+        16.159433172459288
+      ]
+    },
+    {
+      "mechanism": "roughness L=1nm",
+      "overlap": 1.0,
+      "lh_ratio": 0.849557768882265,
+      "hh_ratio": 0.8082659738392873,
+      "lh_over_hh": 1.0510868901815085,
+      "lh_interband_frac": 0.8877424123058466,
+      "hh_interband_frac": 0.2466603632927319,
+      "mu": [
+        54.019534780880164,
+        14.27988198267773
+      ]
+    },
+    {
+      "mechanism": "roughness L=3nm",
+      "overlap": 0.0,
+      "lh_ratio": 1.2441581926735525,
+      "hh_ratio": 6.505329388556829,
+      "lh_over_hh": 0.1912521439517088,
+      "lh_interband_frac": 0.0,
+      "hh_interband_frac": 0.0,
+      "mu": [
+        771.9422456079315,
+        838.1318124055516
+      ]
+    },
+    {
+      "mechanism": "roughness L=3nm",
+      "overlap": 0.05,
+      "lh_ratio": 1.468515832650856,
+      "hh_ratio": 6.177128388396894,
+      "lh_over_hh": 0.2377343872938295,
+      "lh_interband_frac": 0.0830024286585277,
+      "hh_interband_frac": 0.0184488533188365,
+      "mu": [
+        835.5184103954297,
+        781.1646763184451
+      ]
+    },
+    {
+      "mechanism": "roughness L=3nm",
+      "overlap": 0.2,
+      "lh_ratio": 1.9936119698960797,
+      "hh_ratio": 5.636340921552027,
+      "lh_over_hh": 0.353706774952697,
+      "lh_interband_frac": 0.26581887740933585,
+      "hh_interband_frac": 0.06992528907128592,
+      "mu": [
+        908.1405151948853,
+        675.395439558547
+      ]
+    },
+    {
+      "mechanism": "roughness L=3nm",
+      "overlap": 0.5,
+      "lh_ratio": 2.757286952785495,
+      "hh_ratio": 5.195430661386243,
+      "lh_over_hh": 0.5307138392353786,
+      "lh_interband_frac": 0.4751081291966748,
+      "hh_interband_frac": 0.15821805756130702,
+      "mu": [
+        897.9683253640839,
+        563.4614286724001
+      ]
+    },
+    {
+      "mechanism": "roughness L=3nm",
+      "overlap": 1.0,
+      "lh_ratio": 3.65886810216528,
+      "hh_ratio": 4.908182742941994,
+      "lh_over_hh": 0.7454628920300006,
+      "lh_interband_frac": 0.6441671899068344,
+      "hh_interband_frac": 0.27320944709572903,
+      "mu": [
+        807.7964673474565,
+        459.5926043498793
+      ]
+    },
+    {
+      "mechanism": "background impurity",
+      "overlap": 0.0,
+      "lh_ratio": 1.105684167740441,
+      "hh_ratio": 1.2243562864696413,
+      "lh_over_hh": 0.9030738682517127,
+      "lh_interband_frac": 0.0,
+      "hh_interband_frac": 0.0,
+      "mu": [
+        2667876.8329791003,
+        279723.1264660195
+      ]
+    },
+    {
+      "mechanism": "background impurity",
+      "overlap": 0.05,
+      "lh_ratio": 1.09223484573272,
+      "hh_ratio": 1.224968443649515,
+      "lh_over_hh": 0.8916432512160515,
+      "lh_interband_frac": 0.13773381905353732,
+      "hh_interband_frac": 0.014899295709745575,
+      "mu": [
+        2272438.117670498,
+        275693.22189434635
+      ]
+    },
+    {
+      "mechanism": "background impurity",
+      "overlap": 0.2,
+      "lh_ratio": 1.0709160991984852,
+      "hh_ratio": 1.2217814847515815,
+      "lh_over_hh": 0.8765201572982004,
+      "lh_interband_frac": 0.3898490717106121,
+      "hh_interband_frac": 0.057047289530518186,
+      "mu": [
+        1576621.3689852674,
+        263210.9852687095
+      ]
+    },
+    {
+      "mechanism": "background impurity",
+      "overlap": 0.5,
+      "lh_ratio": 1.0582241306075857,
+      "hh_ratio": 1.2090808462981506,
+      "lh_over_hh": 0.8752302493646775,
+      "lh_interband_frac": 0.614991740538556,
+      "hh_interband_frac": 0.1313762365227783,
+      "mu": [
+        983065.356408024,
+        239942.73563348653
+      ]
+    },
+    {
+      "mechanism": "background impurity",
+      "overlap": 1.0,
+      "lh_ratio": 1.0575799612590417,
+      "hh_ratio": 1.1876740058224735,
+      "lh_over_hh": 0.8904631709327169,
+      "lh_interband_frac": 0.7616035736919284,
+      "hh_interband_frac": 0.23224146359403097,
+      "mu": [
+        608341.7726267206,
+        208325.51468855707
+      ]
+    }
+  ]
+}
