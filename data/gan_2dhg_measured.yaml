@@ -11,6 +11,47 @@
 meta:
   compiled: 2026-08-04
   rule: "No number enters the manuscript unless verified: true."
+  citation_audit:
+    date: 2026-08-04
+    scope: "Every reference in the Letter and in the Supplemental Material."
+    doi_check: "Each DOI resolved and the returned record compared field by
+      field with the bibliography entry: title, author order, journal, volume,
+      issue, page or article number, year. Registries used: Crossref, OpenAlex,
+      and the publisher page or author-hosted PDF where those were incomplete.
+      All entries matched; no correction to any bibliographic field was needed."
+    entries_removed: "Two entries were defined but never cited and have been
+      deleted: Dill et al., Appl. Phys. Lett. 127, 032105 (2025), and Ponce,
+      Jena and Giustino, Phys. Rev. B 100, 085204 (2019)."
+    aps_compliance: "Fang and Howard (1966) and de Carvalho et al. (2010) were
+      cited in the Supplemental Material but absent from the Letter's reference
+      list, which APS requires. Both are now cited in the Letter."
+    claims_verified:
+      - "Chang et al.: 'a short-range, large-angle scattering mechanism such as
+         interface roughness scattering' - verbatim, arXiv full text."
+      - "Chang et al. methods: 'The Rashba-Sheka-Pikus parameters (A1-6) and the
+         deformation potentials (acz-D1, act-D2, D3-6) are taken from ref. 61
+         and ref. 62, respectively', ref. 61 Rinke et al. 2008, ref. 62 Yan
+         et al. 2014 - verbatim, arXiv full text."
+      - "Wang et al.: 31 T maximum field, masses 0.57(1) and 2.6(2), densities
+         0.65(3) and 4.6(2)e13, times 4.0(2) and 3.9(2)e-13 s, 8 K - all
+         re-read from the author-hosted PDF."
+      - "Dill et al.: 'transport simulations should predict and be corroborated
+         against measurements of R_sh and R_H, which are directly measurable,
+         rather than n and mu' - verbatim, arXiv full text. Mobilities at 2 K
+         1350-1580 (light) and 222-393 (heavy) cm2/Vs, so the values quoted as
+         near 1400 and 300 lie inside both ranges."
+      - "Costa et al.: the criterion g* m* = 1 for equal orbital and Zeeman
+         gaps - verbatim, arXiv:2509.15268."
+      - "Rizzi et al. -0.3 +/- 0.1 eV; King et al. 0.56 +/- 0.2 and 0.86 +/- 0.2
+         eV. These bracket the offset range scanned in the Letter."
+    unresolved:
+      - "The erratum, J. Appl. Phys. 139, 249901 (2026), remains inaccessible.
+         The manuscript previously asserted that it left the working equations
+         and the subsequent analysis unaffected. That assertion was not
+         supported by anything read and has been removed; the Supplemental
+         Material now records only that the erratum exists and that the two
+         mobility figures taken from that reference were read from the
+         preprint."
 
 sources:
   chang2026:
@@ -27,7 +68,7 @@ sources:
     preprint: "arXiv:2501.16213"
     read_from: primary_pdf          # arXiv full text
   wang2025:
-    authors: "J. A. Wang, D. G. Rickel, C. F. C. Chang, Z. Zhang, P. Peng,
+    authors: "J. Wang, D. G. Rickel, C. F. C. Chang, Z. Zhang, P. Peng,
       Y. Huang, A. K. Azad, D. Jena, H. G. Xing, S. A. Crooker"
     title: "THz cyclotron resonance of a 2D hole gas in a GaN/AlN heterostructure"
     journal: "Applied Physics Letters"
@@ -47,8 +88,10 @@ sources:
     year: 2025
     preprint: "arXiv:2412.03818"
     read_from: primary_pdf
-    note: "An erratum exists, J. Appl. Phys. 139, 249901 (2026). NOT YET READ.
-      Must be checked before any number from this source is quoted."
+    note: "An erratum exists, J. Appl. Phys. 139, 249901 (2026). Its full text
+      is behind a paywall and has NOT been read. Its content must not be
+      characterised in the manuscript, and any number taken from this source
+      must be flagged as read from the preprint."
     erratum_checked: false
   bader2019:
     authors: "S. J. Bader, R. Chaudhuri, M. Schubert, H. W. Then, H. G. Xing,
