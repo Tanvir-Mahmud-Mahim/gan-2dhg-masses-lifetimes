@@ -1,0 +1,210 @@
+# Verified experimental and theoretical parameters for the polarisation-induced
+# GaN/AlN two-dimensional hole gas.
+#
+# PROVENANCE RULE.  Every entry carries the source it was read from and how it
+# was read.  "primary_pdf" means the full text of the paper itself was opened
+# and the number read from it.  "abstract" means only the abstract was
+# accessible.  Nothing in this file was taken from memory or from a secondary
+# summary.  Entries that could not be verified are marked unverified: true and
+# must not be used in the manuscript.
+
+meta:
+  compiled: 2026-08-04
+  rule: "No number enters the manuscript unless verified: true."
+
+sources:
+  chang2026:
+    authors: "C. F. C. Chang, J. E. Dill, Z. Zhang, J.-C. Chen, N. Pieczulewski,
+      S. J. Bader, O. E. Ayala Valenzuela, S. A. Crooker, F. F. Balakirev,
+      R. D. McDonald, J. Encomendero, D. A. Muller, F. Giustino, D. Jena,
+      H. G. Xing"
+    title: "High-mobility holes in gallium nitride and their quantum oscillations"
+    journal: "Nature Electronics"
+    volume: 9
+    pages: "346-357"
+    year: 2026
+    doi: "10.1038/s41928-026-01590-8"
+    preprint: "arXiv:2501.16213"
+    read_from: primary_pdf          # arXiv full text
+  wang2025:
+    authors: "J. A. Wang, D. G. Rickel, C. F. C. Chang, Z. Zhang, P. Peng,
+      Y. Huang, A. K. Azad, D. Jena, H. G. Xing, S. A. Crooker"
+    title: "THz cyclotron resonance of a 2D hole gas in a GaN/AlN heterostructure"
+    journal: "Applied Physics Letters"
+    volume: 126
+    issue: 21
+    article: 213102
+    year: 2025
+    doi: "10.1063/5.0273413"
+    read_from: primary_pdf          # author-hosted PDF, Cornell
+  dill2025jap:
+    authors: "J. E. Dill, C. F. C. Chang, D. Jena, H. G. Xing"
+    title: "Two-carrier model-fitting of Hall effect in semiconductors with
+      dual-band occupation: A case study in GaN two-dimensional hole gas"
+    journal: "Journal of Applied Physics"
+    volume: 137
+    article: "025702"
+    year: 2025
+    preprint: "arXiv:2412.03818"
+    read_from: primary_pdf
+    note: "An erratum exists, J. Appl. Phys. 139, 249901 (2026). NOT YET READ.
+      Must be checked before any number from this source is quoted."
+    erratum_checked: false
+  bader2019:
+    authors: "S. J. Bader, R. Chaudhuri, M. Schubert, H. W. Then, H. G. Xing,
+      D. Jena"
+    title: "Wurtzite phonons and the mobility of a GaN/AlN 2D hole gas"
+    journal: "Applied Physics Letters"
+    volume: 114
+    article: 253501
+    year: 2019
+    doi: "10.1063/1.5099957"
+    preprint: "arXiv:1906.04947"
+    read_from: primary_pdf
+  costa2026:
+    authors: "D. Costa, L. E. A. Stehouwer, D. Degli Esposti, G. Scappucci"
+    title: "Shubnikov-de Haas oscillations in two-dimensional hole gases with
+      competing cyclotron and Zeeman energy"
+    journal: "Physical Review B"
+    volume: 113
+    article: 115418
+    year: 2026
+    doi: "10.1103/pc57-schm"
+    preprint: "arXiv:2509.15268"
+    read_from: primary_pdf          # arXiv full text; APS page 403
+    note: "Germanium only. Nitrides are not mentioned anywhere in the paper."
+
+# ---------------------------------------------------------------------------
+# Heterostructure measured by Chang et al. and Wang et al.
+# ---------------------------------------------------------------------------
+structure:
+  substrate: "bulk Al-polar AlN, dislocation density below 1e4 cm^-2"
+  buffer_nm: 500
+  superlattice: "10 periods of Al0.95Ga0.05N, 2-3 monolayers each,
+    separated by 25 nm AlN spacers"
+  gan_thickness_nm: 15
+  contact_layer: "top 5 nm of the GaN doped with Mg"
+  channel: "2DHG at the GaN/AlN interface; interface atomically sharp by ADF-STEM"
+  source: chang2026
+  verified: true
+
+# ---------------------------------------------------------------------------
+# Shubnikov-de Haas, Chang et al.
+# ---------------------------------------------------------------------------
+sdh:
+  method: "quantum oscillations in pulsed field up to 72 T; Onsager relation
+    and Luttinger theorem for densities; Lifshitz-Kosevich thermal damping
+    for masses"
+  T_K: [1.8, 15.0]
+  light_hole:
+    frequency_T: {value: 166, err: 2}
+    n_s_cm2: {value: 8.0e12, err: 0.1e12}
+    m_over_m0_field_averaged: {value: 0.53, err: 0.01, field_range_T: [32, 72]}
+    m_over_m0_at_32T: 0.48
+    m_over_m0_at_72T: 0.69
+    m_over_m0_extrapolated_to_zero_field: 0.30
+    mu_quantum_cm2Vs: {value: 368, err: 14}
+    tau_q_ps: 0.15
+    mu_hall_cm2Vs: 1900          # T = 3 K, two-channel Drude fit 0-9 T
+  heavy_hole:
+    frequency_T: {value: 795, err: 24}
+    n_s_cm2: {value: 3.8e13, err: 0.1e13}
+    m_over_m0_field_averaged: {value: 1.92, err: 0.16}
+    mu_quantum_cm2Vs: [167, 200]   # estimated from oscillation onset, 50-60 T
+    tau_q_ps: [0.17, 0.24]
+    mu_hall_cm2Vs: 400             # T = 3 K
+  mobility_at_20K:
+    light_hole_cm2Vs: [1537, 1657]
+    heavy_hole_cm2Vs: [376, 438]
+  hall_to_quantum_ratio:
+    light_hole: 5
+    heavy_hole: [2, 2.5]
+  source: chang2026
+  verified: true
+
+# ---------------------------------------------------------------------------
+# Cyclotron resonance, Wang et al.  SAME material system, different technique.
+# ---------------------------------------------------------------------------
+cyclotron_resonance:
+  method: "time-domain terahertz spectroscopy in pulsed field up to 31 T"
+  T_K: 8
+  B_max_T: 31
+  light_hole:
+    m_over_m0: {value: 0.57, err: 0.01}
+    n_s_cm2: {value: 0.65e13, err: 0.03e13}
+    tau_s: {value: 4.0e-13, err: 0.2e-13}
+    mu_cm2Vs: {value: 1242, err: 680}
+  heavy_hole:
+    m_over_m0: {value: 2.6, err: 0.2}
+    n_s_cm2: {value: 4.6e13, err: 0.2e13}
+    tau_s: {value: 3.9e-13, err: 0.2e-13}
+    mu_cm2Vs: {value: 262, err: 630}
+  source: wang2025
+  verified: true
+
+# ---------------------------------------------------------------------------
+# Theory values quoted by Chang et al. for comparison.  These are THEORY,
+# not measurements.  Conflating the two was an error made earlier in this
+# project and must not recur.
+# ---------------------------------------------------------------------------
+theory_quoted_by_chang2026:
+  light_hole_kp_m_over_m0: 0.29
+  light_hole_gw_strained_bulk_m_over_m0: 0.27
+  heavy_hole_kp_m_over_m0: [1.6, 2.1]
+  heavy_hole_gw_strained_bulk_m_over_m0: 1.93
+  verified: true
+
+# ---------------------------------------------------------------------------
+# Open questions stated in print by the authors themselves.
+# ---------------------------------------------------------------------------
+open_questions:
+  - id: field_dependent_lh_mass
+    quote: "We currently do not have a clear justification for the linear
+      extrapolation and the origin of the magnetic field-dependence of the
+      light hole mass."
+    also: "further experiments and theory are necessary to corroborate our
+      observed trend and elucidate its origin. We therefore leave it as an
+      open question."
+    ruled_out_by_authors: "nonparabolicity alone is unable to explain the field
+      dependence of the light hole mass observed here"
+    source: chang2026
+    verified: true
+  - id: cr_vs_sdh_heavy_hole_mass
+    quote: "Where the CR and SdH experiments differ most noticeably is in the
+      determination of the heavy-hole mass m_hh (2.6m_e vs 1.92m_e,
+      respectively)."
+    why_surprising: "it is still somewhat unexpected to infer a smaller mass
+      from SdH quantum oscillations in comparison with a cyclotron resonance
+      measurement."
+    authors_call: "Further investigations of CR in higher magnetic fields,
+      where the heavy-hole CR peak can be more completely resolved, are needed
+      to resolve this puzzle."
+    source: wang2025
+    verified: true
+  - id: elastic_scattering_not_identified
+    quote: "The exact cause (e.g. interface roughness, dislocation, impurity,
+      etc) is irrelevant to this study, since all these elastic mechanisms are
+      temperature-independent and have similar dependence on effective masses.
+      So the exact cause is not deduced here, but rather a generic scatterer
+      with constant scalar matrix element is applied to set the low-temperature
+      mobility to 200cm^2/Vs."
+    comment: "The premise that all elastic mechanisms have a similar dependence
+      on effective mass is the assumption this project tests. In two dimensions
+      interface roughness, remote ionised impurity and dislocation scattering
+      have different dependences on mass, sheet density and well width, so they
+      are separable in principle."
+    source: bader2019
+    verified: true
+
+# ---------------------------------------------------------------------------
+# Temperature dependence, relevant to the n_2 = 1 correction made earlier.
+# ---------------------------------------------------------------------------
+temperature_dependence:
+  statement: "Both light and heavy hole mobilities saturate below 20 K, then
+    decrease above 20 K following approximately a T^-1 power law."
+  implied_exponent_n2: 1.0
+  source: dill2025jap
+  verified: true
+  caveat: "Read from the arXiv version. The published erratum has not been
+    checked. Independent support for the n_2 = 1 value used in this project,
+    which was derived from the two-dimensional acoustic deformation potential."
