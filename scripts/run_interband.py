@@ -18,8 +18,8 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from gpfet import scatter2d as S
-from gpfet.constants import Q as QE
+from gan2dhg import scatter2d as S
+from gan2dhg.constants import Q as QE
 
 EPS0 = 8.8541878128e-12
 EPS_R = 10.4

@@ -15,7 +15,7 @@ import numpy as np
 from matplotlib.ticker import AutoMinorLocator
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-from gpfet.constants import Q as QE
+from gan2dhg.constants import Q as QE
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 RES = os.path.join(ROOT, "results")
@@ -59,7 +59,12 @@ def finish(ax):
 
 
 def figure1():
-    d = json.load(open(os.path.join(RES, "well.json")))
+    # Panels (a) and (b) show the finite-barrier solution, which is the
+    # calculation the Letter reports; the hard-wall file is kept for the
+    # comparison quoted in the Supplemental Material.
+    het = os.path.join(RES, "well_het.json")
+    d = json.load(open(het if os.path.exists(het)
+                       else os.path.join(RES, "well.json")))
     z = np.array(d["z"])
     V = np.array(d["V"])
     p = np.array(d["p_of_z"])
@@ -77,12 +82,12 @@ def figure1():
     for b, c, lab in ((0, C_H, "heavy"), (2, C_L, "light")):
         ax.axhline(1000 * (E[0, b] - E0), color=c, lw=0.9, ls="--")
     ax.axhline(1000 * (EF - E0), color=C_T, lw=0.9, ls=":")
-    ax.text(2.42, 1000 * (E[0, 0] - E0) + 2.5, "heavy edge", color=C_H,
-            fontsize=7, ha="right")
-    ax.text(2.42, 1000 * (E[0, 2] - E0) + 2.5, "light edge", color=C_L,
-            fontsize=7, ha="right")
-    ax.text(2.42, 1000 * (EF - E0) + 2.5, r"$E_{\mathrm{F}}$", color=C_T,
-            fontsize=7, ha="right")
+    ax.text(2.42, 1000 * (E[0, 0] - E0) + 3.0, "heavy edge",
+            color=C_H, fontsize=7, ha="right", va="bottom")
+    ax.text(2.42, 1000 * (E[0, 2] - E0) + 3.0, "light edge",
+            color=C_L, fontsize=7, ha="right", va="bottom")
+    ax.text(2.42, 1000 * (EF - E0) + 3.0, r"$E_{\mathrm{F}}$", color=C_T,
+            fontsize=7, ha="right", va="bottom")
     ax2 = ax.twinx()
     ax2.fill_between(z, 0, p, color=C_G, alpha=0.22, lw=0)
     ax2.plot(z, p, color=C_G, lw=1.0)
@@ -90,12 +95,15 @@ def figure1():
     ax2.tick_params(axis="y", colors="black", direction="in")
     ax2.set_ylim(0, 1.15 * p.max())
     ax2.spines["right"].set_color("black")
-    ax.annotate(r"$V(z)$", xy=(0.13, 62), xytext=(0.60, 68), fontsize=7.5,
-                color="black",
-                arrowprops=dict(arrowstyle="->", lw=0.7, color="black"))
+    if z.min() < 0:
+        ax.axvspan(z.min(), 0.0, color="#c8cdd4", alpha=0.55, lw=0, zorder=0)
+        ax.text(z.min() * 0.55, 86.0, "AlN", fontsize=7, color="#40474f",
+                ha="center", va="top")
+        ax.text(0.30, 86.0, "GaN", fontsize=7, color="#40474f",
+                ha="left", va="top")
     ax.set_xlabel(r"distance from GaN/AlN interface (nm)")
     ax.set_ylabel("hole energy (meV)")
-    ax.set_xlim(0, 2.5)
+    ax.set_xlim(max(z.min(), -0.9), 2.5)
     ax.set_ylim(0, 90)
     ax.set_title("(a)", loc="left", fontsize=9)
     finish(ax)
@@ -105,17 +113,20 @@ def figure1():
     for b, c, lab in ((0, C_H, "heavy"), (2, C_L, "light")):
         ax.plot(kt, 1000 * (E[:, b] - E0), color=c, lw=1.4, label=lab)
     ax.axhline(1000 * (EF - E0), color=C_T, lw=0.9, ls=":")
-    ax.text(2.02, 1000 * (EF - E0) + 3, r"$E_{\mathrm{F}}$", color=C_T,
-            fontsize=7, ha="right")
+    ax.text(0.06, 1000 * (EF - E0) + 3, r"$E_{\mathrm{F}}$", color=C_T,
+            fontsize=7, ha="left")
+    # Fermi wavevector of a SINGLE spin-resolved branch: k_F = sqrt(4 pi n).
     for b, c in ((0, C_H), (2, C_L)):
         n = d["masses"][0]["n_cm2"] if b == 0 else d["masses"][2]["n_cm2"]
-        kF = np.sqrt(2 * np.pi * n * 1e-14)
+        kF = np.sqrt(4 * np.pi * n * 1e-14)
         ax.plot([kF], [1000 * (EF - E0)], "o", color=c, ms=3.5, zorder=5)
     ax.set_xlabel(r"in-plane wavevector $k_\perp$ (nm$^{-1}$)")
     ax.set_ylabel("hole energy (meV)")
     ax.set_xlim(0, 2.05)
     ax.set_ylim(0, 90)
-    ax.legend(loc="upper left", handlelength=1.6)
+    ax.legend(loc="lower right", handlelength=1.1, fontsize=6.0,
+              labelspacing=0.18, borderpad=0.30, handletextpad=0.4,
+              borderaxespad=0.45)
     ax.set_title("(b)", loc="left", fontsize=9)
     finish(ax)
 
@@ -139,6 +150,22 @@ def figure1():
                 label="heavy")
         ax.plot(ns, np.array(ml)[o], "s-", color=C_L, ms=3.2, lw=1.2,
                 label="light")
+    # The hard wall understates both masses; the band shows what the finite
+    # barrier gives at the measured density, over the published range of the
+    # valence band offset.
+    bp = os.path.join(RES, "barrier.json")
+    if os.path.exists(bp):
+        bj = json.load(open(bp))
+        hh = [np.mean([b["m_CR"] for b in r["branches"] if b["m_CR"] > 1])
+              for r in bj["finite_barrier"]]
+        ll = [np.mean([b["m_CR"] for b in r["branches"] if b["m_CR"] <= 1])
+              for r in bj["finite_barrier"]]
+        ax.fill_between([4.30, 4.90], min(hh), max(hh), color=C_H, alpha=0.22,
+                        lw=0, zorder=1)
+        ax.fill_between([4.30, 4.90], min(ll), max(ll), color=C_L, alpha=0.22,
+                        lw=0, zorder=1)
+        ax.plot([], [], "s", color=C_H, alpha=0.45, ms=4,
+                label="finite barrier")
     ax.errorbar([4.6], [1.92], yerr=[0.16], fmt="D", color=C_H, ms=4.0,
                 mfc="white", mew=1.0, capsize=2.5, lw=1.0,
                 label="measured, heavy")
@@ -148,8 +175,8 @@ def figure1():
     ax.set_xlabel(r"sheet density $p_{\mathrm{s}}$ ($10^{13}$ cm$^{-2}$)")
     ax.set_ylabel(r"$m_{\mathrm{CR}}(k_{\mathrm{F}})\ (m_0)$")
     ax.set_ylim(0, 2.4)
-    ax.legend(loc="center left", handlelength=1.5, labelspacing=0.28,
-              bbox_to_anchor=(0.0, 0.42))
+    ax.legend(loc="center left", handlelength=1.3, labelspacing=0.22,
+              fontsize=5.8, bbox_to_anchor=(0.0, 0.45), borderaxespad=0.3)
     ax.set_title("(c)", loc="left", fontsize=9)
     finish(ax)
 
@@ -173,9 +200,11 @@ def figure2():
     ax.axvspan(0, 31, color=C_G, alpha=0.13, lw=0)
     ax.text(33, 13.2, "field range of the\ncyclotron experiment",
             ha="left", va="top", fontsize=7, color=C_G)
-    ax.text(108, 1.45, r"$\omega_{\mathrm{c}}\tau=1$", ha="right", fontsize=7)
-    ax.annotate("0.82 at 31 T", xy=(31, 0.82), xytext=(56, 4.2), fontsize=7,
-                color=C_H, arrowprops=dict(arrowstyle="->", lw=0.7, color=C_H))
+    ax.text(104, 1.45, r"$\omega_{\mathrm{c}}\tau=1$", ha="right", fontsize=7)
+    ax.annotate("0.82 at 31 T", xy=(31.0, 0.82), xytext=(50, 5.2), fontsize=7,
+                color=C_H, ha="left",
+                arrowprops=dict(arrowstyle="->", lw=0.7, color=C_H,
+                                shrinkA=0, shrinkB=1))
     ax.set_xlabel("magnetic field (T)")
     ax.set_ylabel(r"$\omega_{\mathrm{c}}\tau$")
     ax.set_xlim(0, 110)
@@ -201,9 +230,11 @@ def figure2():
     ax.set_xlabel(r"scattering angle $\theta$ (deg)")
     ax.set_ylabel("normalised probability")
     ax.set_xlim(0, 180)
-    ax.set_ylim(0, 1.18)
+    ax.set_ylim(0, 1.46)
     ax.set_xticks([0, 45, 90, 135, 180])
-    ax.legend(loc="upper right", handlelength=1.4, labelspacing=0.25)
+    ax.legend(loc="upper right", handlelength=1.2, labelspacing=0.18,
+              fontsize=6.0, borderpad=0.25, handletextpad=0.4,
+              borderaxespad=0.35)
     ax.set_title("(b)", loc="left", fontsize=9)
     finish(ax)
 
@@ -229,13 +260,15 @@ def figure2():
     ax.axhline(2.13, color=C_H, lw=1.1, ls="--")
     ax.set_yscale("log")
     ax.set_ylim(0.4, 4.0e4)
-    ax.set_xlim(-0.6, 5.6)
+    ax.set_xlim(-0.6, 8.6)
     ax.set_xticks(x)
     ax.set_xticklabels(short, fontsize=6.6, rotation=34, ha="right",
                        rotation_mode="anchor")
     ax.set_ylabel(r"$\tau_{\mathrm{tr}}/\tau_{\mathrm{q}}$")
-    ax.text(-0.45, 5.6, "measured, light", color=C_L, fontsize=6.8)
-    ax.text(-0.45, 1.30, "measured, heavy", color=C_H, fontsize=6.8)
+    ax.text(5.72, 3.82, "  measured,\n  light", color=C_L, fontsize=5.6,
+            ha="left", va="center")
+    ax.text(5.72, 2.13 / 2.2, "  measured,\n  heavy", color=C_H, fontsize=5.6,
+            ha="left", va="center")
     ax.legend(loc="upper right", handlelength=1.3, ncol=2, columnspacing=0.8)
     ax.set_title("(c)", loc="left", fontsize=9)
     ax.yaxis.set_minor_locator(matplotlib.ticker.LogLocator(

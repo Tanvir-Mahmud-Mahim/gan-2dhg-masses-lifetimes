@@ -14,7 +14,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
-from gpfet import scatter2d as S
+from gan2dhg import scatter2d as S
 
 # --- Measured, from data/gan_2dhg_measured.yaml ----------------------------
 # Chang et al., Nat. Electron. 9, 346 (2026), doi 10.1038/s41928-026-01590-8
@@ -63,7 +63,7 @@ print(f"Screening wavevector q_s = {S.screening_wavevector(BANDS, EPS_R)*1e-9:.3
 
 # --- Candidate mechanisms --------------------------------------------------
 F_EFF = Q_EFF = None
-from gpfet.constants import Q as QE
+from gan2dhg.constants import Q as QE
 EPS0 = 8.8541878128e-12
 # Effective field pressing the gas to the interface, e(n_depl + n_s/2)/eps
 F_EFF = QE * (n_tot * 1e4 / 2.0) / (EPS_R * EPS0)
