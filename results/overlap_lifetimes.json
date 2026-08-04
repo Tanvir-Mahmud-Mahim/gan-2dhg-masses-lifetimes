@@ -1,0 +1,135 @@
+{
+ "overlap_light_to_heavy": {
+  "at_0": 0.012044886920563906,
+  "at_pi_over_2": 0.9453983603359792,
+  "at_pi": 0.011915421593041566,
+  "angle_averaged": 0.4786892572963939,
+  "min": 0.011915421593041566,
+  "max": 0.9453983603359792
+ },
+ "overlap_heavy_to_heavy_angle_averaged": 0.5004534922607266,
+ "overlap_light_to_light_angle_averaged": 0.5070581870773584,
+ "two_band": [
+  {
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_unit_overlap": [
+    301.6651745690307,
+    1436.0461639894372
+   ],
+   "ratio_computed_overlap": [
+    311.2707850426396,
+    1450.178530521576
+   ],
+   "light_over_heavy_unit": 0.21006648820465745,
+   "light_over_heavy_computed": 0.21464307910467198,
+   "interband_fraction_computed": [
+    8.080939251087216e-10,
+    1.3352730032778481e-10
+   ]
+  },
+  {
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_unit_overlap": [
+    0.8515977824641308,
+    0.8129264640049954
+   ],
+   "ratio_computed_overlap": [
+    0.8776412001236475,
+    0.7521201600153182
+   ],
+   "light_over_heavy_unit": 1.0475705001269313,
+   "light_over_heavy_computed": 1.1668896099072426,
+   "interband_fraction_computed": [
+    0.8962294179708059,
+    0.318386420610114
+   ]
+  },
+  {
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_unit_overlap": [
+    3.69352674842369,
+    4.9863005815251675
+   ],
+   "ratio_computed_overlap": [
+    2.2491969693444154,
+    6.081281368004773
+   ],
+   "light_over_heavy_unit": 0.7407348770967885,
+   "light_over_heavy_computed": 0.36985576447392066,
+   "interband_fraction_computed": [
+    0.5552903429342653,
+    0.11667056304105683
+   ]
+  },
+  {
+   "mechanism": "background impurities",
+   "ratio_unit_overlap": [
+    1.0459064091278936,
+    1.1549371563079698
+   ],
+   "ratio_computed_overlap": [
+    1.052171095657059,
+    1.235151679303864
+   ],
+   "light_over_heavy_unit": 0.905595948156505,
+   "light_over_heavy_computed": 0.8518557787575259,
+   "interband_fraction_computed": [
+    0.7512735566814972,
+    0.21975167770533077
+   ]
+  },
+  {
+   "mechanism": "dislocations",
+   "ratio_unit_overlap": [
+    199.34775069503533,
+    291.0317424961622
+   ],
+   "ratio_computed_overlap": [
+    358.7511873476893,
+    566.5560620939008
+   ],
+   "light_over_heavy_unit": 0.6849690998831994,
+   "light_over_heavy_computed": 0.6332139241821934,
+   "interband_fraction_computed": [
+    0.001916169316034111,
+    0.0006965478881815201
+   ]
+  }
+ ],
+ "max_light_over_heavy_computed": 1.1668896099072426,
+ "measured_light_over_heavy": 1.7934272300469483,
+ "rashba_bound": {
+  "splitting_light_meV": 0.37860427161051646,
+  "splitting_heavy_meV": 0.02333011167549026,
+  "relative_dk_light": 0.0026194408497347936,
+  "relative_dk_heavy": 0.00012310385512449815,
+  "rows": [
+   {
+    "mechanism": "remote charge, d = 12 nm",
+    "light_over_heavy": 0.21464307910467198,
+    "light_over_heavy_kF_shifted": 0.2156887783527221
+   },
+   {
+    "mechanism": "roughness, L = 1 nm",
+    "light_over_heavy": 1.1668896099072426,
+    "light_over_heavy_kF_shifted": 1.1669190630288588
+   },
+   {
+    "mechanism": "roughness, L = 3 nm",
+    "light_over_heavy": 0.36985576447392066,
+    "light_over_heavy_kF_shifted": 0.37019719613902463
+   },
+   {
+    "mechanism": "background impurities",
+    "light_over_heavy": 0.8518557787575259,
+    "light_over_heavy_kF_shifted": 0.8518726882052764
+   },
+   {
+    "mechanism": "dislocations",
+    "light_over_heavy": 0.6332139241821934,
+    "light_over_heavy_kF_shifted": 0.631360470255485
+   }
+  ],
+  "max_fractional_change": 0.004871805102740767
+ }
+}

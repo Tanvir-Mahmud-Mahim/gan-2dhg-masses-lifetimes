@@ -1,0 +1,468 @@
+{
+ "fang_howard_b_per_nm": 7.084694312786062,
+ "kF_light_per_nm": 0.7089815403622065,
+ "kF_heavy_per_nm": 1.5451894436373304,
+ "table": [
+  {
+   "q_per_nm": 0.001,
+   "F_carrier_exact": 0.9996196508557769,
+   "F_carrier_fang_howard": 0.9997354047251257,
+   "F_remote_exact": 0.9994322706072549,
+   "F_remote_fang_howard": 0.9995766714595333
+  },
+  {
+   "q_per_nm": 0.05598131918031177,
+   "F_carrier_exact": 0.979091062237149,
+   "F_carrier_fang_howard": 0.9853694387322872,
+   "F_remote_exact": 0.968896196531459,
+   "F_remote_fang_howard": 0.9766645674244754
+  },
+  {
+   "q_per_nm": 0.11096263836062353,
+   "F_carrier_exact": 0.9592906876607681,
+   "F_carrier_fang_howard": 0.9713526473809165,
+   "F_remote_exact": 0.9396442243771801,
+   "F_remote_fang_howard": 0.9544473960927639
+  },
+  {
+   "q_per_nm": 0.1659439575409353,
+   "F_carrier_exact": 0.9401829809421642,
+   "F_carrier_fang_howard": 0.9576735217866945,
+   "F_remote_exact": 0.911607796156596,
+   "F_remote_fang_howard": 0.9328990090243209
+  },
+  {
+   "q_per_nm": 0.22092527672124707,
+   "F_carrier_exact": 0.9217345968242554,
+   "F_carrier_fang_howard": 0.9443210249943049,
+   "F_remote_exact": 0.8847228095826253,
+   "F_remote_fang_howard": 0.9119944296236108
+  },
+  {
+   "q_per_nm": 0.27590659590155886,
+   "F_carrier_exact": 0.9039142261819155,
+   "F_carrier_fang_howard": 0.9312845690035864,
+   "F_remote_exact": 0.8589292755083324,
+   "F_remote_fang_howard": 0.8917097923253978
+  },
+  {
+   "q_per_nm": 0.3308879150818706,
+   "F_carrier_exact": 0.8866924456799448,
+   "F_carrier_fang_howard": 0.9185539930843977,
+   "F_remote_exact": 0.8341710058437976,
+   "F_remote_fang_howard": 0.8720222853608254
+  },
+  {
+   "q_per_nm": 0.3858692342621824,
+   "F_carrier_exact": 0.8700415804337212,
+   "F_carrier_fang_howard": 0.9061195432985978,
+   "F_remote_exact": 0.8103953288681168,
+   "F_remote_fang_howard": 0.8529100968683989
+  },
+  {
+   "q_per_nm": 0.44085055344249413,
+   "F_carrier_exact": 0.8539355783855115,
+   "F_carrier_fang_howard": 0.8939718531533131,
+   "F_remote_exact": 0.7875528292033247,
+   "F_remote_fang_howard": 0.834352364131566
+  },
+  {
+   "q_per_nm": 0.49583187262280587,
+   "F_carrier_exact": 0.8383498952526389,
+   "F_carrier_fang_howard": 0.8821019253149343,
+   "F_remote_exact": 0.7655971100224152,
+   "F_remote_fang_howard": 0.8163291257402714
+  },
+  {
+   "q_per_nm": 0.5508131918031177,
+   "F_carrier_exact": 0.8232613890292633,
+   "F_carrier_fang_howard": 0.8705011143181968,
+   "F_remote_exact": 0.7444845753312826,
+   "F_remote_fang_howard": 0.7988212764883794
+  },
+  {
+   "q_per_nm": 0.6057945109834295,
+   "F_carrier_exact": 0.8086482231338015,
+   "F_carrier_fang_howard": 0.8591611102091927,
+   "F_remote_exact": 0.7241742303994174,
+   "F_remote_fang_howard": 0.7818105248321806
+  },
+  {
+   "q_per_nm": 0.6607758301637412,
+   "F_carrier_exact": 0.7944897773910533,
+   "F_carrier_fang_howard": 0.8480739230653654,
+   "F_remote_exact": 0.7046274986209167,
+   "F_remote_fang_howard": 0.7652793527475434
+  },
+  {
+   "q_per_nm": 0.715757149344053,
+   "F_carrier_exact": 0.7807665661236249,
+   "F_carrier_fang_howard": 0.8372318683393714,
+   "F_remote_exact": 0.6858080532695476,
+   "F_remote_fang_howard": 0.7492109778346147
+  },
+  {
+   "q_per_nm": 0.7707384685243648,
+   "F_carrier_exact": 0.7674601627027821,
+   "F_carrier_fang_howard": 0.8266275529772977,
+   "F_remote_exact": 0.6676816627724181,
+   "F_remote_fang_howard": 0.7335893175294987
+  },
+  {
+   "q_per_nm": 0.8257197877046765,
+   "F_carrier_exact": 0.7545531299756671,
+   "F_carrier_fang_howard": 0.8162538622650054,
+   "F_remote_exact": 0.6502160482689952,
+   "F_remote_fang_howard": 0.718398955292023
+  },
+  {
+   "q_per_nm": 0.8807011068849883,
+   "F_carrier_exact": 0.742028956045012,
+   "F_carrier_fang_howard": 0.806103947359467,
+   "F_remote_exact": 0.6333807523481594,
+   "F_remote_fang_howard": 0.7036251086476935
+  },
+  {
+   "q_per_nm": 0.9356824260653,
+   "F_carrier_exact": 0.7298719949299969,
+   "F_carrier_fang_howard": 0.7961712134647774,
+   "F_remote_exact": 0.6171470179676828,
+   "F_remote_fang_howard": 0.6892535989702175
+  },
+  {
+   "q_per_nm": 0.9906637452456117,
+   "F_carrier_exact": 0.7180674116836053,
+   "F_carrier_fang_howard": 0.7864493086151882,
+   "F_remote_exact": 0.6014876766597721,
+   "F_remote_fang_howard": 0.6752708228986806
+  },
+  {
+   "q_per_nm": 1.0456450644259236,
+   "F_carrier_exact": 0.7066011315833651,
+   "F_carrier_fang_howard": 0.7769321130299333,
+   "F_remote_exact": 0.5863770452146198,
+   "F_remote_fang_howard": 0.6616637252905511
+  },
+  {
+   "q_per_nm": 1.1006263836062353,
+   "F_carrier_exact": 0.6954597930494211,
+   "F_carrier_fang_howard": 0.7676137290069122,
+   "F_remote_exact": 0.5717908301125908,
+   "F_remote_fang_howard": 0.6484197736183053
+  },
+  {
+   "q_per_nm": 1.155607702786547,
+   "F_carrier_exact": 0.6846307039769531,
+   "F_carrier_fang_howard": 0.7584884713243897,
+   "F_remote_exact": 0.5577060390458787,
+   "F_remote_fang_howard": 0.6355269337235532
+  },
+  {
+   "q_per_nm": 1.210589021966859,
+   "F_carrier_exact": 0.6741018011995171,
+   "F_carrier_fang_howard": 0.7495508581218474,
+   "F_remote_exact": 0.5441008989332072,
+   "F_remote_fang_howard": 0.6229736468482363
+  },
+  {
+   "q_per_nm": 1.2655703411471706,
+   "F_carrier_exact": 0.6638616128263524,
+   "F_carrier_fang_howard": 0.7407956022329412,
+   "F_remote_exact": 0.5309547798872788,
+   "F_remote_fang_howard": 0.6107488078677098
+  },
+  {
+   "q_per_nm": 1.3205516603274823,
+   "F_carrier_exact": 0.6538992232204249,
+   "F_carrier_fang_howard": 0.7322176029452174,
+   "F_remote_exact": 0.5182481246449645,
+   "F_remote_fang_howard": 0.5988417446554255
+  },
+  {
+   "q_per_nm": 1.3755329795077942,
+   "F_carrier_exact": 0.6442042404052684,
+   "F_carrier_fang_howard": 0.7238119381628315,
+   "F_remote_exact": 0.5059623830153475,
+   "F_remote_fang_howard": 0.5872421985134566
+  },
+  {
+   "q_per_nm": 1.4305142986881059,
+   "F_carrier_exact": 0.6347667657078191,
+   "F_carrier_fang_howard": 0.7155738569499659,
+   "F_remote_exact": 0.49407995094124785,
+   "F_remote_fang_howard": 0.5759403056073283
+  },
+  {
+   "q_per_nm": 1.4854956178684176,
+   "F_carrier_exact": 0.6255773654616623,
+   "F_carrier_fang_howard": 0.7074987724340395,
+   "F_remote_exact": 0.48258411380629856,
+   "F_remote_fang_howard": 0.5649265793475408
+  },
+  {
+   "q_per_nm": 1.5404769370487295,
+   "F_carrier_exact": 0.6166270446106229,
+   "F_carrier_fang_howard": 0.6995822550490672,
+   "F_remote_exact": 0.4714589936524566,
+   "F_remote_fang_howard": 0.5541918936638225
+  },
+  {
+   "q_per_nm": 1.5954582562290411,
+   "F_carrier_exact": 0.6079072220666132,
+   "F_carrier_fang_howard": 0.6918200261007227,
+   "F_remote_exact": 0.4606895000024009,
+   "F_remote_fang_howard": 0.5437274671215435
+  },
+  {
+   "q_per_nm": 1.6504395754093528,
+   "F_carrier_exact": 0.5994097076883006,
+   "F_carrier_fang_howard": 0.684207951635773,
+   "F_remote_exact": 0.4502612840079629,
+   "F_remote_fang_howard": 0.5335248478328799
+  },
+  {
+   "q_per_nm": 1.7054208945896647,
+   "F_carrier_exact": 0.5911266807585649,
+   "F_carrier_fang_howard": 0.6767420365995975,
+   "F_remote_exact": 0.440160695669846,
+   "F_remote_fang_howard": 0.5235758991182794
+  },
+  {
+   "q_per_nm": 1.7604022137699764,
+   "F_carrier_exact": 0.5830506698490611,
+   "F_carrier_fang_howard": 0.669418419266464,
+   "F_remote_exact": 0.43037474389569824,
+   "F_remote_fang_howard": 0.5138727858765039
+  },
+  {
+   "q_per_nm": 1.815383532950288,
+   "F_carrier_exact": 0.575174533969561,
+   "F_carrier_fang_howard": 0.6622333659281575,
+   "F_remote_exact": 0.42089105918334374,
+   "F_remote_fang_howard": 0.504407961624109
+  },
+  {
+   "q_per_nm": 1.8703648521306,
+   "F_carrier_exact": 0.5674914449082479,
+   "F_carrier_fang_howard": 0.655183265827389,
+   "F_remote_exact": 0.4116978587338778,
+   "F_remote_fang_howard": 0.4951741561675859
+  },
+  {
+   "q_per_nm": 1.9253461713109117,
+   "F_carrier_exact": 0.5599948706768381,
+   "F_carrier_fang_howard": 0.6482646263232189,
+   "F_remote_exact": 0.402783913815558,
+   "F_remote_fang_howard": 0.48616436387364476
+  },
+  {
+   "q_per_nm": 1.9803274904912234,
+   "F_carrier_exact": 0.5526785599814226,
+   "F_carrier_fang_howard": 0.6414740682764632,
+   "F_remote_exact": 0.3941385192141718,
+   "F_remote_fang_howard": 0.47737183250517495
+  },
+  {
+   "q_per_nm": 2.0353088096715353,
+   "F_carrier_exact": 0.5455365276462867,
+   "F_carrier_fang_howard": 0.6348083216437503,
+   "F_remote_exact": 0.3857514646189591,
+   "F_remote_fang_howard": 0.46879005259238776
+  },
+  {
+   "q_per_nm": 2.090290128851847,
+   "F_carrier_exact": 0.5385630409237723,
+   "F_carrier_fang_howard": 0.6282642212695425,
+   "F_remote_exact": 0.3776130078053638,
+   "F_remote_fang_howard": 0.46041274731044135
+  },
+  {
+   "q_per_nm": 2.1452714480321586,
+   "F_carrier_exact": 0.5317526066285425,
+   "F_carrier_fang_howard": 0.6218387028660527,
+   "F_remote_exact": 0.36971384948699165,
+   "F_remote_fang_howard": 0.45223386283656464
+  },
+  {
+   "q_per_nm": 2.2002527672124708,
+   "F_carrier_exact": 0.5250999590394245,
+   "F_carrier_fang_howard": 0.615528799171549,
+   "F_remote_exact": 0.36204510971927617,
+   "F_remote_fang_howard": 0.4442475591612715
+  },
+  {
+   "q_per_nm": 2.2552340863927824,
+   "F_carrier_exact": 0.5186000485164226,
+   "F_carrier_fang_howard": 0.6093316362780854,
+   "F_remote_exact": 0.35459830574658807,
+   "F_remote_fang_howard": 0.43644820132975604
+  },
+  {
+   "q_per_nm": 2.310215405573094,
+   "F_carrier_exact": 0.5122480307845138,
+   "F_carrier_fang_howard": 0.6032444301201878,
+   "F_remote_exact": 0.34736533119295954,
+   "F_remote_fang_howard": 0.428830351090937
+  },
+  {
+   "q_per_nm": 2.365196724753406,
+   "F_carrier_exact": 0.5060392568395242,
+   "F_carrier_fang_howard": 0.5972644831165097,
+   "F_remote_exact": 0.34033843650430107,
+   "F_remote_fang_howard": 0.42138875893293687
+  },
+  {
+   "q_per_nm": 2.420178043933718,
+   "F_carrier_exact": 0.4999692634347576,
+   "F_carrier_fang_howard": 0.5913891809569026,
+   "F_remote_exact": 0.33351021055703906,
+   "F_remote_fang_howard": 0.4141183564849907
+  },
+  {
+   "q_per_nm": 2.4751593631140296,
+   "F_carrier_exact": 0.49403376411013533,
+   "F_carrier_fang_howard": 0.5856159895277645,
+   "F_remote_exact": 0.32687356335455836,
+   "F_remote_fang_howard": 0.4070142492669269
+  },
+  {
+   "q_per_nm": 2.5301406822943413,
+   "F_carrier_exact": 0.4882286407284411,
+   "F_carrier_fang_howard": 0.5799424519689262,
+   "F_remote_exact": 0.3204217097387463,
+   "F_remote_fang_howard": 0.40007170976843626
+  },
+  {
+   "q_per_nm": 2.585122001474653,
+   "F_carrier_exact": 0.48254993548586367,
+   "F_carrier_fang_howard": 0.5743661858556972,
+   "F_remote_exact": 0.3141481540493565,
+   "F_remote_fang_howard": 0.3932861708413497
+  },
+  {
+   "q_per_nm": 2.6401033206549647,
+   "F_carrier_exact": 0.4769938433664207,
+   "F_carrier_fang_howard": 0.5688848805000318,
+   "F_remote_exact": 0.3080466756688894,
+   "F_remote_fang_howard": 0.3866532193890856
+  },
+  {
+   "q_per_nm": 2.6950846398352764,
+   "F_carrier_exact": 0.4715567050120382,
+   "F_carrier_fang_howard": 0.5634962943651171,
+   "F_remote_exact": 0.30211131539525204,
+   "F_remote_fang_howard": 0.38016859033831935
+  },
+  {
+   "q_per_nm": 2.7500659590155885,
+   "F_carrier_exact": 0.4662349999820836,
+   "F_carrier_fang_howard": 0.5581982525879687,
+   "F_remote_exact": 0.2963363625886628,
+   "F_remote_fang_howard": 0.37382816087875026
+  },
+  {
+   "q_per_nm": 2.8050472781959,
+   "F_carrier_exact": 0.46102534037800663,
+   "F_carrier_fang_howard": 0.5529886446049279,
+   "F_remote_exact": 0.290716343043126,
+   "F_remote_fang_howard": 0.3676279449576318
+  },
+  {
+   "q_per_nm": 2.860028597376212,
+   "F_carrier_exact": 0.4559244648104545,
+   "F_carrier_fang_howard": 0.5478654218752043,
+   "F_remote_exact": 0.28524600753635687,
+   "F_remote_fang_howard": 0.3615640880164533
+  },
+  {
+   "q_per_nm": 2.9150099165565235,
+   "F_carrier_exact": 0.4509292326878095,
+   "F_carrier_fang_howard": 0.5428265956978816,
+   "F_remote_exact": 0.27992032101531383,
+   "F_remote_fang_howard": 0.3556328619578621
+  },
+  {
+   "q_per_nm": 2.969991235736835,
+   "F_carrier_exact": 0.44603661880654877,
+   "F_carrier_fang_howard": 0.5378702351180279,
+   "F_remote_exact": 0.2747344523775065,
+   "F_remote_fang_howard": 0.3498306603315521
+  },
+  {
+   "q_per_nm": 3.024972554917147,
+   "F_carrier_exact": 0.44124370822517595,
+   "F_carrier_fang_howard": 0.5329944649177889,
+   "F_remote_exact": 0.2696837648110365,
+   "F_remote_fang_howard": 0.34415399372846334
+  },
+  {
+   "q_per_nm": 3.079953874097459,
+   "F_carrier_exact": 0.4365476914047106,
+   "F_carrier_fang_howard": 0.5281974636885517,
+   "F_remote_exact": 0.2647638066588929,
+   "F_remote_fang_howard": 0.3385994853732057
+  },
+  {
+   "q_per_nm": 3.1349351932777707,
+   "F_carrier_exact": 0.43194585959987636,
+   "F_carrier_fang_howard": 0.523477461980466,
+   "F_remote_exact": 0.25997030277539734,
+   "F_remote_fang_howard": 0.3331638669051591
+  },
+  {
+   "q_per_nm": 3.1899165124580824,
+   "F_carrier_exact": 0.4274356004861837,
+   "F_carrier_fang_howard": 0.5188327405257998,
+   "F_remote_exact": 0.2552991463448837,
+   "F_remote_fang_howard": 0.3278439743392137
+  },
+  {
+   "q_per_nm": 3.244897831638394,
+   "F_carrier_exact": 0.4230143940090927,
+   "F_carrier_fang_howard": 0.5142616285327922,
+   "F_remote_exact": 0.2507463911347269,
+   "F_remote_fang_howard": 0.32263674419759103
+  }
+ ],
+ "ratios": [
+  {
+   "mechanism": "remote charge, d = 12 nm",
+   "variational": {
+    "light": 302.34816058212607,
+    "heavy": 1459.6767192031527,
+    "light_over_heavy": 0.20713364583027669
+   },
+   "computed_envelope": {
+    "light": 303.86429850081043,
+    "heavy": 1467.067182299988,
+    "light_over_heavy": 0.2071236424390794
+   }
+  },
+  {
+   "mechanism": "roughness, L = 3 nm",
+   "variational": {
+    "light": 1.2624585577256786,
+    "heavy": 6.606989282681971,
+    "light_over_heavy": 0.19107925012604374
+   },
+   "computed_envelope": {
+    "light": 1.2318830236912959,
+    "heavy": 6.426068224631103,
+    "light_over_heavy": 0.19170089401937743
+   }
+  },
+  {
+   "mechanism": "background impurities",
+   "variational": {
+    "light": 1.097857927704312,
+    "heavy": 1.1846191766668857,
+    "light_over_heavy": 0.9267602190885594
+   },
+   "computed_envelope": {
+    "light": 1.1117446019687072,
+    "heavy": 1.2501012950647996,
+    "light_over_heavy": 0.889323614300455
+   }
+  }
+ ]
+}

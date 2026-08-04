@@ -1,0 +1,675 @@
+{
+ "screening_strength_scan": [
+  {
+   "qs_scale": 0.01,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 737.9961762442912,
+   "ratio_heavy": 3582.8917002124385,
+   "light_over_heavy": 0.2059778073114891
+  },
+  {
+   "qs_scale": 0.01,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 225.71011651372848,
+   "ratio_heavy": 1089.3231231008122,
+   "light_over_heavy": 0.2072021714468279
+  },
+  {
+   "qs_scale": 0.01,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.9856065431658487,
+   "ratio_heavy": 1.7393423857537775,
+   "light_over_heavy": 0.566654703086947
+  },
+  {
+   "qs_scale": 0.01,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 2.7287734380189543,
+   "ratio_heavy": 14.90404130854844,
+   "light_over_heavy": 0.1830894977762726
+  },
+  {
+   "qs_scale": 0.01,
+   "mechanism": "background impurities",
+   "ratio_light": 9.312434114493286,
+   "ratio_heavy": 26.1840645728203,
+   "light_over_heavy": 0.35565273254633734
+  },
+  {
+   "qs_scale": 0.01,
+   "mechanism": "dislocations",
+   "ratio_light": 7589910.633290656,
+   "ratio_heavy": 16607378.687419575,
+   "light_over_heavy": 0.45702038691031754
+  },
+  {
+   "qs_scale": 0.1,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 350.40320260698047,
+   "ratio_heavy": 1679.6618515074783,
+   "light_over_heavy": 0.20861532474080863
+  },
+  {
+   "qs_scale": 0.1,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 74.99519841211236,
+   "ratio_heavy": 361.85943451160966,
+   "light_over_heavy": 0.20724953188889778
+  },
+  {
+   "qs_scale": 0.1,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.786581242834728,
+   "ratio_heavy": 1.226478009648687,
+   "light_over_heavy": 0.6413333436447317
+  },
+  {
+   "qs_scale": 0.1,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.6987293642696215,
+   "ratio_heavy": 9.190174416498824,
+   "light_over_heavy": 0.1848419069413903
+  },
+  {
+   "qs_scale": 0.1,
+   "mechanism": "background impurities",
+   "ratio_light": 1.924387770847319,
+   "ratio_heavy": 3.621244759133262,
+   "light_over_heavy": 0.5314161010502692
+  },
+  {
+   "qs_scale": 0.1,
+   "mechanism": "dislocations",
+   "ratio_light": 1034538.4955476996,
+   "ratio_heavy": 2154624.476337456,
+   "light_over_heavy": 0.48014793617598855
+  },
+  {
+   "qs_scale": 0.3,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 314.8397551726079,
+   "ratio_heavy": 1508.4541840023753,
+   "light_over_heavy": 0.20871681653415874
+  },
+  {
+   "qs_scale": 0.3,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 60.32568365031966,
+   "ratio_heavy": 291.977104074751,
+   "light_over_heavy": 0.20661100753597197
+  },
+  {
+   "qs_scale": 0.3,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.7227092198236037,
+   "ratio_heavy": 1.002834527919517,
+   "light_over_heavy": 0.7206664705920508
+  },
+  {
+   "qs_scale": 0.3,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.4102802191497221,
+   "ratio_heavy": 7.529330280128161,
+   "light_over_heavy": 0.18730486865104248
+  },
+  {
+   "qs_scale": 0.3,
+   "mechanism": "background impurities",
+   "ratio_light": 1.319709914226637,
+   "ratio_heavy": 1.8338438726609405,
+   "light_over_heavy": 0.7196413685488472
+  },
+  {
+   "qs_scale": 0.3,
+   "mechanism": "dislocations",
+   "ratio_light": 528081.3777529458,
+   "ratio_heavy": 903161.1618228839,
+   "light_over_heavy": 0.5847033730802811
+  },
+  {
+   "qs_scale": 1.0,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 301.72491239154,
+   "ratio_heavy": 1445.4339276512508,
+   "light_over_heavy": 0.2087434829219943
+  },
+  {
+   "qs_scale": 1.0,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 54.62402441639951,
+   "ratio_heavy": 264.92825011713234,
+   "light_over_heavy": 0.20618421928295178
+  },
+  {
+   "qs_scale": 1.0,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.688938873761136,
+   "ratio_heavy": 0.8533407672217315,
+   "light_over_heavy": 0.807343209447443
+  },
+  {
+   "qs_scale": 1.0,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2624585606692966,
+   "ratio_heavy": 6.60718626244885,
+   "light_over_heavy": 0.19107355393389291
+  },
+  {
+   "qs_scale": 1.0,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0978574468605664,
+   "ratio_heavy": 1.184605921667616,
+   "light_over_heavy": 0.9267701830454044
+  },
+  {
+   "qs_scale": 1.0,
+   "mechanism": "dislocations",
+   "ratio_light": 352147.7667512998,
+   "ratio_heavy": 422986.35120104067,
+   "light_over_heavy": 0.8325274935028055
+  },
+  {
+   "qs_scale": 3.0,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 297.8972130321036,
+   "ratio_heavy": 1427.0528395600643,
+   "light_over_heavy": 0.2087499528916814
+  },
+  {
+   "qs_scale": 3.0,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 52.90583527748043,
+   "ratio_heavy": 256.80025259549063,
+   "light_over_heavy": 0.20601940513203937
+  },
+  {
+   "qs_scale": 3.0,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6772948635925305,
+   "ratio_heavy": 0.790997546916766,
+   "light_over_heavy": 0.8562540632806791
+  },
+  {
+   "qs_scale": 3.0,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2120082222446948,
+   "ratio_heavy": 6.265120283334133,
+   "light_over_heavy": 0.19345330455486417
+  },
+  {
+   "qs_scale": 3.0,
+   "mechanism": "background impurities",
+   "ratio_light": 1.032831489922816,
+   "ratio_heavy": 0.9943548516618055,
+   "light_over_heavy": 1.0386950777146677
+  },
+  {
+   "qs_scale": 3.0,
+   "mechanism": "dislocations",
+   "ratio_light": 302523.21275622206,
+   "ratio_heavy": 281616.73683849233,
+   "light_over_heavy": 1.0742373345861174
+  },
+  {
+   "qs_scale": 10.0,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 296.54822806992274,
+   "ratio_heavy": 1420.5761580145474,
+   "light_over_heavy": 0.20875208020131078
+  },
+  {
+   "qs_scale": 10.0,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 52.292623586070576,
+   "ratio_heavy": 253.9029562678913,
+   "light_over_heavy": 0.20595515843815926
+  },
+  {
+   "qs_scale": 10.0,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6729428669087758,
+   "ratio_heavy": 0.765253836044105,
+   "light_over_heavy": 0.8793720922556618
+  },
+  {
+   "qs_scale": 10.0,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.1932058677265607,
+   "ratio_heavy": 6.131621983204461,
+   "light_over_heavy": 0.194598732765156
+  },
+  {
+   "qs_scale": 10.0,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0098536650520402,
+   "ratio_heavy": 0.9268101674974265,
+   "light_over_heavy": 1.089601409724332
+  },
+  {
+   "qs_scale": 10.0,
+   "mechanism": "dislocations",
+   "ratio_light": 285268.89914856554,
+   "ratio_heavy": 232389.25591667203,
+   "light_over_heavy": 1.2275477109443245
+  }
+ ],
+ "screening_strength_inversions": 4,
+ "local_field_scan": [
+  {
+   "gamma": 0.0,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 301.72491239154,
+   "ratio_heavy": 1445.4339276512508,
+   "light_over_heavy": 0.2087434829219943
+  },
+  {
+   "gamma": 0.0,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 54.62402441639951,
+   "ratio_heavy": 264.92825011713234,
+   "light_over_heavy": 0.20618421928295178
+  },
+  {
+   "gamma": 0.0,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.688938873761136,
+   "ratio_heavy": 0.8533407672217315,
+   "light_over_heavy": 0.807343209447443
+  },
+  {
+   "gamma": 0.0,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2624585606692966,
+   "ratio_heavy": 6.60718626244885,
+   "light_over_heavy": 0.19107355393389291
+  },
+  {
+   "gamma": 0.0,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0978574468605664,
+   "ratio_heavy": 1.184605921667616,
+   "light_over_heavy": 0.9267701830454044
+  },
+  {
+   "gamma": 0.0,
+   "mechanism": "dislocations",
+   "ratio_light": 352147.7667512998,
+   "ratio_heavy": 422986.35120104067,
+   "light_over_heavy": 0.8325274935028055
+  },
+  {
+   "gamma": 0.25,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 297.84075126200963,
+   "ratio_heavy": 1426.7713582038787,
+   "light_over_heavy": 0.2087515631354927
+  },
+  {
+   "gamma": 0.25,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 53.067952820155085,
+   "ratio_heavy": 257.52400694647855,
+   "light_over_heavy": 0.20606992508929176
+  },
+  {
+   "gamma": 0.25,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6847933657216367,
+   "ratio_heavy": 0.8538496558025247,
+   "light_over_heavy": 0.8020069587988606
+  },
+  {
+   "gamma": 0.25,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2397009188790185,
+   "ratio_heavy": 6.4745123886467,
+   "light_over_heavy": 0.1914740206618309
+  },
+  {
+   "gamma": 0.25,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0656101170017052,
+   "ratio_heavy": 1.1655980073940995,
+   "light_over_heavy": 0.9142175177392977
+  },
+  {
+   "gamma": 0.25,
+   "mechanism": "dislocations",
+   "ratio_light": 318400.1735443919,
+   "ratio_heavy": 375890.57431929547,
+   "light_over_heavy": 0.847055487148052
+  },
+  {
+   "gamma": 0.5,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 293.9201879075518,
+   "ratio_heavy": 1407.9394829599617,
+   "light_over_heavy": 0.20875910610137366
+  },
+  {
+   "gamma": 0.5,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 51.483324744129604,
+   "ratio_heavy": 249.9890103352941,
+   "light_over_heavy": 0.20594235192610408
+  },
+  {
+   "gamma": 0.5,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6803296904884615,
+   "ratio_heavy": 0.8545510526075003,
+   "light_over_heavy": 0.7961252735135772
+  },
+  {
+   "gamma": 0.5,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2155044996622708,
+   "ratio_heavy": 6.333102193052324,
+   "light_over_heavy": 0.19192876770498504
+  },
+  {
+   "gamma": 0.5,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0329909352348887,
+   "ratio_heavy": 1.1467564377082227,
+   "light_over_heavy": 0.9007936657406582
+  },
+  {
+   "gamma": 0.5,
+   "mechanism": "dislocations",
+   "ratio_light": 285465.8516559939,
+   "ratio_heavy": 330819.7000314885,
+   "light_over_heavy": 0.8629046324291519
+  },
+  {
+   "gamma": 0.75,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 289.9610662004816,
+   "ratio_heavy": 1388.9281342044446,
+   "light_over_heavy": 0.20876606863937316
+  },
+  {
+   "gamma": 0.75,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 49.86671099760874,
+   "ratio_heavy": 242.30803728725442,
+   "light_over_heavy": 0.20579883175105793
+  },
+  {
+   "gamma": 0.75,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6754999331792418,
+   "ratio_heavy": 0.8555049806459317,
+   "light_over_heavy": 0.7895920520173001
+  },
+  {
+   "gamma": 0.75,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.1896761663390312,
+   "ratio_heavy": 6.181706977332378,
+   "light_over_heavy": 0.19245107713798784
+  },
+  {
+   "gamma": 0.75,
+   "mechanism": "background impurities",
+   "ratio_light": 0.9999491332287573,
+   "ratio_heavy": 1.1281401198593541,
+   "light_over_heavy": 0.8863696234412988
+  },
+  {
+   "gamma": 0.75,
+   "mechanism": "dislocations",
+   "ratio_light": 253418.80155787073,
+   "ratio_heavy": 287883.1937010276,
+   "light_over_heavy": 0.8802834173816037
+  },
+  {
+   "gamma": 1.0,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 285.9609958127898,
+   "ratio_heavy": 1369.7260474718546,
+   "light_over_heavy": 0.20877240112400344
+  },
+  {
+   "gamma": 1.0,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 48.213918044799755,
+   "ratio_heavy": 234.46260485620812,
+   "light_over_heavy": 0.2056358542735142
+  },
+  {
+   "gamma": 1.0,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6702445058529891,
+   "ratio_heavy": 0.8567956180714466,
+   "light_over_heavy": 0.7822688301810371
+  },
+  {
+   "gamma": 1.0,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.1619791280872032,
+   "ratio_heavy": 6.018774368236997,
+   "light_over_heavy": 0.19305909426001078
+  },
+  {
+   "gamma": 1.0,
+   "mechanism": "background impurities",
+   "ratio_light": 0.9664221080990368,
+   "ratio_heavy": 1.109832395538898,
+   "light_over_heavy": 0.8707820315785377
+  },
+  {
+   "gamma": 1.0,
+   "mechanism": "dislocations",
+   "ratio_light": 222343.8494936848,
+   "ratio_heavy": 247199.46313343087,
+   "light_over_heavy": 0.8994511827627646
+  }
+ ],
+ "local_field_inversions": 0,
+ "thermal": [
+  {
+   "band": "light",
+   "T_K": 2.0,
+   "EF_meV": 36.13407338906396,
+   "T_F_K": 419.3185094488133,
+   "kT_over_EF": 0.0047696439697569384,
+   "dq_over_2kF": 0.0023848219848784692
+  },
+  {
+   "band": "light",
+   "T_K": 3.0,
+   "EF_meV": 36.13407338906396,
+   "T_F_K": 419.3185094488133,
+   "kT_over_EF": 0.007154465954635408,
+   "dq_over_2kF": 0.003577232977317704
+  },
+  {
+   "band": "heavy",
+   "T_K": 2.0,
+   "EF_meV": 47.3789217484211,
+   "T_F_K": 549.8095560090559,
+   "kT_over_EF": 0.003637623206329026,
+   "dq_over_2kF": 0.001818811603164513
+  },
+  {
+   "band": "heavy",
+   "T_K": 3.0,
+   "EF_meV": 47.3789217484211,
+   "T_F_K": 549.8095560090559,
+   "kT_over_EF": 0.005456434809493539,
+   "dq_over_2kF": 0.0027282174047467693
+  }
+ ],
+ "warp_scan": [
+  {
+   "warp": 0.0,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 301.72491239154,
+   "ratio_heavy": 1445.4339276512508,
+   "light_over_heavy": 0.2087434829219943
+  },
+  {
+   "warp": 0.0,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 54.62402441639951,
+   "ratio_heavy": 264.92825011713234,
+   "light_over_heavy": 0.20618421928295178
+  },
+  {
+   "warp": 0.0,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.688938873761136,
+   "ratio_heavy": 0.8533407672217315,
+   "light_over_heavy": 0.807343209447443
+  },
+  {
+   "warp": 0.0,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2624585606692966,
+   "ratio_heavy": 6.60718626244885,
+   "light_over_heavy": 0.19107355393389291
+  },
+  {
+   "warp": 0.0,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0978574468605664,
+   "ratio_heavy": 1.184605921667616,
+   "light_over_heavy": 0.9267701830454044
+  },
+  {
+   "warp": 0.0,
+   "mechanism": "dislocations",
+   "ratio_light": 352147.7667512998,
+   "ratio_heavy": 422986.35120104067,
+   "light_over_heavy": 0.8325274935028055
+  },
+  {
+   "warp": 0.02,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 303.25462178436766,
+   "ratio_heavy": 1454.0983979602447,
+   "light_over_heavy": 0.20855165111918286
+  },
+  {
+   "warp": 0.02,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 54.70406865959654,
+   "ratio_heavy": 266.2302103293261,
+   "light_over_heavy": 0.2054765632793053
+  },
+  {
+   "warp": 0.02,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6881249188625377,
+   "ratio_heavy": 0.8501961593242948,
+   "light_over_heavy": 0.809371944716187
+  },
+  {
+   "warp": 0.02,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2614855353802963,
+   "ratio_heavy": 6.609734787295299,
+   "light_over_heavy": 0.19085267048914314
+  },
+  {
+   "warp": 0.02,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0957479509383892,
+   "ratio_heavy": 1.1776299837613942,
+   "light_over_heavy": 0.9304687941440903
+  },
+  {
+   "warp": 0.02,
+   "mechanism": "dislocations",
+   "ratio_light": 349650.2068783141,
+   "ratio_heavy": 418953.3022397156,
+   "light_over_heavy": 0.8345803816537342
+  },
+  {
+   "warp": 0.05,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 311.10137629129724,
+   "ratio_heavy": 1497.9460655164717,
+   "light_over_heavy": 0.20768529885889694
+  },
+  {
+   "warp": 0.05,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 55.115107525384765,
+   "ratio_heavy": 272.917982813644,
+   "light_over_heavy": 0.20194751169262046
+  },
+  {
+   "warp": 0.05,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6875487046369647,
+   "ratio_heavy": 0.8475877379485051,
+   "light_over_heavy": 0.8111829299242842
+  },
+  {
+   "warp": 0.05,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.260999046217451,
+   "ratio_heavy": 6.622550790079019,
+   "light_over_heavy": 0.19040987169271753
+  },
+  {
+   "warp": 0.05,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0934819257672879,
+   "ratio_heavy": 1.1698695472861158,
+   "light_over_heavy": 0.9347041542400746
+  },
+  {
+   "warp": 0.05,
+   "mechanism": "dislocations",
+   "ratio_light": 339496.97301685973,
+   "ratio_heavy": 406027.88495625986,
+   "light_over_heavy": 0.8361420128901558
+  },
+  {
+   "warp": 0.1,
+   "mechanism": "remote charge, d = 12 nm",
+   "ratio_light": 336.7421589740127,
+   "ratio_heavy": 1634.7317305899924,
+   "light_over_heavy": 0.2059923060601991
+  },
+  {
+   "warp": 0.1,
+   "mechanism": "remote charge, d = 5 nm",
+   "ratio_light": 56.45466177027995,
+   "ratio_heavy": 294.8832374616768,
+   "light_over_heavy": 0.19144751073759095
+  },
+  {
+   "warp": 0.1,
+   "mechanism": "roughness, L = 1 nm",
+   "ratio_light": 0.6876815995543998,
+   "ratio_heavy": 0.8466256127343307,
+   "light_over_heavy": 0.8122617473541907
+  },
+  {
+   "warp": 0.1,
+   "mechanism": "roughness, L = 3 nm",
+   "ratio_light": 1.2615970282299458,
+   "ratio_heavy": 6.65716944217672,
+   "light_over_heavy": 0.1895095264117893
+  },
+  {
+   "warp": 0.1,
+   "mechanism": "background impurities",
+   "ratio_light": 1.0905983410900117,
+   "ratio_heavy": 1.160096938039808,
+   "light_over_heavy": 0.940092422735615
+  },
+  {
+   "warp": 0.1,
+   "mechanism": "dislocations",
+   "ratio_light": 311010.46587409306,
+   "ratio_heavy": 371846.8715432487,
+   "light_over_heavy": 0.8363939289937528
+  }
+ ],
+ "warp_inversions": 0
+}
