@@ -10,6 +10,7 @@
 
 meta:
   compiled: 2026-08-04
+  revised: 2026-09-24
   rule: "No number enters the manuscript unless verified: true."
   citation_audit:
     date: 2026-08-04
@@ -53,6 +54,52 @@ meta:
          mobility figures taken from that reference were read from the
          preprint."
 
+  revision_audit:
+    date: 2026-09-24
+    scope: "Every reference in the revised Letter and Supplemental Material,
+      including the two added in revision."
+    doi_check: "Each DOI resolved through OpenAlex or Crossref and compared
+      with title, author order, journal, volume, issue, pages and year. All
+      nineteen journal articles matched. Article numbers not returned by OpenAlex
+      (Rinke 075202, Yan 125118, Dill 025702, Dill erratum 249901, Bader
+      253501, Costa 115418, Huang and Wu 020901, de Carvalho 232101) were
+      verified against Crossref in the audit of 2026-08-04 and are consistent
+      with the issue numbers returned now."
+    entries_added:
+      - "Bernardini, Fiorentini and Vanderbilt, Phys. Rev. B 56, R10024
+         (1997), doi 10.1103/PhysRevB.56.R10024. Table II read from the arXiv
+         full text (cond-mat/9705105): P_sp = -0.081, -0.029 C/m2; e33 = 1.46,
+         0.73 C/m2; e31 = -0.60, -0.49 C/m2 for AlN, GaN. Eq. (2):
+         dP3 = e33 eps3 + e31 (eps1 + eps2)."
+      - "Ambacher et al., J. Appl. Phys. 85, 3222 (1999), doi
+         10.1063/1.369664. Cited for the statement that the bound sheet charge
+         at a nitride heterointerface is the discontinuity of the total
+         (spontaneous plus piezoelectric) polarization, which is the subject
+         of the paper as stated in its title."
+    claims_verified:
+      - "Chang et al.: 'By growing a thin layer of GaN to ensure pseudomorphic
+         compressive strain (by 2.4%) to the single-crystal bulk AlN
+         substrate, a piezoelectric polarization component develops within the
+         GaN layer.' and 'The combined discontinuity in spontaneous
+         polarization and piezoelectric polarization determines the 2DHG
+         density.' The strain is stated, not measured."
+      - "Chang et al.: 'We observe a linear increase in the light hole mass
+         from 0.48 m0 at 32 T to 0.69 m0 at 72 T.' and 'Extrapolating to
+         B = 0 T, we obtain a mass of 0.30 m0'. Masses from fitting chi/sinh chi
+         to FFT amplitudes between 1.8 and 15 K."
+      - "Chang et al.: 'the density and Hall mobility of carriers in each band
+         must be determined by fitting a two-channel Drude model'; Dill et al.:
+         four free parameters, no constraint from quantum oscillations."
+      - "Chang et al.: quantum mobility 368 +/- 14 cm2/Vs, 'a quantum
+         scattering time of 0.15 ps', light mass 0.53 m0. These three are not
+         mutually consistent (368 cm2/Vs with 0.53 m0 gives 0.111 ps), so the
+         revised analysis uses the mass-free ratio mu_Hall/mu_q, which the same
+         paper states as about 5 (light) and 2 to 2.5 (heavy)."
+    correction: "The previous version formed the measured light-hole ratio as
+      tau_tr/tau_q = 0.573/0.150 = 3.82, mixing the quoted 0.15 ps with a
+      transport time converted at 0.53 m0. It is now mu_Hall/mu_q =
+      1900/368 = 5.16; heavy 400/(167 to 200) = 2.00 to 2.40."
+
 sources:
   chang2026:
     authors: "C. F. C. Chang, J. E. Dill, Z. Zhang, J.-C. Chen, N. Pieczulewski,
@@ -93,6 +140,32 @@ sources:
       characterised in the manuscript, and any number taken from this source
       must be flagged as read from the preprint."
     erratum_checked: false
+  bernardini1997:
+    authors: "F. Bernardini, V. Fiorentini, D. Vanderbilt"
+    title: "Spontaneous polarization and piezoelectric constants of III-V
+      nitrides"
+    journal: "Physical Review B"
+    volume: 56
+    pages: "R10024-R10027"
+    year: 1997
+    doi: "10.1103/PhysRevB.56.R10024"
+    preprint: "cond-mat/9705105"
+    read_from: primary_pdf          # arXiv full text, Table II and Eq. (2)
+  ambacher1999:
+    authors: "O. Ambacher, J. Smart, J. R. Shealy, N. G. Weimann, K. Chu,
+      M. Murphy, W. J. Schaff, L. F. Eastman, R. Dimitrov, L. Wittmer,
+      M. Stutzmann, W. Rieger, J. Hilsenbeck"
+    title: "Two-dimensional electron gases induced by spontaneous and
+      piezoelectric polarization charges in N- and Ga-face AlGaN/GaN
+      heterostructures"
+    journal: "Journal of Applied Physics"
+    volume: 85
+    pages: "3222-3233"
+    year: 1999
+    doi: "10.1063/1.369664"
+    read_from: bibliographic_record
+    note: "Cited only for the general principle stated in its title. No
+      number is taken from it."
   bader2019:
     authors: "S. J. Bader, R. Chaudhuri, M. Schubert, H. W. Then, H. G. Xing,
       D. Jena"
@@ -147,7 +220,8 @@ sdh:
     m_over_m0_at_72T: 0.69
     m_over_m0_extrapolated_to_zero_field: 0.30
     mu_quantum_cm2Vs: {value: 368, err: 14}
-    tau_q_ps: 0.15
+    tau_q_ps: 0.15               # as quoted; not consistent with 368 cm2/Vs at 0.53 m0
+    mu_hall_over_mu_q: 5.16      # 1900 / 368, mass free, used in the comparison
     mu_hall_cm2Vs: 1900          # T = 3 K, two-channel Drude fit 0-9 T
   heavy_hole:
     frequency_T: {value: 795, err: 24}
