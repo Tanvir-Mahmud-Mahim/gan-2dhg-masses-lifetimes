@@ -42,6 +42,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+from gan2dhg import measured as MS                # noqa: E402
 from gan2dhg import scatter2d as S                 # noqa: E402
 from gan2dhg.constants import HBAR, M0, PI, Q      # noqa: E402
 
@@ -50,14 +51,28 @@ EPS_R = 10.4
 EPS0 = 8.8541878128e-12
 KB = 1.380649e-23
 
-N_L, N_H = 0.80e13, 3.80e13
-M_L, M_H = 0.53, 1.92
-R_L, R_H = 3.82, 2.13
+N_L, N_H = MS.N_L_CM2, MS.N_H_CM2
+M_L, M_H = MS.M_L, MS.M_H
 
-# Measured lifetimes, from mobility and quantum mobility.
-TAU_TR_L = S.tau_from_mobility(1900.0, M_L)
-TAU_TR_H = S.tau_from_mobility(400.0, M_H)
-TAU_Q_L, TAU_Q_H = 0.150e-12, 0.205e-12
+# Measured lifetimes, each from a mobility and the band's measured mass.  They
+# are used only to set the scale of the measured rates in the inelastic
+# bounds; the comparison of ratios uses the mass-free mobility ratio.
+TAU_TR_L = S.tau_from_mobility(MS.MU_HALL_L, M_L)
+TAU_TR_H = S.tau_from_mobility(MS.MU_HALL_H, M_H)
+TAU_Q_L = S.tau_from_mobility(MS.MU_Q_L, M_L)
+TAU_Q_H = S.tau_from_mobility(0.5 * sum(MS.MU_Q_H_RANGE), M_H)
+
+
+def log_miss(rl, rh, targets):
+    (l_lo, l_hi), (h_lo, h_hi) = targets
+
+    def d(x, lo, hi):
+        if not np.isfinite(x) or x <= 0:
+            return np.inf
+        if lo <= x <= hi:
+            return 0.0
+        return min(abs(np.log(x / lo)), abs(np.log(x / hi)))
+    return max(d(rl, l_lo, l_hi), d(rh, h_lo, h_hi))
 
 
 def load_overlap():
@@ -234,11 +249,13 @@ def correlated_scan(bands, b, ov_fn, F_EFF):
                     r = S.two_band_lifetimes(bands, w, EPS_R, b,
                                              overlap_fn=ov_fn)
                     rl, rh = float(r["ratio"][0]), float(r["ratio"][1])
-                    miss = max(abs(np.log(rl / R_L)), abs(np.log(rh / R_H)))
+                    miss = log_miss(rl, rh, MS.TARGET_POINT)
                     rec = {"kind": kind, "xi_nm": xi_nm, "family": fam,
                            "parameter": float(p), "ratio_light": rl,
                            "ratio_heavy": rh, "light_over_heavy": rl / rh,
-                           "log_miss": float(miss)}
+                           "log_miss": float(miss),
+                           "log_miss_box": float(log_miss(rl, rh,
+                                                          MS.TARGET_BOX))}
                     rows.append(rec)
                     if best is None or miss < best["log_miss"]:
                         best = rec
@@ -299,6 +316,10 @@ def main():
         np.exp(out["uncorrelated_best"]["log_miss"]))
     out["correlated_max_light_over_heavy"] = max(
         r["light_over_heavy"] for r in rows)
+    out["correlated_best_box_factor"] = float(np.exp(min(
+        r["log_miss_box"] for r in rows)))
+    out["uncorrelated_best_box_factor"] = float(np.exp(min(
+        r["log_miss_box"] for r in unc)))
     out["best_by_kind"] = {
         k: min([r for r in rows if r["kind"] == k], key=lambda r: r["log_miss"])
         for k in ("none", "hole", "cluster")}
@@ -321,9 +342,9 @@ def main():
           f"{best['family']}: L {best['ratio_light']:.3f} "
           f"H {best['ratio_heavy']:.3f}, off by a factor "
           f"{out['correlated_best_factor']:.2f}")
-    print(f"  largest light/heavy reachable: "
-          f"{out['correlated_max_light_over_heavy']:.3f} "
-          f"(measured {R_L / R_H:.3f})")
+    print(f"  against the permissive range: uncorrelated "
+          f"{out['uncorrelated_best_box_factor']:.2f}, correlated "
+          f"{out['correlated_best_box_factor']:.2f}")
 
 
 if __name__ == "__main__":

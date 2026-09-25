@@ -10,6 +10,7 @@ import sys
 
 import matplotlib
 matplotlib.use("Agg")
+import matplotlib.patches  # noqa: F401
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import AutoMinorLocator
@@ -73,45 +74,43 @@ def figure1():
     EF = d["EF"]
     E0 = E[0, 0]
 
-    fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.35))
+    fig, axes = plt.subplots(1, 4, figsize=(7.1, 2.05))
 
     # (a) self-consistent well and hole distribution
     ax = axes[0]
-    ax.plot(z, 1000 * (V - V.min()), color="black", lw=1.4,
-            label="self-consistent $V(z)$")
-    for b, c, lab in ((0, C_H, "heavy"), (2, C_L, "light")):
+    ax.plot(z, 1000 * (V - V.min()), color="black", lw=1.4)
+    for b, c in ((0, C_H), (2, C_L)):
         ax.axhline(1000 * (E[0, b] - E0), color=c, lw=0.9, ls="--")
     ax.axhline(1000 * (EF - E0), color=C_T, lw=0.9, ls=":")
-    ax.text(2.42, 1000 * (E[0, 0] - E0) + 3.0, "heavy edge",
-            color=C_H, fontsize=7, ha="right", va="bottom")
-    ax.text(2.42, 1000 * (E[0, 2] - E0) + 3.0, "light edge",
-            color=C_L, fontsize=7, ha="right", va="bottom")
-    ax.text(2.42, 1000 * (EF - E0) + 3.0, r"$E_{\mathrm{F}}$", color=C_T,
+    ax.text(2.42, 1000 * (EF - E0) + 2.5, r"$E_{\mathrm{F}}$", color=C_T,
             fontsize=7, ha="right", va="bottom")
     ax2 = ax.twinx()
     ax2.fill_between(z, 0, p, color=C_G, alpha=0.22, lw=0)
     ax2.plot(z, p, color=C_G, lw=1.0)
-    ax2.set_ylabel(r"hole density (nm$^{-3}$)", color=C_G)
+    ax2.set_ylabel(r"hole density (nm$^{-3}$)", color="black")
     ax2.tick_params(axis="y", colors="black", direction="in")
-    ax2.set_ylim(0, 1.15 * p.max())
+    ax2.set_ylim(-0.05 / 0.95 * 1.15 * p.max(), 1.15 * p.max())
     ax2.spines["right"].set_color("black")
     if z.min() < 0:
         ax.axvspan(z.min(), 0.0, color="#c8cdd4", alpha=0.55, lw=0, zorder=0)
-        ax.text(z.min() * 0.55, 86.0, "AlN", fontsize=7, color="#40474f",
-                ha="center", va="top")
-        ax.text(0.30, 86.0, "GaN", fontsize=7, color="#40474f",
-                ha="left", va="top")
-    ax.set_xlabel(r"distance from GaN/AlN interface (nm)")
+        ax.text(-0.45, 72.0, "AlN", fontsize=7, color="#40474f",
+                ha="center", va="center")
+        ax.text(1.75, 72.0, "GaN", fontsize=7, color="#40474f",
+                ha="center", va="center")
+    ax.set_xlabel(r"$z$ from interface (nm)")
     ax.set_ylabel("hole energy (meV)")
     ax.set_xlim(max(z.min(), -0.9), 2.5)
-    ax.set_ylim(0, 90)
+    ax.set_ylim(-5, 90)
     ax.set_title("(a)", loc="left", fontsize=9)
     finish(ax)
 
     # (b) in-plane dispersion
     ax = axes[1]
+    dj = json.load(open(os.path.join(RES, "dispersion.json")))
+    kd = np.array(dj["k_per_nm"])
+    Ed = np.array(dj["E_eV"])
     for b, c, lab in ((0, C_H, "heavy"), (2, C_L, "light")):
-        ax.plot(kt, 1000 * (E[:, b] - E0), color=c, lw=1.4, label=lab)
+        ax.plot(kd, 1000 * (Ed[b] - dj["E0_eV"]), color=c, lw=1.4, label=lab)
     ax.axhline(1000 * (EF - E0), color=C_T, lw=0.9, ls=":")
     ax.text(0.06, 1000 * (EF - E0) + 3, r"$E_{\mathrm{F}}$", color=C_T,
             fontsize=7, ha="left")
@@ -120,67 +119,92 @@ def figure1():
         n = d["masses"][0]["n_cm2"] if b == 0 else d["masses"][2]["n_cm2"]
         kF = np.sqrt(4 * np.pi * n * 1e-14)
         ax.plot([kF], [1000 * (EF - E0)], "o", color=c, ms=3.5, zorder=5)
-    ax.set_xlabel(r"in-plane wavevector $k_\perp$ (nm$^{-1}$)")
+    ax.set_xlabel(r"$k_\perp$ (nm$^{-1}$)")
     ax.set_ylabel("hole energy (meV)")
     ax.set_xlim(0, 2.05)
-    ax.set_ylim(0, 90)
+    ax.set_ylim(-5, 90)
     ax.legend(loc="lower right", handlelength=1.1, fontsize=6.0,
               labelspacing=0.18, borderpad=0.30, handletextpad=0.4,
               borderaxespad=0.45)
     ax.set_title("(b)", loc="left", fontsize=9)
     finish(ax)
 
-    # (c) mass against sheet density: the prediction
+    # (c) mass against sheet density: the prediction, finite barrier at two
+    #     valence band offsets
     ax = axes[2]
-    sp = os.path.join(RES, "well_sweep.json")
-    if os.path.exists(sp):
-        sw = json.load(open(sp))
-        ns, mh, ml = [], [], []
+    sw = json.load(open(os.path.join(RES, "well_sweep.json")))
+    for idx, c, mk, lab in (((0, 1), C_H, "o", "heavy"),
+                            ((2, 3), C_L, "s", "light")):
+        curves = {}
         for r in sw:
-            hv = [b["m"] for b in r["bands"] if b["m"] > 1.0]
-            lv = [b["m"] for b in r["bands"] if b["m"] <= 1.0]
-            if not hv:
-                continue
-            ns.append(r["p_s_cm2"] / 1e13)
-            mh.append(np.mean(hv))
-            ml.append(np.mean(lv) if lv else np.nan)
-        o = np.argsort(ns)
-        ns = np.array(ns)[o]
-        ax.plot(ns, np.array(mh)[o], "o-", color=C_H, ms=3.2, lw=1.2,
-                label="heavy")
-        ax.plot(ns, np.array(ml)[o], "s-", color=C_L, ms=3.2, lw=1.2,
-                label="light")
-    # The hard wall understates both masses; the band shows what the finite
-    # barrier gives at the measured density, over the published range of the
-    # valence band offset.
-    bp = os.path.join(RES, "barrier.json")
-    if os.path.exists(bp):
-        bj = json.load(open(bp))
-        hh = [np.mean([b["m_CR"] for b in r["branches"] if b["m_CR"] > 1])
-              for r in bj["finite_barrier"]]
-        ll = [np.mean([b["m_CR"] for b in r["branches"] if b["m_CR"] <= 1])
-              for r in bj["finite_barrier"]]
-        ax.fill_between([4.30, 4.90], min(hh), max(hh), color=C_H, alpha=0.22,
-                        lw=0, zorder=1)
-        ax.fill_between([4.30, 4.90], min(ll), max(ll), color=C_L, alpha=0.22,
-                        lw=0, zorder=1)
-        ax.plot([], [], "s", color=C_H, alpha=0.45, ms=4,
-                label="finite barrier")
-    ax.errorbar([4.6], [1.92], yerr=[0.16], fmt="D", color=C_H, ms=4.0,
-                mfc="white", mew=1.0, capsize=2.5, lw=1.0,
+            ms = [b["m"] for b in r["bands"] if b["index"] in idx]
+            if ms:
+                curves.setdefault(r["vbo_eV"], []).append(
+                    (r["p_s_cm2"] / 1e13, float(np.mean(ms))))
+        vbos = sorted(curves)
+        xs = [np.array(sorted(curves[v]))[:, 0] for v in vbos]
+        ys = [np.array(sorted(curves[v]))[:, 1] for v in vbos]
+        common = xs[0]
+        lo = np.min([np.interp(common, x, y) for x, y in zip(xs, ys)], axis=0)
+        hi = np.max([np.interp(common, x, y) for x, y in zip(xs, ys)], axis=0)
+        ax.fill_between(common, lo, hi, color=c, alpha=0.25, lw=0)
+        ax.plot(common, 0.5 * (lo + hi), mk + "-", color=c, ms=2.8, lw=1.1,
+                label=lab)
+    ax.errorbar([4.6], [1.92], yerr=[0.16], fmt="D", color=C_H, ms=3.6,
+                mfc="white", mew=1.0, capsize=2.2, lw=1.0,
                 label="measured, heavy")
-    ax.errorbar([4.6], [0.30], yerr=[0.03], fmt="D", color=C_L, ms=4.0,
-                mfc="white", mew=1.0, capsize=2.5, lw=1.0,
-                label=r"measured, light ($B\!\to\!0$)")
-    ax.set_xlabel(r"sheet density $p_{\mathrm{s}}$ ($10^{13}$ cm$^{-2}$)")
+    ax.plot([4.6], [0.30], "D", color=C_L, ms=3.6, mfc="white", mew=1.0,
+            label=r"measured, light ($B\!\to\!0$)")
+    ax.set_xlabel(r"sheet density ($10^{13}$ cm$^{-2}$)")
     ax.set_ylabel(r"$m_{\mathrm{CR}}(k_{\mathrm{F}})\ (m_0)$")
+    ax.set_xlim(1.6, 6.9)
     ax.set_ylim(0, 2.4)
-    ax.legend(loc="center left", handlelength=1.3, labelspacing=0.22,
-              fontsize=5.8, bbox_to_anchor=(0.0, 0.45), borderaxespad=0.3)
+    ax.legend(loc="center left", handlelength=1.2, labelspacing=0.2,
+              fontsize=5.6, bbox_to_anchor=(0.0, 0.47), borderaxespad=0.3)
     ax.set_title("(c)", loc="left", fontsize=9)
     finish(ax)
 
-    fig.tight_layout(pad=0.4, w_pad=2.4)
+    # (d) light-hole mass from a Lifshitz-Kosevich analysis of the computed
+    #     Landau levels, against the reported field dependence
+    ax = axes[3]
+    lj = json.load(open(os.path.join(RES, "landau.json")))
+    table = {}
+    for k, rec in lj["kappa"].items():
+        for a in rec["analysis"]:
+            for r in a["field_resolved"]:
+                table.setdefault(r["B_centre_T"], []).append(r["m_LK"])
+    Bc = np.array(sorted(table))
+    lo = np.array([min(table[b]) for b in Bc])
+    hi = np.array([max(table[b]) for b in Bc])
+    mean = np.array([np.mean(table[b]) for b in Bc])
+    ax.fill_between(Bc, lo, hi, color=C_L, alpha=0.25, lw=0)
+    ax.plot(Bc, mean, "s-", color=C_L, ms=2.8, lw=1.1,
+            label="Landau levels, this work")
+    bar = json.load(open(os.path.join(RES, "barrier.json")))
+    ml = [np.mean([b["m_CR"] for b in r["branches"] if b["m_CR"] <= 1])
+          for r in bar["finite_barrier"]]
+    ax.plot([2.0, 2.0], [min(ml), max(ml)], color=C_L, lw=3.0,
+            solid_capstyle="butt", label="zero field, this work")
+    meas = lj["measured"]
+    slope = (meas["m_72T"] - meas["m_32T"]) / 40.0
+    ax.plot([32, 72], [meas["m_32T"], meas["m_72T"]], color="black", lw=1.1,
+            ls="--", label="reported")
+    ax.plot([0, 32], [meas["m_32T"] - 32 * slope, meas["m_32T"]],
+            color="black", lw=0.8, ls=":")
+    w = lj["kappa"]["0.0"]["analysis"][0]["window_32_72"]["B_eff_T"]
+    ax.errorbar([w], [meas["m_avg_32_72"]], xerr=[[w - 32], [72 - w]],
+                fmt="D", color="black", ms=3.6, mfc="white", mew=1.0,
+                capsize=2.0, lw=0.8, label="reported, 32-72 T average")
+    ax.set_xlabel("magnetic field (T)")
+    ax.set_ylabel(r"light-hole mass ($m_0$)")
+    ax.set_xlim(0, 80)
+    ax.set_ylim(-0.02, 0.8)
+    ax.legend(loc="lower right", handlelength=1.4, labelspacing=0.15,
+              fontsize=5.4, borderaxespad=0.25, handletextpad=0.4)
+    ax.set_title("(d)", loc="left", fontsize=9)
+    finish(ax)
+
+    fig.tight_layout(pad=0.4, w_pad=1.2)
     fig.savefig(os.path.join(FIG, "prb_fig1.png"))
     fig.savefig(os.path.join(FIG, "prb_fig1.pdf"))
     plt.close(fig)
@@ -228,7 +252,7 @@ def figure2():
     ax.text(138, 0.30, "transport weight\n" r"$(1-\cos\theta)/2$", fontsize=7,
             color=C_G, ha="center")
     ax.set_xlabel(r"scattering angle $\theta$ (deg)")
-    ax.set_ylabel("normalised probability")
+    ax.set_ylabel("normalized probability")
     ax.set_xlim(0, 180)
     ax.set_ylim(0, 1.46)
     ax.set_xticks([0, 45, 90, 135, 180])
@@ -238,43 +262,49 @@ def figure2():
     ax.set_title("(b)", loc="left", fontsize=9)
     finish(ax)
 
-    # (c) predicted versus measured ratios
+    # (c) the two lifetime ratios, computed against measured.  Each curve is
+    #     one mechanism with its shape parameter scanned continuously,
+    #     solved with the coupled two-subband Boltzmann equation and the
+    #     computed Bloch overlap.  No curve reaches the measured region.
     ax = axes[2]
-    d = json.load(open(os.path.join(RES, "scattering.json")))
-    keep_names = ["remote ionised charge, d = 2 nm",
-                  "remote ionised charge, d = 10 nm",
-                  "interface roughness, Lambda = 1.0 nm",
-                  "interface roughness, Lambda = 4.0 nm",
-                  "background impurities in channel",
-                  "threading dislocations"]
-    short = ["remote 2 nm", "remote 10 nm", "rough 1 nm", "rough 4 nm",
-             "background", "dislocation"]
-    keep = [m for n in keep_names for m in d["mechanisms"]
-            if m["mechanism"] == n]
-    x = np.arange(len(keep))
-    ax.bar(x - 0.19, [m["lh_ratio"] for m in keep], 0.36, color=C_L,
-           label="light", edgecolor="none")
-    ax.bar(x + 0.19, [m["hh_ratio"] for m in keep], 0.36, color=C_H,
-           label="heavy", edgecolor="none")
-    ax.axhline(3.82, color=C_L, lw=1.1, ls="--")
-    ax.axhline(2.13, color=C_H, lw=1.1, ls="--")
+    sys.path.insert(0, os.path.join(ROOT, "src"))
+    from gan2dhg import measured as MS
+    d = json.load(open(os.path.join(RES, "tension.json")))
+    style = {"interface roughness": (C_L, "-", "roughness"),
+             "remote ionised charge": (C_H, "-", "remote charge"),
+             "charged dislocations": (C_T, "-", "dislocations"),
+             "background impurities": ("black", "o", "background")}
+    for f in d["figure"]:
+        if f["name"] == "charged dislocations":
+            continue          # ratios above 300 for both subbands, off scale
+        c, ls, lab = style[f["name"]]
+        x, y = np.array(f["ratio_light"]), np.array(f["ratio_heavy"])
+        if ls == "o":
+            ax.plot(x, y, "o", color=c, ms=3.2, mfc="white", mew=0.9,
+                    label=lab, zorder=4)
+        else:
+            ax.plot(x, y, ls, color=c, lw=1.3, label=lab)
+    (l_lo, l_hi), (h_lo, h_hi) = MS.TARGET_BOX
+    ax.add_patch(matplotlib.patches.Rectangle(
+        (l_lo, h_lo), l_hi - l_lo, h_hi - h_lo, facecolor=C_G, alpha=0.20,
+        edgecolor="none", zorder=1))
+    ax.errorbar([MS.R_L], [MS.R_H],
+                xerr=[[MS.R_L - MS.R_L_RANGE[0]], [MS.R_L_RANGE[1] - MS.R_L]],
+                yerr=[[MS.R_H - MS.R_H_RANGE[0]], [MS.R_H_RANGE[1] - MS.R_H]],
+                fmt="D", color="black", ms=4.0, mfc="white", mew=1.0,
+                capsize=2.0, lw=0.9, zorder=6, label="measured")
+    ax.plot([0.3, 3e3], [0.3, 3e3], color=C_G, lw=0.6, ls=":", zorder=0)
+    ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.set_ylim(0.4, 4.0e4)
-    ax.set_xlim(-0.6, 8.6)
-    ax.set_xticks(x)
-    ax.set_xticklabels(short, fontsize=6.6, rotation=34, ha="right",
-                       rotation_mode="anchor")
-    ax.set_ylabel(r"$\tau_{\mathrm{tr}}/\tau_{\mathrm{q}}$")
-    ax.text(5.72, 3.82, "  measured,\n  light", color=C_L, fontsize=5.6,
-            ha="left", va="center")
-    ax.text(5.72, 2.13 / 2.2, "  measured,\n  heavy", color=C_H, fontsize=5.6,
-            ha="left", va="center")
-    ax.legend(loc="upper right", handlelength=1.3, ncol=2, columnspacing=0.8)
+    ax.set_xlim(0.5, 1.0e3)
+    ax.set_ylim(0.5, 1.0e3)
+    ax.set_xlabel(r"$\tau_{\mathrm{tr}}/\tau_{\mathrm{q}}$, light subband")
+    ax.set_ylabel(r"$\tau_{\mathrm{tr}}/\tau_{\mathrm{q}}$, heavy subband")
+    ax.legend(loc="upper left", handlelength=1.3, labelspacing=0.2,
+              fontsize=6.0, borderaxespad=0.35)
     ax.set_title("(c)", loc="left", fontsize=9)
-    ax.yaxis.set_minor_locator(matplotlib.ticker.LogLocator(
-        base=10.0, subs=np.arange(2, 10) * 0.1, numticks=20))
-    for s in ax.spines.values():
-        s.set_color("black")
+    for s_ in ax.spines.values():
+        s_.set_color("black")
 
     fig.tight_layout(pad=0.4, w_pad=2.0)
     fig.savefig(os.path.join(FIG, "prb_fig2.png"))

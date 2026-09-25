@@ -152,9 +152,12 @@ def figure():
             color=C_G, ha="center", va="top")
 
     # ---- expanded view of the buried interface, to the left ------------
-    d = json.load(open(os.path.join(RES, "well.json")))
+    # finite-barrier solution at an offset of 0.7 eV, as in Fig. 2(a) of the Letter
+    d = json.load(open(os.path.join(RES, "well_het.json")))
     zz = np.array(d["z"])
     pp = np.array(d["p_of_z"])
+    zc = np.trapezoid(zz * pp, zz) / np.trapezoid(pp, zz)
+    zrms = np.sqrt(np.trapezoid((zz - zc) ** 2 * pp, zz) / np.trapezoid(pp, zz))
 
     bx0, bx1 = -3.60, -0.35
     bh, f_int = 6.60, 0.72
@@ -193,19 +196,20 @@ def figure():
     # band 2: the computed confining field, on its own line
     cal.text(0.5, 0.632, "$E=8.0$ MV cm$^{-1}$", fontsize=6.1, color=C_T,
              ha="center", va="center")
-    cal.text(0.5, 0.596, "fixed polarisation charge,\n"
+    cal.text(0.5, 0.596, "polarization charge,\n"
                          "balanced by the hole gas",
              fontsize=5.7, ha="center", va="top", color="black")
     cal.text(0.5, 0.512, "computed hole density\n"
-                         "$\\langle z\\rangle=0.57$ nm\n"
-                         "rms width $0.36$ nm",
+                         f"$\\langle z\\rangle={zc:.2f}$ nm\n"
+                         f"rms width ${zrms:.2f}$ nm",
              fontsize=5.7, ha="center", va="top", color=C_L)
 
     # band 3: the computed distribution
     ins = cal.inset_axes([0.20, 0.115, 0.72, 0.275])
     ins.fill_between(zz, 0, pp, color=C_L, alpha=0.28, lw=0)
     ins.plot(zz, pp, color=C_L, lw=1.0)
-    ins.set_xlim(0, 2.2)
+    ins.axvline(0.0, color=C_G, lw=0.5)
+    ins.set_xlim(-0.5, 2.2)
     ins.set_ylim(0, 1.12 * pp.max())
     ins.set_yticks([])
     ins.set_xticks([0, 1, 2])
@@ -248,15 +252,15 @@ def figure():
          "resolved: $\\omega_{\\mathrm{c}}\\tau=0.82$ at 31 T,\n"
          "so the resonance is overdamped"),
         (5.30, 3.60, 4.55, 1.75, "light-hole mass exceeds theory",
-         "$0.53$ vs $0.25$ to $0.30\\,m_0$", C_L,
-         "resolved: $0.53$ is a field average;\n"
-         "at $B\\rightarrow0$ theory and data agree"),
+         "$0.53$ vs $0.26$ to $0.33\\,m_0$", C_L,
+         "agree at $B\\rightarrow0$; the rise with field\n"
+         "is not in the Landau levels"),
         (0.15, 1.35, 4.55, 1.75, "subband occupations disagree",
-         "light: $0.45$ vs $0.80\\times10^{13}$ cm$^{-2}$", C_T,
-         "open; a Rashba splitting of\n1.5 meV is predicted, not assumed"),
+         "light: $0.5$ vs $0.8\\times10^{13}$ cm$^{-2}$", C_T,
+         "open; not explained by strain\nor by the piezoelectric charge"),
         (5.30, 1.35, 4.55, 1.75, "lifetime ratios not reproduced",
-         "$\\tau_{\\mathrm{tr}}/\\tau_{\\mathrm{q}}$: $3.82$ vs $2.13$", C_G,
-         "open; no elastic mechanism fits\nboth, which questions that fit"),
+         "$\\tau_{\\mathrm{tr}}/\\tau_{\\mathrm{q}}$: $5.2$ and $2.2$ measured", C_G,
+         "open; no elastic mechanism fits both,\nand the Hall fit is not the cause"),
     ]
     for (x, y, w, h, title, sub, col, res) in dis:
         ax.add_patch(FancyBboxPatch((x, y), w, h,
@@ -275,8 +279,8 @@ def figure():
         ax.add_patch(FancyArrowPatch((x0, 5.85), (x1, 5.42),
                                      arrowstyle="->", lw=0.7, color=C_G,
                                      mutation_scale=7, zorder=1))
-    ax.text(5.0, 0.82, "this work: self-consistent six-band envelope functions\n"
-                       "and two-dimensional scattering",
+    ax.text(5.0, 0.82, "this work: self-consistent six-band envelope functions,\n"
+                       "Landau levels and coupled two-subband transport",
             fontsize=6.2, ha="center", va="top", color="black",
             linespacing=1.3)
 

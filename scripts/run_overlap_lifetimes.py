@@ -26,6 +26,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
+from gan2dhg import measured as MS            # noqa: E402
 from gan2dhg import scatter2d as S            # noqa: E402
 from gan2dhg.constants import HBAR, M0, PI, Q  # noqa: E402
 
@@ -35,7 +36,7 @@ EPS0 = 8.8541878128e-12
 
 N_L, N_H = 0.80e13, 3.80e13          # measured pair densities, cm^-2
 M_L, M_H = 0.53, 1.92                # measured masses
-MEAS = {"light": 3.82, "heavy": 2.13}
+MEAS = {"light": MS.R_L, "heavy": MS.R_H}
 
 
 def main():

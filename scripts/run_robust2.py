@@ -3,12 +3,6 @@
 Each block here removes, or bounds, one of the caveats that the Letter
 previously only declared.
 
-  screening strength      the random phase approximation is replaced by a
-                          one-parameter family that spans it, so that any
-                          local-field correction, any error in the dielectric
-                          constant and any many-body enhancement of the
-                          polarisability lie inside the family
-
   local field             a local-field factor of the standard one-parameter
                           shape is applied explicitly and scanned from zero
                           (random phase approximation) to unity
@@ -16,13 +10,14 @@ previously only declared.
   temperature             the thermal smearing of each Fermi surface is
                           computed rather than asserted to be negligible
 
-  spin splitting          the two Kramers pairs are resolved into four
-                          branches separated by the computed Rashba splitting,
-                          and the lifetimes are solved on all four
-
   basal-plane warping     a hexagonal warping of the Fermi contour is imposed
                           parametrically and the ratio is recomputed, so the
                           caveat becomes a bound
+
+Each perturbation is reported as the largest fractional change it produces in
+either subband's ratio, relative to the unperturbed calculation.  The scan of
+the screening strength itself is made in run_tension.py, through the coupled
+two-subband solver, where it is compared directly with the measurement.
 
 Outputs results/robust2.json.
 """
@@ -45,7 +40,6 @@ KB = 1.380649e-23
 # Measured, from the quantum oscillation study; the scattering comparison is
 # made against the measurement, so the measured densities are used here.
 N_L_CM2, N_H_CM2 = 0.80e13, 3.80e13
-MEAS_RATIO_L, MEAS_RATIO_H = 3.82, 2.13
 M_L, M_H = 0.53, 1.92
 
 
@@ -135,24 +129,31 @@ def mechanisms(b):
     }
 
 
+def max_change(rows, key, base_value, relevant_below=None):
+    """Largest fractional change of either subband's ratio from the base.
+
+    With relevant_below, only mechanisms whose unperturbed ratios both lie
+    below that value are counted: a mechanism giving ratios in the hundreds
+    is an order of magnitude or more from the measurement whatever the
+    perturbation does, and its sensitivity has no bearing on the comparison.
+    """
+    base = {r["mechanism"]: r for r in rows if r[key] == base_value}
+    worst = 0.0
+    for r in rows:
+        b0 = base[r["mechanism"]]
+        if relevant_below is not None and max(
+                b0["ratio_light"], b0["ratio_heavy"]) >= relevant_below:
+            continue
+        for band in ("ratio_light", "ratio_heavy"):
+            worst = max(worst, abs(r[band] / b0[band] - 1.0))
+    return float(worst)
+
+
 def main():
     out = {}
     bands = bands_of()
     b = b_fh(bands)
     mech = mechanisms(b)
-
-    # ---- 1. screening strength scanned over two decades ------------------
-    rows = []
-    for qs_scale in (0.01, 0.1, 0.3, 1.0, 3.0, 10.0):
-        for name, w in mech.items():
-            rl = ratio_for(bands[0], bands, w, b, qs_scale=qs_scale)
-            rh = ratio_for(bands[1], bands, w, b, qs_scale=qs_scale)
-            rows.append({"qs_scale": qs_scale, "mechanism": name,
-                         "ratio_light": rl, "ratio_heavy": rh,
-                         "light_over_heavy": rl / rh})
-    out["screening_strength_scan"] = rows
-    out["screening_strength_inversions"] = sum(
-        1 for r in rows if r["light_over_heavy"] > 1.0)
 
     # ---- 2. explicit local field, scanned --------------------------------
     rows = []
@@ -164,8 +165,15 @@ def main():
                          "ratio_light": rl, "ratio_heavy": rh,
                          "light_over_heavy": rl / rh})
     out["local_field_scan"] = rows
-    out["local_field_inversions"] = sum(
-        1 for r in rows if r["light_over_heavy"] > 1.0)
+    out["local_field_max_change"] = max_change(rows, "gamma", 0.0)
+    out["local_field_max_change_relevant"] = max_change(rows, "gamma", 0.0,
+                                                        relevant_below=20.0)
+    out["local_field_never_raises_a_ratio"] = bool(all(
+        r["ratio_light"] <= b["ratio_light"] + 1e-12
+        and r["ratio_heavy"] <= b["ratio_heavy"] + 1e-12
+        for r in rows for b in rows
+        if b["mechanism"] == r["mechanism"] and b["gamma"] == 0.0
+        and r["mechanism"] != "dislocations"))
 
     # ---- 3. thermal smearing of the Fermi surfaces -----------------------
     # E_F of each subband above its own edge, from the measured density and
@@ -192,14 +200,20 @@ def main():
                          "ratio_light": rl, "ratio_heavy": rh,
                          "light_over_heavy": rl / rh})
     out["warp_scan"] = rows
-    out["warp_inversions"] = sum(
-        1 for r in rows if r["light_over_heavy"] > 1.0)
+    out["warp_max_change"] = max_change(rows, "warp", 0.0)
+    out["warp_max_change_relevant"] = max_change(rows, "warp", 0.0,
+                                                 relevant_below=20.0)
 
     json.dump(out, open(os.path.join(RES, "robust2.json"), "w"), indent=1)
     print("WROTE results/robust2.json")
-    for key in ("screening_strength", "local_field", "warp"):
-        print(f"  {key}: inversions of the ordering = "
-              f"{out[key + '_inversions']}")
+    for key in ("local_field", "warp"):
+        print(f"  {key}: largest fractional change of either ratio = "
+              f"{out[key + '_max_change']:.4f}; for mechanisms with both "
+              f"ratios below 20: {out[key + '_max_change_relevant']:.4f}")
+    print("  local field never raises a ratio (dislocations excepted):",
+          out["local_field_never_raises_a_ratio"])
+    for t in out["thermal"]:
+        print(f"  {t['band']} T = {t['T_K']} K: kT/EF = {t['kT_over_EF']:.4f}")
 
 
 if __name__ == "__main__":
