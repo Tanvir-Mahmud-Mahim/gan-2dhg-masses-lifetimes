@@ -153,8 +153,16 @@ def figure1():
     ax.errorbar([4.6], [1.92], yerr=[0.16], fmt="D", color=C_H, ms=3.6,
                 mfc="white", mew=1.0, capsize=2.2, lw=1.0,
                 label="measured, heavy")
-    ax.plot([4.6], [0.30], "D", color=C_L, ms=3.6, mfc="white", mew=1.0,
-            label=r"measured, light ($B\!\to\!0$)")
+    ax.errorbar([4.6], [0.53], yerr=[0.01], fmt="D", color=C_L, ms=3.6,
+                mfc="white", mew=1.0, capsize=2.2, lw=1.0,
+                label="measured, light")
+    fits = json.load(open(os.path.join(RES, "a6_apply.json")))[
+        "fits_to_measured_light_occupation"]
+    mf = [f["m_lh"] for f in fits.values() if f]
+    ax.errorbar([4.85], [np.mean(mf)], yerr=[[np.mean(mf) - min(mf)],
+                                             [max(mf) - np.mean(mf)]],
+                fmt="^", color=C_L, ms=3.6, capsize=2.0, lw=1.0,
+                label=r"light, rescaled $A_6$")
     ax.set_xlabel(r"sheet density ($10^{13}$ cm$^{-2}$)")
     ax.set_ylabel(r"$m_{\mathrm{CR}}(k_{\mathrm{F}})\ (m_0)$")
     ax.set_xlim(1.6, 6.9)
@@ -165,40 +173,39 @@ def figure1():
     finish(ax)
 
     # (d) light-hole mass from a Lifshitz-Kosevich analysis of the computed
-    #     Landau levels, against the reported field dependence
+    #     Landau levels (level width fixed by the measured Dingle slope,
+    #     scripts/run_landau_dingle.py), with the published A6 and with A6
+    #     rescaled to the measured light-hole occupation, against the reported
+    #     field dependence and the cyclotron-resonance mass
     ax = axes[3]
-    lj = json.load(open(os.path.join(RES, "landau.json")))
-    table = {}
-    for k, rec in lj["kappa"].items():
-        for a in rec["analysis"]:
-            for r in a["field_resolved"]:
-                table.setdefault(r["B_centre_T"], []).append(r["m_LK"])
-    Bc = np.array(sorted(table))
-    lo = np.array([min(table[b]) for b in Bc])
-    hi = np.array([max(table[b]) for b in Bc])
-    mean = np.array([np.mean(table[b]) for b in Bc])
-    ax.fill_between(Bc, lo, hi, color=C_L, alpha=0.25, lw=0)
-    ax.plot(Bc, mean, "s-", color=C_L, ms=2.8, lw=1.1,
-            label="Landau levels, this work")
-    bar = json.load(open(os.path.join(RES, "barrier.json")))
-    ml = [np.mean([b["m_CR"] for b in r["branches"] if b["m_CR"] <= 1])
-          for r in bar["finite_barrier"]]
-    ax.plot([2.0, 2.0], [min(ml), max(ml)], color=C_L, lw=3.0,
-            solid_capstyle="butt", label="zero field, this work")
-    meas = lj["measured"]
+    ld = json.load(open(os.path.join(RES, "landau_dingle.json")))
+    fields = ["32", "40", "48", "56", "64", "72"]
+    Bc = np.array([float(f) for f in fields])
+    for well, c, lab in (("well_het_pol03.json", C_G, "published $A_6$"),
+                         ("well_het_pol03_A6.json", C_L, r"rescaled $A_6$")):
+        rec = ld[well]
+        rows = [np.array([k["LK_fixed_density"][f] for f in fields])
+                for k in rec["kappa"].values()]
+        rows = np.array(rows)
+        ax.fill_between(Bc, rows.min(0), rows.max(0), color=c, alpha=0.25,
+                        lw=0)
+        k0 = rec["kappa"]["0.0"]["LK_fixed_density"]
+        ax.plot(Bc, [k0[f] for f in fields], "s-", color=c, ms=2.6, lw=1.0,
+                label=lab)
+        ax.plot([1.5], [rec["m_light_zero_field"]], "o", color=c, ms=3.4,
+                mfc=c, zorder=5)
+    meas = json.load(open(os.path.join(RES, "landau.json")))["measured"]
     slope = (meas["m_72T"] - meas["m_32T"]) / 40.0
     ax.plot([32, 72], [meas["m_32T"], meas["m_72T"]], color="black", lw=1.1,
             ls="--", label="reported")
     ax.plot([0, 32], [meas["m_32T"] - 32 * slope, meas["m_32T"]],
             color="black", lw=0.8, ls=":")
-    w = lj["kappa"]["0.0"]["analysis"][0]["window_32_72"]["B_eff_T"]
-    ax.errorbar([w], [meas["m_avg_32_72"]], xerr=[[w - 32], [72 - w]],
-                fmt="D", color="black", ms=3.6, mfc="white", mew=1.0,
-                capsize=2.0, lw=0.8, label="reported, 32-72 T average")
+    ax.plot([31.0], [0.57], "^", color="black", ms=3.8, mfc="white", mew=0.9,
+            label="cyclotron resonance")
     ax.set_xlabel("magnetic field (T)")
     ax.set_ylabel(r"light-hole mass ($m_0$)")
     ax.set_xlim(0, 80)
-    ax.set_ylim(-0.02, 0.8)
+    ax.set_ylim(0.0, 0.8)
     ax.legend(loc="lower right", handlelength=1.4, labelspacing=0.15,
               fontsize=5.4, borderaxespad=0.25, handletextpad=0.4)
     ax.set_title("(d)", loc="left", fontsize=9)
@@ -284,6 +291,11 @@ def figure2():
                     label=lab, zorder=4)
         else:
             ax.plot(x, y, ls, color=c, lw=1.3, label=lab)
+    mx = json.load(open(os.path.join(RES, "mixtures.json")))
+    tr = mx["closest_pair_trajectory"]
+    x = np.array([p["ratios"][0] for p in tr["points"]])
+    y = np.array([p["ratios"][1] for p in tr["points"]])
+    ax.plot(x, y, color="#6a3d9a", lw=1.1, ls="-.", label="two mechanisms")
     (l_lo, l_hi), (h_lo, h_hi) = MS.TARGET_BOX
     ax.add_patch(matplotlib.patches.Rectangle(
         (l_lo, h_lo), l_hi - l_lo, h_hi - h_lo, facecolor=C_G, alpha=0.20,

@@ -253,14 +253,16 @@ def figure():
          "so the resonance is overdamped"),
         (5.30, 3.60, 4.55, 1.75, "light-hole mass exceeds theory",
          "$0.53$ vs $0.26$ to $0.33\\,m_0$", C_L,
-         "agree at $B\\rightarrow0$; the rise with field\n"
-         "is not in the Landau levels"),
+         "one zero-field discrepancy with the\n"
+         "occupation; fits a rescaled $A_6$"),
         (0.15, 1.35, 4.55, 1.75, "subband occupations disagree",
          "light: $0.5$ vs $0.8\\times10^{13}$ cm$^{-2}$", C_T,
-         "open; not explained by strain\nor by the piezoelectric charge"),
+         "same discrepancy as the light mass,\n"
+         "not strain or polarization charge"),
         (5.30, 1.35, 4.55, 1.75, "lifetime ratios not reproduced",
          "$\\tau_{\\mathrm{tr}}/\\tau_{\\mathrm{q}}$: $5.2$ and $2.2$ measured", C_G,
-         "open; no elastic mechanism fits both,\nand the Hall fit is not the cause"),
+         "need two mechanisms; the light-hole\n"
+         "quantum mobility stays anomalous"),
     ]
     for (x, y, w, h, title, sub, col, res) in dis:
         ax.add_patch(FancyBboxPatch((x, y), w, h,

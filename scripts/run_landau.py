@@ -90,7 +90,12 @@ _z = np.array(_d["z"])
 _m = (_z <= 8.0 + 1e-9) & (_z >= -2.0 - 1e-9)
 Z = _z[_m]
 V = np.array(_d["V"])[_m]
-PROF = H.profile(Z, _d["vbo_eV"])
+# A well computed with a rescaled A6 (scripts/run_a6.py) records the factor;
+# the Landau levels must then use the same parameter set.
+from gan2dhg.kp6 import GAN as _GAN          # noqa: E402
+_GAN_USED = dict(_GAN)
+_GAN_USED["A6"] = _GAN["A6"] * float(_d.get("A6_factor", 1.0))
+PROF = H.profile(Z, _d["vbo_eV"], gan=_GAN_USED)
 EF0 = _d["EF"]
 E_MAX = EF0 + 0.040
 
