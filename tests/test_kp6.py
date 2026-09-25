@@ -739,8 +739,14 @@ def test_coupled_response_reduces_to_drude_without_interband_scattering():
 def test_measured_ratio_is_the_mass_free_mobility_ratio():
     from gan2dhg import measured as MS
     assert abs(MS.R_L - 1900.0 / 368.0) < 1e-12
-    assert abs(MS.R_H_RANGE[0] - 2.0) < 1e-12
-    assert abs(MS.R_H_RANGE[1] - 400.0 / 167.0) < 1e-12
+    assert abs(MS.R_H_NOMINAL_RANGE[0] - 2.0) < 1e-12
+    assert abs(MS.R_H_NOMINAL_RANGE[1] - 400.0 / 167.0) < 1e-12
+    assert abs(MS.R_H_RANGE[0] - 381.0 / 200.0) < 1e-12
+    assert abs(MS.R_H_RANGE[1] - 464.0 / 167.0) < 1e-12
+    assert abs(MS.R_L_RANGE[0] - 1858.0 / 382.0) < 1e-12
+    assert abs(MS.R_L_RANGE[1] - 1986.0 / 354.0) < 1e-12
+    lo, hi = MS.TARGET_BOX
+    assert lo[0] < MS.R_L < lo[1] and hi[0] < MS.R_H < hi[1]
 
 
 def test_piezoelectric_share_of_the_interface_charge():
