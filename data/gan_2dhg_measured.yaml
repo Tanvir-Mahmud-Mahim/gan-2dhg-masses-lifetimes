@@ -10,7 +10,7 @@
 
 meta:
   compiled: 2026-08-04
-  revised: 2026-09-24
+  revised: 2026-09-25
   rule: "No number enters the manuscript unless verified: true."
   citation_audit:
     date: 2026-08-04
@@ -43,16 +43,17 @@ meta:
          near 1400 and 300 lie inside both ranges."
       - "Costa et al.: the criterion g* m* = 1 for equal orbital and Zeeman
          gaps - verbatim, arXiv:2509.15268."
-      - "Rizzi et al. -0.3 +/- 0.1 eV; King et al. 0.56 +/- 0.2 and 0.86 +/- 0.2
-         eV. These bracket the offset range scanned in the Letter."
+      - "Rizzi et al. -0.3 +/- 0.1 eV; King et al. 0.5 +/- 0.2 and 0.8 +/- 0.2
+         eV. (Corrected 2026-09-25: this line previously read 0.56 and 0.86,
+         a text-extraction artifact in which the plus-minus sign of the PDF
+         was rendered as the digit 6. See second_revision_audit.)"
     unresolved:
       - "The erratum, J. Appl. Phys. 139, 249901 (2026), remains inaccessible.
          The manuscript previously asserted that it left the working equations
          and the subsequent analysis unaffected. That assertion was not
-         supported by anything read and has been removed; the Supplemental
-         Material now records only that the erratum exists and that the two
-         mobility figures taken from that reference were read from the
-         preprint."
+         supported by anything read and has been removed. As of 2026-09-25 no
+         number in the manuscript is taken from Dill et al. or its erratum;
+         the work is cited for the two-carrier fitting procedure only."
 
   revision_audit:
     date: 2026-09-24
@@ -99,6 +100,90 @@ meta:
       tau_tr/tau_q = 0.573/0.150 = 3.82, mixing the quoted 0.15 ps with a
       transport time converted at 0.53 m0. It is now mu_Hall/mu_q =
       1900/368 = 5.16; heavy 400/(167 to 200) = 2.00 to 2.40."
+
+  second_revision_audit:
+    date: 2026-09-25
+    scope: "Every citation and every attributed claim in the revised Letter
+      and Supplemental Material, re-read against the primary text where it
+      was accessible."
+    doi_check: "All nineteen DOIs resolved through the Crossref REST API and
+      compared field by field (title, authors, journal, volume, issue, pages,
+      year). All matched the bibliography; no bibliographic field changed."
+    corrections:
+      - "King et al. (1998): the valence band discontinuities are 0.5 +/- 0.2
+         eV (GaN grown on AlN at 650 C) and 0.8 +/- 0.2 eV (800 C), as stated
+         in the Crossref abstract and in the author-hosted PDF. The Letter had
+         0.86 +/- 0.20 eV, a text-extraction artifact. Corrected to 0.8 +/- 0.2
+         eV. The offsets scanned, 0.3 to 0.8 eV, now span exactly the
+         published central values; no computed number changes."
+      - "Rizzi et al. (1999), abstract: '(-0.3 +/- 0.1) eV for AlN/GaN, and
+         [(0.15-0.4) +/- 0.1] eV for GaN/AlN' (substrate/overlayer). The
+         Letter's structure is GaN grown on AlN, i.e. AlN/GaN in that
+         notation, so 0.3 +/- 0.1 eV is the appropriate value. The Letter now
+         writes 0.3 +/- 0.1 eV."
+      - "Samples. The manuscript stated that the three experiments were made
+         on the same gas and drew Fig. 1(a) as 'the heterostructure on which
+         all three experiments were performed'. That is not so. Chang et al.
+         report the quantum oscillations and the low-field Hall fit on the
+         same sample ('For the present sample, this analysis yields Hall
+         mobilities ~1900 ... and ~400') using 'the fitting algorithm
+         described in our recent work' (their ref. 36 = Dill et al., J. Appl.
+         Phys. 137, 025702). Wang et al. used an 8.2 nm undoped GaN layer on a
+         700 nm AlN buffer without a Mg-doped cap and note that the layer
+         thicknesses were not the same. Dill et al. used other samples (10 nm
+         GaN on 700 nm AlN). Abstract, introduction, Fig. 1 caption and the
+         heavy-hole-mass section corrected; Supplemental Material Sec. S8
+         gains a paragraph on the samples."
+      - "New calculation for the cyclotron-resonance sample (8.2 nm GaN,
+         5.25e13 cm^-2): m_hh 2.008 / 1.938 and m_lh 0.361 / 0.270 m0 at
+         offsets 0.3 / 0.7 eV (scripts/run_structure_check.py,
+         results/structure_check.json). The sample difference changes the
+         heavy-hole mass by less than one percent."
+      - "Chang et al. give the range of the Hall fit, 'mu_LH = 1858 ~ 1986
+         cm2/Vs and mu_HH = 381 ~ 464 cm2/Vs at T = 3 K'. The measured ratio
+         ranges and the permissive box now include it: light 4.86 to 5.61
+         (down to 2.75 with the mass reassignment), heavy 1.91 to 2.78.
+         Nominal ratios (5.16, 2.20) and every point comparison are
+         unchanged. Box comparisons: 1.71 -> 1.50 (published densities),
+         1.60 -> 1.51 (density assignments), 1.61 -> 1.53 (screening),
+         correlated disorder 1.79 -> 1.54 and 1.53 -> 1.44; apparent (fitted)
+         box 2.28 -> 2.23. The Letter's statement 'at least a factor of 1.5'
+         is unchanged."
+      - "Spin degeneracy: the Letter said it was 'assumed in both
+         experiments'. It is stated only in the quantum-oscillation analysis
+         of Chang et al. ('neglecting Zeeman-splitting so that each of the
+         plotted energy levels ... contains two spin-degenerate LLs').
+         Corrected."
+      - "Strain: 'not measured in these samples' replaced by 'not measured in
+         Ref. [Chang]', since the cyclotron-resonance paper was not checked
+         for this point."
+      - "Costa et al.: the Letter said the Zeeman-cyclotron competition 'can
+         compromise mass extraction'. The abstract states that 'evaluation of
+         critical bandstructure and quantum transport parameters ... is
+         challenging when competition emerges among different energy scales'.
+         Reworded to 'complicates the extraction of band parameters from
+         quantum oscillations of hole gases'. The work concerns germanium."
+      - "Huang and Wu: 'the hole channel limits nitride complementary
+         electronics' reworded to 'the limited performance of p-channel
+         transistors is a barrier to complementary GaN logic'."
+      - "Bader et al.: 'the standard mobility model' reworded to 'the mobility
+         model of Bader et al.'; 'standard' was not supported."
+      - "Introduction: 'the most detailed transport parameters available for
+         any wide-bandgap hole system' was an unverifiable superlative;
+         reworded to 'unusually detailed'."
+    claims_verified:
+      - "Rinke et al. (2008), Table V, AlN, OEPx(cLDA)+G0W0: A1 -3.991, A2
+         -0.311, A3 3.671, A4 -1.147, A5 -1.329, A6 -1.952; Delta_CR -0.295
+         eV. Identical to kp6_het.ALN_KP. Delta_SO is not given in that work."
+      - "de Carvalho et al. (2010), Table II, wurtzite AlN: Delta_so 21.7 meV
+         (parallel to c), 23.5 meV (perpendicular), Delta_cf -275.7 meV. The
+         code uses 22 meV; 19, 21.7 and 23.5 meV give the same masses to four
+         figures (results/structure_check.json)."
+      - "Chang et al. reference 61 = Rinke et al. 2008 and reference 62 = Yan
+         et al. 2014, as the Letter states."
+      - "Chaudhuri et al. (2019): title 'A polarization-induced 2D hole gas in
+         undoped gallium nitride quantum wells' supports 'forms at a GaN/AlN
+         interface without acceptor doping'."
 
 sources:
   chang2026:
@@ -191,7 +276,8 @@ sources:
     note: "Germanium only. Nitrides are not mentioned anywhere in the paper."
 
 # ---------------------------------------------------------------------------
-# Heterostructure measured by Chang et al. and Wang et al.
+# Heterostructure of Chang et al. (quantum oscillations and Hall, one sample).
+# The cyclotron-resonance sample of Wang et al. is different: see cr_sample.
 # ---------------------------------------------------------------------------
 structure:
   substrate: "bulk Al-polar AlN, dislocation density below 1e4 cm^-2"
@@ -202,6 +288,15 @@ structure:
   contact_layer: "top 5 nm of the GaN doped with Mg"
   channel: "2DHG at the GaN/AlN interface; interface atomically sharp by ADF-STEM"
   source: chang2026
+  verified: true
+
+cr_sample:
+  gan_thickness_nm: 8.2
+  gan_doping: "undoped, no Mg-doped cap"
+  aln_buffer_nm: 700
+  note: "The authors state that the layer thicknesses were not the same as
+    those of the quantum-oscillation sample."
+  source: wang2025
   verified: true
 
 # ---------------------------------------------------------------------------
@@ -223,6 +318,7 @@ sdh:
     tau_q_ps: 0.15               # as quoted; not consistent with 368 cm2/Vs at 0.53 m0
     mu_hall_over_mu_q: 5.16      # 1900 / 368, mass free, used in the comparison
     mu_hall_cm2Vs: 1900          # T = 3 K, two-channel Drude fit 0-9 T
+    mu_hall_fit_range_cm2Vs: [1858, 1986]
   heavy_hole:
     frequency_T: {value: 795, err: 24}
     n_s_cm2: {value: 3.8e13, err: 0.1e13}
@@ -230,6 +326,7 @@ sdh:
     mu_quantum_cm2Vs: [167, 200]   # estimated from oscillation onset, 50-60 T
     tau_q_ps: [0.17, 0.24]
     mu_hall_cm2Vs: 400             # T = 3 K
+    mu_hall_fit_range_cm2Vs: [381, 464]
   mobility_at_20K:
     light_hole_cm2Vs: [1537, 1657]
     heavy_hole_cm2Vs: [376, 438]
@@ -240,7 +337,7 @@ sdh:
   verified: true
 
 # ---------------------------------------------------------------------------
-# Cyclotron resonance, Wang et al.  SAME material system, different technique.
+# Cyclotron resonance, Wang et al.  Same material system, DIFFERENT sample.
 # ---------------------------------------------------------------------------
 cyclotron_resonance:
   method: "time-domain terahertz spectroscopy in pulsed field up to 31 T"
