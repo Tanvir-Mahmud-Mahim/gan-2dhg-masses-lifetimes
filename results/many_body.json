@@ -1,0 +1,134 @@
+{
+ "benchmark": [
+  {
+   "r_s": 1,
+   "m_star_over_m": 1.0302150883040313,
+   "Asgari_2005": 1.033
+  },
+  {
+   "r_s": 2,
+   "m_star_over_m": 1.1636923317325794,
+   "Asgari_2005": 1.168
+  },
+  {
+   "r_s": 3,
+   "m_star_over_m": 1.3153245940387122,
+   "Asgari_2005": 1.322
+  },
+  {
+   "r_s": 5,
+   "m_star_over_m": 1.6831115135787844,
+   "Asgari_2005": 1.696
+  }
+ ],
+ "gan": [
+  {
+   "eps": 10.4,
+   "interaction": "strict 2D",
+   "m_light": 0.27,
+   "light_in_two_component_gas": 1.1956567180039885,
+   "heavy_in_two_component_gas": 1.3392571858741629,
+   "light_alone": 1.027643119520263,
+   "heavy_alone": 1.346674684079759
+  },
+  {
+   "eps": 10.4,
+   "interaction": "strict 2D",
+   "m_light": 0.3,
+   "light_in_two_component_gas": 1.208389591605877,
+   "heavy_in_two_component_gas": 1.339861831632458,
+   "light_alone": 1.0408925167276435,
+   "heavy_alone": 1.346674684079759
+  },
+  {
+   "eps": 10.4,
+   "interaction": "strict 2D",
+   "m_light": 0.53,
+   "light_in_two_component_gas": 1.2859785834545847,
+   "heavy_in_two_component_gas": 1.3479342863828891,
+   "light_alone": 1.1524321584618935,
+   "heavy_alone": 1.346674684079759
+  },
+  {
+   "eps": 10.4,
+   "interaction": "Fang-Howard b = 5.72 nm^-1",
+   "m_light": 0.27,
+   "light_in_two_component_gas": 1.1245524913043277,
+   "heavy_in_two_component_gas": 1.1081696293898555,
+   "light_alone": 0.9897789967495139,
+   "heavy_alone": 1.1029983805055334
+  },
+  {
+   "eps": 10.4,
+   "interaction": "Fang-Howard b = 5.72 nm^-1",
+   "m_light": 0.3,
+   "light_in_two_component_gas": 1.1315124959799419,
+   "heavy_in_two_component_gas": 1.109268792341339,
+   "light_alone": 0.9980396233169073,
+   "heavy_alone": 1.1029983805055334
+  },
+  {
+   "eps": 10.4,
+   "interaction": "Fang-Howard b = 5.72 nm^-1",
+   "m_light": 0.53,
+   "light_in_two_component_gas": 1.1711727523195075,
+   "heavy_in_two_component_gas": 1.1185602503541905,
+   "light_alone": 1.0690278404386109,
+   "heavy_alone": 1.1029983805055334
+  },
+  {
+   "eps": 9.5,
+   "interaction": "strict 2D",
+   "m_light": 0.27,
+   "light_in_two_component_gas": 1.2156291061801878,
+   "heavy_in_two_component_gas": 1.3857471458225021,
+   "light_alone": 1.0389137140605245,
+   "heavy_alone": 1.3973349194094182
+  },
+  {
+   "eps": 9.5,
+   "interaction": "strict 2D",
+   "m_light": 0.3,
+   "light_in_two_component_gas": 1.2297315653805534,
+   "heavy_in_two_component_gas": 1.386189178960404,
+   "light_alone": 1.0538061300223749,
+   "heavy_alone": 1.3973349194094182
+  },
+  {
+   "eps": 9.5,
+   "interaction": "strict 2D",
+   "m_light": 0.53,
+   "light_in_two_component_gas": 1.315931367533859,
+   "heavy_in_two_component_gas": 1.393786952843694,
+   "light_alone": 1.1785195644052895,
+   "heavy_alone": 1.3973349194094182
+  },
+  {
+   "eps": 9.5,
+   "interaction": "Fang-Howard b = 5.72 nm^-1",
+   "m_light": 0.27,
+   "light_in_two_component_gas": 1.136936234030141,
+   "heavy_in_two_component_gas": 1.127478428970734,
+   "light_alone": 0.9967995177791855,
+   "heavy_alone": 1.1233269056556567
+  },
+  {
+   "eps": 9.5,
+   "interaction": "Fang-Howard b = 5.72 nm^-1",
+   "m_light": 0.3,
+   "light_in_two_component_gas": 1.144543185476053,
+   "heavy_in_two_component_gas": 1.1285596775472087,
+   "light_alone": 1.0061742193412306,
+   "heavy_alone": 1.1233269056556567
+  },
+  {
+   "eps": 9.5,
+   "interaction": "Fang-Howard b = 5.72 nm^-1",
+   "m_light": 0.53,
+   "light_in_two_component_gas": 1.1878214547540984,
+   "heavy_in_two_component_gas": 1.1379260725246487,
+   "light_alone": 1.085556769932122,
+   "heavy_alone": 1.1233269056556567
+  }
+ ]
+}

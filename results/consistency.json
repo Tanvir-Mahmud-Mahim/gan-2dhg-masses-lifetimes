@@ -1,0 +1,51 @@
+{
+ "kF_light_per_nm": 0.7089815403622064,
+ "kF_heavy_per_nm": 1.5451894436373304,
+ "cases": [
+  {
+   "case": "closure A (field vanishes beyond the gas), offset 0.7 eV",
+   "Delta_meV": 11.263334362361931,
+   "E_heavy_at_kFH_meV": 52.603711487617,
+   "E_light_at_kFL_meV": 77.5374941022084,
+   "mismatch_meV": 24.933782614591394,
+   "light_secant_mass_required": 0.4632531251657362,
+   "light_secant_mass_computed": 0.2889672079431918
+  },
+  {
+   "case": "closure B (interface charge from polarization), offset 0.7 eV",
+   "Delta_meV": 11.310679360727494,
+   "E_heavy_at_kFH_meV": 52.300845656010786,
+   "E_light_at_kFL_meV": 79.59756241297295,
+   "mismatch_meV": 27.29671675696216,
+   "light_secant_mass_required": 0.4672110564481467,
+   "light_secant_mass_computed": 0.28045003729562945
+  },
+  {
+   "case": "closure A (field vanishes beyond the gas), offset 0.3 eV",
+   "Delta_meV": 11.285821080792346,
+   "E_heavy_at_kFH_meV": 51.270056451816984,
+   "E_light_at_kFL_meV": 69.82058062285601,
+   "mismatch_meV": 18.55052417103903,
+   "light_secant_mass_required": 0.47896524020271036,
+   "light_secant_mass_computed": 0.32717412779397137
+  },
+  {
+   "case": "closure B (interface charge from polarization), offset 0.3 eV",
+   "Delta_meV": 11.349614860996727,
+   "E_heavy_at_kFH_meV": 50.593453198309824,
+   "E_light_at_kFL_meV": 65.43715066352229,
+   "mismatch_meV": 14.843697465212468,
+   "light_secant_mass_required": 0.4880016764465077,
+   "light_secant_mass_computed": 0.35407527103333636
+  }
+ ],
+ "parabolic": {
+  "formula": "Delta = pi hbar^2 (n_H/m_H - n_L/m_L)",
+  "Delta_meV_for_m_L": {
+   "0.3": -16.45794124116013,
+   "0.46": 5.746185018323372,
+   "0.53": 11.244848360884145,
+   "0.57": 13.780572809583843
+  }
+ }
+}
