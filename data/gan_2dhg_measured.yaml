@@ -10,7 +10,7 @@
 
 meta:
   compiled: 2026-08-04
-  revised: 2026-09-25
+  revised: 2026-09-25 (light-hole analysis added)
   rule: "No number enters the manuscript unless verified: true."
   citation_audit:
     date: 2026-08-04
@@ -185,6 +185,39 @@ meta:
          undoped gallium nitride quantum wells' supports 'forms at a GaN/AlN
          interface without acceptor doping'."
 
+  light_hole_revision:
+    date: 2026-09-25
+    scope: "Statements and numbers added when the light-hole analysis and the
+      two-mechanism scattering analysis were added to the Letter."
+    claims_verified:
+      - "Wang et al. (author-hosted PDF): 'The fitted CR frequencies, shown in
+         Fig. 3, increase linearly with B, with slope that reveals meff. We
+         find that mhh = 2.6me and mlh = 0.57me.' Also: 'without independent
+         knowledge of meff that is provided by the cyclotron shift, the
+         spectral weight reveals only the ratio N/meff.' The field range of
+         their Fig. 3 was not read numerically; the experiment extends to
+         31 T."
+      - "Chang et al. (arXiv full text): the field-resolved light-hole masses
+         are obtained by an LK fit 'for each light hole oscillation peak',
+         with amplitudes 'taken from the fitted dashed lines in Fig. 2a',
+         which are 'least-square fits to the single-channel LK formula,
+         performed separately for each temperature'. The Dingle plot uses the
+         light-hole peaks at 1.8 K and 15 K; 'mu_q has no discernable
+         temperature dependence' (368 +/- 14 cm2/Vs). Clear light-hole
+         oscillations from about 25 T."
+      - "Rinke et al. (arXiv full text), Table V, GaN A6 = -3.202."
+      - "Punya and Lambrecht, Phys. Rev. B 85, 195147 (2012), accepted
+         manuscript read through the APS 'accepted' link: GaN A6 = -1.55, with
+         -3.31 in parentheses (quasi-cubic value); 'Our results agree quite
+         closely with those of Rinke et al. except for the parameter A6.'
+         DOI and bibliographic fields checked against Crossref."
+      - "Asgari et al., Phys. Rev. B 71, 045323 (2005), Table I, on-shell RPA
+         m*/m of the 2D electron gas: 1.033, 1.168, 1.322, 1.696 at r_s = 1,
+         2, 3, 5 (read from the Purdue e-Pubs copy). DOI and bibliographic
+         fields checked against Crossref. Used only as a numerical benchmark."
+      - "Vurgaftman and Meyer, J. Appl. Phys. 94, 3675 (2003): not accessible;
+         its A6 value is therefore not quoted anywhere."
+
 sources:
   chang2026:
     authors: "C. F. C. Chang, J. E. Dill, Z. Zhang, J.-C. Chen, N. Pieczulewski,
@@ -251,6 +284,27 @@ sources:
     read_from: bibliographic_record
     note: "Cited only for the general principle stated in its title. No
       number is taken from it."
+  punya2012:
+    authors: "A. Punya, W. R. L. Lambrecht"
+    title: "Valence band effective-mass Hamiltonians for the group-III nitrides
+      from quasiparticle self-consistent GW band structures"
+    journal: "Physical Review B"
+    volume: 85
+    article: 195147
+    year: 2012
+    doi: "10.1103/PhysRevB.85.195147"
+    read_from: primary_pdf          # accepted manuscript
+  asgari2005:
+    authors: "R. Asgari, B. Davoudi, M. Polini, G. F. Giuliani, M. P. Tosi,
+      G. Vignale"
+    title: "Quasiparticle self-energy and many-body effective mass enhancement
+      in a two-dimensional electron liquid"
+    journal: "Physical Review B"
+    volume: 71
+    article: "045323"
+    year: 2005
+    doi: "10.1103/PhysRevB.71.045323"
+    read_from: primary_pdf          # Purdue e-Pubs copy, Table I
   bader2019:
     authors: "S. J. Bader, R. Chaudhuri, M. Schubert, H. W. Then, H. G. Xing,
       D. Jena"
