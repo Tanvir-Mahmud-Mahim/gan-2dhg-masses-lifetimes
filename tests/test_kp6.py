@@ -589,3 +589,179 @@ def test_boltzmann_closed_form_is_exact_for_an_angular_kernel():
             kF, shape, lambda q: 1.0, lambda t: np.ones_like(t))
         assert abs(re / rc - 1.0) < 1e-8
         assert higher < 1e-8
+
+
+# ---------------------------------------------------------------------------
+# Landau levels, magnetotransport, polarisation (added in revision)
+# ---------------------------------------------------------------------------
+
+def _load_script(name):
+    import importlib.util
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    spec = importlib.util.spec_from_file_location(
+        name, os.path.join(here, "scripts", name + ".py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _small_well():
+    """A short grid through a triangular well, for fast Landau tests."""
+    from gan2dhg import kp6_het as H
+    z = np.arange(-8, 41) * 0.125
+    V = 0.8 * np.maximum(z, 0.0)
+    return z, V, H.profile(z, 0.7)
+
+
+def test_landau_parabolic_limit():
+    """With every band coupling switched off the Landau levels of the
+    heavy-hole component must be (m + 1/2) hbar omega_c above the zero-field
+    subband edge, with the in-plane mass m0 / |A2 + A4|."""
+    from gan2dhg import kp6_het as H
+    from gan2dhg import landau as L
+    z, V, prof = _small_well()
+    p2 = dict(prof)
+    p2["A5"] = np.zeros_like(prof["A5"])
+    p2["A6"] = np.zeros_like(prof["A6"])
+    p2["d2"] = np.zeros_like(prof["d2"])
+    p2["A2"] = np.full_like(prof["A2"], prof["A2"][-1])
+    p2["A4"] = np.full_like(prof["A4"], prof["A4"][-1])
+    B = 20.0
+    Nz = len(z)
+    from gan2dhg.kp6 import HB2_2M0_eVnm2
+    l2 = L.magnetic_length_nm(B) ** 2
+    hwc = 2.0 * HB2_2M0_eVnm2 / l2 * abs(prof["A2"][-1] + prof["A4"][-1])
+    E0 = np.linalg.eigvalsh(H.build_operator(0.0, 0.0, z, V, p2)[:Nz, :Nz])[0]
+    for n in (0, 3, 7):
+        Mb, comps = L.block_operator(n, B, z, V, p2, g0=0.0)
+        assert comps[0] == 0
+        E = np.linalg.eigvalsh(Mb[:Nz, :Nz])[0]
+        assert abs((E - E0) / (hwc * (n + 0.5)) - 1.0) < 1e-10
+
+
+def test_landau_blocks_are_hermitian_and_time_reversal_symmetric():
+    """The spectrum at B and at -B must coincide, Zeeman terms included; this
+    checks the whole ladder-operator bookkeeping."""
+    from gan2dhg import landau as L
+    z, V, prof = _small_well()
+    for n in (-3, -1, 0, 2, 5):
+        M, _ = L.block_operator(n, 25.0, z, V, prof, kappa_L=1.3)
+        assert np.allclose(M, M.conj().T, atol=1e-12)
+    from gan2dhg import kp6_het as H
+    e_max = np.linalg.eigvalsh(H.build_operator(0.0, 0.0, z, V, prof))[0] + 0.03
+    a = L.spectrum(25.0, z, V, prof, e_max, kappa_L=1.3)
+    b = L.spectrum(-25.0, z, V, prof, e_max, kappa_L=1.3)
+    assert len(a) == len(b) and len(a) > 5
+    assert np.max(np.abs(a - b)) < 1e-9
+
+
+def test_landau_level_count_matches_zero_field_density_of_states():
+    """At weak field the number of Landau states below an energy must equal
+    the number of zero-field states below it (Onsager), summed over the
+    spin-resolved branches, to within one level per branch."""
+    from gan2dhg import kp6_het as H
+    from gan2dhg import landau as L
+    z, V, prof = _small_well()
+    B = 4.0
+    E0 = np.linalg.eigvalsh(H.build_operator(0.0, 0.0, z, V, prof))[0]
+    e_cut = E0 + 0.015
+    n_ll = len(L.spectrum(B, z, V, prof, e_cut, g0=0.0)) \
+        * L.degeneracy_per_nm2(B)
+    k = np.linspace(1e-4, 1.6, 400)
+    E = np.array([np.linalg.eigvalsh(H.build_operator(kk, 0.0, z, V, prof))[:6]
+                  for kk in k])
+    n0 = 0.0
+    for s in range(6):
+        below = E[:, s] < e_cut
+        if below.any():
+            n0 += k[below].max() ** 2 / (4.0 * np.pi)
+    assert abs(n_ll - n0) <= 6 * L.degeneracy_per_nm2(B)
+
+
+def test_grid_truncation_used_for_landau_levels_is_harmless():
+    """The Landau calculation truncates the grid at -2 and +8 nm; the bound
+    levels at the two Fermi wavevectors must move by less than 0.03 meV."""
+    import json
+    from gan2dhg import kp6_het as H
+    here = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    d = json.load(open(os.path.join(here, "results", "well_het.json")))
+    z, V = np.array(d["z"]), np.array(d["V"])
+    m = (z <= 8.0 + 1e-9) & (z >= -2.0 - 1e-9)
+    for k, idx in ((0.566, (0, 1, 2, 3)), (1.604, (0, 1))):
+        a = np.linalg.eigvalsh(H.build_operator(k, 0.0, z, V,
+                                                H.profile(z, 0.7)))
+        b = np.linalg.eigvalsh(H.build_operator(k, 0.0, z[m], V[m],
+                                                H.profile(z[m], 0.7)))
+        for i in idx:
+            assert abs(a[i] - b[i]) < 3e-5
+
+
+def test_coupled_magnetoconductivity_is_exactly_two_carrier():
+    """The coupled two-subband response must equal the two-carrier form with
+    the pole mobilities and channel densities computed in closed form, and an
+    explicit least-squares fit must return those same parameters."""
+    from scipy.optimize import least_squares
+    T = _load_script("run_tension")
+    from gan2dhg.constants import M0 as m0, Q as q
+    M = np.array([[4.0e12, -1.5e12], [-0.4e12, 2.0e12]])
+    n = np.array([0.8e17, 3.8e17])
+    m = np.array([0.53, 1.92]) * m0
+    n_c, mu_c = T.two_carrier_equivalent(M, n, m)
+    Bs = np.linspace(0.0, 9.0, 37)
+    exact = np.array([T.response(M, n, m, B) for B in Bs])
+    model = np.array([np.sum(q * n_c * mu_c / (1 + 1j * mu_c * B))
+                      for B in Bs])
+    assert np.max(np.abs(model / exact - 1.0)) < 1e-10
+
+    def resid(p):
+        d = np.array([q * p[0] * 1e17 * p[2] / (1 + 1j * p[2] * B)
+                      + q * p[1] * 1e17 * p[3] / (1 + 1j * p[3] * B)
+                      for B in Bs]) / exact[0] - exact / exact[0]
+        return np.concatenate([d.real, d.imag])
+    r = least_squares(resid, [n[0] / 1e17, n[1] / 1e17, 0.2, 0.05],
+                      x_scale="jac", xtol=1e-14, ftol=1e-14)
+    fit = sorted(zip(r.x[:2] * 1e17, r.x[2:]))
+    for (nf, muf), nc, mc in zip(fit, n_c, mu_c):
+        assert abs(nf / nc - 1.0) < 1e-5 and abs(muf / mc - 1.0) < 1e-5
+
+
+def test_coupled_response_reduces_to_drude_without_interband_scattering():
+    T = _load_script("run_tension")
+    from gan2dhg.constants import M0 as m0
+    M = np.diag([4.0e12, 2.0e12])
+    n = np.array([0.8e17, 3.8e17])
+    m = np.array([0.53, 1.92]) * m0
+    n_c, mu_c = T.two_carrier_equivalent(M, n, m)
+    assert np.allclose(n_c, n, rtol=1e-12)
+    assert np.allclose(mu_c, 1.602176634e-19 / (m * np.diag(M)), rtol=1e-12)
+
+
+def test_measured_ratio_is_the_mass_free_mobility_ratio():
+    from gan2dhg import measured as MS
+    assert abs(MS.R_L - 1900.0 / 368.0) < 1e-12
+    assert abs(MS.R_H_RANGE[0] - 2.0) < 1e-12
+    assert abs(MS.R_H_RANGE[1] - 400.0 / 167.0) < 1e-12
+
+
+def test_piezoelectric_share_of_the_interface_charge():
+    """P_pz = 2 exx (e31 - e33 C13/C33) for biaxial strain; for GaN on AlN it
+    is positive and adds to the negative bound charge at the interface."""
+    P = _load_script("run_strain_polarisation")
+    exx = P.strain_state(0.0)[0]
+    sig, ppz = P.sigma_polarisation(exx)
+    assert ppz > 0.0
+    assert abs(ppz - 2 * exx * (-0.49 - 0.73 * 106.0 / 398.0)) < 1e-12
+    sig_sp = (0.081 - 0.029) / 1.602176634e-19 * 1e-4
+    assert sig > sig_sp
+    assert abs(P.strain_state(1.0)[0]) < 1e-12
+
+
+def test_sparse_and_dense_solvers_agree():
+    """The shift-and-invert solver used in the self-consistent loops must
+    return the same lowest levels as the dense solver."""
+    from gan2dhg import kp6_het as H
+    z, V, prof = _small_well()
+    for k in (0.01, 0.6, 1.8):
+        wd = H.solve(k, 0.0, z, V, prof, n_states=6)[0]
+        ws = H.solve(k, 0.0, z, V, prof, n_states=6, sparse=True)[0]
+        assert np.max(np.abs(wd - ws)) < 1e-10
