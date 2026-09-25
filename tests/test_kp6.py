@@ -771,3 +771,75 @@ def test_sparse_and_dense_solvers_agree():
         wd = H.solve(k, 0.0, z, V, prof, n_states=6)[0]
         ws = H.solve(k, 0.0, z, V, prof, n_states=6, sparse=True)[0]
         assert np.max(np.abs(wd - ws)) < 1e-10
+
+
+# ---------------------------------------------------------------------------
+# Light-hole analysis: parameter override, bound on A6, consistency test
+# ---------------------------------------------------------------------------
+
+def test_parameter_override_reproduces_the_default_profile():
+    """profile(gan=GAN) must equal the default profile exactly, so that a
+    rescaled parameter is the only difference in the A6 calculations."""
+    from gan2dhg import kp6_het as H
+    from gan2dhg.kp6 import GAN
+    z = np.arange(-8, 41) * 0.125
+    a = H.profile(z, 0.7)
+    b = H.profile(z, 0.7, gan=dict(GAN))
+    for key in ("A1", "A2", "A3", "A4", "A5", "A6", "d1", "d2", "lam_e",
+                "th_e", "shift"):
+        assert np.array_equal(a[key], b[key])
+    g = dict(GAN); g["A6"] = GAN["A6"] * 1.3
+    c = H.profile(z, 0.7, gan=g)
+    assert np.allclose(c["A6"][z >= 0], GAN["A6"] * 1.3)
+    assert np.array_equal(c["A1"], a["A1"])
+
+
+def test_six_band_hamiltonian_is_bounded_only_below_the_critical_a6():
+    """With the published set every band curves away from the edge at large k;
+    beyond |A6| = 4.44 (other parameters fixed) one band does not."""
+    A = _load_script("run_a6")
+    assert A.max_curvature(1.0)[0] < 0
+    assert A.max_curvature(1.30)[0] < 0
+    assert A.max_curvature(1.40)[0] > 0
+
+
+def test_parabolic_consistency_of_the_measured_densities():
+    """Delta = pi hbar^2 (p_H/m_H - p_L/m_L): with the measured densities and
+    heavy mass the computed 11.2 meV requires m_L = 0.53 m0."""
+    C = _load_script("run_consistency")
+    assert abs(C.parabolic_delta(0.53) - 11.24) < 0.02
+    assert C.parabolic_delta(0.30) < 0
+
+
+# ---------------------------------------------------------------------------
+# Many-body mass (random phase approximation)
+# ---------------------------------------------------------------------------
+
+def test_lindhard_static_limits():
+    """Static 2D Lindhard: -N0 below 2 kF, -N0 [1 - (1 - (2kF/q)^2)^(1/2)] above."""
+    from gan2dhg import rpa2d as R
+    sp = R.Species(0.5, 0.1)
+    q = np.array([0.3, 1.0, 1.5]) * sp.kF
+    assert np.allclose(R.chi0(sp, q, 1e-9j).real, -sp.N0, rtol=1e-6)
+    q = np.array([2.5, 4.0]) * sp.kF
+    exact = -sp.N0 * (1 - np.sqrt(1 - (2 * sp.kF / q) ** 2))
+    assert np.allclose(R.chi0(sp, q, 1e-9j).real, exact, rtol=1e-6)
+
+
+def test_lindhard_small_q_dynamic_limit():
+    """For Omega >> v_F q the 2D Lindhard function is n q^2 / (m Omega^2)."""
+    from gan2dhg import rpa2d as R
+    sp = R.Species(1.0, 1.0)
+    q = 1e-6 * sp.kF
+    Om = 0.01 * sp.EF
+    expect = sp.n * (2 * R.HB2M0 / sp.m) * q ** 2 / Om ** 2
+    assert abs(R.chi0(sp, q, Om + 1e-9j).real / expect - 1) < 1e-4
+
+
+def test_rpa_mass_reproduces_published_value_at_rs_1():
+    """Strictly 2D electron gas, r_s = 1: on-shell RPA m*/m = 1.033
+    (Asgari et al., Phys. Rev. B 71, 045323, 2005)."""
+    from gan2dhg import rpa2d as R
+    n = 1.0 / (np.pi * 0.0529177 ** 2)
+    r = R.mass_ratio(R.System([R.Species(1.0, n)], eps=1.0), 0)
+    assert abs(r - 1.033) < 0.01
