@@ -2,13 +2,13 @@
  "measured": {
   "light": 5.163043478260869,
   "light_range": [
-   4.973821989528796,
-   5.367231638418079
+   4.863874345549738,
+   5.610169491525424
   ],
-  "light_low_mass_assignment": 2.8153709374691296,
+  "light_low_mass_assignment": 2.7531364220092858,
   "heavy_range": [
-   2.0,
-   2.395209580838323
+   1.905,
+   2.7784431137724552
   ],
   "heavy": 2.1976047904191613
  },
@@ -28,7 +28,7 @@
       0.13934892695554457
      ],
      "miss_point": 1.7323445598169138,
-     "miss_box": 1.2906871557187942,
+     "miss_box": 1.2420219837375133,
      "apparent_ratio": [
       0.9539249852161299,
       0.6039989619929566
@@ -43,7 +43,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.6886964694600177,
-     "apparent_miss_box": 1.1973299801634518
+     "apparent_miss_box": 1.1486648081821709
     },
     {
      "parameter": 0.4,
@@ -56,7 +56,7 @@
       0.1582157823596817
      ],
      "miss_point": 1.7382433217179485,
-     "miss_box": 1.262010971998578,
+     "miss_box": 1.213345800017297,
      "apparent_ratio": [
       0.9522807667638059,
       0.6173903298968535
@@ -71,7 +71,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.690421591586408,
-     "apparent_miss_box": 1.1754010102192078
+     "apparent_miss_box": 1.126735838237927
     },
     {
      "parameter": 0.6000000000000001,
@@ -84,7 +84,7 @@
       0.19306449233098844
      ],
      "miss_point": 1.7481539253905725,
-     "miss_box": 1.207835648476641,
+     "miss_box": 1.15917047649536,
      "apparent_ratio": [
       0.9494596152429998,
       0.6445784918657103
@@ -99,7 +99,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.6933885092760714,
-     "apparent_miss_box": 1.1323058573545468
+     "apparent_miss_box": 1.0836406853732659
     },
     {
      "parameter": 0.8,
@@ -112,7 +112,7 @@
       0.24726601928449188
      ],
      "miss_point": 1.7610300429931718,
-     "miss_box": 1.1545978406655613,
+     "miss_box": 1.1322445948848132,
      "apparent_ratio": [
       0.9453032167045581,
       0.6947293153818263
@@ -127,7 +127,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.6977757657022883,
-     "apparent_miss_box": 1.0913435633746775
+     "apparent_miss_box": 1.0689903175939297
     },
     {
      "parameter": 1.0,
@@ -140,7 +140,7 @@
       0.318386420610114
      ],
      "miss_point": 1.772043651750815,
-     "miss_box": 1.1656114494232044,
+     "miss_box": 1.1432582036424563,
      "apparent_ratio": [
       0.9393710738873557,
       0.7847124295957908
@@ -155,7 +155,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.7040709249637311,
-     "apparent_miss_box": 1.0976387226361206
+     "apparent_miss_box": 1.0752854768553726
     },
     {
      "parameter": 1.2,
@@ -168,7 +168,7 @@
       0.3923349819162395
      ],
      "miss_point": 1.7664518488839107,
-     "miss_box": 1.1600196465563002,
+     "miss_box": 1.1376664007755524,
      "apparent_ratio": [
       0.9316801478651379,
       0.9370956376814175
@@ -183,7 +183,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.712291939170867,
-     "apparent_miss_box": 1.1058597368432566
+     "apparent_miss_box": 1.0835064910625085
     },
     {
      "parameter": 1.4000000000000001,
@@ -196,7 +196,7 @@
       0.43830436933559747
      ],
      "miss_point": 1.7209860013063683,
-     "miss_box": 1.1145537989787577,
+     "miss_box": 1.0922005531980095,
      "apparent_ratio": [
       0.9236973585441834,
       1.1631136642555011
@@ -211,7 +211,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.7208970220201352,
-     "apparent_miss_box": 1.1144648196925246
+     "apparent_miss_box": 1.0921115739117766
     },
     {
      "parameter": 1.6,
@@ -224,7 +224,7 @@
       0.43877801611731126
      ],
      "miss_point": 1.6261666493620026,
-     "miss_box": 1.019734447034392,
+     "miss_box": 0.9973812012536439,
      "apparent_ratio": [
       0.9320810804634914,
       1.4242057900249645
@@ -239,7 +239,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.7118616988606343,
-     "apparent_miss_box": 1.1054294965330236
+     "apparent_miss_box": 1.0830762507522755
     },
     {
      "parameter": 1.8,
@@ -252,7 +252,7 @@
       0.40083261615792
      ],
      "miss_point": 1.5054656838277032,
-     "miss_box": 0.8990334815000925,
+     "miss_box": 0.8766802357193446,
      "apparent_ratio": [
       0.7885360793476179,
       2.0194711968842616
@@ -267,7 +267,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.8791033436709188,
-     "apparent_miss_box": 1.2726711413433083
+     "apparent_miss_box": 1.2503178955625602
     },
     {
      "parameter": 2.0,
@@ -280,7 +280,7 @@
       0.3469633332277652
      ],
      "miss_point": 1.381154379448909,
-     "miss_box": 0.7747221771212983,
+     "miss_box": 0.7523689313405503,
      "apparent_ratio": [
       0.7737321213531517,
       2.457188033775098
@@ -295,7 +295,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.8980557887261635,
-     "apparent_miss_box": 1.2916235863985528
+     "apparent_miss_box": 1.2692703406178047
     },
     {
      "parameter": 2.2,
@@ -308,7 +308,7 @@
       0.290608662629564
      ],
      "miss_point": 1.2585700363070091,
-     "miss_box": 0.6521378339793984,
+     "miss_box": 0.6297845881986506,
      "apparent_ratio": [
       0.7541059259980242,
       3.0647370078873304
@@ -323,7 +323,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.9237486624184126,
-     "apparent_miss_box": 1.3173164600908018
+     "apparent_miss_box": 1.294963214310054
     },
     {
      "parameter": 2.4000000000000004,
@@ -336,7 +336,7 @@
       0.23605278941964403
      ],
      "miss_point": 1.1510617059663042,
-     "miss_box": 0.5446295036386934,
+     "miss_box": 0.5222762578579455,
      "apparent_ratio": [
       0.7329306331507367,
       3.837752334609293
@@ -351,7 +351,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.952230442732802,
-     "apparent_miss_box": 1.3457982404051914
+     "apparent_miss_box": 1.3234449946244435
     },
     {
      "parameter": 2.6000000000000005,
@@ -364,7 +364,7 @@
       0.18931413618752402
      ],
      "miss_point": 1.035990613293191,
-     "miss_box": 0.5374498847285234,
+     "miss_box": 0.4072051651848325,
      "apparent_ratio": [
       0.7266876368321392,
       4.886799650727558
@@ -379,7 +379,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.960784781243218,
-     "apparent_miss_box": 1.3543525789156072
+     "apparent_miss_box": 1.3319993331348594
     },
     {
      "parameter": 2.8000000000000003,
@@ -392,7 +392,7 @@
       0.1494294512546841
      ],
      "miss_point": 0.9306103031510227,
-     "miss_box": 0.7397899868463116,
+     "miss_box": 0.591369981728038,
      "apparent_ratio": [
       0.732444813577054,
       6.203684016847301
@@ -407,7 +407,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.9528935077412501,
-     "apparent_miss_box": 1.3464613054136396
+     "apparent_miss_box": 1.3241080596328916
     },
     {
      "parameter": 3.0000000000000004,
@@ -420,7 +420,7 @@
       0.11667056304105672
      ],
      "miss_point": 1.0178473894518973,
-     "miss_box": 0.9317446903984856,
+     "miss_box": 0.7833246852802122,
      "apparent_ratio": [
       0.7546897711251712,
       7.817980533336816
@@ -435,7 +435,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.9229747403328687,
-     "apparent_miss_box": 1.3165425380052582
+     "apparent_miss_box": 1.2941892922245102
     },
     {
      "parameter": 3.2,
@@ -448,7 +448,7 @@
       0.09022881748040468
      ],
      "miss_point": 1.201688531632475,
-     "miss_box": 1.1155858325790633,
+     "miss_box": 0.9671658274607899,
      "apparent_ratio": [
       0.7934492992073454,
       9.81686488641126
@@ -463,7 +463,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.8728918631814766,
-     "apparent_miss_box": 1.4106310786985354
+     "apparent_miss_box": 1.262211073580262
     },
     {
      "parameter": 3.4000000000000004,
@@ -476,7 +476,7 @@
       0.06915131806109509
      ],
      "miss_point": 1.3708237355830704,
-     "miss_box": 1.2847210365296584,
+     "miss_box": 1.136301031411385,
      "apparent_ratio": [
       0.8530106344828662,
       12.1707497309888
@@ -491,7 +491,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.800509491399182,
-     "apparent_miss_box": 1.6255647752577749
+     "apparent_miss_box": 1.4771447701395015
     },
     {
      "parameter": 3.6000000000000005,
@@ -504,7 +504,7 @@
       0.052518012870076736
      ],
      "miss_point": 1.523375025468108,
-     "miss_box": 1.437272326414696,
+     "miss_box": 1.2888523212964227,
      "apparent_ratio": [
       0.9367679272233886,
       14.849771682608118
@@ -519,7 +519,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.9106164545841542,
-     "apparent_miss_box": 1.8245137555307425
+     "apparent_miss_box": 1.676093750412469
     },
     {
      "parameter": 3.8000000000000003,
@@ -532,7 +532,7 @@
       0.03951230566292252
      ],
      "miss_point": 1.6581270746791266,
-     "miss_box": 1.5720243756257148,
+     "miss_box": 1.4236043705074417,
      "apparent_ratio": [
       1.0487176714111128,
       17.744976672527056
@@ -547,7 +547,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 2.0887344358656446,
-     "apparent_miss_box": 2.002631736812233
+     "apparent_miss_box": 1.8542117316939595
     },
     {
      "parameter": 4.0,
@@ -560,7 +560,7 @@
       0.02943700130116844
      ],
      "miss_point": 1.7774610165089733,
-     "miss_box": 1.6913583174555615,
+     "miss_box": 1.5429383123372882,
      "apparent_ratio": [
       1.189097838176907,
       20.841291513660057
@@ -575,7 +575,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 2.249568152151494,
-     "apparent_miss_box": 2.163465453098082
+     "apparent_miss_box": 2.0150454479798086
     },
     {
      "parameter": 4.2,
@@ -588,7 +588,7 @@
       0.021707604629421784
      ],
      "miss_point": 1.886603175224724,
-     "miss_box": 1.8005004761713121,
+     "miss_box": 1.6520804710530388,
      "apparent_ratio": [
       1.3573910473307493,
       24.113789429980464
@@ -603,7 +603,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 2.395415816746658,
-     "apparent_miss_box": 2.309313117693246
+     "apparent_miss_box": 2.160893112574973
     },
     {
      "parameter": 4.4,
@@ -616,7 +616,7 @@
       0.016010201840155003
      ],
      "miss_point": 1.975014114275307,
-     "miss_box": 1.8889114152218953,
+     "miss_box": 1.740491410103622,
      "apparent_ratio": [
       3.439372840428077,
       12.289459653784316
@@ -631,7 +631,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.721373920641955,
-     "apparent_miss_box": 1.6352712215885432
+     "apparent_miss_box": 1.4868512164702696
     },
     {
      "parameter": 4.6000000000000005,
@@ -644,7 +644,7 @@
       0.011461269458722723
      ],
      "miss_point": 2.1035415372294293,
-     "miss_box": 2.0174388381760173,
+     "miss_box": 1.869018833057744,
      "apparent_ratio": [
       3.8623102583092037,
       14.6387134819657
@@ -659,7 +659,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.8963015921190371,
-     "apparent_miss_box": 1.8101988930656252
+     "apparent_miss_box": 1.6617788879473518
     },
     {
      "parameter": 4.800000000000001,
@@ -672,7 +672,7 @@
       0.008158396813845892
      ],
      "miss_point": 2.1467167399501137,
-     "miss_box": 2.0606140408967017,
+     "miss_box": 1.9121940357784282,
      "apparent_ratio": [
       4.249129562786657,
       16.1203332541054
@@ -687,7 +687,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.9927133745585772,
-     "apparent_miss_box": 1.9066106755051655
+     "apparent_miss_box": 1.7581906703868921
     },
     {
      "parameter": 5.000000000000001,
@@ -700,7 +700,7 @@
       0.005756420331606282
      ],
      "miss_point": 2.2244730855530257,
-     "miss_box": 2.138370386499614,
+     "miss_box": 1.9899503813813406,
      "apparent_ratio": [
       4.6789706107106666,
       18.116572775319273
@@ -715,7 +715,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.1094591066527917,
-     "apparent_miss_box": 2.02335640759938
+     "apparent_miss_box": 1.8749364024811064
     },
     {
      "parameter": 5.2,
@@ -728,7 +728,7 @@
       0.004014675006640989
      ],
      "miss_point": 2.298857374520278,
-     "miss_box": 2.2127546754668663,
+     "miss_box": 2.0643346703485927,
      "apparent_ratio": [
       5.084426006330047,
       20.139146396868792
@@ -743,7 +743,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.215297467282142,
-     "apparent_miss_box": 2.12919476822873
+     "apparent_miss_box": 1.9807747631104566
     },
     {
      "parameter": 5.4,
@@ -756,7 +756,7 @@
       0.0027670627546180215
      ],
      "miss_point": 2.372453477780949,
-     "miss_box": 2.2863507787275377,
+     "miss_box": 2.137930773609264,
      "apparent_ratio": [
       5.617446979899097,
       22.179792380062935
@@ -771,7 +771,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.31181358555813,
-     "apparent_miss_box": 2.225710886504718
+     "apparent_miss_box": 2.077290881386445
     },
     {
      "parameter": 5.6000000000000005,
@@ -784,7 +784,7 @@
       0.0018844522168640632
      ],
      "miss_point": 2.442763060553169,
-     "miss_box": 2.356660361499757,
+     "miss_box": 2.208240356381484,
      "apparent_ratio": [
       6.081568790836089,
       24.22343402801143
@@ -799,7 +799,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.399952477243033,
-     "apparent_miss_box": 2.313849778189621
+     "apparent_miss_box": 2.165429773071348
     },
     {
      "parameter": 5.800000000000001,
@@ -812,7 +812,7 @@
       0.0012678863450676925
      ],
      "miss_point": 2.510664558108397,
-     "miss_box": 2.424561859054985,
+     "miss_box": 2.2761418539367115,
      "apparent_ratio": [
       6.4799768575022725,
       26.27271984331701
@@ -827,7 +827,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.481163096895885,
-     "apparent_miss_box": 2.3950603978424736
+     "apparent_miss_box": 2.2466403927242
     },
     {
      "parameter": 6.000000000000001,
@@ -840,7 +840,7 @@
       0.0008426361054035825
      ],
      "miss_point": 2.576925754033717,
-     "miss_box": 2.4908230549803054,
+     "miss_box": 2.342403049862032,
      "apparent_ratio": [
       6.932488593838673,
       28.333350253328806
@@ -855,7 +855,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.5566715293605244,
-     "apparent_miss_box": 2.4705688303071125
+     "apparent_miss_box": 2.322148825188839
     },
     {
      "parameter": 6.2,
@@ -868,7 +868,7 @@
       0.000553099446492622
      ],
      "miss_point": 2.641164837707717,
-     "miss_box": 2.555062138654305,
+     "miss_box": 2.4066421335360317,
      "apparent_ratio": [
       7.384019020396897,
       30.410510628400246
@@ -883,7 +883,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.6274202573738257,
-     "apparent_miss_box": 2.541317558320414
+     "apparent_miss_box": 2.3928975532021406
     },
     {
      "parameter": 6.4,
@@ -896,7 +896,7 @@
       0.00035851869402137027
      ],
      "miss_point": 2.7034497730929026,
-     "miss_box": 2.617347074039491,
+     "miss_box": 2.4689270689212175,
      "apparent_ratio": [
       7.835856473712577,
       32.51154142165724
@@ -911,7 +911,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.694227111323834,
-     "apparent_miss_box": 2.608124412270422
+     "apparent_miss_box": 2.4597044071521483
     },
     {
      "parameter": 6.6000000000000005,
@@ -924,7 +924,7 @@
       0.0002294620157604621
      ],
      "miss_point": 2.7638749804573273,
-     "miss_box": 2.6777722814039153,
+     "miss_box": 2.5293522762856417,
      "apparent_ratio": [
       8.289879740271758,
       34.64397372616409
@@ -939,7 +939,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.7577557564357096,
-     "apparent_miss_box": 2.6716530573822976
+     "apparent_miss_box": 2.523233052264024
     },
     {
      "parameter": 6.800000000000001,
@@ -952,7 +952,7 @@
       0.00014499339090268126
      ],
      "miss_point": 2.8225497182276724,
-     "miss_box": 2.736447019174261,
+     "miss_box": 2.5880270140559873,
      "apparent_ratio": [
       8.748166898354135,
       36.814947508272766
@@ -967,7 +967,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.818535909357396,
-     "apparent_miss_box": 2.732433210303984
+     "apparent_miss_box": 2.5840132051857103
     },
     {
      "parameter": 7.000000000000001,
@@ -980,7 +980,7 @@
       9.044303133698417e-05
      ],
      "miss_point": 2.879584987300951,
-     "miss_box": 2.7934822882475396,
+     "miss_box": 2.645062283129266,
      "apparent_ratio": [
       9.212723791780597,
       39.03080229020468
@@ -995,7 +995,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.876983101075051,
-     "apparent_miss_box": 2.790880402021639
+     "apparent_miss_box": 2.642460396903366
     },
     {
      "parameter": 7.2,
@@ -1008,7 +1008,7 @@
       5.5685988704201606e-05
      ],
      "miss_point": 2.9351104915903883,
-     "miss_box": 2.8490077925369763,
+     "miss_box": 2.700587787418703,
      "apparent_ratio": [
       9.685334259983998,
       41.296761938045016
@@ -1023,7 +1023,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.9334160578182953,
-     "apparent_miss_box": 2.8473133587648833
+     "apparent_miss_box": 2.69889335364661
     },
     {
      "parameter": 7.4,
@@ -1036,7 +1036,7 @@
       3.440241833629898e-05
      ],
      "miss_point": 2.989104413104689,
-     "miss_box": 2.903001714051277,
+     "miss_box": 2.7545817089330034,
      "apparent_ratio": [
       10.167096681054213,
       43.615772675532256
@@ -1051,7 +1051,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 2.9880508079114283,
-     "apparent_miss_box": 2.901948108858017
+     "apparent_miss_box": 2.753528103739743
     },
     {
      "parameter": 7.6000000000000005,
@@ -1064,7 +1064,7 @@
       2.029341547671315e-05
      ],
      "miss_point": 3.041789151679053,
-     "miss_box": 2.9556864526256414,
+     "miss_box": 2.807266447507368,
      "apparent_ratio": [
       10.660298078763839,
       45.993470716484
@@ -1079,7 +1079,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.0411314098307103,
-     "apparent_miss_box": 2.955028710777299
+     "apparent_miss_box": 2.806608705659025
     },
     {
      "parameter": 7.800000000000001,
@@ -1092,7 +1092,7 @@
       1.2009393650758149e-05
      ],
      "miss_point": 3.093113527364407,
-     "miss_box": 3.007010828310995,
+     "miss_box": 2.858590823192722,
      "apparent_ratio": [
       11.164743017447838,
       48.427912753242964
@@ -1107,7 +1107,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.0927083216293436,
-     "apparent_miss_box": 3.0066056225759317
+     "apparent_miss_box": 2.858185617457658
     },
     {
      "parameter": 8.0,
@@ -1120,7 +1120,7 @@
       7.0127143776410605e-06
      ],
      "miss_point": 3.143136389785522,
-     "miss_box": 3.0570336907321103,
+     "miss_box": 2.9086136856138367,
      "apparent_ratio": [
       11.681459474014662,
       50.92012019308075
@@ -1135,7 +1135,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.1428900984783135,
-     "apparent_miss_box": 3.0567873994249015
+     "apparent_miss_box": 2.908367394306628
     },
     {
      "parameter": 8.2,
@@ -1148,7 +1148,7 @@
       4.040394480098186e-06
      ],
      "miss_point": 3.1918843662482326,
-     "miss_box": 3.1057816671948206,
+     "miss_box": 2.9573616620765475,
      "apparent_ratio": [
       12.21092249866215,
       53.46914361404033
@@ -1163,7 +1163,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.191736696999321,
-     "apparent_miss_box": 3.105633997945909
+     "apparent_miss_box": 2.957213992827636
     },
     {
      "parameter": 8.4,
@@ -1176,7 +1176,7 @@
       2.296734172513304e-06
      ],
      "miss_point": 3.2393824434538336,
-     "miss_box": 3.153279744400422,
+     "miss_box": 3.0048597392821486,
      "apparent_ratio": [
       12.75346031831115,
       56.07349022141788
@@ -1191,7 +1191,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.239295120133462,
-     "apparent_miss_box": 3.1531924210800506
+     "apparent_miss_box": 3.004772415961777
     },
     {
      "parameter": 8.6,
@@ -1204,7 +1204,7 @@
       1.2880322122210686e-06
      ],
      "miss_point": 3.2856601432195784,
-     "miss_box": 3.199557444166167,
+     "miss_box": 3.0511374390478934,
      "apparent_ratio": [
       13.309291511380424,
       58.731561422753515
@@ -1219,7 +1219,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.2856092200024793,
-     "apparent_miss_box": 3.199506520949068
+     "apparent_miss_box": 3.0510865158307943
     },
     {
      "parameter": 8.799999999999999,
@@ -1232,7 +1232,7 @@
       7.126129779599921e-07
      ],
      "miss_point": 3.3307564951928876,
-     "miss_box": 3.2446537961394757,
+     "miss_box": 3.0962337910212026,
      "apparent_ratio": [
       13.878555347609613,
       61.442098809490744
@@ -1247,7 +1247,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.330727212928873,
-     "apparent_miss_box": 3.2446245138754617
+     "apparent_miss_box": 3.096204508757188
     },
     {
      "parameter": 9.0,
@@ -1260,7 +1260,7 @@
       3.8893353737634584e-07
      ],
      "miss_point": 3.374723251281238,
-     "miss_box": 3.2886205522278265,
+     "miss_box": 3.140200547109553,
      "apparent_ratio": [
       14.461335512250477,
       64.20458880134755
@@ -1275,7 +1275,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.3747066491602697,
-     "apparent_miss_box": 3.2886039501068582
+     "apparent_miss_box": 3.1401839449885847
     },
     {
      "parameter": 9.2,
@@ -1288,7 +1288,7 @@
       2.0939988476520455e-07
      ],
      "miss_point": 3.417626100787263,
-     "miss_box": 3.331523401733851,
+     "miss_box": 3.1831033966155773,
      "apparent_ratio": [
       15.057678020213782,
       67.0195827160479
@@ -1303,7 +1303,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.417616820391863,
-     "apparent_miss_box": 3.3315141213384516
+     "apparent_miss_box": 3.183094116220178
     },
     {
      "parameter": 9.4,
@@ -1316,7 +1316,7 @@
       1.1120955489829498e-07
      ],
      "miss_point": 3.4595439345815517,
-     "miss_box": 3.3734412355281402,
+     "miss_box": 3.2250212304098667,
      "apparent_ratio": [
       15.667604330123144,
       69.88890122282831
@@ -1331,7 +1331,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.459538820205651,
-     "apparent_miss_box": 3.3734361211522392
+     "apparent_miss_box": 3.2250161160339657
     },
     {
      "parameter": 9.6,
@@ -1344,7 +1344,7 @@
       5.825828774952413e-08
      ],
      "miss_point": 3.500566435114721,
-     "miss_box": 3.4144637360613093,
+     "miss_box": 3.2660437309430357,
      "apparent_ratio": [
       16.291120657108657,
       72.81570734446534
@@ -1359,7 +1359,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.5005636565181075,
-     "apparent_miss_box": 3.4144609574646956
+     "apparent_miss_box": 3.2660409523464224
     },
     {
      "parameter": 9.8,
@@ -1372,7 +1372,7 @@
       3.010290383631542e-08
      ],
      "miss_point": 3.5407903618953336,
-     "miss_box": 3.4546876628419216,
+     "miss_box": 3.306267657723648,
      "apparent_ratio": [
       16.297658249569018,
       75.80444747935275
@@ -1387,7 +1387,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.5407889291593557,
-     "apparent_miss_box": 3.4546862301059442
+     "apparent_miss_box": 3.3062662249876706
     },
     {
      "parameter": 10.0,
@@ -1400,7 +1400,7 @@
       1.575727648361891e-08
      ],
      "miss_point": 3.4916723484544288,
-     "miss_box": 3.405569649401017,
+     "miss_box": 3.2571496442827432,
      "apparent_ratio": [
       18.32110682662907,
       72.17109093925394
@@ -1415,7 +1415,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.491671527575071,
-     "apparent_miss_box": 3.4055688285216594
+     "apparent_miss_box": 3.257148823403386
     },
     {
      "parameter": 10.2,
@@ -1428,7 +1428,7 @@
       7.711757676887032e-09
      ],
      "miss_point": 3.6192389703074146,
-     "miss_box": 3.533136271254003,
+     "miss_box": 3.3847162661357295,
      "apparent_ratio": [
       18.24316272486307,
       81.99076320031382
@@ -1443,7 +1443,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.6192385613830256,
-     "apparent_miss_box": 3.533135862329614
+     "apparent_miss_box": 3.3847158572113405
     },
     {
      "parameter": 10.4,
@@ -1456,7 +1456,7 @@
       3.8231021681767174e-09
      ],
      "miss_point": 3.657652134316792,
-     "miss_box": 3.5715494352633805,
+     "miss_box": 3.423129430145107,
      "apparent_ratio": [
       18.92097801986159,
       85.20157845757855
@@ -1471,7 +1471,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.6576519245232424,
-     "apparent_miss_box": 3.571549225469831
+     "apparent_miss_box": 3.4231292203515573
     },
     {
      "parameter": 10.6,
@@ -1484,7 +1484,7 @@
       1.869175925151012e-09
      ],
      "miss_point": 3.695635381377767,
-     "miss_box": 3.609532682324355,
+     "miss_box": 3.461112677206082,
      "apparent_ratio": [
       19.612343989028194,
       88.50006716311603
@@ -1499,7 +1499,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.6956352752810466,
-     "apparent_miss_box": 3.6095325762276347
+     "apparent_miss_box": 3.4611125711093615
     },
     {
      "parameter": 10.8,
@@ -1512,7 +1512,7 @@
       9.012389723395131e-10
      ],
      "miss_point": 3.733255310955235,
-     "miss_box": 3.647152611901823,
+     "miss_box": 3.4987326067835496,
      "apparent_ratio": [
       20.317250544585505,
       91.89285637070233
@@ -1527,7 +1527,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.7332552580659524,
-     "apparent_miss_box": 3.6471525590125404
+     "apparent_miss_box": 3.498732553894267
     },
     {
      "parameter": 11.0,
@@ -1540,7 +1540,7 @@
       4.2851844295199726e-10
      ],
      "miss_point": 3.770562198570401,
-     "miss_box": 3.6844594995169895,
+     "miss_box": 3.536039494398716,
      "apparent_ratio": [
       21.0356873088287,
       95.38584652960563
@@ -1555,7 +1555,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.7705621725816543,
-     "apparent_miss_box": 3.6844594735282428
+     "apparent_miss_box": 3.536039468409969
     },
     {
      "parameter": 11.2,
@@ -1568,7 +1568,7 @@
       2.0092016939088353e-10
      ],
      "miss_point": 3.807588482703808,
-     "miss_box": 3.7214857836503965,
+     "miss_box": 3.573065778532123,
      "apparent_ratio": [
       21.767643226295323,
       98.98383022695552
@@ -1583,7 +1583,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.8075884701159546,
-     "apparent_miss_box": 3.7214857710625426
+     "apparent_miss_box": 3.5730657659442695
     },
     {
      "parameter": 11.4,
@@ -1596,7 +1596,7 @@
       9.289413682722625e-11
      ],
      "miss_point": 3.844348177591249,
-     "miss_box": 3.7582454785378374,
+     "miss_box": 3.609825473419564,
      "apparent_ratio": [
       22.51310622783328,
       102.69015054457505
@@ -1611,7 +1611,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.844348171581393,
-     "apparent_miss_box": 3.7582454725279817
+     "apparent_miss_box": 3.609825467409708
     },
     {
      "parameter": 11.6,
@@ -1624,7 +1624,7 @@
       4.234967931893152e-11
      ],
      "miss_point": 3.8808371566237394,
-     "miss_box": 3.794734457570328,
+     "miss_box": 3.6463144524520543,
      "apparent_ratio": [
       23.27206308726837,
       106.50641194923713
@@ -1639,7 +1639,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.880837153795474,
-     "apparent_miss_box": 3.7947344547420623
+     "apparent_miss_box": 3.6463144496237887
     },
     {
      "parameter": 11.8,
@@ -1652,7 +1652,7 @@
       1.903699420324756e-11
      ],
      "miss_point": 3.917034216808135,
-     "miss_box": 3.8309315177547236,
+     "miss_box": 3.68251151263645,
      "apparent_ratio": [
       24.044499577314905,
       110.4322544597399
@@ -1667,7 +1667,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.9170342154961815,
-     "apparent_miss_box": 3.8309315164427695
+     "apparent_miss_box": 3.6825115113244964
     },
     {
      "parameter": 12.0,
@@ -1680,7 +1680,7 @@
       8.437583964848727e-12
      ],
      "miss_point": 3.952902812242992,
-     "miss_box": 3.86680011318958,
+     "miss_box": 3.7183801080713064,
      "apparent_ratio": [
       24.830400990409185,
       114.46520007025518
@@ -1695,7 +1695,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.952902811643121,
-     "apparent_miss_box": 3.866800112589709
+     "apparent_miss_box": 3.718380107471436
     }
    ],
    "best_miss_point": {
@@ -1709,7 +1709,7 @@
      0.1494294512546841
     ],
     "miss_point": 0.9306103031510227,
-    "miss_box": 0.7397899868463116,
+    "miss_box": 0.591369981728038,
     "apparent_ratio": [
      0.732444813577054,
      6.203684016847301
@@ -1724,7 +1724,7 @@
     ],
     "light_channel_more_mobile": false,
     "apparent_miss_point": 1.9528935077412501,
-    "apparent_miss_box": 1.3464613054136396,
+    "apparent_miss_box": 1.3241080596328916,
     "factor": 2.536056468665525
    },
    "best_miss_box": {
@@ -1738,7 +1738,7 @@
      0.18931413618752402
     ],
     "miss_point": 1.035990613293191,
-    "miss_box": 0.5374498847285234,
+    "miss_box": 0.4072051651848325,
     "apparent_ratio": [
      0.7266876368321392,
      4.886799650727558
@@ -1753,8 +1753,8 @@
     ],
     "light_channel_more_mobile": false,
     "apparent_miss_point": 1.960784781243218,
-    "apparent_miss_box": 1.3543525789156072,
-    "factor": 1.7116364218114581
+    "apparent_miss_box": 1.3319993331348594,
+    "factor": 1.5026123577816834
    },
    "best_apparent_miss_point": {
     "parameter": 0.2,
@@ -1767,7 +1767,7 @@
      0.13934892695554457
     ],
     "miss_point": 1.7323445598169138,
-    "miss_box": 1.2906871557187942,
+    "miss_box": 1.2420219837375133,
     "apparent_ratio": [
      0.9539249852161299,
      0.6039989619929566
@@ -1782,7 +1782,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.6886964694600177,
-    "apparent_miss_box": 1.1973299801634518,
+    "apparent_miss_box": 1.1486648081821709,
     "factor": 5.412420848890003
    },
    "best_apparent_miss_box": {
@@ -1796,7 +1796,7 @@
      0.24726601928449188
     ],
     "miss_point": 1.7610300429931718,
-    "miss_box": 1.1545978406655613,
+    "miss_box": 1.1322445948848132,
     "apparent_ratio": [
      0.9453032167045581,
      0.6947293153818263
@@ -1811,8 +1811,8 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.6977757657022883,
-    "apparent_miss_box": 1.0913435633746775,
-    "factor": 2.9782728839999666
+    "apparent_miss_box": 1.0689903175939297,
+    "factor": 2.9124373781431254
    }
   },
   {
@@ -1830,7 +1830,7 @@
       0.16329640118371136
      ],
      "miss_point": 1.3244191038852215,
-     "miss_box": 0.7179869015576109,
+     "miss_box": 0.695633655776863,
      "apparent_ratio": [
       1.2322269057233466,
       2.545850983498338
@@ -1845,7 +1845,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.4327032021092279,
-     "apparent_miss_box": 0.8262709997816171
+     "apparent_miss_box": 0.8039177540008691
     },
     {
      "parameter": 0.7050847457627119,
@@ -1858,7 +1858,7 @@
       0.06863211441014805
      ],
      "miss_point": 1.34847659128612,
-     "miss_box": 1.2623738922327084,
+     "miss_box": 1.113953887114435,
      "apparent_ratio": [
       1.372067382305382,
       10.76221227129473
@@ -1873,7 +1873,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 1.588673099384191,
-     "apparent_miss_box": 1.5025704003307794
+     "apparent_miss_box": 1.3541503952125058
     },
     {
      "parameter": 1.2101694915254237,
@@ -1886,7 +1886,7 @@
       0.024974114132448877
      ],
      "miss_point": 2.229120532959831,
-     "miss_box": 2.143017833906419,
+     "miss_box": 1.9945978287881456,
      "apparent_ratio": [
       2.571040038253424,
       26.427270384758792
@@ -1901,7 +1901,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 2.4870284104886227,
-     "apparent_miss_box": 2.4009257114352107
+     "apparent_miss_box": 2.252505706316937
     },
     {
      "parameter": 1.7152542372881356,
@@ -1914,7 +1914,7 @@
       0.009054600350467013
      ],
      "miss_point": 2.8777764866478126,
-     "miss_box": 2.791673787594401,
+     "miss_box": 2.6432537824761275,
      "apparent_ratio": [
       4.839590134514886,
       54.11639514480123
@@ -1929,7 +1929,7 @@
      ],
      "light_channel_more_mobile": false,
      "apparent_miss_point": 3.203769156887588,
-     "apparent_miss_box": 3.117666457834176
+     "apparent_miss_box": 2.969246452715903
     },
     {
      "parameter": 2.2203389830508478,
@@ -1942,7 +1942,7 @@
       0.003370586441117318
      ],
      "miss_point": 3.3557524984564537,
-     "miss_box": 3.269649799403042,
+     "miss_box": 3.1212297942847687,
      "apparent_ratio": [
       14.47185100771853,
       53.88139489840158
@@ -1957,7 +1957,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.199417204552189,
-     "apparent_miss_box": 3.113314505498777
+     "apparent_miss_box": 2.9648945003805034
     },
     {
      "parameter": 2.72542372881356,
@@ -1970,7 +1970,7 @@
       0.0013023874311887118
      ],
      "miss_point": 3.7248238014598147,
-     "miss_box": 3.638721102406403,
+     "miss_box": 3.4903010972881297,
      "apparent_ratio": [
       21.741872209581604,
       83.65058149042798
@@ -1985,7 +1985,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.6392803432404084,
-     "apparent_miss_box": 3.5531776441869964
+     "apparent_miss_box": 3.404757639068723
     },
     {
      "parameter": 3.2305084745762715,
@@ -1998,7 +1998,7 @@
       0.0005053298856713129
      ],
      "miss_point": 4.030958433152586,
-     "miss_box": 3.944855734099174,
+     "miss_box": 3.7964357289809008,
      "apparent_ratio": [
       29.967147562582205,
       118.48953056561291
@@ -2013,7 +2013,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 3.987456571377035,
-     "apparent_miss_box": 3.9013538723236234
+     "apparent_miss_box": 3.75293386720535
     },
     {
      "parameter": 3.7355932203389832,
@@ -2026,7 +2026,7 @@
       0.0002015164688323745
      ],
      "miss_point": 4.293721671820401,
-     "miss_box": 4.207618972766989,
+     "miss_box": 4.059198967648715,
      "apparent_ratio": [
       38.79458450003268,
       157.5527597791916
@@ -2041,7 +2041,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 4.272392349258713,
-     "apparent_miss_box": 4.186289650205301
+     "apparent_miss_box": 4.037869645087027
     },
     {
      "parameter": 4.240677966101695,
@@ -2054,7 +2054,7 @@
       8.14376969473507e-05
      ],
      "miss_point": 4.524831741697216,
-     "miss_box": 4.438729042643804,
+     "miss_box": 4.290309037525531,
      "apparent_ratio": [
       48.24763911584659,
       200.70681428801268
@@ -2069,7 +2069,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 4.514477172194043,
-     "apparent_miss_box": 4.428374473140631
+     "apparent_miss_box": 4.279954468022359
     },
     {
      "parameter": 4.7457627118644075,
@@ -2082,7 +2082,7 @@
       3.324675363891583e-05
      ],
      "miss_point": 4.731444341948121,
-     "miss_box": 4.645341642894709,
+     "miss_box": 4.496921637776436,
      "apparent_ratio": [
       58.41792957730748,
       248.08961957705077
@@ -2097,7 +2097,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 4.726422014511322,
-     "apparent_miss_box": 4.640319315457911
+     "apparent_miss_box": 4.491899310339638
     },
     {
      "parameter": 5.25084745762712,
@@ -2110,7 +2110,7 @@
       1.3680418836981012e-05
      ],
      "miss_point": 4.918481648746377,
-     "miss_box": 4.832378949692965,
+     "miss_box": 4.683958944574692,
      "apparent_ratio": [
       69.40767286676248,
       299.88927525495023
@@ -2125,7 +2125,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 4.916045288407183,
-     "apparent_miss_box": 4.829942589353772
+     "apparent_miss_box": 4.681522584235498
     },
     {
      "parameter": 5.755932203389831,
@@ -2138,7 +2138,7 @@
       5.664570566055183e-06
      ],
      "miss_point": 5.089487653502909,
-     "miss_box": 5.003384954449497,
+     "miss_box": 4.854964949331223,
      "apparent_ratio": [
       81.29652134437448,
       356.26517895252
@@ -2153,7 +2153,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.088307302623389,
-     "apparent_miss_box": 5.002204603569977
+     "apparent_miss_box": 4.853784598451703
     },
     {
      "parameter": 6.261016949152543,
@@ -2166,7 +2166,7 @@
       2.3573888446870583e-06
      ],
      "miss_point": 5.247087152983557,
-     "miss_box": 5.160984453930145,
+     "miss_box": 5.0125644488118715,
      "apparent_ratio": [
       94.1380982526837,
       417.3332139203547
@@ -2181,7 +2181,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.246516941220743,
-     "apparent_miss_box": 5.160414242167331
+     "apparent_miss_box": 5.011994237049057
     },
     {
      "parameter": 6.766101694915255,
@@ -2194,7 +2194,7 @@
       9.851471434174641e-07
      ],
      "miss_point": 5.393276396870238,
-     "miss_box": 5.307173697816826,
+     "miss_box": 5.158753692698553,
      "apparent_ratio": [
       107.82150314145835,
       483.17095021113926
@@ -2209,7 +2209,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.393002489579382,
-     "apparent_miss_box": 5.3068997905259705
+     "apparent_miss_box": 5.158479785407698
     },
     {
      "parameter": 7.271186440677966,
@@ -2222,7 +2222,7 @@
       4.1312040854890597e-07
      ],
      "miss_point": 5.529615568653814,
-     "miss_box": 5.4435128696004025,
+     "miss_box": 5.295092864482129,
      "apparent_ratio": [
       122.6409473056307,
       553.8269963682061
@@ -2237,7 +2237,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.529484321415812,
-     "apparent_miss_box": 5.4433816223624
+     "apparent_miss_box": 5.294961617244127
     },
     {
      "parameter": 7.776271186440678,
@@ -2250,7 +2250,7 @@
       1.7374929350832957e-07
      ],
      "miss_point": 5.657349394952576,
-     "miss_box": 5.571246695899165,
+     "miss_box": 5.422826690780892,
      "apparent_ratio": [
       138.47980374285427,
       629.329407395139
@@ -2265,7 +2265,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.657286784130814,
-     "apparent_miss_box": 5.571184085077403
+     "apparent_miss_box": 5.422764079959129
     },
     {
      "parameter": 8.28135593220339,
@@ -2278,7 +2278,7 @@
       7.325768147659062e-08
      ],
      "miss_point": 5.777492623288957,
-     "miss_box": 5.691389924235545,
+     "miss_box": 5.542969919117271,
      "apparent_ratio": [
       155.34468363286848,
       709.6918912224562
@@ -2293,7 +2293,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.777462884186671,
-     "apparent_miss_box": 5.691360185133259
+     "apparent_miss_box": 5.542940180014986
     },
     {
      "parameter": 8.786440677966102,
@@ -2306,7 +2306,7 @@
       3.0953913321418725e-08
      ],
      "miss_point": 5.890884728389842,
-     "miss_box": 5.8047820293364305,
+     "miss_box": 5.656362024218157,
      "apparent_ratio": [
       173.239197095326,
       794.9177868020089
@@ -2321,7 +2321,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.89087066084138,
-     "apparent_miss_box": 5.804767961787968
+     "apparent_miss_box": 5.656347956669695
     },
     {
      "parameter": 9.291525423728814,
@@ -2334,7 +2334,7 @@
       1.3103459872709777e-08
      ],
      "miss_point": 5.998228852967931,
-     "miss_box": 5.912126153914519,
+     "miss_box": 5.7637061487962455,
      "apparent_ratio": [
       192.16523037064354,
       885.0023141346469
@@ -2349,7 +2349,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.998222224208105,
-     "apparent_miss_box": 5.912119525154693
+     "apparent_miss_box": 5.763699520036419
     },
     {
      "parameter": 9.796610169491526,
@@ -2362,7 +2362,7 @@
       5.5559878919808625e-09
      ],
      "miss_point": 6.100119967257333,
-     "miss_box": 6.014017268203921,
+     "miss_box": 5.865597263085648,
      "apparent_ratio": [
       212.12369393680098,
       979.9336747800063
@@ -2377,7 +2377,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.100116854940578,
-     "apparent_miss_box": 6.014014155887166
+     "apparent_miss_box": 5.865594150768892
     },
     {
      "parameter": 10.301694915254238,
@@ -2390,7 +2390,7 @@
       2.3974970897455705e-09
      ],
      "miss_point": 6.197065933081062,
-     "miss_box": 6.11096323402765,
+     "miss_box": 5.962543228909376,
      "apparent_ratio": [
       233.11494008022538,
       1079.6935055725676
@@ -2405,7 +2405,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.197064453067614,
-     "apparent_miss_box": 6.110961754014203
+     "apparent_miss_box": 5.962541748895929
     },
     {
      "parameter": 10.806779661016948,
@@ -2418,7 +2418,7 @@
       1.0191917310109488e-09
      ],
      "miss_point": 6.289503860426023,
-     "miss_box": 6.203401161372611,
+     "miss_box": 6.054981156254337,
      "apparent_ratio": [
       255.13906328735106,
       1184.2574310133978
@@ -2433,7 +2433,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.289503181015177,
-     "apparent_miss_box": 6.203400481961766
+     "apparent_miss_box": 6.054980476843492
     },
     {
      "parameter": 11.31186440677966,
@@ -2446,7 +2446,7 @@
       4.268898567971746e-10
      ],
      "miss_point": 6.377812941416809,
-     "miss_box": 6.291710242363397,
+     "miss_box": 6.1432902372451235,
      "apparent_ratio": [
       278.195943158393,
       1293.5952819430506
@@ -2461,7 +2461,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.37781262538826,
-     "apparent_miss_box": 6.291709926334848
+     "apparent_miss_box": 6.143289921216574
     },
     {
      "parameter": 11.816949152542373,
@@ -2474,7 +2474,7 @@
       1.8187229500199464e-10
      ],
      "miss_point": 6.462324880529995,
-     "miss_box": 6.376222181476583,
+     "miss_box": 6.22780217635831,
      "apparent_ratio": [
       302.28538256193235,
       1407.6723019850158
@@ -2489,7 +2489,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.4623247339245395,
-     "apparent_miss_box": 6.376222034871128
+     "apparent_miss_box": 6.227802029752855
     },
     {
      "parameter": 12.322033898305085,
@@ -2502,7 +2502,7 @@
       7.75531860952583e-11
      ],
      "miss_point": 6.5433325484212315,
-     "miss_box": 6.4572298493678195,
+     "miss_box": 6.308809844249546,
      "apparent_ratio": [
       327.40715022661,
       1526.450701020419
@@ -2517,7 +2517,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.543332480581884,
-     "apparent_miss_box": 6.457229781528472
+     "apparent_miss_box": 6.3088097764101985
     },
     {
      "parameter": 12.827118644067797,
@@ -2530,7 +2530,7 @@
       3.309597040868084e-11
      ],
      "miss_point": 6.621096940816477,
-     "miss_box": 6.534994241763065,
+     "miss_box": 6.386574236644792,
      "apparent_ratio": [
       353.56098386776273,
       1649.8917276516047
@@ -2545,7 +2545,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.621096909498663,
-     "apparent_miss_box": 6.534994210445251
+     "apparent_miss_box": 6.386574205326977
     },
     {
      "parameter": 13.332203389830509,
@@ -2558,7 +2558,7 @@
       1.4133694214990555e-11
      ],
      "miss_point": 6.6958529799770234,
-     "miss_box": 6.6097502809236115,
+     "miss_box": 6.461330275805338,
      "apparent_ratio": [
       380.74660765109076,
       1777.958368821986
@@ -2573,7 +2573,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.695852965551102,
-     "apparent_miss_box": 6.609750266497691
+     "apparent_miss_box": 6.461330261379417
     },
     {
      "parameter": 13.837288135593221,
@@ -2586,7 +2586,7 @@
       6.039724276263314e-12
      ],
      "miss_point": 6.767814229985368,
-     "miss_box": 6.681711530931956,
+     "miss_box": 6.5332915258136826,
      "apparent_ratio": [
       408.96373639280324,
       1910.6184395876567
@@ -2601,7 +2601,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.7678142233541045,
-     "apparent_miss_box": 6.681711524300693
+     "apparent_miss_box": 6.533291519182419
     },
     {
      "parameter": 14.342372881355931,
@@ -2614,7 +2614,7 @@
       2.582378755278114e-12
      ],
      "miss_point": 6.8371766920346575,
-     "miss_box": 6.751073992981246,
+     "miss_box": 6.602653987862973,
      "apparent_ratio": [
       438.21207516782096,
       2047.8479180351244
@@ -2629,7 +2629,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.837176688992352,
-     "apparent_miss_box": 6.7510739899389405
+     "apparent_miss_box": 6.602653984820667
     },
     {
      "parameter": 14.847457627118644,
@@ -2642,7 +2642,7 @@
       1.1046719095020308e-12
      ],
      "miss_point": 6.904121804510135,
-     "miss_box": 6.818019105456723,
+     "miss_box": 6.66959910033845,
      "apparent_ratio": [
       468.4913155118777,
       2189.6343354487435
@@ -2657,7 +2657,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.904121803116941,
-     "apparent_miss_box": 6.818019104063529
+     "apparent_miss_box": 6.669599098945255
     },
     {
      "parameter": 15.352542372881356,
@@ -2670,7 +2670,7 @@
       4.728439861878542e-13
      ],
      "miss_point": 6.968818760644603,
-     "miss_box": 6.882716061591191,
+     "miss_box": 6.734296056472918,
      "apparent_ratio": [
       499.8011288143681,
       2335.9800312504913
@@ -2685,7 +2685,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 6.968818760007709,
-     "apparent_miss_box": 6.882716060954298
+     "apparent_miss_box": 6.734296055836024
     },
     {
      "parameter": 15.857627118644068,
@@ -2698,7 +2698,7 @@
       2.0250467969162855e-13
      ],
      "miss_point": 7.031426249208936,
-     "miss_box": 6.945323550155524,
+     "miss_box": 6.79690354503725,
      "apparent_ratio": [
       532.1411572186066,
       2486.9050997625613
@@ -2713,7 +2713,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.031426248918259,
-     "apparent_miss_box": 6.945323549864847
+     "apparent_miss_box": 6.7969035447465735
     },
     {
      "parameter": 16.36271186440678,
@@ -2726,7 +2726,7 @@
       8.670841822322473e-14
      ],
      "miss_point": 7.092093717858179,
-     "miss_box": 7.005991018804767,
+     "miss_box": 6.857571013686494,
      "apparent_ratio": [
       565.5110022186675,
       2642.4498870987672
@@ -2741,7 +2741,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.092093717725721,
-     "apparent_miss_box": 7.005991018672309
+     "apparent_miss_box": 6.857571013554035
     },
     {
      "parameter": 16.867796610169492,
@@ -2754,7 +2754,7 @@
       3.7192471324942744e-14
      ],
      "miss_point": 7.150962252385329,
-     "miss_box": 7.064859553331917,
+     "miss_box": 6.916439548213644,
      "apparent_ratio": [
       599.9102111275663,
       2802.676935864094
@@ -2769,7 +2769,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.150962252325058,
-     "apparent_miss_box": 7.0648595532716465
+     "apparent_miss_box": 6.916439548153373
     },
     {
      "parameter": 17.372881355932204,
@@ -2782,7 +2782,7 @@
       1.587618925213974e-14
      ],
      "miss_point": 7.208165157424314,
-     "miss_box": 7.122062458370902,
+     "miss_box": 6.973642453252629,
      "apparent_ratio": [
       635.338261613666,
       2967.672317492748
@@ -2797,7 +2797,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.208165157396928,
-     "apparent_miss_box": 7.122062458343517
+     "apparent_miss_box": 6.973642453225243
     },
     {
      "parameter": 17.877966101694916,
@@ -2810,7 +2810,7 @@
       6.772360450213455e-15
      ],
      "miss_point": 7.263828315113054,
-     "miss_box": 7.177725616059642,
+     "miss_box": 7.029305610941369,
      "apparent_ratio": [
       671.7945445749684,
       3137.546332740843
@@ -2825,7 +2825,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.2638283151006275,
-     "apparent_miss_box": 7.177725616047216
+     "apparent_miss_box": 7.029305610928942
     },
     {
      "parameter": 18.38305084745763,
@@ -2838,7 +2838,7 @@
       2.886579864025407e-15
      ],
      "miss_point": 7.318070387998667,
-     "miss_box": 7.231967688945255,
+     "miss_box": 7.083547683826981,
      "apparent_ratio": [
       709.2783456922283,
       3312.433596092322
@@ -2853,7 +2853,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.318070387993035,
-     "apparent_miss_box": 7.231967688939623
+     "apparent_miss_box": 7.083547683821349
     },
     {
      "parameter": 18.88813559322034,
@@ -2866,7 +2866,7 @@
       1.2212453270876722e-15
      ],
      "miss_point": 7.371002921823108,
-     "miss_box": 7.284900222769696,
+     "miss_box": 7.136480217651423,
      "apparent_ratio": [
       747.788826100608,
       3492.492548155894
@@ -2881,7 +2881,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.371002921820558,
-     "apparent_miss_box": 7.284900222767146
+     "apparent_miss_box": 7.136480217648874
     },
     {
      "parameter": 19.393220338983053,
@@ -2894,7 +2894,7 @@
       4.440892098500626e-16
      ],
      "miss_point": 7.422730393039284,
-     "miss_box": 7.336627693985873,
+     "miss_box": 7.1882076888676,
      "apparent_ratio": [
       787.3250026948614,
       3677.904459716867
@@ -2909,7 +2909,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.422730393038132,
-     "apparent_miss_box": 7.33662769398472
+     "apparent_miss_box": 7.188207688866447
     },
     {
      "parameter": 19.898305084745765,
@@ -2922,7 +2922,7 @@
       1.1102230246251565e-16
      ],
      "miss_point": 7.473350235763614,
-     "miss_box": 7.387247536710202,
+     "miss_box": 7.238827531591928,
      "apparent_ratio": [
       827.8857286734217,
       3868.8720028311263
@@ -2937,7 +2937,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.473350235763093,
-     "apparent_miss_box": 7.3872475367096815
+     "apparent_miss_box": 7.238827531591408
     },
     {
      "parameter": 20.403389830508477,
@@ -2950,7 +2950,7 @@
       2.220446049250313e-16
      ],
      "miss_point": 7.522952873641497,
-     "miss_box": 7.436850174588086,
+     "miss_box": 7.288430169469812,
      "apparent_ratio": [
       869.4696749810564,
       4065.6174687546254
@@ -2965,7 +2965,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.5229528736412625,
-     "apparent_miss_box": 7.436850174587851
+     "apparent_miss_box": 7.288430169469577
     },
     {
      "parameter": 20.908474576271185,
@@ -2978,7 +2978,7 @@
       0.0
      ],
      "miss_point": 7.571621773946478,
-     "miss_box": 7.485519074893067,
+     "miss_box": 7.337099069774793,
      "apparent_ratio": [
       912.0753133670452,
       4268.380710468629
@@ -2993,7 +2993,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.571621773946372,
-     "apparent_miss_box": 7.48551907489296
+     "apparent_miss_box": 7.337099069774687
     },
     {
      "parameter": 21.413559322033898,
@@ -3006,7 +3006,7 @@
       0.0
      ],
      "miss_point": 7.619433534568079,
-     "miss_box": 7.533330835514667,
+     "miss_box": 7.384910830396393,
      "apparent_ratio": [
       955.7009017918778,
       4477.416881674803
@@ -3021,7 +3021,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.619433534568031,
-     "apparent_miss_box": 7.533330835514619
+     "apparent_miss_box": 7.384910830396345
     },
     {
      "parameter": 21.91864406779661,
@@ -3034,7 +3034,7 @@
       0.0
      ],
      "miss_point": 7.666458009144488,
-     "miss_box": 7.580355310091077,
+     "miss_box": 7.431935304972804,
      "apparent_ratio": [
       1000.3444729228235,
       4692.994035143838
@@ -3049,7 +3049,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.666458009144467,
-     "apparent_miss_box": 7.580355310091055
+     "apparent_miss_box": 7.431935304972781
     },
     {
      "parameter": 22.423728813559322,
@@ -3062,7 +3062,7 @@
       0.0
      ],
      "miss_point": 7.712758471334425,
-     "miss_box": 7.626655772281013,
+     "miss_box": 7.478235767162739,
      "apparent_ratio": [
       1046.003826429428,
       4915.390632154005
@@ -3077,7 +3077,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.712758471334415,
-     "apparent_miss_box": 7.626655772281003
+     "apparent_miss_box": 7.47823576716273
     },
     {
      "parameter": 22.928813559322034,
@@ -3090,7 +3090,7 @@
       0.0
      ],
      "miss_point": 7.758391816397012,
-     "miss_box": 7.672289117343601,
+     "miss_box": 7.523869112225327,
      "apparent_ratio": [
       1092.676525748153,
       5144.893004492087
@@ -3105,7 +3105,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.758391816397007,
-     "apparent_miss_box": 7.672289117343596
+     "apparent_miss_box": 7.523869112225323
     },
     {
      "parameter": 23.433898305084746,
@@ -3118,7 +3118,7 @@
       0.0
      ],
      "miss_point": 7.8034087961079495,
-     "miss_box": 7.7173060970545375,
+     "miss_box": 7.568886091936264,
      "apparent_ratio": [
       1140.3598998989664,
       5381.79279945845
@@ -3133,7 +3133,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.803408796107948,
-     "apparent_miss_box": 7.717306097054536
+     "apparent_miss_box": 7.568886091936262
     },
     {
      "parameter": 23.938983050847458,
@@ -3146,7 +3146,7 @@
       0.0
      ],
      "miss_point": 7.847854281873532,
-     "miss_box": 7.761751582820121,
+     "miss_box": 7.613331577701848,
      "apparent_ratio": [
       1189.0510508700554,
       5626.384429058225
@@ -3161,7 +3161,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.8478542818735315,
-     "apparent_miss_box": 7.7617515828201205
+     "apparent_miss_box": 7.613331577701847
     },
     {
      "parameter": 24.44406779661017,
@@ -3174,7 +3174,7 @@
       0.0
      ],
      "miss_point": 7.891767550358195,
-     "miss_box": 7.805664851304783,
+     "miss_box": 7.65724484618651,
      "apparent_ratio": [
       1238.746866934949,
       5878.96253674305
@@ -3189,7 +3189,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.891767550358194,
-     "apparent_miss_box": 7.805664851304782
+     "apparent_miss_box": 7.65724484618651
     },
     {
      "parameter": 24.949152542372882,
@@ -3202,7 +3202,7 @@
       0.0
      ],
      "miss_point": 7.935182585793266,
-     "miss_box": 7.849079886739854,
+     "miss_box": 7.70065988162158,
      "apparent_ratio": [
       1289.444042196605,
       6139.819488433443
@@ -3217,7 +3217,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.935182585793265,
-     "apparent_miss_box": 7.849079886739854
+     "apparent_miss_box": 7.70065988162158
     },
     {
      "parameter": 25.454237288135594,
@@ -3230,7 +3230,7 @@
       0.0
      ],
      "miss_point": 7.978128393414349,
-     "miss_box": 7.892025694360937,
+     "miss_box": 7.743605689242664,
      "apparent_ratio": [
       1341.1391024640504,
       6409.2428899871675
@@ -3245,7 +3245,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 7.978128393414349,
-     "apparent_miss_box": 7.892025694360937
+     "apparent_miss_box": 7.7436056892426635
     },
     {
      "parameter": 25.959322033898307,
@@ -3258,7 +3258,7 @@
       0.0
      ],
      "miss_point": 8.020629318961722,
-     "miss_box": 7.9345266199083095,
+     "miss_box": 7.786106614790037,
      "apparent_ratio": [
       1393.8284374724697,
       6687.513130218788
@@ -3273,7 +3273,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.020629318961722,
-     "apparent_miss_box": 7.9345266199083095
+     "apparent_miss_box": 7.786106614790036
     },
     {
      "parameter": 26.46440677966102,
@@ -3286,7 +3286,7 @@
       0.0
      ],
      "miss_point": 8.062705369712123,
-     "miss_box": 7.976602670658711,
+     "miss_box": 7.828182665540438,
      "apparent_ratio": [
       1447.5083392997205,
       6974.900946359438
@@ -3301,7 +3301,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.062705369712123,
-     "apparent_miss_box": 7.9766026706587105
+     "apparent_miss_box": 7.828182665540438
     },
     {
      "parameter": 26.96949152542373,
@@ -3314,7 +3314,7 @@
       0.0
      ],
      "miss_point": 8.104372533298552,
-     "miss_box": 8.018269834245139,
+     "miss_box": 7.869849829126866,
      "apparent_ratio": [
       1502.1750467010452,
       7271.665009066921
@@ -3329,7 +3329,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.104372533298552,
-     "apparent_miss_box": 8.018269834245139
+     "apparent_miss_box": 7.869849829126866
     },
     {
      "parameter": 27.474576271186443,
@@ -3342,7 +3342,7 @@
       0.0
      ],
      "miss_point": 8.145643091080593,
-     "miss_box": 8.05954039202718,
+     "miss_box": 7.911120386908908,
      "apparent_ratio": [
       1557.8247949473237,
       7578.049523451697
@@ -3357,7 +3357,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.145643091080593,
-     "apparent_miss_box": 8.05954039202718
+     "apparent_miss_box": 7.911120386908908
     },
     {
      "parameter": 27.979661016949155,
@@ -3370,7 +3370,7 @@
       0.0
      ],
      "miss_point": 8.186525923692606,
-     "miss_box": 8.100423224639194,
+     "miss_box": 7.95200321952092,
      "apparent_ratio": [
       1614.453870683556,
       7894.281845362964
@@ -3385,7 +3385,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.186525923692606,
-     "apparent_miss_box": 8.100423224639194
+     "apparent_miss_box": 7.95200321952092
     },
     {
      "parameter": 28.484745762711864,
@@ -3398,7 +3398,7 @@
       0.0
      ],
      "miss_point": 8.227026806752159,
-     "miss_box": 8.140924107698746,
+     "miss_box": 7.992504102580473,
      "apparent_ratio": [
       1672.0586711423223,
       8220.570112442381
@@ -3413,7 +3413,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.227026806752159,
-     "apparent_miss_box": 8.140924107698746
+     "apparent_miss_box": 7.992504102580473
     },
     {
      "parameter": 28.989830508474576,
@@ -3426,7 +3426,7 @@
       0.0
      ],
      "miss_point": 8.26714869547978,
-     "miss_box": 8.181045996426368,
+     "miss_box": 8.032625991308095,
      "apparent_ratio": [
       1730.635767040805,
       8557.10089361076
@@ -3441,7 +3441,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.26714869547978,
-     "apparent_miss_box": 8.181045996426366
+     "apparent_miss_box": 8.032625991308095
     },
     {
      "parameter": 29.494915254237288,
@@ -3454,7 +3454,7 @@
       0.0
      ],
      "miss_point": 8.306891997262603,
-     "miss_box": 8.22078929820919,
+     "miss_box": 8.072369293090919,
      "apparent_ratio": [
       1790.1819683852073,
       8904.036862146915
@@ -3469,7 +3469,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.306891997262603,
-     "apparent_miss_box": 8.22078929820919
+     "apparent_miss_box": 8.072369293090917
     },
     {
      "parameter": 30.0,
@@ -3482,7 +3482,7 @@
       0.0
      ],
      "miss_point": 8.346254831692757,
-     "miss_box": 8.260152132639345,
+     "miss_box": 8.111732127521073,
      "apparent_ratio": [
       1850.6943923583838,
       9261.514501369782
@@ -3497,7 +3497,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 8.346254831692757,
-     "apparent_miss_box": 8.260152132639345
+     "apparent_miss_box": 8.111732127521073
     }
    ],
    "best_miss_point": {
@@ -3511,7 +3511,7 @@
      0.16329640118371136
     ],
     "miss_point": 1.3244191038852215,
-    "miss_box": 0.7179869015576109,
+    "miss_box": 0.695633655776863,
     "apparent_ratio": [
      1.2322269057233466,
      2.545850983498338
@@ -3526,7 +3526,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.4327032021092279,
-    "apparent_miss_box": 0.8262709997816171,
+    "apparent_miss_box": 0.8039177540008691,
     "factor": 3.7600005507776935
    },
    "best_miss_box": {
@@ -3540,7 +3540,7 @@
      0.16329640118371136
     ],
     "miss_point": 1.3244191038852215,
-    "miss_box": 0.7179869015576109,
+    "miss_box": 0.695633655776863,
     "apparent_ratio": [
      1.2322269057233466,
      2.545850983498338
@@ -3555,8 +3555,8 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.4327032021092279,
-    "apparent_miss_box": 0.8262709997816171,
-    "factor": 2.050301594417946
+    "apparent_miss_box": 0.8039177540008691,
+    "factor": 2.0049791381202864
    },
    "best_apparent_miss_point": {
     "parameter": 0.2,
@@ -3569,7 +3569,7 @@
      0.16329640118371136
     ],
     "miss_point": 1.3244191038852215,
-    "miss_box": 0.7179869015576109,
+    "miss_box": 0.695633655776863,
     "apparent_ratio": [
      1.2322269057233466,
      2.545850983498338
@@ -3584,7 +3584,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.4327032021092279,
-    "apparent_miss_box": 0.8262709997816171,
+    "apparent_miss_box": 0.8039177540008691,
     "factor": 4.190010341666773
    },
    "best_apparent_miss_box": {
@@ -3598,7 +3598,7 @@
      0.16329640118371136
     ],
     "miss_point": 1.3244191038852215,
-    "miss_box": 0.7179869015576109,
+    "miss_box": 0.695633655776863,
     "apparent_ratio": [
      1.2322269057233466,
      2.545850983498338
@@ -3613,8 +3613,8 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.4327032021092279,
-    "apparent_miss_box": 0.8262709997816171,
-    "factor": 2.28478287918607
+    "apparent_miss_box": 0.8039177540008691,
+    "factor": 2.2342771523830094
    }
   },
   {
@@ -3632,7 +3632,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147242,
-     "miss_box": 5.46610530309383,
+     "miss_box": 5.317685297975556,
      "apparent_ratio": [
       305.46377882710453,
       513.1487309275011
@@ -3647,7 +3647,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.4531976913484455,
-     "apparent_miss_box": 5.3670949922950335
+     "apparent_miss_box": 5.218674987176761
     },
     {
      "parameter": 0.1,
@@ -3660,7 +3660,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147242,
-     "miss_box": 5.46610530309383,
+     "miss_box": 5.317685297975556,
      "apparent_ratio": [
       305.46377882710453,
       513.1487309275011
@@ -3675,7 +3675,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.4531976913484455,
-     "apparent_miss_box": 5.3670949922950335
+     "apparent_miss_box": 5.218674987176761
     },
     {
      "parameter": 0.15,
@@ -3688,7 +3688,7 @@
       0.0006965478881815201
      ],
      "miss_point": 5.552208002147307,
-     "miss_box": 5.4661053030938955,
+     "miss_box": 5.317685297975622,
      "apparent_ratio": [
       305.46377882704564,
       513.1487309275349
@@ -3703,7 +3703,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348511,
-     "apparent_miss_box": 5.3670949922951
+     "apparent_miss_box": 5.2186749871768265
     },
     {
      "parameter": 0.2,
@@ -3716,7 +3716,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147242,
-     "miss_box": 5.46610530309383,
+     "miss_box": 5.317685297975556,
      "apparent_ratio": [
       305.46377882710453,
       513.1487309275011
@@ -3731,7 +3731,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.4531976913484455,
-     "apparent_miss_box": 5.3670949922950335
+     "apparent_miss_box": 5.218674987176761
     },
     {
      "parameter": 0.25,
@@ -3744,7 +3744,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147295,
-     "miss_box": 5.466105303093883,
+     "miss_box": 5.3176852979756095,
      "apparent_ratio": [
       305.46377882708765,
       513.1487309275269
@@ -3759,7 +3759,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348496,
-     "apparent_miss_box": 5.367094992295084
+     "apparent_miss_box": 5.2186749871768106
     },
     {
      "parameter": 0.3,
@@ -3772,7 +3772,7 @@
       0.0006965478881815201
      ],
      "miss_point": 5.552208002147307,
-     "miss_box": 5.4661053030938955,
+     "miss_box": 5.317685297975622,
      "apparent_ratio": [
       305.46377882704564,
       513.1487309275349
@@ -3787,7 +3787,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348511,
-     "apparent_miss_box": 5.3670949922951
+     "apparent_miss_box": 5.2186749871768265
     },
     {
      "parameter": 0.35,
@@ -3800,7 +3800,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147145,
-     "miss_box": 5.466105303093733,
+     "miss_box": 5.317685297975459,
      "apparent_ratio": [
       305.4637788270703,
       513.1487309274577
@@ -3815,7 +3815,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348361,
-     "apparent_miss_box": 5.367094992294949
+     "apparent_miss_box": 5.2186749871766756
     },
     {
      "parameter": 0.39999999999999997,
@@ -3828,7 +3828,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147148,
-     "miss_box": 5.4661053030937365,
+     "miss_box": 5.317685297975463,
      "apparent_ratio": [
       305.46377882709044,
       513.148730927458
@@ -3843,7 +3843,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348362,
-     "apparent_miss_box": 5.36709499229495
+     "apparent_miss_box": 5.218674987176676
     },
     {
      "parameter": 0.44999999999999996,
@@ -3856,7 +3856,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147297,
-     "miss_box": 5.466105303093885,
+     "miss_box": 5.317685297975611,
      "apparent_ratio": [
       305.4637788271134,
       513.1487309275263
@@ -3871,7 +3871,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348495,
-     "apparent_miss_box": 5.367094992295083
+     "apparent_miss_box": 5.21867498717681
     },
     {
      "parameter": 0.49999999999999994,
@@ -3884,7 +3884,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147295,
-     "miss_box": 5.466105303093883,
+     "miss_box": 5.3176852979756095,
      "apparent_ratio": [
       305.46377882708765,
       513.1487309275269
@@ -3899,7 +3899,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348496,
-     "apparent_miss_box": 5.367094992295084
+     "apparent_miss_box": 5.2186749871768106
     },
     {
      "parameter": 0.5499999999999999,
@@ -3912,7 +3912,7 @@
       0.0006965478881815201
      ],
      "miss_point": 5.552208002147463,
-     "miss_box": 5.466105303094051,
+     "miss_box": 5.317685297975777,
      "apparent_ratio": [
       305.4637788270856,
       513.1487309276057
@@ -3927,7 +3927,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.45319769134865,
-     "apparent_miss_box": 5.367094992295238
+     "apparent_miss_box": 5.218674987176964
     },
     {
      "parameter": 0.6,
@@ -3940,7 +3940,7 @@
       0.0006965478881815201
      ],
      "miss_point": 5.552208002147307,
-     "miss_box": 5.4661053030938955,
+     "miss_box": 5.317685297975622,
      "apparent_ratio": [
       305.46377882704564,
       513.1487309275349
@@ -3955,7 +3955,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348511,
-     "apparent_miss_box": 5.3670949922951
+     "apparent_miss_box": 5.2186749871768265
     },
     {
      "parameter": 0.65,
@@ -3968,7 +3968,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147546,
-     "miss_box": 5.4661053030941344,
+     "miss_box": 5.317685297975861,
      "apparent_ratio": [
       305.4637788271292,
       513.1487309276424
@@ -3983,7 +3983,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348721,
-     "apparent_miss_box": 5.367094992295309
+     "apparent_miss_box": 5.218674987177036
     },
     {
      "parameter": 0.7,
@@ -3996,7 +3996,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147145,
-     "miss_box": 5.466105303093733,
+     "miss_box": 5.317685297975459,
      "apparent_ratio": [
       305.4637788270703,
       513.1487309274577
@@ -4011,7 +4011,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348361,
-     "apparent_miss_box": 5.367094992294949
+     "apparent_miss_box": 5.2186749871766756
     },
     {
      "parameter": 0.75,
@@ -4024,7 +4024,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147352,
-     "miss_box": 5.46610530309394,
+     "miss_box": 5.317685297975667,
      "apparent_ratio": [
       305.4637788270587,
       513.1487309275552
@@ -4039,7 +4039,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348551,
-     "apparent_miss_box": 5.367094992295139
+     "apparent_miss_box": 5.218674987176866
     },
     {
      "parameter": 0.7999999999999999,
@@ -4052,7 +4052,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147148,
-     "miss_box": 5.4661053030937365,
+     "miss_box": 5.317685297975463,
      "apparent_ratio": [
       305.46377882709044,
       513.148730927458
@@ -4067,7 +4067,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348362,
-     "apparent_miss_box": 5.36709499229495
+     "apparent_miss_box": 5.218674987176676
     },
     {
      "parameter": 0.85,
@@ -4080,7 +4080,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147174,
-     "miss_box": 5.466105303093762,
+     "miss_box": 5.317685297975489,
      "apparent_ratio": [
       305.4637788270946,
       513.14873092747
@@ -4095,7 +4095,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348385,
-     "apparent_miss_box": 5.367094992294973
+     "apparent_miss_box": 5.2186749871766995
     },
     {
      "parameter": 0.9,
@@ -4108,7 +4108,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147293,
-     "miss_box": 5.466105303093881,
+     "miss_box": 5.317685297975608,
      "apparent_ratio": [
       305.4637788270956,
       513.1487309275254
@@ -4123,7 +4123,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348493,
-     "apparent_miss_box": 5.3670949922950815
+     "apparent_miss_box": 5.218674987176808
     },
     {
      "parameter": 0.95,
@@ -4136,7 +4136,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147223,
-     "miss_box": 5.466105303093811,
+     "miss_box": 5.3176852979755385,
      "apparent_ratio": [
       305.4637788271115,
       513.1487309274919
@@ -4151,7 +4151,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348428,
-     "apparent_miss_box": 5.367094992295016
+     "apparent_miss_box": 5.218674987176742
     },
     {
      "parameter": 1.0,
@@ -4164,7 +4164,7 @@
       0.0006965478881814091
      ],
      "miss_point": 5.552208002147295,
-     "miss_box": 5.466105303093883,
+     "miss_box": 5.3176852979756095,
      "apparent_ratio": [
       305.46377882708765,
       513.1487309275269
@@ -4179,7 +4179,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 5.453197691348496,
-     "apparent_miss_box": 5.367094992295084
+     "apparent_miss_box": 5.2186749871768106
     }
    ],
    "best_miss_point": {
@@ -4193,7 +4193,7 @@
      0.0006965478881814091
     ],
     "miss_point": 5.552208002147145,
-    "miss_box": 5.466105303093733,
+    "miss_box": 5.317685297975459,
     "apparent_ratio": [
      305.4637788270703,
      513.1487309274577
@@ -4208,7 +4208,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 5.453197691348361,
-    "apparent_miss_box": 5.367094992294949,
+    "apparent_miss_box": 5.2186749871766756,
     "factor": 257.80616449502384
    },
    "best_miss_box": {
@@ -4222,7 +4222,7 @@
      0.0006965478881814091
     ],
     "miss_point": 5.552208002147145,
-    "miss_box": 5.466105303093733,
+    "miss_box": 5.317685297975459,
     "apparent_ratio": [
      305.4637788270703,
      513.1487309274577
@@ -4237,8 +4237,8 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 5.453197691348361,
-    "apparent_miss_box": 5.367094992294949,
-    "factor": 236.5371559241843
+    "apparent_miss_box": 5.2186749871766756,
+    "factor": 203.91134131395194
    },
    "best_apparent_miss_point": {
     "parameter": 0.35,
@@ -4251,7 +4251,7 @@
      0.0006965478881814091
     ],
     "miss_point": 5.552208002147145,
-    "miss_box": 5.466105303093733,
+    "miss_box": 5.317685297975459,
     "apparent_ratio": [
      305.4637788270703,
      513.1487309274577
@@ -4266,7 +4266,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 5.453197691348361,
-    "apparent_miss_box": 5.367094992294949,
+    "apparent_miss_box": 5.2186749871766756,
     "factor": 233.50364595336634
    },
    "best_apparent_miss_box": {
@@ -4280,7 +4280,7 @@
      0.0006965478881814091
     ],
     "miss_point": 5.552208002147145,
-    "miss_box": 5.466105303093733,
+    "miss_box": 5.317685297975459,
     "apparent_ratio": [
      305.4637788270703,
      513.1487309274577
@@ -4295,8 +4295,8 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 5.453197691348361,
-    "apparent_miss_box": 5.367094992294949,
-    "factor": 214.23959516221356
+    "apparent_miss_box": 5.2186749871766756,
+    "factor": 184.68930617432198
    }
   },
   {
@@ -4314,7 +4314,7 @@
       0.21975167770533077
      ],
      "miss_point": 1.5906704874370023,
-     "miss_box": 0.9842382851093917,
+     "miss_box": 0.9618850393286438,
      "apparent_ratio": [
       1.044067616149972,
       1.2292353226629216
@@ -4329,7 +4329,7 @@
      ],
      "light_channel_more_mobile": true,
      "apparent_miss_point": 1.5984019731952321,
-     "apparent_miss_box": 0.9919697708676214
+     "apparent_miss_box": 0.9696165250868735
     }
    ],
    "best_miss_point": {
@@ -4343,7 +4343,7 @@
      0.21975167770533077
     ],
     "miss_point": 1.5906704874370023,
-    "miss_box": 0.9842382851093917,
+    "miss_box": 0.9618850393286438,
     "apparent_ratio": [
      1.044067616149972,
      1.2292353226629216
@@ -4358,7 +4358,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.5984019731952321,
-    "apparent_miss_box": 0.9919697708676214,
+    "apparent_miss_box": 0.9696165250868735,
     "factor": 4.907037932872178
    },
    "best_miss_box": {
@@ -4372,7 +4372,7 @@
      0.21975167770533077
     ],
     "miss_point": 1.5906704874370023,
-    "miss_box": 0.9842382851093917,
+    "miss_box": 0.9618850393286438,
     "apparent_ratio": [
      1.044067616149972,
      1.2292353226629216
@@ -4387,8 +4387,8 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.5984019731952321,
-    "apparent_miss_box": 0.9919697708676214,
-    "factor": 2.675772931883278
+    "apparent_miss_box": 0.9696165250868735,
+    "factor": 2.616624267073227
    },
    "best_apparent_miss_point": {
     "parameter": 1.0,
@@ -4401,7 +4401,7 @@
      0.21975167770533077
     ],
     "miss_point": 1.5906704874370023,
-    "miss_box": 0.9842382851093917,
+    "miss_box": 0.9618850393286438,
     "apparent_ratio": [
      1.044067616149972,
      1.2292353226629216
@@ -4416,7 +4416,7 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.5984019731952321,
-    "apparent_miss_box": 0.9919697708676214,
+    "apparent_miss_box": 0.9696165250868735,
     "factor": 4.945123666702482
    },
    "best_apparent_miss_box": {
@@ -4430,7 +4430,7 @@
      0.21975167770533077
     ],
     "miss_point": 1.5906704874370023,
-    "miss_box": 0.9842382851093917,
+    "miss_box": 0.9618850393286438,
     "apparent_ratio": [
      1.044067616149972,
      1.2292353226629216
@@ -4445,42 +4445,42 @@
     ],
     "light_channel_more_mobile": true,
     "apparent_miss_point": 1.5984019731952321,
-    "apparent_miss_box": 0.9919697708676214,
-    "factor": 2.6965408120317793
+    "apparent_miss_box": 0.9696165250868735,
+    "factor": 2.636933067765814
    }
   }
  ],
  "closest_miss_point": 2.536056468665525,
- "closest_miss_box": 1.7116364218114581,
+ "closest_miss_box": 1.5026123577816834,
  "closest_apparent_miss_point": 4.190010341666773,
- "closest_apparent_miss_box": 2.28478287918607,
+ "closest_apparent_miss_box": 2.2342771523830094,
  "two_carrier": {
   "n_cases": 141,
   "n_cases_labelled_as_observed_and_densities_within_40pc": 93,
   "max_mobility_error_in_those_cases": 0.09785379178517739,
   "closest_apparent_point": 4.190010341666773,
-  "closest_apparent_box": 2.28478287918607
+  "closest_apparent_box": 2.2342771523830094
  },
  "screening_scan": [
   {
    "screening_scale": 0.1,
    "closest_point": 2.516330928685906,
-   "closest_box": 1.70668259198913
+   "closest_box": 1.5816226951035794
   },
   {
    "screening_scale": 0.3,
    "closest_point": 2.575359769710535,
-   "closest_box": 1.6979831154016456
+   "closest_box": 1.5250397488770673
   },
   {
    "screening_scale": 3.0,
    "closest_point": 2.585146017069278,
-   "closest_box": 1.6107262406627538
+   "closest_box": 1.575120713237577
   },
   {
    "screening_scale": 10.0,
    "closest_point": 2.514925219511731,
-   "closest_box": 1.6380714710920827
+   "closest_box": 1.6018614701521523
   }
  ],
  "density_cases": [
@@ -4489,49 +4489,49 @@
    "n_light_cm2": 8000000000000.0,
    "n_heavy_cm2": 38000000000000.0,
    "closest_point": 2.536056468665525,
-   "closest_box": 1.7116364218114581
+   "closest_box": 1.5026123577816834
   },
   {
    "case": "both halved (spin resolved)",
    "n_light_cm2": 4000000000000.0,
    "n_heavy_cm2": 19000000000000.0,
    "closest_point": 2.5361153902885323,
-   "closest_box": 1.6122385731358853
+   "closest_box": 1.5751625577213648
   },
   {
    "case": "light halved only",
    "n_light_cm2": 4000000000000.0,
    "n_heavy_cm2": 38000000000000.0,
    "closest_point": 3.1023556735514655,
-   "closest_box": 1.703937010536332
+   "closest_box": 1.66627103451395
   },
   {
    "case": "heavy halved only",
    "n_light_cm2": 8000000000000.0,
    "n_heavy_cm2": 19000000000000.0,
    "closest_point": 2.3891109213974517,
-   "closest_box": 1.5980236452517507
+   "closest_box": 1.5116718811769065
   },
   {
    "case": "cyclotron-resonance densities",
    "n_light_cm2": 6500000000000.0,
    "n_heavy_cm2": 46000000000000.0,
    "closest_point": 2.813490608370458,
-   "closest_box": 1.7009269014974704
+   "closest_box": 1.6633274647275265
   },
   {
    "case": "self-consistent occupations",
    "n_light_cm2": 5070000000000.0,
    "n_heavy_cm2": 40930000000000.0,
    "closest_point": 2.9435943752419758,
-   "closest_box": 1.6951510279466102
+   "closest_box": 1.6576792683814745
   },
   {
    "case": "equal densities",
    "n_light_cm2": 23000000000000.0,
    "n_heavy_cm2": 23000000000000.0,
    "closest_point": 2.576403269718109,
-   "closest_box": 1.7115679512772264
+   "closest_box": 1.6527716090223161
   }
  ],
  "figure": [
