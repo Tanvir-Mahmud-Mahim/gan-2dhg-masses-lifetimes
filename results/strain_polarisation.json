@@ -1,0 +1,351 @@
+{
+ "constants": {
+  "Psp_AlN": -0.081,
+  "Psp_GaN": -0.029,
+  "e33_GaN": 0.73,
+  "e31_GaN": -0.49,
+  "source": "Bernardini, Fiorentini and Vanderbilt, PRB 56, R10024 (1997), Table II"
+ },
+ "pseudomorphic": {
+  "exx": -0.024145500156788947,
+  "P_pz_C_m2": 0.03305142835532316,
+  "sigma_total_cm2": 53084926187559.89,
+  "sigma_spontaneous_only_cm2": 32455847187195.97,
+  "piezo_share_of_sigma": 0.3886052120987637,
+  "measured_p_s_cm2": 46000000000000.0
+ },
+ "rows": [
+  {
+   "converged": true,
+   "iterations": 20,
+   "centroid_nm": 0.4345595706056624,
+   "EF_minus_E0_meV": 56.24225015839468,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20471474209762.918,
+     "m_CR": 1.9301033051687144,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20462059912055.742,
+     "m_CR": 1.9305699973529078,
+     "edge_meV": 2.1540547123777287e-09
+    },
+    {
+     "index": 2,
+     "n_cm2": 2546277713582.982,
+     "m_CR": 0.267083523686671,
+     "edge_meV": 11.263193289341334
+    },
+    {
+     "index": 3,
+     "n_cm2": 2520188164548.8535,
+     "m_CR": 0.26449695199492335,
+     "edge_meV": 11.26347547323392
+    }
+   ],
+   "m_heavy": 1.930336651260811,
+   "m_light": 0.26579023784079714,
+   "p_light_cm2": 5066465878131.836,
+   "p_heavy_cm2": 40933534121818.66,
+   "separation_meV": 11.263334381287628,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.0,
+   "bound": true,
+   "exx": -0.024145500156788947,
+   "ezz": 0.012861422194068484,
+   "closure": "field vanishes beyond gas",
+   "sigma_cm2": 46000000000000.0,
+   "interface_field_MV_cm": 8.003614387187309
+  },
+  {
+   "converged": true,
+   "iterations": 21,
+   "centroid_nm": 0.3485736794445041,
+   "EF_minus_E0_meV": 55.63342278267186,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20356478938263.887,
+     "m_CR": 1.9438570542270814,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20349153293223.375,
+     "m_CR": 1.944052770168447,
+     "edge_meV": 4.133360320679458e-10
+    },
+    {
+     "index": 2,
+     "n_cm2": 2650367523151.9414,
+     "m_CR": 0.2685167802650209,
+     "edge_meV": 11.310663802235666
+    },
+    {
+     "index": 3,
+     "n_cm2": 2644000245370.72,
+     "m_CR": 0.26764667005713344,
+     "edge_meV": 11.31069491781167
+    }
+   ],
+   "m_heavy": 1.9439549121977642,
+   "m_light": 0.2680817251610772,
+   "p_light_cm2": 5294367768522.662,
+   "p_heavy_cm2": 40705632231487.266,
+   "separation_meV": 11.310679360023668,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.0,
+   "bound": true,
+   "exx": -0.024145500156788947,
+   "ezz": 0.012861422194068484,
+   "closure": "interface charge from polarisation",
+   "sigma_cm2": 53084926187559.89,
+   "interface_field_MV_cm": 9.23633215168545
+  },
+  {
+   "converged": true,
+   "iterations": 20,
+   "centroid_nm": 0.4345634175185725,
+   "EF_minus_E0_meV": 56.180489668074316,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20450815864594.496,
+     "m_CR": 1.9301032440409946,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20439477984914.49,
+     "m_CR": 1.9306501238459544,
+     "edge_meV": 2.8844704402786192e-09
+    },
+    {
+     "index": 2,
+     "n_cm2": 2571837851237.853,
+     "m_CR": 0.27026534013548453,
+     "edge_meV": 11.253720748711116
+    },
+    {
+     "index": 3,
+     "n_cm2": 2537868299125.903,
+     "m_CR": 0.2670113527209363,
+     "edge_meV": 11.254126893090465
+    }
+   ],
+   "m_heavy": 1.9303766839434746,
+   "m_light": 0.2686383464282104,
+   "p_light_cm2": 5109706150363.756,
+   "p_heavy_cm2": 40890293849508.984,
+   "separation_meV": 11.253923820900791,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.1,
+   "bound": true,
+   "exx": -0.02173095014111011,
+   "ezz": 0.011575279974661665,
+   "closure": "field vanishes beyond gas",
+   "sigma_cm2": 46000000000000.0,
+   "interface_field_MV_cm": 8.003614387187309
+  },
+  {
+   "converged": true,
+   "iterations": 21,
+   "centroid_nm": 0.3678966560950464,
+   "EF_minus_E0_meV": 55.705127966854896,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20351078969073.367,
+     "m_CR": 1.9398636880492726,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20341475382617.1,
+     "m_CR": 1.940183977133318,
+     "edge_meV": 1.3564704914870163e-09
+    },
+    {
+     "index": 2,
+     "n_cm2": 2660879857784.074,
+     "m_CR": 0.26999740855959226,
+     "edge_meV": 11.29074179383549
+    },
+    {
+     "index": 3,
+     "n_cm2": 2646565790525.4736,
+     "m_CR": 0.26846338496229477,
+     "edge_meV": 11.290931878478183
+    }
+   ],
+   "m_heavy": 1.9400238325912953,
+   "m_light": 0.2692303967609435,
+   "p_light_cm2": 5307445648309.548,
+   "p_heavy_cm2": 40692554351690.47,
+   "separation_meV": 11.290836836156837,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.1,
+   "bound": true,
+   "exx": -0.02173095014111011,
+   "ezz": 0.011575279974661665,
+   "closure": "interface charge from polarisation",
+   "sigma_cm2": 51022018287523.555,
+   "interface_field_MV_cm": 8.877403470203422
+  },
+  {
+   "converged": true,
+   "iterations": 20,
+   "centroid_nm": 0.43457108760633695,
+   "EF_minus_E0_meV": 56.069899351687994,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20413965611430.688,
+     "m_CR": 1.9301127528690576,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20398980852718.49,
+     "m_CR": 1.9308065963396759,
+     "edge_meV": 4.213074333847544e-09
+    },
+    {
+     "index": 2,
+     "n_cm2": 2618288745665.9873,
+     "m_CR": 0.27623009813702126,
+     "edge_meV": 11.23707298152632
+    },
+    {
+     "index": 3,
+     "n_cm2": 2568764790295.275,
+     "m_CR": 0.27159435337645643,
+     "edge_meV": 11.237708607491626
+    }
+   ],
+   "m_heavy": 1.9304596746043667,
+   "m_light": 0.27391222575673885,
+   "p_light_cm2": 5187053535961.262,
+   "p_heavy_cm2": 40812946464149.17,
+   "separation_meV": 11.237390794508972,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.25,
+   "bound": true,
+   "exx": -0.01810912511759171,
+   "ezz": 0.009646066645551362,
+   "closure": "field vanishes beyond gas",
+   "sigma_cm2": 46000000000000.0,
+   "interface_field_MV_cm": 8.003614387187309
+  },
+  {
+   "converged": true,
+   "iterations": 21,
+   "centroid_nm": 0.4041550425065461,
+   "EF_minus_E0_meV": 55.793737143539246,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20337315109314.383,
+     "m_CR": 1.933854658991727,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20323217928563.44,
+     "m_CR": 1.9344324036797675,
+     "edge_meV": 3.327560449406519e-09
+    },
+    {
+     "index": 2,
+     "n_cm2": 2685766933356.166,
+     "m_CR": 0.2744939510713185,
+     "edge_meV": 11.254453126007036
+    },
+    {
+     "index": 3,
+     "n_cm2": 2653700028766.0513,
+     "m_CR": 0.2712681206544792,
+     "edge_meV": 11.254968423834221
+    }
+   ],
+   "m_heavy": 1.9341435313357471,
+   "m_light": 0.27288103586289886,
+   "p_light_cm2": 5339466962122.217,
+   "p_heavy_cm2": 40660533037877.83,
+   "separation_meV": 11.254710774920628,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.25,
+   "bound": true,
+   "exx": -0.01810912511759171,
+   "ezz": 0.009646066645551362,
+   "closure": "interface charge from polarisation",
+   "sigma_cm2": 47927656437468.914,
+   "interface_field_MV_cm": 8.33901044798036
+  },
+  {
+   "converged": true,
+   "iterations": 20,
+   "centroid_nm": 0.4345932566225553,
+   "EF_minus_E0_meV": 55.80700254108989,
+   "branches": [
+    {
+     "index": 0,
+     "n_cm2": 20326597432875.6,
+     "m_CR": 1.9301828138872907,
+     "edge_meV": 0.0
+    },
+    {
+     "index": 1,
+     "n_cm2": 20302255638621.01,
+     "m_CR": 1.9312271815692397,
+     "edge_meV": 7.333245122254084e-09
+    },
+    {
+     "index": 2,
+     "n_cm2": 2731824989219.109,
+     "m_CR": 0.2920421749609658,
+     "edge_meV": 11.19987355541574
+    },
+    {
+     "index": 3,
+     "n_cm2": 2639321939284.2617,
+     "m_CR": 0.2831087798538316,
+     "edge_meV": 11.201068419832927
+    }
+   ],
+   "m_heavy": 1.9307049977282653,
+   "m_light": 0.2875754774073987,
+   "p_light_cm2": 5371146928503.371,
+   "p_heavy_cm2": 40628853071496.61,
+   "separation_meV": 11.200470987624334,
+   "third_pair_occupied": false,
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.5,
+   "bound": true,
+   "exx": -0.012072750078394473,
+   "ezz": 0.006430711097034242,
+   "closure": "field vanishes beyond gas",
+   "sigma_cm2": 46000000000000.0,
+   "interface_field_MV_cm": 8.003614387187309
+  },
+  {
+   "vbo_eV": 0.7,
+   "relaxed_fraction": 0.5,
+   "exx": -0.012072750078394473,
+   "ezz": 0.006430711097034242,
+   "closure": "interface charge from polarisation",
+   "sigma_cm2": 42770386687377.94,
+   "bound": false
+  }
+ ],
+ "relaxation_at_which_sigma_equals_p_s": 0.34344364997753435
+}
