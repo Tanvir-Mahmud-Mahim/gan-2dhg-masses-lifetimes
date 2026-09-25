@@ -13,9 +13,10 @@ claim attributed to a reference checked against the primary text.
 
 ## What the code does
 
-Three magnetotransport experiments have been applied to the same
-polarization-induced GaN/AlN two-dimensional hole gas, and the subband-resolved
-parameters they return do not agree. This repository contains the analysis
+Quantum oscillations, a two-carrier Hall analysis (on one sample) and terahertz
+cyclotron resonance (on a second sample of similar design and density) have
+been applied to polarization-induced GaN/AlN two-dimensional hole gases, and
+the subband-resolved parameters they return do not agree. This repository contains the analysis
 that accounts for two of those disagreements and tests the third.
 
 | module | purpose |
@@ -46,6 +47,7 @@ python scripts/run_barrier.py                  # -> results/barrier.json        
 python scripts/run_well_het.py                 # -> results/well_het.json           finite-barrier well at 0.7 eV, saved in full
 python scripts/run_rashba.py                   # -> results/rashba.json             tracked spin splitting
 python scripts/run_well_sweep.py               # -> results/well_sweep.json         masses against density, finite barrier
+python scripts/run_structure_check.py          # -> results/structure_check.json    cyclotron-resonance sample, AlN spin-orbit splitting
 python scripts/run_dispersion.py               # -> results/dispersion.json         fine dispersion for Fig. 2(b) of the Letter
 python scripts/run_strain_polarisation.py      # -> results/strain_polarisation.json piezoelectric charge, strain relaxation
 python scripts/run_well_polarisation.py        # -> results/well_het_pol.json       well with the polarization closure
