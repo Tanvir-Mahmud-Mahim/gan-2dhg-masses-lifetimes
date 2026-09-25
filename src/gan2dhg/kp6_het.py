@@ -281,7 +281,7 @@ def self_consistent_het(p_s_cm2=4.6e13, vbo_eV=0.7, L_gan=15.0, L_bar=4.0,
                         dz=0.09375, kt_max=2.4, n_kt=16, eps_r=10.4,
                         n_states=6, max_iter=90, tol=2e-5, mix=0.6,
                         gan_params_in_barrier=False, aln=None, verbose=False,
-                        strain="AlN", sigma_cm2=None, sparse=False):
+                        strain="AlN", sigma_cm2=None, sparse=False, gan=None):
     """Self-consistent solution with a finite barrier of offset vbo_eV.
 
     The grid is built so that z = 0, the interface, is a grid point.
@@ -293,11 +293,14 @@ def self_consistent_het(p_s_cm2=4.6e13, vbo_eV=0.7, L_gan=15.0, L_bar=4.0,
     leaves a residual field across the rest of the GaN layer, as happens when
     part of the polarisation charge is compensated by charge far from the
     interface.
+
+    gan, if given, replaces the GaN parameter set (kp6.GAN) in the well; it is
+    used to test the sensitivity of the subbands to individual parameters.
     """
     n_bar = int(round(L_bar / dz))
     n_gan = int(round(L_gan / dz))
     z = (np.arange(-n_bar, n_gan + 1)) * dz
-    prof = profile(z, vbo_eV, aln=aln, strain_gan=strain,
+    prof = profile(z, vbo_eV, aln=aln, gan=gan, strain_gan=strain,
                    gan_params_in_barrier=gan_params_in_barrier)
     p_s = p_s_cm2 * 1.0e-14
     sigma = p_s if sigma_cm2 is None else sigma_cm2 * 1.0e-14
