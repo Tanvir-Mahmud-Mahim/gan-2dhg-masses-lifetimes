@@ -223,11 +223,27 @@ def build_operator(kx, ky, z, V, prof):
     return -M + np.kron(np.eye(6), np.diag(V))
 
 
-def solve(kx, ky, z, V, prof, n_states=8):
-    """Lowest hole levels, their envelopes and the full spinors."""
+def solve(kx, ky, z, V, prof, n_states=8, sparse=False):
+    """Lowest hole levels, their envelopes and the full spinors.
+
+    With sparse=True the lowest levels are found by shift-and-invert Lanczos
+    iteration about a shift below the whole hole spectrum, which returns the
+    same levels as the dense solver (checked in the test suite) in a small
+    fraction of the time.  The hole spectrum is bounded below by the valence
+    band maximum of GaN at the interface, which lies above zero on the energy
+    scale used here, so the shift of -0.2 eV lies below every level and the
+    levels nearest to it are the lowest ones.
+    """
     M = build_operator(kx, ky, z, V, prof)
-    w, v = np.linalg.eigh(M)
-    w, v = w[:n_states], v[:, :n_states]
+    if sparse:
+        import scipy.sparse as sps
+        from scipy.sparse.linalg import eigsh
+        w, v = eigsh(sps.csc_matrix(M), k=n_states, sigma=-0.2, which="LM")
+        o = np.argsort(w)
+        w, v = w[o], v[:, o]
+    else:
+        w, v = np.linalg.eigh(M)
+        w, v = w[:n_states], v[:, :n_states]
     n = len(z)
     dens = np.zeros((n, n_states))
     for s in range(n_states):
@@ -264,20 +280,30 @@ def poisson_het(z, p_of_z, p_s, eps_r):
 def self_consistent_het(p_s_cm2=4.6e13, vbo_eV=0.7, L_gan=15.0, L_bar=4.0,
                         dz=0.09375, kt_max=2.4, n_kt=16, eps_r=10.4,
                         n_states=6, max_iter=90, tol=2e-5, mix=0.6,
-                        gan_params_in_barrier=False, aln=None, verbose=False):
+                        gan_params_in_barrier=False, aln=None, verbose=False,
+                        strain="AlN", sigma_cm2=None, sparse=False):
     """Self-consistent solution with a finite barrier of offset vbo_eV.
 
     The grid is built so that z = 0, the interface, is a grid point.
+
+    strain is the strain tensor (exx, eyy, ezz) of the GaN layer, or "AlN"
+    for pseudomorphic growth on relaxed AlN.  sigma_cm2 is the bound sheet
+    charge at the interface in units of e; by default it equals the hole sheet
+    density p_s_cm2, so that the field vanishes beyond the gas.  A larger value
+    leaves a residual field across the rest of the GaN layer, as happens when
+    part of the polarisation charge is compensated by charge far from the
+    interface.
     """
     n_bar = int(round(L_bar / dz))
     n_gan = int(round(L_gan / dz))
     z = (np.arange(-n_bar, n_gan + 1)) * dz
-    prof = profile(z, vbo_eV, aln=aln,
+    prof = profile(z, vbo_eV, aln=aln, strain_gan=strain,
                    gan_params_in_barrier=gan_params_in_barrier)
     p_s = p_s_cm2 * 1.0e-14
+    sigma = p_s if sigma_cm2 is None else sigma_cm2 * 1.0e-14
 
     from .kp6_well import E2_OVER_EPS0, fill_subbands
-    V = (E2_OVER_EPS0 / eps_r) * p_s * np.maximum(z, 0.0)
+    V = (E2_OVER_EPS0 / eps_r) * sigma * np.maximum(z, 0.0)
     kt_grid = np.linspace(1e-3, kt_max, n_kt)
 
     err = np.inf
@@ -285,7 +311,8 @@ def self_consistent_het(p_s_cm2=4.6e13, vbo_eV=0.7, L_gan=15.0, L_bar=4.0,
         E_of_k = np.empty((n_kt, n_states))
         dens0 = None
         for i, kt in enumerate(kt_grid):
-            w, d, _ = solve(kt, 0.0, z, V, prof, n_states=n_states)
+            w, d, _ = solve(kt, 0.0, z, V, prof, n_states=n_states,
+                            sparse=sparse)
             E_of_k[i] = w
             if i == 0:
                 dens0 = d
@@ -293,7 +320,7 @@ def self_consistent_het(p_s_cm2=4.6e13, vbo_eV=0.7, L_gan=15.0, L_bar=4.0,
         p_of_z = np.zeros_like(z)
         for s in range(n_states):
             p_of_z += per[s] * dens0[:, s]
-        V_new = poisson_het(z, p_of_z, p_s, eps_r)
+        V_new = poisson_het(z, p_of_z, sigma, eps_r)
         err = np.max(np.abs(V_new - V))
         V = (1.0 - mix) * V + mix * V_new
         if verbose:
@@ -305,7 +332,8 @@ def self_consistent_het(p_s_cm2=4.6e13, vbo_eV=0.7, L_gan=15.0, L_bar=4.0,
     return {"z": z, "V": V, "prof": prof, "kt": kt_grid, "E_of_k": E_of_k,
             "EF": EF, "per_subband_nm2": per, "p_of_z": p_of_z,
             "converged": bool(err < tol), "iterations": it + 1,
-            "vbo_eV": vbo_eV, "p_s_cm2": p_s_cm2, "eps_r": eps_r}
+            "vbo_eV": vbo_eV, "p_s_cm2": p_s_cm2, "eps_r": eps_r,
+            "sigma_cm2": sigma * 1.0e14}
 
 
 def mass_at_kf(sol, subband, dk=0.01, n_states=6):
