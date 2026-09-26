@@ -3,13 +3,14 @@
 In a Shubnikov-de Haas measurement the oscillation of the density of states at
 the Fermi level, delta_j for subband j, enters the conductivity in two ways
 (Dmitriev, Mirlin, Polyakov and Zudov, Rev. Mod. Phys. 84, 1709 (2012),
-Eqs. 38 and 39): it scales every scattering rate into subband j, so it
-renormalizes the transport times, and it multiplies the dissipative
-conductivity sigma_xx of the carriers of subband j by nu_j / nu_j0.  For a
-single carrier in a strong field the two together give
-Delta rho_xx / rho_xx = 2 Delta nu / nu_0, the standard
-4 delta X / sinh X of Coleridge, Stoner and Fletcher (Phys. Rev. B 39, 1120
-(1989)).  In a two-carrier gas the two carriers contribute very unequally to
+Sec. II.C.2; Eqs. 38 to 40 in the numbering of arXiv:1111.2176): it scales
+every scattering rate into subband j, so it renormalizes the transport times,
+and it multiplies the dissipative conductivity sigma_xx of the carriers of
+subband j by nu_j / nu_j0.  For a single carrier in a strong field the two
+together give Delta rho_xx / rho_xx = 2 Delta nu / nu_0, which with
+Delta nu / nu_0 = -2 delta cos(2 pi E_F / hbar omega_c) (their Eq. 31) and the
+thermal factor X / sinh X (their Eq. 40) is the standard amplitude
+4 delta X / sinh X.  In a two-carrier gas the two carriers contribute very unequally to
 rho_xx: in strong fields the carrier with the lower mobility (here the heavy
 holes) carries most of sigma_xx, so a relative oscillation of equal size moves
 rho_xx by different amounts for the two subbands, and the field at which an
