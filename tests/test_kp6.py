@@ -889,13 +889,66 @@ def test_polarization_fluctuations_reduce_to_point_charges():
     assert np.allclose(a, b, rtol=1e-6)
 
 
-def test_digitized_light_hole_amplitudes_reproduce_the_reported_dingle_slope():
-    """The digitized 1.8 K light-hole amplitudes of Chang et al. must return
-    their Dingle mobility, 368 +/- 14 cm^2/Vs, to within ten percent."""
-    import json
-    D = json.load(open(os.path.join(os.path.dirname(__file__), "..", "data",
-                                    "chang2026_fig2_digitized.json")))
-    x = np.array(D["light_1p8K"]["inv_B_T"])
-    a = np.array(D["light_1p8K"]["amp_ohm"])
-    s, _ = np.polyfit(x, np.log(a), 1)
-    assert abs(-np.pi / s * 1e4 / 368.0 - 1) < 0.10
+def test_native_digitization_reproduces_the_reported_values():
+    """The native-resolution digitization of Fig. 2 of Chang et al. must return
+    their light-hole Dingle mobility (368 +/- 14 cm^2/Vs) at 1.8 K and their
+    heavy-hole LK mass (1.92 +/- 0.16 m0) from the joint fit of Fig. 2c."""
+    sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "scripts"))
+    import run_heavy_quantum_mobility as HQ
+    D, L, H = HQ.load()
+    p, model, _ = HQ.lk_fit(*L[1.8], 1.8)
+    assert abs(p[1] * 1e4 - 368.0) < 14.0
+    res = HQ.heavy_joint([(T, H[T][0], H[T][1]) for T in HQ.T_HEAVY])[0]
+    assert abs(res["m_H"] - 1.92) < 0.16
+
+
+def test_full_response_gives_twice_the_density_of_states_oscillation():
+    """One carrier in a strong field: with the density-of-states factor in
+    sigma_xx, Delta rho/rho = 2 Delta nu/nu (the standard 4 delta X/sinh X; Dmitriev
+    et al., Rev. Mod. Phys. 84, 1709 (2012)); with the rates only it is Delta nu/nu."""
+    from gan2dhg import sdh
+    K = sdh.response_weights(1000.0, (1.0, 1e-9), (0.19, 0.04), np.eye(2), True)
+    assert abs(K[0] - 2.0) < 1e-3
+    K = sdh.response_weights(200.0, (1.0, 1e-9), (0.19, 0.04), np.eye(2), False)
+    assert abs(K[0] - 1.0) < 1e-6
+    W = np.array([[0.2, 0.8], [0.15, 0.85]])
+    S_ = sdh.sensitivities(60.0, (0.8, 3.8), (0.19, 0.04))
+    assert np.allclose(sdh.response_weights(60.0, (0.8, 3.8), (0.19, 0.04), W, False), S_ @ W,
+                       atol=1e-6)
+
+
+def test_lorentzian_density_of_states_closed_form():
+    from gan2dhg import sdh
+    a, th = 0.9, np.linspace(0, 2 * np.pi, 7)
+    series = 1 + 2 * sum((-1) ** r * np.exp(-r * a) * np.cos(r * th) for r in range(1, 200))
+    assert np.allclose(sdh.lorentz_dos(a, th), series, atol=1e-12)
+
+
+def test_spin_factor_from_harmonics_inverts_the_cosines():
+    from gan2dhg import sdh
+    for S_ in (0.1, 0.23, 0.35):
+        r21 = np.cos(2 * np.pi * S_) / np.cos(np.pi * S_)
+        assert abs(sdh.spin_factor_from_harmonics(r21) - np.cos(np.pi * S_)) < 1e-12
+
+
+def test_misfit_line_kernel_has_exponent_three():
+    q = np.logspace(6, 9.5, 9)
+    r = S.w_misfit_lines(q, 1e5, 1.0, 3.189e-10, 10.4, 5.7e9) / S.w_power_law(q, 3.0, 5.7e9)
+    assert np.allclose(r, r[0], rtol=1e-10)
+
+
+def test_quantum_resistance_reduces_to_first_order():
+    """For weak oscillations and low temperature the non-perturbative rho_xx
+    equals rho_0 (1 + sum_j K_j delta_j) with delta_j = -2 exp(-a_j) cos(2 pi F_j/B)."""
+    from gan2dhg import sdh
+    v = np.array([1.0, 2.0])
+    A = np.array([[3.0, 1.0], [0.6, 5.0]]); Bk = np.array([[1.0, 0.2], [0.1, 0.5]])
+    W = sdh.dos_weights(A, Bk, v)
+    n, mu, m, F, muq = (0.8, 3.8), (0.19, 0.04), (0.53, 1.92), (166.0, 795.0), (0.004, 0.002)
+    B = 60.0
+    for full in (True, False):
+        rho0 = sdh.rho_xx(B, n, mu)
+        rho = sdh.rho_xx_quantum([1 / B], 0.05, A, Bk, v, n, mu, m, F, muq, dos_in_sxx=full)[0]
+        d = np.array([-2 * np.exp(-np.pi / (q * B)) * np.cos(2 * np.pi * f / B) for q, f in zip(muq, F)])
+        K = sdh.response_weights(B, n, mu, W, full)
+        assert abs((rho / rho0 - 1) - K @ d) < 0.02 * np.max(np.abs(d))
