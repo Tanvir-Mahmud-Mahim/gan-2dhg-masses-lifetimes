@@ -1,0 +1,3250 @@
+{
+ "mu_q_H_start": 115.30299602259039,
+ "single_mechanism_quantum_ratio": [
+  {
+   "mechanism": "interface roughness",
+   "parameter": 0.2,
+   "ratios": [
+    0.913183591308822,
+    0.5501633883422831
+   ],
+   "mu_q_L_over_mu_q_H": 6.64939540021871
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 0.4,
+   "ratios": [
+    0.907812794829822,
+    0.566168358721109
+   ],
+   "mu_q_L_over_mu_q_H": 5.834715442816168
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 0.6000000000000001,
+   "ratios": [
+    0.8988602578109002,
+    0.5976867642206508
+   ],
+   "mu_q_L_over_mu_q_H": 4.750730909227268
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 0.8,
+   "ratios": [
+    0.8873606216377393,
+    0.6539452910146567
+   ],
+   "mu_q_L_over_mu_q_H": 3.6739682311776587
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 1.0,
+   "ratios": [
+    0.8776412001236475,
+    0.7521201600153182
+   ],
+   "mu_q_L_over_mu_q_H": 2.814910938266113
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 1.2,
+   "ratios": [
+    0.8825625434700489,
+    0.9164708070230129
+   ],
+   "mu_q_L_over_mu_q_H": 2.2446146756629948
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 1.4000000000000001,
+   "ratios": [
+    0.9236151722690171,
+    1.163079680930965
+   ],
+   "mu_q_L_over_mu_q_H": 1.964673772085127
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 1.6,
+   "ratios": [
+    1.015478142192107,
+    1.4822380548072969
+   ],
+   "mu_q_L_over_mu_q_H": 1.9087694969676166
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 1.8,
+   "ratios": [
+    1.145751258894422,
+    1.8283977780735587
+   ],
+   "mu_q_L_over_mu_q_H": 2.0205846526448137
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 2.0,
+   "ratios": [
+    1.2974124365985193,
+    2.229595619421864
+   ],
+   "mu_q_L_over_mu_q_H": 2.2438378123038274
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 2.2,
+   "ratios": [
+    1.466613777306622,
+    2.738621058882999
+   ],
+   "mu_q_L_over_mu_q_H": 2.5585241092895874
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 2.4000000000000004,
+   "ratios": [
+    1.6330746412873742,
+    3.318658642425879
+   ],
+   "mu_q_L_over_mu_q_H": 2.985291382503622
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 2.6000000000000005,
+   "ratios": [
+    1.8322333153666852,
+    4.09972795643463
+   ],
+   "mu_q_L_over_mu_q_H": 3.4924782172661213
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 2.8000000000000003,
+   "ratios": [
+    2.0358550931547934,
+    5.019150626790347
+   ],
+   "mu_q_L_over_mu_q_H": 4.093808712158805
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 3.0000000000000004,
+   "ratios": [
+    2.2491969693444167,
+    6.08128136800478
+   ],
+   "mu_q_L_over_mu_q_H": 4.759472556405304
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 3.2,
+   "ratios": [
+    2.5013888385227006,
+    7.3086353029507505
+   ],
+   "mu_q_L_over_mu_q_H": 5.450969206817969
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 3.4000000000000004,
+   "ratios": [
+    2.7832239016501226,
+    8.655472425232908
+   ],
+   "mu_q_L_over_mu_q_H": 6.118508483058063
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 3.6000000000000005,
+   "ratios": [
+    3.0956829118645683,
+    10.081913350073728
+   ],
+   "mu_q_L_over_mu_q_H": 6.712308294588791
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 3.8000000000000003,
+   "ratios": [
+    3.428850591351938,
+    11.53625990640469
+   ],
+   "mu_q_L_over_mu_q_H": 7.186430151938211
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 4.0,
+   "ratios": [
+    3.7818926235041834,
+    12.998436124981394
+   ],
+   "mu_q_L_over_mu_q_H": 7.541465599880107
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 4.2,
+   "ratios": [
+    4.164327628653626,
+    14.497427369070868
+   ],
+   "mu_q_L_over_mu_q_H": 7.7738066951458595
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 4.4,
+   "ratios": [
+    4.484479377871369,
+    15.83752540758101
+   ],
+   "mu_q_L_over_mu_q_H": 7.891480667771929
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 4.6000000000000005,
+   "ratios": [
+    4.910772249469864,
+    18.009683273150664
+   ],
+   "mu_q_L_over_mu_q_H": 7.9253485539308945
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 4.800000000000001,
+   "ratios": [
+    5.201710097530976,
+    18.80428511642086
+   ],
+   "mu_q_L_over_mu_q_H": 7.932277801684311
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 5.000000000000001,
+   "ratios": [
+    5.5410965030735,
+    20.324785892638076
+   ],
+   "mu_q_L_over_mu_q_H": 7.8789880459900345
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 5.2,
+   "ratios": [
+    5.833078934213489,
+    21.89427988320651
+   ],
+   "mu_q_L_over_mu_q_H": 7.801453166149506
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 5.4,
+   "ratios": [
+    6.262737873195677,
+    23.566389269410372
+   ],
+   "mu_q_L_over_mu_q_H": 7.724413347541945
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 5.6000000000000005,
+   "ratios": [
+    6.612710997256667,
+    25.282971254941423
+   ],
+   "mu_q_L_over_mu_q_H": 7.628356499621096
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 5.800000000000001,
+   "ratios": [
+    6.900378440729746,
+    27.05934978316866
+   ],
+   "mu_q_L_over_mu_q_H": 7.51765918127831
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 6.000000000000001,
+   "ratios": [
+    7.25975616034468,
+    28.913071377766084
+   ],
+   "mu_q_L_over_mu_q_H": 7.42352207596132
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 6.2,
+   "ratios": [
+    7.6326743440702804,
+    30.831376018232202
+   ],
+   "mu_q_L_over_mu_q_H": 7.33388854053911
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 6.4,
+   "ratios": [
+    8.020591325424917,
+    32.81277130730348
+   ],
+   "mu_q_L_over_mu_q_H": 7.249728393352361
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 6.6000000000000005,
+   "ratios": [
+    8.424294074568785,
+    34.85661790754861
+   ],
+   "mu_q_L_over_mu_q_H": 7.171436347176866
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 6.800000000000001,
+   "ratios": [
+    8.844075601320652,
+    36.963012624893956
+   ],
+   "mu_q_L_over_mu_q_H": 7.099045904105073
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 7.000000000000001,
+   "ratios": [
+    9.27990391180067,
+    39.13248822732276
+   ],
+   "mu_q_L_over_mu_q_H": 7.032373642568021
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 7.2,
+   "ratios": [
+    9.732339346544096,
+    41.36679588333573
+   ],
+   "mu_q_L_over_mu_q_H": 6.971113215758416
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 7.4,
+   "ratios": [
+    10.198372297474291,
+    43.66175069721918
+   ],
+   "mu_q_L_over_mu_q_H": 6.914871193433658
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 7.6000000000000005,
+   "ratios": [
+    10.681109084550721,
+    46.02373249805382
+   ],
+   "mu_q_L_over_mu_q_H": 6.863317664034856
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 7.800000000000001,
+   "ratios": [
+    11.178365674427937,
+    48.44753999749515
+   ],
+   "mu_q_L_over_mu_q_H": 6.815976398138951
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 8.0,
+   "ratios": [
+    11.690234146975262,
+    50.9326629205653
+   ],
+   "mu_q_L_over_mu_q_H": 6.772467226467085
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 8.2,
+   "ratios": [
+    12.21648492529294,
+    53.47703994532606
+   ],
+   "mu_q_L_over_mu_q_H": 6.732398368726998
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 8.4,
+   "ratios": [
+    12.756930942070655,
+    56.078386958565396
+   ],
+   "mu_q_L_over_mu_q_H": 6.695395142495755
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 8.6,
+   "ratios": [
+    13.311423065317213,
+    58.73455229895829
+   ],
+   "mu_q_L_over_mu_q_H": 6.661105090933398
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 8.799999999999999,
+   "ratios": [
+    13.879844078943973,
+    61.44389799959172
+   ],
+   "mu_q_L_over_mu_q_H": 6.62920302646215
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 9.0,
+   "ratios": [
+    14.462102586607006,
+    64.20565474254596
+   ],
+   "mu_q_L_over_mu_q_H": 6.599395895826281
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 9.2,
+   "ratios": [
+    15.058127546916749,
+    67.02020468716108
+   ],
+   "mu_q_L_over_mu_q_H": 6.571427088602573
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 9.4,
+   "ratios": [
+    15.667863720168945,
+    69.8892586618545
+   ],
+   "mu_q_L_over_mu_q_H": 6.54507973153679
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 9.6,
+   "ratios": [
+    16.29126804783992,
+    72.81590967022427
+   ],
+   "mu_q_L_over_mu_q_H": 6.520178570535243
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 9.8,
+   "ratios": [
+    16.297737656842568,
+    75.80455608718971
+   ],
+   "mu_q_L_over_mu_q_H": 6.496590181967921
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 10.0,
+   "ratios": [
+    18.32115136023441,
+    72.17115018303703
+   ],
+   "mu_q_L_over_mu_q_H": 6.318953264088327
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 10.2,
+   "ratios": [
+    18.243187404373522,
+    81.99079672834343
+   ],
+   "mu_q_L_over_mu_q_H": 6.453016228235858
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 10.4,
+   "ratios": [
+    18.920991218282325,
+    85.20159633232203
+   ],
+   "mu_q_L_over_mu_q_H": 6.43295089622223
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 10.6,
+   "ratios": [
+    19.61235094259595,
+    88.50007655268338
+   ],
+   "mu_q_L_over_mu_q_H": 6.414028318357732
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 10.8,
+   "ratios": [
+    20.317254153826244,
+    91.89286123084972
+   ],
+   "mu_q_L_over_mu_q_H": 6.396271399717209
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 11.0,
+   "ratios": [
+    21.035689154529805,
+    95.38584900856428
+   ],
+   "mu_q_L_over_mu_q_H": 6.379716146345416
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 11.2,
+   "ratios": [
+    21.767644156228354,
+    98.98383147294949
+   ],
+   "mu_q_L_over_mu_q_H": 6.364404772073574
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 11.4,
+   "ratios": [
+    22.513106689455537,
+    102.69015116172802
+   ],
+   "mu_q_L_over_mu_q_H": 6.350379164721875
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 11.6,
+   "ratios": [
+    23.272063313034934,
+    106.50641225046556
+   ],
+   "mu_q_L_over_mu_q_H": 6.337674988099501
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 11.8,
+   "ratios": [
+    24.044499686096938,
+    110.43225460462193
+   ],
+   "mu_q_L_over_mu_q_H": 6.326316627859353
+  },
+  {
+   "mechanism": "interface roughness",
+   "parameter": 12.0,
+   "ratios": [
+    24.83040104204619,
+    114.4652001389195
+   ],
+   "mu_q_L_over_mu_q_H": 6.3163131191607835
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 0.2,
+   "ratios": [
+    1.3731496600959219,
+    2.695406394247071
+   ],
+   "mu_q_L_over_mu_q_H": 3.7118078832655668
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 0.7050847457627119,
+   "ratios": [
+    2.6561245475845014,
+    8.46419257349353
+   ],
+   "mu_q_L_over_mu_q_H": 5.037807797175109
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 1.2101694915254237,
+   "ratios": [
+    5.6497749735902065,
+    20.419464101716326
+   ],
+   "mu_q_L_over_mu_q_H": 6.022263050642439
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 1.7152542372881356,
+   "ratios": [
+    10.922525149198103,
+    39.06178105306181
+   ],
+   "mu_q_L_over_mu_q_H": 6.358090304418592
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 2.2203389830508478,
+   "ratios": [
+    17.806990366264497,
+    62.99910589161712
+   ],
+   "mu_q_L_over_mu_q_H": 6.3919610367211055
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 2.72542372881356,
+   "ratios": [
+    25.182382505841414,
+    91.1213228859998
+   ],
+   "mu_q_L_over_mu_q_H": 6.34209869950659
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 3.2305084745762715,
+   "ratios": [
+    32.88310574590227,
+    123.75780482963549
+   ],
+   "mu_q_L_over_mu_q_H": 6.28628298196763
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 3.7355932203389832,
+   "ratios": [
+    40.93811259919028,
+    160.94934810769166
+   ],
+   "mu_q_L_over_mu_q_H": 6.235648855860304
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 4.240677966101695,
+   "ratios": [
+    49.68478836163547,
+    202.79584378192075
+   ],
+   "mu_q_L_over_mu_q_H": 6.1961180182974305
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 4.7457627118644075,
+   "ratios": [
+    59.32430812818813,
+    249.3387410030137
+   ],
+   "mu_q_L_over_mu_q_H": 6.165882286866214
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 5.25084745762712,
+   "ratios": [
+    69.95549565667791,
+    300.6208043637308
+   ],
+   "mu_q_L_over_mu_q_H": 6.142713646675068
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 5.755932203389831,
+   "ratios": [
+    81.61742028125867,
+    356.68594514686066
+   ],
+   "mu_q_L_over_mu_q_H": 6.124773751396848
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 6.261016949152543,
+   "ratios": [
+    94.32154873241947,
+    417.5712500870065
+   ],
+   "mu_q_L_over_mu_q_H": 6.110693543706158
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 6.766101694915255,
+   "ratios": [
+    107.92418085513505,
+    483.3033123837862
+   ],
+   "mu_q_L_over_mu_q_H": 6.096676391372974
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 7.271186440677966,
+   "ratios": [
+    122.69754240003198,
+    553.8996894020863
+   ],
+   "mu_q_L_over_mu_q_H": 6.087912775477037
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 7.776271186440678,
+   "ratios": [
+    138.51055156089524,
+    629.3688114600432
+   ],
+   "mu_q_L_over_mu_q_H": 6.080766851197985
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 8.28135593220339,
+   "ratios": [
+    155.36117800046912,
+    709.7129971360342
+   ],
+   "mu_q_L_over_mu_q_H": 6.074870153944701
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 8.786440677966102,
+   "ratios": [
+    173.2479457907032,
+    794.9289694251538
+   ],
+   "mu_q_L_over_mu_q_H": 6.069951527166949
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 9.291525423728814,
+   "ratios": [
+    192.16982373405605,
+    885.0081806218764
+   ],
+   "mu_q_L_over_mu_q_H": 6.0658090896534596
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 9.796610169491526,
+   "ratios": [
+    212.12608347014677,
+    979.9367246487478
+   ],
+   "mu_q_L_over_mu_q_H": 6.062290969658822
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 10.301694915254238,
+   "ratios": [
+    233.11619272211087,
+    1079.6951035346572
+   ],
+   "mu_q_L_over_mu_q_H": 6.0592819630909895
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 10.806779661016948,
+   "ratios": [
+    255.13969428993693,
+    1184.258235611013
+   ],
+   "mu_q_L_over_mu_q_H": 6.056694199219929
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 11.31186440677966,
+   "ratios": [
+    278.1962638889623,
+    1293.5956907561551
+   ],
+   "mu_q_L_over_mu_q_H": 6.054460504412178
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 11.816949152542373,
+   "ratios": [
+    302.28554452171755,
+    1407.6725083574695
+   ],
+   "mu_q_L_over_mu_q_H": 6.052529632421753
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 12.322033898305085,
+   "ratios": [
+    327.4072315171855,
+    1526.4508045738419
+   ],
+   "mu_q_L_over_mu_q_H": 6.050862757857637
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 12.827118644067797,
+   "ratios": [
+    353.56102443969826,
+    1649.8917793226083
+   ],
+   "mu_q_L_over_mu_q_H": 6.049430848270083
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 13.332203389830509,
+   "ratios": [
+    380.74662779443526,
+    1777.9583944706733
+   ],
+   "mu_q_L_over_mu_q_H": 6.0482126508231495
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 13.837288135593221,
+   "ratios": [
+    408.9637463447941,
+    1910.618452257471
+   ],
+   "mu_q_L_over_mu_q_H": 6.04719310990657
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 14.342372881355931,
+   "ratios": [
+    438.21208006222605,
+    2047.8479242653034
+   ],
+   "mu_q_L_over_mu_q_H": 6.0463620926712975
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 14.847457627118644,
+   "ratios": [
+    468.49131790866375,
+    2189.634338499329
+   ],
+   "mu_q_L_over_mu_q_H": 6.045713338618347
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 15.352542372881356,
+   "ratios": [
+    499.8011299833726,
+    2335.980032738263
+   ],
+   "mu_q_L_over_mu_q_H": 6.045243576591996
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 15.857627118644068,
+   "ratios": [
+    532.1411577866355,
+    2486.905100485447
+   ],
+   "mu_q_L_over_mu_q_H": 6.044951771161775
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 16.36271186440678,
+   "ratios": [
+    565.5110024937067,
+    2642.4498874487813
+   ],
+   "mu_q_L_over_mu_q_H": 6.044838473018063
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 16.867796610169492,
+   "ratios": [
+    599.9102112603011,
+    2802.676936033014
+   ],
+   "mu_q_L_over_mu_q_H": 6.044905256448957
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 17.372881355932204,
+   "ratios": [
+    635.3382616775259,
+    2967.6723175740203
+   ],
+   "mu_q_L_over_mu_q_H": 6.045154232474569
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 17.877966101694916,
+   "ratios": [
+    671.7945446056032,
+    3137.5463327798334
+   ],
+   "mu_q_L_over_mu_q_H": 6.045587629690748
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 18.38305084745763,
+   "ratios": [
+    709.2783457068844,
+    3312.4335961109778
+   ],
+   "mu_q_L_over_mu_q_H": 6.046207436964848
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 18.88813559322034,
+   "ratios": [
+    747.7888261076017,
+    3492.4925481647974
+   ],
+   "mu_q_L_over_mu_q_H": 6.047015103297435
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 19.393220338983053,
+   "ratios": [
+    787.3250026981907,
+    3677.9044597211064
+   ],
+   "mu_q_L_over_mu_q_H": 6.048011290748376
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 19.898305084745765,
+   "ratios": [
+    827.8857286750031,
+    3868.87200283314
+   ],
+   "mu_q_L_over_mu_q_H": 6.049195676557842
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 20.403389830508477,
+   "ratios": [
+    869.4696749818061,
+    4065.61746875558
+   ],
+   "mu_q_L_over_mu_q_H": 6.050566800634229
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 20.908474576271185,
+   "ratios": [
+    912.0753133673998,
+    4268.380710469081
+   ],
+   "mu_q_L_over_mu_q_H": 6.052121954539818
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 21.413559322033898,
+   "ratios": [
+    955.7009017920451,
+    4477.416881675017
+   ],
+   "mu_q_L_over_mu_q_H": 6.0538571080500745
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 21.91864406779661,
+   "ratios": [
+    1000.3444729229026,
+    4692.99403514394
+   ],
+   "mu_q_L_over_mu_q_H": 6.0557668693341205
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 22.423728813559322,
+   "ratios": [
+    1046.003826429465,
+    4915.390632154053
+   ],
+   "mu_q_L_over_mu_q_H": 6.057844474824048
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 22.928813559322034,
+   "ratios": [
+    1092.6765257481704,
+    5144.89300449211
+   ],
+   "mu_q_L_over_mu_q_H": 6.060081804915503
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 23.433898305084746,
+   "ratios": [
+    1140.3598998989744,
+    5381.792799458461
+   ],
+   "mu_q_L_over_mu_q_H": 6.062469421771877
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 23.938983050847458,
+   "ratios": [
+    1189.0510508700597,
+    5626.384429058229
+   ],
+   "mu_q_L_over_mu_q_H": 6.064996625682155
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 24.44406779661017,
+   "ratios": [
+    1238.7468669349507,
+    5878.962536743053
+   ],
+   "mu_q_L_over_mu_q_H": 6.067651526639357
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 24.949152542372882,
+   "ratios": [
+    1289.444042196606,
+    6139.819488433446
+   ],
+   "mu_q_L_over_mu_q_H": 6.0704211280531055
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 25.454237288135594,
+   "ratios": [
+    1341.139102464051,
+    6409.242889987168
+   ],
+   "mu_q_L_over_mu_q_H": 6.0732914197748435
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 25.959322033898307,
+   "ratios": [
+    1393.8284374724703,
+    6687.513130218789
+   ],
+   "mu_q_L_over_mu_q_H": 6.076247477890489
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 26.46440677966102,
+   "ratios": [
+    1447.5083392997208,
+    6974.900946359439
+   ],
+   "mu_q_L_over_mu_q_H": 6.079273569012656
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 26.96949152542373,
+   "ratios": [
+    1502.1750467010454,
+    7271.665009066921
+   ],
+   "mu_q_L_over_mu_q_H": 6.082353257078331
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 27.474576271186443,
+   "ratios": [
+    1557.824794947324,
+    7578.049523451697
+   ],
+   "mu_q_L_over_mu_q_H": 6.085469510921197
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 27.979661016949155,
+   "ratios": [
+    1614.4538706835563,
+    7894.281845362965
+   ],
+   "mu_q_L_over_mu_q_H": 6.088604811137833
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 28.484745762711864,
+   "ratios": [
+    1672.0586711423225,
+    8220.570112442381
+   ],
+   "mu_q_L_over_mu_q_H": 6.091741255000224
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 28.989830508474576,
+   "ratios": [
+    1730.6357670408054,
+    8557.100893610761
+   ],
+   "mu_q_L_over_mu_q_H": 6.0948606583816884
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 29.494915254237288,
+   "ratios": [
+    1790.1819683852075,
+    8904.036862146917
+   ],
+   "mu_q_L_over_mu_q_H": 6.097944653858859
+  },
+  {
+   "mechanism": "remote ionised charge",
+   "parameter": 30.0,
+   "ratios": [
+    1850.6943923583838,
+    9261.514501369782
+   ],
+   "mu_q_L_over_mu_q_H": 6.100974784328079
+  },
+  {
+   "mechanism": "charged dislocations",
+   "parameter": 1.0,
+   "ratios": [
+    358.75118734774486,
+    566.5560620939397
+   ],
+   "mu_q_L_over_mu_q_H": 2.750951296452484
+  },
+  {
+   "mechanism": "background impurities",
+   "parameter": 1.0,
+   "ratios": [
+    1.052171095657059,
+    1.235151679303864
+   ],
+   "mu_q_L_over_mu_q_H": 3.418738662322725
+  },
+  {
+   "mechanism": "Mg-doped layer",
+   "parameter": 0.0,
+   "ratios": [
+    312.6716258805293,
+    1454.3518954690371
+   ],
+   "mu_q_L_over_mu_q_H": 6.052073714374701
+  },
+  {
+   "mechanism": "polarization fluctuations",
+   "parameter": 2.0,
+   "ratios": [
+    3.569680582818572,
+    12.0077117740073
+   ],
+   "mu_q_L_over_mu_q_H": 5.611693075201859
+  },
+  {
+   "mechanism": "polarization fluctuations",
+   "parameter": 5.0,
+   "ratios": [
+    18.401763270672173,
+    71.11695250318853
+   ],
+   "mu_q_L_over_mu_q_H": 6.5329605832839475
+  },
+  {
+   "mechanism": "polarization fluctuations",
+   "parameter": 10.0,
+   "ratios": [
+    56.880820376061074,
+    258.142944726382
+   ],
+   "mu_q_L_over_mu_q_H": 6.1561473012317895
+  },
+  {
+   "mechanism": "polarization fluctuations",
+   "parameter": 20.0,
+   "ratios": [
+    210.7279027335501,
+    1018.4919504983985
+   ],
+   "mu_q_L_over_mu_q_H": 6.05642847648044
+  },
+  {
+   "mechanism": "polarization fluctuations",
+   "parameter": 40.0,
+   "ratios": [
+    823.9980392582886,
+    3141.5199415760394
+   ],
+   "mu_q_L_over_mu_q_H": 5.872304130328648
+  },
+  {
+   "mechanism": "polarization fluctuations",
+   "parameter": 80.0,
+   "ratios": [
+    2702.0765844643847,
+    36315.13698988576
+   ],
+   "mu_q_L_over_mu_q_H": 6.5868317402059295
+  }
+ ],
+ "quantum_ratio_range_over_scans": [
+  1.9087694969676166,
+  7.932277801684311
+ ],
+ "singles": [
+  {
+   "mechanisms": [
+    "interface roughness"
+   ],
+   "mu_q_H": 146.33028760894044,
+   "worst_factor": 1.655592449581472,
+   "mu_tr": [
+    1147.6254318992053,
+    651.9419767628375
+   ],
+   "mu_q": [
+    510.23785268291056,
+    107.20470527689706
+   ],
+   "ratios": [
+    2.249196969344416,
+    6.081281368004778
+   ],
+   "W": [
+    [
+     0.5635810662596441,
+     0.43641893299195544
+    ],
+    [
+     0.4083851923297743,
+     0.5916148051454684
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 3.0000000000000004,
+     "amplitude": [
+      "rms height (nm)",
+      0.3741862240785302
+     ],
+     "mu_tr_alone": [
+      1147.6254318992053,
+      651.9419767628375
+     ],
+     "mu_q_alone": [
+      510.23785268291056,
+      107.20470527689706
+     ],
+     "share_of_quantum_rate": [
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "remote ionised charge"
+   ],
+   "mu_q_H": 140.51021247274215,
+   "worst_factor": 1.927696141343826,
+   "mu_tr": [
+    1218.9981976440458,
+    771.0784565375304
+   ],
+   "mu_q": [
+    458.9386438044148,
+    91.09887917156334
+   ],
+   "ratios": [
+    2.6561245475845006,
+    8.464192573493527
+   ],
+   "W": [
+    [
+     0.4676780136492198,
+     0.5323219873787366
+    ],
+    [
+     0.45243069557443505,
+     0.5475693054535213
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "remote ionised charge",
+     "parameter": 0.7050847457627119,
+     "amplitude": [
+      "sheet density (cm^-2)",
+      28522322779388.88
+     ],
+     "mu_tr_alone": [
+      1218.9981976440458,
+      771.0784565375304
+     ],
+     "mu_q_alone": [
+      458.9386438044148,
+      91.09887917156334
+     ],
+     "share_of_quantum_rate": [
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "background impurities"
+   ],
+   "mu_q_H": 121.83978804573444,
+   "worst_factor": 2.42701975201193,
+   "mu_tr": [
+    782.8531261127786,
+    268.8117900218492
+   ],
+   "mu_q": [
+    744.0359551256283,
+    217.63463915083895
+   ],
+   "ratios": [
+    1.052171095657059,
+    1.2351516793038642
+   ],
+   "W": [
+    [
+     0.21773053404672282,
+     0.7822694652048767
+    ],
+    [
+     0.2663998532881351,
+     0.7336001459634645
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "background impurities",
+     "parameter": 1.0,
+     "amplitude": [
+      "volume density (cm^-3)",
+      1.9025643729892937e+20
+     ],
+     "mu_tr_alone": [
+      782.8531261127786,
+      268.8117900218492
+     ],
+     "mu_q_alone": [
+      744.0359551256283,
+      217.63463915083895
+     ],
+     "share_of_quantum_rate": [
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "charged dislocations"
+   ],
+   "mu_q_H": 132.94460099463922,
+   "worst_factor": 17.66101094796883,
+   "mu_tr": [
+    12305.773266781001,
+    7064.40437918753
+   ],
+   "mu_q": [
+    34.301693487785336,
+    12.46902972510615
+   ],
+   "ratios": [
+    358.7511873477334,
+    566.5560620938683
+   ],
+   "W": [
+    [
+     0.4937176480979133,
+     0.5062823511536862
+    ],
+    [
+     0.32820290307711275,
+     0.6717971068326278
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "charged dislocations",
+     "parameter": 1.0,
+     "amplitude": [
+      "N f^2 (cm^-2)",
+      86188666972.02148
+     ],
+     "mu_tr_alone": [
+      12305.773266781001,
+      7064.40437918753
+     ],
+     "mu_q_alone": [
+      34.301693487785336,
+      12.46902972510615
+     ],
+     "share_of_quantum_rate": [
+      1.0,
+      1.0
+     ]
+    }
+   ]
+  }
+ ],
+ "pairs": [
+  {
+   "mechanisms": [
+    "interface roughness",
+    "charged dislocations"
+   ],
+   "mu_q_H": 115.30297216412963,
+   "worst_factor": 1.0507219322347408,
+   "mu_tr": [
+    1932.3178130468477,
+    392.41994488681877
+   ],
+   "mu_q": [
+    351.02979723147297,
+    121.15136170470281
+   ],
+   "ratios": [
+    5.504711646380993,
+    3.239088189890201
+   ],
+   "W": [
+    [
+     0.13686385713640448,
+     0.8631361421151951
+    ],
+    [
+     0.22577565061965288,
+     0.7742243486319467
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 0.8,
+     "amplitude": [
+      "rms height (nm)",
+      0.0820031267732881
+     ],
+     "mu_tr_alone": [
+      1962.5706609743945,
+      393.66895755618367
+     ],
+     "mu_q_alone": [
+      2211.694561510083,
+      601.9906603278231
+     ],
+     "share_of_quantum_rate": [
+      0.1587153141941081,
+      0.2012512314372585
+     ]
+    },
+    {
+     "mechanism": "charged dislocations",
+     "parameter": 1.0,
+     "amplitude": [
+      "N f^2 (cm^-2)",
+      7085405756.480388
+     ],
+     "mu_tr_alone": [
+      149690.5371938351,
+      85933.20090902374
+     ],
+     "mu_q_alone": [
+      417.25447182627715,
+      151.67643002780588
+     ],
+     "share_of_quantum_rate": [
+      0.8412846858058919,
+      0.7987487685627416
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "charged dislocations",
+    "background impurities"
+   ],
+   "mu_q_H": 121.86363532551003,
+   "worst_factor": 1.2815154256107186,
+   "mu_tr": [
+    1482.6196876206438,
+    511.32611023403814
+   ],
+   "mu_q": [
+    362.3914852753226,
+    124.0594414638774
+   ],
+   "ratios": [
+    4.091210052836205,
+    4.121621895121314
+   ],
+   "W": [
+    [
+     0.22026179102851984,
+     0.7797382099994365
+    ],
+    [
+     0.26644682016296883,
+     0.7335531808649876
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "charged dislocations",
+     "parameter": 1.0,
+     "amplitude": [
+      "N f^2 (cm^-2)",
+      6079298250.876728
+     ],
+     "mu_tr_alone": [
+      174463.91839237118,
+      100154.9144764768
+     ],
+     "mu_q_alone": [
+      486.3089643888959,
+      176.7784711477882
+     ],
+     "share_of_quantum_rate": [
+      0.7451877547244269,
+      0.7017791287501449
+     ]
+    },
+    {
+     "mechanism": "background impurities",
+     "parameter": 1.0,
+     "amplitude": [
+      "volume density (cm^-3)",
+      9.953494773787478e+19
+     ],
+     "mu_tr_alone": [
+      1496.3874507151763,
+      513.8212721846245
+     ],
+     "mu_q_alone": [
+      1422.1902282733906,
+      415.99852131052927
+     ],
+     "share_of_quantum_rate": [
+      0.25481224527557317,
+      0.29822087124985497
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "interface roughness",
+    "polarization fluctuations"
+   ],
+   "mu_q_H": 115.37327697639715,
+   "worst_factor": 1.3139842870624152,
+   "mu_tr": [
+    1921.6845112929382,
+    386.6012155821607
+   ],
+   "mu_q": [
+    483.5462176389688,
+    89.82212887353595
+   ],
+   "ratios": [
+    3.974148573999869,
+    4.30407540358425
+   ],
+   "W": [
+    [
+     0.13512411101146427,
+     0.8648758882401353
+    ],
+    [
+     0.22632830365409973,
+     0.7736716973738567
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 0.8,
+     "amplitude": [
+      "rms height (nm)",
+      0.08270844398185064
+     ],
+     "mu_tr_alone": [
+      1929.2407471922288,
+      386.9833626499864
+     ],
+     "mu_q_alone": [
+      2174.1338303153057,
+      591.7671829237364
+     ],
+     "share_of_quantum_rate": [
+      0.22240867185661806,
+      0.15178626234349957
+     ]
+    },
+    {
+     "mechanism": "polarization fluctuations",
+     "parameter": 40.0,
+     "amplitude": [
+      "rms of the interface charge (cm^-2)",
+      2327266746191.711
+     ],
+     "mu_tr_alone": [
+      512404.2936237268,
+      332673.2361476317
+     ],
+     "mu_q_alone": [
+      621.851350623353,
+      105.89563088391179
+     ],
+     "share_of_quantum_rate": [
+      0.7775913281433819,
+      0.8482137376565003
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "remote ionised charge",
+    "background impurities"
+   ],
+   "mu_q_H": 121.80908130568406,
+   "worst_factor": 1.330777182673127,
+   "mu_tr": [
+    1453.92173124549,
+    499.98185989482823
+   ],
+   "mu_q": [
+    489.72600322371073,
+    95.69574783387928
+   ],
+   "ratios": [
+    2.96884731804067,
+    5.224702990594311
+   ],
+   "W": [
+    [
+     0.21983188602803239,
+     0.780168114999924
+    ],
+    [
+     0.26609593462012526,
+     0.7339040646314743
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "remote ionised charge",
+     "parameter": 18.38305084745763,
+     "amplitude": [
+      "sheet density (cm^-2)",
+      363027132282060.44
+     ],
+     "mu_tr_alone": [
+      537238.3539169286,
+      414967.8459195751
+     ],
+     "mu_q_alone": [
+      757.4436145819625,
+      125.2758233121743
+     ],
+     "share_of_quantum_rate": [
+      0.6465511013568889,
+      0.7638804144628565
+     ]
+    },
+    {
+     "mechanism": "background impurities",
+     "parameter": 1.0,
+     "amplitude": [
+      "volume density (cm^-3)",
+      1.0216608492178578e+20
+     ],
+     "mu_tr_alone": [
+      1457.8501937954395,
+      500.5885613866684
+     ],
+     "mu_q_alone": [
+      1385.5638116394389,
+      405.28509151912573
+     ],
+     "share_of_quantum_rate": [
+      0.3534488986431111,
+      0.23611958553714363
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "interface roughness",
+    "remote ionised charge"
+   ],
+   "mu_q_H": 115.34829923979395,
+   "worst_factor": 1.3309535191664679,
+   "mu_tr": [
+    1917.750680314428,
+    386.41468484654746
+   ],
+   "mu_q": [
+    489.79089505326016,
+    88.88247320845534
+   ],
+   "ratios": [
+    3.915447795545262,
+    4.347478989927432
+   ],
+   "W": [
+    [
+     0.13660185871344765,
+     0.8633981405381519
+    ],
+    [
+     0.22609295236009075,
+     0.7739070468915088
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 0.8,
+     "amplitude": [
+      "rms height (nm)",
+      0.08272248132512054
+     ],
+     "mu_tr_alone": [
+      1928.586049305146,
+      386.85203783205895
+     ],
+     "mu_q_alone": [
+      2173.3960266860727,
+      591.5663636507301
+     ],
+     "share_of_quantum_rate": [
+      0.22535740796401393,
+      0.15024936958879043
+     ]
+    },
+    {
+     "mechanism": "remote ionised charge",
+     "parameter": 16.36271186440678,
+     "amplitude": [
+      "sheet density (cm^-2)",
+      388091978954200.0
+     ],
+     "mu_tr_alone": [
+      357561.206834584,
+      276395.771795046
+     ],
+     "mu_q_alone": [
+      632.2798411664239,
+      104.59830216947707
+     ],
+     "share_of_quantum_rate": [
+      0.774642592035986,
+      0.8497506304112097
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "interface roughness",
+    "Mg-doped layer"
+   ],
+   "mu_q_H": 115.26784653623783,
+   "worst_factor": 1.3313350549363034,
+   "mu_tr": [
+    1914.2623092264082,
+    387.1126262852627
+   ],
+   "mu_q": [
+    489.93130021655963,
+    88.796452940532
+   ],
+   "ratios": [
+    3.907205578374489,
+    4.359550561603136
+   ],
+   "W": [
+    [
+     0.14057572528258788,
+     0.8594242721926548
+    ],
+    [
+     0.22537033927960692,
+     0.7746296599719926
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 0.8,
+     "amplitude": [
+      "rms height (nm)",
+      0.08260911129783367
+     ],
+     "mu_tr_alone": [
+      1933.8831377113447,
+      387.91457245178873
+     ],
+     "mu_q_alone": [
+      2179.3655144873483,
+      593.1911702428553
+     ],
+     "share_of_quantum_rate": [
+      0.22480455754656012,
+      0.14969280966231902
+     ]
+    },
+    {
+     "mechanism": "Mg-doped layer",
+     "parameter": 0.0,
+     "amplitude": [
+      "ionized acceptors (cm^-2)",
+      294363114549947.5
+     ],
+     "mu_tr_alone": [
+      197611.60582117285,
+      151876.0409326061
+     ],
+     "mu_q_alone": [
+      632.0100369346355,
+      104.42867465964675
+     ],
+     "share_of_quantum_rate": [
+      0.7751954424534399,
+      0.850307190337681
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "interface roughness",
+    "interface roughness"
+   ],
+   "mu_q_H": 113.2892578164159,
+   "worst_factor": 1.3526278933777427,
+   "mu_tr": [
+    1822.6724129109848,
+    403.67405477864213
+   ],
+   "mu_q": [
+    497.76706476300933,
+    86.51362846265216
+   ],
+   "ratios": [
+    3.661697492538549,
+    4.666016926488152
+   ],
+   "W": [
+    [
+     0.238210398961769,
+     0.7617896002898306
+    ],
+    [
+     0.20766491815038535,
+     0.7923350793248574
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 0.8,
+     "amplitude": [
+      "rms height (nm)",
+      0.07976615020344532
+     ],
+     "mu_tr_alone": [
+      2074.1915604736555,
+      416.05881796790555
+     ],
+     "mu_q_alone": [
+      2337.4843439023302,
+      636.2287850140366
+     ],
+     "share_of_quantum_rate": [
+      0.21294990319892732,
+      0.13597880275213184
+     ]
+    },
+    {
+     "mechanism": "interface roughness",
+     "parameter": 12.0,
+     "amplitude": [
+      "rms height (nm)",
+      0.7749289100321444
+     ],
+     "mu_tr_alone": [
+      15703.899782013023,
+      11461.292649143877
+     ],
+     "mu_q_alone": [
+      632.4464818518665,
+      100.1290578729093
+     ],
+     "share_of_quantum_rate": [
+      0.7870500968010726,
+      0.864021197247868
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "interface roughness",
+    "background impurities"
+   ],
+   "mu_q_H": 120.87030203131097,
+   "worst_factor": 1.3656664824040552,
+   "mu_tr": [
+    1410.620229218072,
+    503.82137137943283
+   ],
+   "mu_q": [
+    502.5652655246923,
+    94.64591128953253
+   ],
+   "ratios": [
+    2.806839879284823,
+    5.3232238404698355
+   ],
+   "W": [
+    [
+     0.275023150919651,
+     0.7249768501083054
+    ],
+    [
+     0.2572159498726023,
+     0.7427840493789972
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "interface roughness",
+     "parameter": 12.0,
+     "amplitude": [
+      "rms height (nm)",
+      0.7023126673082405
+     ],
+     "mu_tr_alone": [
+      19119.2229822364,
+      13953.923093334859
+     ],
+     "mu_q_alone": [
+      769.9925164261806,
+      121.90537452780451
+     ],
+     "share_of_quantum_rate": [
+      0.6526885064510538,
+      0.7763883393668214
+     ]
+    },
+    {
+     "mechanism": "background impurities",
+     "parameter": 1.0,
+     "amplitude": [
+      "volume density (cm^-3)",
+      9.78272779410612e+19
+     ],
+     "mu_tr_alone": [
+      1522.508341612873,
+      522.7905196781369
+     ],
+     "mu_q_alone": [
+      1447.0159348581028,
+      423.2601780315626
+     ],
+     "share_of_quantum_rate": [
+      0.34731149354894625,
+      0.22361166063317864
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "remote ionised charge",
+    "charged dislocations"
+   ],
+   "mu_q_H": 140.47453540080951,
+   "worst_factor": 1.59660722583176,
+   "mu_tr": [
+    1207.164958873321,
+    638.642890332704
+   ],
+   "mu_q": [
+    403.16671820062294,
+    126.40074416968989
+   ],
+   "ratios": [
+    2.994207865820447,
+    5.0525247657983865
+   ],
+   "W": [
+    [
+     0.30734681999433633,
+     0.6926531810336201
+    ],
+    [
+     0.38466319374208524,
+     0.6153368055095143
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "remote ionised charge",
+     "parameter": 0.2,
+     "amplitude": [
+      "sheet density (cm^-2)",
+      5661391934028.882
+     ],
+     "mu_tr_alone": [
+      1212.6985238434909,
+      641.3184580285472
+     ],
+     "mu_q_alone": [
+      883.151020667898,
+      237.93015383407217
+     ],
+     "share_of_quantum_rate": [
+      0.4565093724238932,
+      0.5312514707902021
+     ]
+    },
+    {
+     "mechanism": "charged dislocations",
+     "parameter": 1.0,
+     "amplitude": [
+      "N f^2 (cm^-2)",
+      3985410964.638006
+     ],
+     "mu_tr_alone": [
+      266125.17588136834,
+      152775.10946699654
+     ],
+     "mu_q_alone": [
+      741.8098817981291,
+      269.65576699039974
+     ],
+     "share_of_quantum_rate": [
+      0.5434906275761069,
+      0.4687485292097979
+     ]
+    }
+   ]
+  },
+  {
+   "mechanisms": [
+    "remote ionised charge",
+    "remote ionised charge"
+   ],
+   "mu_q_H": 140.47236121594653,
+   "worst_factor": 1.6464864861725654,
+   "mu_tr": [
+    1153.9724230696568,
+    610.4686276199233
+   ],
+   "mu_q": [
+    508.4502117914883,
+    109.684454105842
+   ],
+   "ratios": [
+    2.2695878501136164,
+    5.565680502278296
+   ],
+   "W": [
+    [
+     0.30718313581701295,
+     0.6928168634345866
+    ],
+    [
+     0.3846571772214702,
+     0.6153428238064862
+    ]
+   ],
+   "components": [
+    {
+     "mechanism": "remote ionised charge",
+     "parameter": 0.2,
+     "amplitude": [
+      "sheet density (cm^-2)",
+      5942227643815.464
+     ],
+     "mu_tr_alone": [
+      1155.3851607219715,
+      611.0090967661705
+     ],
+     "mu_q_alone": [
+      841.4124070359974,
+      226.6853332656164
+     ],
+     "share_of_quantum_rate": [
+      0.6042818094192135,
+      0.4838621560810035
+     ]
+    },
+    {
+     "mechanism": "remote ionised charge",
+     "parameter": 18.38305084745763,
+     "amplitude": [
+      "sheet density (cm^-2)",
+      214006505624947.53
+     ],
+     "mu_tr_alone": [
+      911337.2437199622,
+      703925.2692508053
+     ],
+     "mu_q_alone": [
+      1284.8795529092247,
+      212.51000173328902
+     ],
+     "share_of_quantum_rate": [
+      0.3957181905807864,
+      0.5161378439189964
+     ]
+    }
+   ]
+  }
+ ],
+ "revised_ratio_target": [
+  5.163043478260869,
+  3.4691213287252856
+ ],
+ "closest_single_mechanism_ratio": {
+  "factor": 2.1067684322347637,
+  "mechanism": "interface roughness",
+  "parameter": 3.2,
+  "ratios": [
+   2.5013888385227006,
+   7.3086353029507505
+  ]
+ },
+ "best_pair_trajectory": {
+  "mechanisms": [
+   "interface roughness",
+   "charged dislocations"
+  ],
+  "parameters": [
+   0.8,
+   1.0
+  ],
+  "points": [
+   {
+    "weight": 0.0001,
+    "ratios": [
+     0.8874490952892761,
+     0.6539942174327714
+    ]
+   },
+   {
+    "weight": 0.0001122018454301963,
+    "ratios": [
+     0.8874598907039022,
+     0.6540001873582846
+    ]
+   },
+   {
+    "weight": 0.00012589254117941674,
+    "ratios": [
+     0.8874720033574074,
+     0.6540068857247777
+    ]
+   },
+   {
+    "weight": 0.0001412537544622754,
+    "ratios": [
+     0.8874855939770034,
+     0.6540144014154665
+    ]
+   },
+   {
+    "weight": 0.00015848931924611142,
+    "ratios": [
+     0.8875008429015263,
+     0.6540228341589518
+    ]
+   },
+   {
+    "weight": 0.00017782794100389227,
+    "ratios": [
+     0.8875179524743991,
+     0.6540322958525566
+    ]
+   },
+   {
+    "weight": 0.00019952623149688788,
+    "ratios": [
+     0.8875371497285786,
+     0.6540429120471299
+    ]
+   },
+   {
+    "weight": 0.000223872113856834,
+    "ratios": [
+     0.8875586893991083,
+     0.6540548236130286
+    ]
+   },
+   {
+    "weight": 0.00025118864315095795,
+    "ratios": [
+     0.8875828573032507,
+     0.6540681886093744
+    ]
+   },
+   {
+    "weight": 0.0002818382931264455,
+    "ratios": [
+     0.8876099741330534,
+     0.6540831843813973
+    ]
+   },
+   {
+    "weight": 0.00031622776601683794,
+    "ratios": [
+     0.8876403997106644,
+     0.6541000099136905
+    ]
+   },
+   {
+    "weight": 0.0003548133892335753,
+    "ratios": [
+     0.8876745377628616,
+     0.6541188884706052
+    ]
+   },
+   {
+    "weight": 0.00039810717055349735,
+    "ratios": [
+     0.8877128412781492,
+     0.6541400705588187
+    ]
+   },
+   {
+    "weight": 0.00044668359215096305,
+    "ratios": [
+     0.8877558185174943,
+     0.6541638372513925
+    ]
+   },
+   {
+    "weight": 0.0005011872336272725,
+    "ratios": [
+     0.8878040397584596,
+     0.6541905039174176
+    ]
+   },
+   {
+    "weight": 0.0005623413251903491,
+    "ratios": [
+     0.8878581448622126,
+     0.6542204244067475
+    ]
+   },
+   {
+    "weight": 0.000630957344480193,
+    "ratios": [
+     0.8879188517638058,
+     0.654253995745338
+    ]
+   },
+   {
+    "weight": 0.000707945784384138,
+    "ratios": [
+     0.8879869659983773,
+     0.6542916634034995
+    ]
+   },
+   {
+    "weight": 0.0007943282347242813,
+    "ratios": [
+     0.888063391389656,
+     0.6543339272069667
+    ]
+   },
+   {
+    "weight": 0.0008912509381337459,
+    "ratios": [
+     0.8881491420425791,
+     0.6543813479692194
+    ]
+   },
+   {
+    "weight": 0.001,
+    "ratios": [
+     0.8882453557991272,
+     0.6544345549330541
+    ]
+   },
+   {
+    "weight": 0.001122018454301963,
+    "ratios": [
+     0.8883533093358845,
+     0.6544942541201535
+    ]
+   },
+   {
+    "weight": 0.0012589254117941675,
+    "ratios": [
+     0.8884744351036166,
+     0.6545612376994367
+    ]
+   },
+   {
+    "weight": 0.0014125375446227555,
+    "ratios": [
+     0.8886103403335806,
+     0.6546363944984992
+    ]
+   },
+   {
+    "weight": 0.001584893192461114,
+    "ratios": [
+     0.8887628283626908,
+     0.6547207217976111
+    ]
+   },
+   {
+    "weight": 0.0017782794100389228,
+    "ratios": [
+     0.8889339225604195,
+     0.6548153385627671
+    ]
+   },
+   {
+    "weight": 0.001995262314968879,
+    "ratios": [
+     0.8891258931748032,
+     0.6549215002933627
+    ]
+   },
+   {
+    "weight": 0.00223872113856834,
+    "ratios": [
+     0.8893412874536324,
+     0.6550406156815051
+    ]
+   },
+   {
+    "weight": 0.002511886431509582,
+    "ratios": [
+     0.8895829634403224,
+     0.6551742653039916
+    ]
+   },
+   {
+    "weight": 0.002818382931264455,
+    "ratios": [
+     0.8898541278926732,
+     0.6553242225949637
+    ]
+   },
+   {
+    "weight": 0.0031622776601683794,
+    "ratios": [
+     0.8901583788273687,
+     0.6554924773774928
+    ]
+   },
+   {
+    "weight": 0.0035481338923357532,
+    "ratios": [
+     0.8904997532543762,
+     0.6556812622663092
+    ]
+   },
+   {
+    "weight": 0.003981071705534973,
+    "ratios": [
+     0.8908827807341615,
+     0.6558930822919632
+    ]
+   },
+   {
+    "weight": 0.004466835921509635,
+    "ratios": [
+     0.8913125434677847,
+     0.6561307481394496
+    ]
+   },
+   {
+    "weight": 0.005011872336272725,
+    "ratios": [
+     0.89179474371647,
+     0.6563974134422634
+    ]
+   },
+   {
+    "weight": 0.005623413251903491,
+    "ratios": [
+     0.892335779444294,
+     0.6566966166266492
+    ]
+   },
+   {
+    "weight": 0.006309573444801929,
+    "ratios": [
+     0.8929428291865146,
+     0.6570323278611557
+    ]
+   },
+   {
+    "weight": 0.00707945784384138,
+    "ratios": [
+     0.8936239472681555,
+     0.6574090017343174
+    ]
+   },
+   {
+    "weight": 0.00794328234724282,
+    "ratios": [
+     0.8943881706344127,
+     0.6578316363592474
+    ]
+   },
+   {
+    "weight": 0.008912509381337459,
+    "ratios": [
+     0.895245638708029,
+     0.6583058396891529
+    ]
+   },
+   {
+    "weight": 0.01,
+    "ratios": [
+     0.8962077278610167,
+     0.6588379039234014
+    ]
+   },
+   {
+    "weight": 0.01122018454301964,
+    "ratios": [
+     0.8972872022812383,
+     0.6594348889910245
+    ]
+   },
+   {
+    "weight": 0.012589254117941675,
+    "ratios": [
+     0.8984983832309112,
+     0.6601047162189023
+    ]
+   },
+   {
+    "weight": 0.01412537544622754,
+    "ratios": [
+     0.8998573389368972,
+     0.6608562734268595
+    ]
+   },
+   {
+    "weight": 0.01584893192461114,
+    "ratios": [
+     0.9013820976248305,
+     0.66169953284337
+    ]
+   },
+   {
+    "weight": 0.01778279410038923,
+    "ratios": [
+     0.9030928865142619,
+     0.6626456834054555
+    ]
+   },
+   {
+    "weight": 0.01995262314968881,
+    "ratios": [
+     0.9050123999339728,
+     0.6637072791969633
+    ]
+   },
+   {
+    "weight": 0.0223872113856834,
+    "ratios": [
+     0.9071661000998835,
+     0.6648984059931934
+    ]
+   },
+   {
+    "weight": 0.025118864315095822,
+    "ratios": [
+     0.9095825545274268,
+     0.6662348681196711
+    ]
+   },
+   {
+    "weight": 0.02818382931264455,
+    "ratios": [
+     0.9122938145313874,
+     0.6677343981018524
+    ]
+   },
+   {
+    "weight": 0.03162277660168379,
+    "ratios": [
+     0.9153358398051431,
+     0.6694168918842757
+    ]
+   },
+   {
+    "weight": 0.035481338923357565,
+    "ratios": [
+     0.9187489746747872,
+     0.6713046727360753
+    ]
+   },
+   {
+    "weight": 0.039810717055349734,
+    "ratios": [
+     0.9225784822993626,
+     0.6734227873393096
+    ]
+   },
+   {
+    "weight": 0.04466835921509635,
+    "ratios": [
+     0.9268751438448464,
+     0.6757993379822071
+    ]
+   },
+   {
+    "weight": 0.05011872336272725,
+    "ratios": [
+     0.9316959305059269,
+     0.6784658552567508
+    ]
+   },
+   {
+    "weight": 0.056234132519034905,
+    "ratios": [
+     0.9371047571964596,
+     0.6814577161952757
+    ]
+   },
+   {
+    "weight": 0.06309573444801936,
+    "ratios": [
+     0.9431733277882373,
+     0.6848146133808972
+    ]
+   },
+   {
+    "weight": 0.0707945784384138,
+    "ratios": [
+     0.9499820829611322,
+     0.6885810812394638
+    ]
+   },
+   {
+    "weight": 0.07943282347242822,
+    "ratios": [
+     0.9576212630497773,
+     0.6928070864750532
+    ]
+   },
+   {
+    "weight": 0.08912509381337459,
+    "ratios": [
+     0.9661920997482162,
+     0.6975486904565887
+    ]
+   },
+   {
+    "weight": 0.1,
+    "ratios": [
+     0.9758081521813294,
+     0.7028687923108766
+    ]
+   },
+   {
+    "weight": 0.11220184543019641,
+    "ratios": [
+     0.9865968046889004,
+     0.708837962539426
+    ]
+   },
+   {
+    "weight": 0.12589254117941676,
+    "ratios": [
+     0.9987009457151235,
+     0.7155353781664594
+    ]
+   },
+   {
+    "weight": 0.14125375446227553,
+    "ratios": [
+     1.0122808494751634,
+     0.7230498717587419
+    ]
+   },
+   {
+    "weight": 0.1584893192461114,
+    "ratios": [
+     1.027516284604696,
+     0.7314811081511716
+    ]
+   },
+   {
+    "weight": 0.1778279410038923,
+    "ratios": [
+     1.0446088768136466,
+     0.7409409043843862
+    ]
+   },
+   {
+    "weight": 0.19952623149688808,
+    "ratios": [
+     1.0637847556885682,
+     0.7515547102329205
+    ]
+   },
+   {
+    "weight": 0.223872113856834,
+    "ratios": [
+     1.0852975192478114,
+     0.7634632687980623
+    ]
+   },
+   {
+    "weight": 0.25118864315095824,
+    "ratios": [
+     1.109431553679424,
+     0.7768244789843849
+    ]
+   },
+   {
+    "weight": 0.2818382931264455,
+    "ratios": [
+     1.1365057499139979,
+     0.7918154843017644
+    ]
+   },
+   {
+    "weight": 0.31622776601683794,
+    "ratios": [
+     1.1668776633338966,
+     0.8086350153672508
+    ]
+   },
+   {
+    "weight": 0.3548133892335757,
+    "ratios": [
+     1.200948168026141,
+     0.8275060167586322
+    ]
+   },
+   {
+    "weight": 0.3981071705534973,
+    "ratios": [
+     1.2391666625763362,
+     0.8486785925325931
+    ]
+   },
+   {
+    "weight": 0.4466835921509635,
+    "ratios": [
+     1.2820368904994903,
+     0.8724333088075858
+    ]
+   },
+   {
+    "weight": 0.5011872336272725,
+    "ratios": [
+     1.330123445028489,
+     0.8990848963715186
+    ]
+   },
+   {
+    "weight": 0.5623413251903491,
+    "ratios": [
+     1.3840590351421398,
+     0.9289864013580706
+    ]
+   },
+   {
+    "weight": 0.6309573444801936,
+    "ratios": [
+     1.4445525974091693,
+     0.9625338376981674
+    ]
+   },
+   {
+    "weight": 0.707945784384138,
+    "ratios": [
+     1.512398346432842,
+     1.0001714013547982
+    ]
+   },
+   {
+    "weight": 0.7943282347242822,
+    "ratios": [
+     1.588485865360149,
+     1.0423973133542195
+    ]
+   },
+   {
+    "weight": 0.8912509381337459,
+    "ratios": [
+     1.6738113469964992,
+     1.0897703664032188
+    ]
+   },
+   {
+    "weight": 1.0,
+    "ratios": [
+     1.7694901054281909,
+     1.1429172585029648
+    ]
+   },
+   {
+    "weight": 1.122018454301963,
+    "ratios": [
+     1.8767704875349975,
+     1.2025408065103989
+    ]
+   },
+   {
+    "weight": 1.2589254117941688,
+    "ratios": [
+     1.997049323141828,
+     1.2694291431356048
+    ]
+   },
+   {
+    "weight": 1.4125375446227555,
+    "ratios": [
+     2.1318890614941868,
+     1.3444660124755614
+    ]
+   },
+   {
+    "weight": 1.584893192461114,
+    "ratios": [
+     2.2830367498228803,
+     1.4286422919465473
+    ]
+   },
+   {
+    "weight": 1.7782794100389228,
+    "ratios": [
+     2.4524450164305063,
+     1.5230688824586376
+    ]
+   },
+   {
+    "weight": 1.9952623149688788,
+    "ratios": [
+     2.6422952252617073,
+     1.6289911239355788
+    ]
+   },
+   {
+    "weight": 2.2387211385683425,
+    "ratios": [
+     2.8550229703825614,
+     1.7478049098640964
+    ]
+   },
+   {
+    "weight": 2.5118864315095824,
+    "ratios": [
+     3.0933460760150284,
+     1.8810746924756079
+    ]
+   },
+   {
+    "weight": 2.818382931264455,
+    "ratios": [
+     3.3602952592747615,
+     2.0305535894009914
+    ]
+   },
+   {
+    "weight": 3.1622776601683795,
+    "ratios": [
+     3.6592475967116482,
+     2.198205823124412
+    ]
+   },
+   {
+    "weight": 3.5481338923357533,
+    "ratios": [
+     3.9939629099021645,
+     2.3862317461536695
+    ]
+   },
+   {
+    "weight": 3.9810717055349776,
+    "ratios": [
+     4.368623146953952,
+     2.597095727283642
+    ]
+   },
+   {
+    "weight": 4.4668359215096345,
+    "ratios": [
+     4.787874782571805,
+     2.833557197288915
+    ]
+   },
+   {
+    "weight": 5.011872336272725,
+    "ratios": [
+     5.256874185406728,
+     3.09870517530282
+    ]
+   },
+   {
+    "weight": 5.62341325190349,
+    "ratios": [
+     5.781335803222998,
+     3.3959966192580375
+    ]
+   },
+   {
+    "weight": 6.309573444801943,
+    "ratios": [
+     6.36758288876755,
+     3.729298964020198
+    ]
+   },
+   {
+    "weight": 7.0794578438413875,
+    "ratios": [
+     7.02260032627951,
+     4.102937227799548
+    ]
+   },
+   {
+    "weight": 7.943282347242821,
+    "ratios": [
+     7.754088913991501,
+     4.521746079146556
+    ]
+   },
+   {
+    "weight": 8.91250938133746,
+    "ratios": [
+     8.570520205109007,
+     4.991127260768712
+    ]
+   },
+   {
+    "weight": 10.0,
+    "ratios": [
+     9.481190702054981,
+     5.517112759201838
+    ]
+   },
+   {
+    "weight": 11.220184543019652,
+    "ratios": [
+     10.496273830339113,
+     6.106434086693107
+    ]
+   },
+   {
+    "weight": 12.589254117941687,
+    "ratios": [
+     11.626867684878563,
+     6.7665979979437285
+    ]
+   },
+   {
+    "weight": 14.125375446227554,
+    "ratios": [
+     12.885036041281062,
+     7.505968892559476
+    ]
+   },
+   {
+    "weight": 15.848931924611142,
+    "ratios": [
+     14.283839560113764,
+     8.333858045313287
+    ]
+   },
+   {
+    "weight": 17.78279410038923,
+    "ratios": [
+     15.837353492462027,
+     9.260619649670966
+    ]
+   },
+   {
+    "weight": 19.95262314968883,
+    "ratios": [
+     17.56066753788691,
+     10.297753442090215
+    ]
+   },
+   {
+    "weight": 22.387211385683422,
+    "ratios": [
+     19.469862840688382,
+     11.458013379332938
+    ]
+   },
+   {
+    "weight": 25.11886431509582,
+    "ratios": [
+     21.581960481488778,
+     12.755521449629311
+    ]
+   },
+   {
+    "weight": 28.183829312644548,
+    "ratios": [
+     23.914835290744307,
+     14.205885189544258
+    ]
+   },
+   {
+    "weight": 31.622776601683793,
+    "ratios": [
+     26.487088461290554,
+     15.826316828264194
+    ]
+   },
+   {
+    "weight": 35.481338923357605,
+    "ratios": [
+     29.317872372015135,
+     17.635751165183372
+    ]
+   },
+   {
+    "weight": 39.81071705534978,
+    "ratios": [
+     32.4266613773202,
+     19.654958281546268
+    ]
+   },
+   {
+    "weight": 44.668359215096345,
+    "ratios": [
+     35.83296320421122,
+     21.906645973034646
+    ]
+   },
+   {
+    "weight": 50.118723362727245,
+    "ratios": [
+     39.555967170673014,
+     24.415545356816857
+    ]
+   },
+   {
+    "weight": 56.23413251903491,
+    "ratios": [
+     43.61412782091948,
+     27.208471458002457
+    ]
+   },
+   {
+    "weight": 63.09573444801943,
+    "ratios": [
+     48.0246858510488,
+     30.314348744260244
+    ]
+   },
+   {
+    "weight": 70.79457843841388,
+    "ratios": [
+     52.80313238753377,
+     33.76418961443098
+    ]
+   },
+   {
+    "weight": 79.43282347242821,
+    "ratios": [
+     57.96262768900172,
+     37.59101186277388
+    ]
+   },
+   {
+    "weight": 89.12509381337459,
+    "ratios": [
+     63.51339093610647,
+     41.829679296379
+    ]
+   },
+   {
+    "weight": 100.0,
+    "ratios": [
+     69.4620835566603,
+     46.51664820609111
+    ]
+   },
+   {
+    "weight": 112.20184543019653,
+    "ratios": [
+     75.81121393457147,
+     51.689601578281675
+    ]
+   },
+   {
+    "weight": 125.89254117941688,
+    "ratios": [
+     82.55859566003039,
+     57.38695315027633
+    ]
+   },
+   {
+    "weight": 141.25375446227554,
+    "ratios": [
+     89.6968939072849,
+     63.64720507220116
+    ]
+   },
+   {
+    "weight": 158.48931924611142,
+    "ratios": [
+     97.2132943232467,
+     70.50814647821937
+    ]
+   },
+   {
+    "weight": 177.82794100389228,
+    "ratios": [
+     105.08932540288903,
+     78.00588609528596
+    ]
+   },
+   {
+    "weight": 199.52623149688827,
+    "ratios": [
+     113.30085848105314,
+     86.17372043090214
+    ]
+   },
+   {
+    "weight": 223.87211385683423,
+    "ratios": [
+     121.81829942005264,
+     95.0408501964982
+    ]
+   },
+   {
+    "weight": 251.18864315095823,
+    "ratios": [
+     130.60697359427726,
+     104.63097126832722
+    ]
+   },
+   {
+    "weight": 281.8382931264455,
+    "ratios": [
+     139.6276921484757,
+     114.96078211196915
+    ]
+   },
+   {
+    "weight": 316.2277660168379,
+    "ratios": [
+     148.83747436941073,
+     126.0384662005647
+    ]
+   },
+   {
+    "weight": 354.81338923357606,
+    "ratios": [
+     158.19039008521685,
+     137.86222406830632
+    ]
+   },
+   {
+    "weight": 398.1071705534977,
+    "ratios": [
+     167.63847877920065,
+     150.41894336219303
+    ]
+   },
+   {
+    "weight": 446.6835921509635,
+    "ratios": [
+     177.1326995145223,
+     163.68310440382027
+    ]
+   },
+   {
+    "weight": 501.18723362727246,
+    "ratios": [
+     186.62386798534058,
+     177.61602112596208
+    ]
+   },
+   {
+    "weight": 562.341325190349,
+    "ratios": [
+     196.06354339218825,
+     192.16551088198912
+    ]
+   },
+   {
+    "weight": 630.9573444801943,
+    "ratios": [
+     205.40483704933595,
+     207.2660703179976
+    ]
+   },
+   {
+    "weight": 707.9457843841387,
+    "ratios": [
+     214.6031249398963,
+     222.8396081209677
+    ]
+   },
+   {
+    "weight": 794.3282347242822,
+    "ratios": [
+     223.61665609770412,
+     238.79675027670586
+    ]
+   },
+   {
+    "weight": 891.2509381337459,
+    "ratios": [
+     232.4070563218976,
+     255.03869224651947
+    ]
+   },
+   {
+    "weight": 1000.0,
+    "ratios": [
+     240.93973155012446,
+     271.4595292697562
+    ]
+   },
+   {
+    "weight": 1122.0184543019652,
+    "ratios": [
+     249.18417716726518,
+     287.9489557238049
+    ]
+   },
+   {
+    "weight": 1258.9254117941687,
+    "ratios": [
+     257.114199177876,
+     304.3951921280147
+    ]
+   },
+   {
+    "weight": 1412.5375446227554,
+    "ratios": [
+     264.7080514966088,
+     320.6879782231482
+    ]
+   },
+   {
+    "weight": 1584.893192461114,
+    "ratios": [
+     271.9484916981615,
+     336.72146532304475
+    ]
+   },
+   {
+    "weight": 1778.2794100389228,
+    "ratios": [
+     278.82275633770195,
+     352.3968515007176
+    ]
+   },
+   {
+    "weight": 1995.262314968883,
+    "ratios": [
+     285.322456967994,
+     367.62462762639336
+    ]
+   },
+   {
+    "weight": 2238.721138568342,
+    "ratios": [
+     291.4433993684014,
+     382.32633742377584
+    ]
+   },
+   {
+    "weight": 2511.886431509582,
+    "ratios": [
+     297.18533100248095,
+     396.4357959052188
+    ]
+   },
+   {
+    "weight": 2818.382931264455,
+    "ratios": [
+     302.55162481063365,
+     409.89975274311644
+    ]
+   },
+   {
+    "weight": 3162.2776601683795,
+    "ratios": [
+     307.5489105025237,
+     422.6780257072037
+    ]
+   },
+   {
+    "weight": 3548.1338923357603,
+    "ratios": [
+     312.1866669817368,
+     434.7431607077623
+    ]
+   },
+   {
+    "weight": 3981.0717055349774,
+    "ratios": [
+     316.47679101353066,
+     446.0796971229515
+    ]
+   },
+   {
+    "weight": 4466.835921509635,
+    "ratios": [
+     320.43315756496236,
+     456.68312934890196
+    ]
+   },
+   {
+    "weight": 5011.872336272725,
+    "ratios": [
+     324.07118642856324,
+     466.5586585516006
+    ]
+   },
+   {
+    "weight": 5623.413251903491,
+    "ratios": [
+     327.40742798431137,
+     475.71982401193486
+    ]
+   },
+   {
+    "weight": 6309.573444801943,
+    "ratios": [
+     330.45917854756215,
+     484.1870932984122
+    ]
+   },
+   {
+    "weight": 7079.457843841388,
+    "ratios": [
+     333.2441330058298,
+     491.98647695326383
+    ]
+   },
+   {
+    "weight": 7943.282347242822,
+    "ratios": [
+     335.78007966442544,
+     499.1482183944395
+    ]
+   },
+   {
+    "weight": 8912.509381337459,
+    "ratios": [
+     338.08463963129566,
+     505.7055949313283
+    ]
+   },
+   {
+    "weight": 10000.0,
+    "ratios": [
+     340.175050836268,
+     511.6938522707319
+    ]
+   }
+  ]
+ }
+}

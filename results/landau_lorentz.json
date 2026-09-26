@@ -1,0 +1,258 @@
+{
+ "inputs_cm2Vs": [
+  368.0,
+  1000.0,
+  1800.0
+ ],
+ "mass_for_conversion": 0.53,
+ "wells": {
+  "well_het_pol03.json": {
+   "A6_factor": 1.0,
+   "kappa": {
+    "-2.0": [
+     {
+      "mu_q_in": 368.0,
+      "Gamma_meV": 2.967792148574277,
+      "fixed_density": {
+       "light_frequency_T": 118.75,
+       "mu_q_returned": 583.5651002366827
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 118.5,
+       "mu_q_returned": 614.094207636377
+      }
+     },
+     {
+      "mu_q_in": 1000.0,
+      "Gamma_meV": 1.0921475106753338,
+      "fixed_density": {
+       "light_frequency_T": 120.25,
+       "mu_q_returned": 1203.0458454124819
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 118.5,
+       "mu_q_returned": 1376.8298686187402
+      }
+     },
+     {
+      "mu_q_in": 1800.0,
+      "Gamma_meV": 0.6067486170418521,
+      "fixed_density": {
+       "light_frequency_T": 121.75,
+       "mu_q_returned": 1859.3120472125602
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 118.0,
+       "mu_q_returned": 2043.2249843613029
+      }
+     }
+    ],
+    "0.0": [
+     {
+      "mu_q_in": 368.0,
+      "Gamma_meV": 2.967792148574277,
+      "fixed_density": {
+       "light_frequency_T": 126.75,
+       "mu_q_returned": 552.2422820718872
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 126.5,
+       "mu_q_returned": 590.3242353352357
+      }
+     },
+     {
+      "mu_q_in": 1000.0,
+      "Gamma_meV": 1.0921475106753338,
+      "fixed_density": {
+       "light_frequency_T": 128.0,
+       "mu_q_returned": 913.1425452915752
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 128.25,
+       "mu_q_returned": 1211.9845270283695
+      }
+     },
+     {
+      "mu_q_in": 1800.0,
+      "Gamma_meV": 0.6067486170418521,
+      "fixed_density": {
+       "light_frequency_T": 129.0,
+       "mu_q_returned": 1112.8212951308924
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 129.25,
+       "mu_q_returned": 1597.7051458801025
+      }
+     }
+    ],
+    "2.0": [
+     {
+      "mu_q_in": 368.0,
+      "Gamma_meV": 2.967792148574277,
+      "fixed_density": {
+       "light_frequency_T": 134.5,
+       "mu_q_returned": 511.13721965014105
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 134.5,
+       "mu_q_returned": 534.7459966604308
+      }
+     },
+     {
+      "mu_q_in": 1000.0,
+      "Gamma_meV": 1.0921475106753338,
+      "fixed_density": {
+       "light_frequency_T": 133.5,
+       "mu_q_returned": 773.749810086687
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 133.5,
+       "mu_q_returned": 1020.9834799643083
+      }
+     },
+     {
+      "mu_q_in": 1800.0,
+      "Gamma_meV": 0.6067486170418521,
+      "fixed_density": {
+       "light_frequency_T": 132.75,
+       "mu_q_returned": 820.3876666810675
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 133.25,
+       "mu_q_returned": 1334.878223459606
+      }
+     }
+    ]
+   },
+   "control": {
+    "368.0": 372.7910748746554,
+    "1000.0": 1021.1487437179873,
+    "1800.0": 1856.9753868403577
+   }
+  },
+  "well_het_pol03_A6.json": {
+   "A6_factor": 1.282708050799943,
+   "kappa": {
+    "-2.0": [
+     {
+      "mu_q_in": 368.0,
+      "Gamma_meV": 2.967792148574277,
+      "fixed_density": {
+       "light_frequency_T": 154.75,
+       "mu_q_returned": 425.8492158152654
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 154.75,
+       "mu_q_returned": 430.18291446420517
+      }
+     },
+     {
+      "mu_q_in": 1000.0,
+      "Gamma_meV": 1.0921475106753338,
+      "fixed_density": {
+       "light_frequency_T": 154.75,
+       "mu_q_returned": 1118.6184038673043
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 154.5,
+       "mu_q_returned": 1120.3099749754958
+      }
+     },
+     {
+      "mu_q_in": 1800.0,
+      "Gamma_meV": 0.6067486170418521,
+      "fixed_density": {
+       "light_frequency_T": 154.5,
+       "mu_q_returned": 3166.459607593687
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 154.5,
+       "mu_q_returned": 1906.5172618958118
+      }
+     }
+    ],
+    "0.0": [
+     {
+      "mu_q_in": 368.0,
+      "Gamma_meV": 2.967792148574277,
+      "fixed_density": {
+       "light_frequency_T": 164.25,
+       "mu_q_returned": 406.931612772946
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 164.0,
+       "mu_q_returned": 417.16252025471886
+      }
+     },
+     {
+      "mu_q_in": 1000.0,
+      "Gamma_meV": 1.0921475106753338,
+      "fixed_density": {
+       "light_frequency_T": 164.25,
+       "mu_q_returned": 767.0082113216506
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 164.0,
+       "mu_q_returned": 1001.135578492209
+      }
+     },
+     {
+      "mu_q_in": 1800.0,
+      "Gamma_meV": 0.6067486170418521,
+      "fixed_density": {
+       "light_frequency_T": 164.25,
+       "mu_q_returned": 913.0877004898127
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 164.25,
+       "mu_q_returned": 1557.4694794012223
+      }
+     }
+    ],
+    "2.0": [
+     {
+      "mu_q_in": 368.0,
+      "Gamma_meV": 2.967792148574277,
+      "fixed_density": {
+       "light_frequency_T": 177.5,
+       "mu_q_returned": 343.62621810359116
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 176.75,
+       "mu_q_returned": 347.7911446172066
+      }
+     },
+     {
+      "mu_q_in": 1000.0,
+      "Gamma_meV": 1.0921475106753338,
+      "fixed_density": {
+       "light_frequency_T": 176.0,
+       "mu_q_returned": 588.4740860733967
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 175.5,
+       "mu_q_returned": 667.6762498220919
+      }
+     },
+     {
+      "mu_q_in": 1800.0,
+      "Gamma_meV": 0.6067486170418521,
+      "fixed_density": {
+       "light_frequency_T": 175.0,
+       "mu_q_returned": 670.9608498475862
+      },
+      "fixed_chemical_potential": {
+       "light_frequency_T": 175.25,
+       "mu_q_returned": 882.8496849026687
+      }
+     }
+    ]
+   },
+   "control": {
+    "368.0": 372.964152899515,
+    "1000.0": 1021.9430336069188,
+    "1800.0": 1859.1666458313864
+   }
+  }
+ }
+}
