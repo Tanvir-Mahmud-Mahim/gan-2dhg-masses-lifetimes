@@ -1,0 +1,14 @@
+{
+ "source": "C. F. C. Chang et al., Nat. Electron. 9, 346 (2026); arXiv:2501.16213v1, Fig. 2a (Delta R_xx, light-hole oscillation) and Fig. 2c (Delta R_xx - Delta R_LH^fit, the heavy-hole oscillation left after subtracting the light-hole fit), both on the same ohm scale.",
+ "method": "Page 16 of the arXiv PDF rendered with pdf.js at scale 2 (1224 x 1584 px). The 1.8 K and 2.1 K curves were located by their colour; the ohm axis was calibrated on the tick marks (20 Ohm = 31 px, zero of each curve at its labelled offset) and the 1/B axis on its tick marks (0.005 T^-1 = 54 px). In windows one light-hole period wide (light) or two heavy-hole periods wide (heavy) a sinusoid at 166 T or 795 T plus a linear background was fitted by least squares with outlier rejection; the amplitude of the sinusoid is recorded.",
+ "validation": "A straight-line fit of ln(amplitude) against 1/B to the eleven 1.8 K light-hole amplitudes gives a Dingle mobility of 393 cm^2/Vs, against the reported 368 +/- 14 cm^2/Vs.",
+ "resolution": "One pixel is 0.65 Ohm; the rms residual of the heavy-hole sinusoid fits is 0.4 to 0.6 Ohm.",
+ "light_1p8K": {"inv_B_T": [0.015, 0.0165, 0.018, 0.0195, 0.021, 0.0225, 0.024, 0.0255, 0.027, 0.0285, 0.030],
+                "amp_ohm": [10.81, 9.92, 8.67, 7.32, 6.06, 5.94, 4.81, 4.38, 4.39, 3.81, 3.21]},
+ "heavy_1p8K": {"inv_B_T": [0.0142, 0.0150, 0.0158, 0.0166, 0.0174, 0.0182, 0.0190, 0.0200, 0.0215],
+                "amp_ohm": [1.95, 2.00, 1.81, 1.47, 0.71, 0.41, 0.36, 0.30, 0.31],
+                "fit_rms_ohm": [0.39, 0.41, 0.42, 0.47, 0.61, 0.43, 0.52, 0.60, 0.37]},
+ "light_2p1K": {"inv_B_T": [0.015, 0.0158, 0.0166], "amp_ohm": [11.37, 10.75, 10.38]},
+ "heavy_2p1K": {"inv_B_T": [0.015, 0.0158, 0.0166], "amp_ohm": [1.97, 1.66, 1.50]},
+ "used_for_ratio": "The ratio A_H / A_L is formed at 1/B = 0.0150, 0.0158 and 0.0166 T^-1 (66.7, 63.3 and 60.2 T), where the heavy-hole amplitude is at least three times the fit residual; the light-hole amplitude at 0.0158 T^-1 at 1.8 K is interpolated between 0.0150 and 0.0165."
+}

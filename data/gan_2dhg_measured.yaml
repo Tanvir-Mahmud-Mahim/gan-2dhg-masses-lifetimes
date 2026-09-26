@@ -377,7 +377,7 @@ sdh:
     frequency_T: {value: 795, err: 24}
     n_s_cm2: {value: 3.8e13, err: 0.1e13}
     m_over_m0_field_averaged: {value: 1.92, err: 0.16}
-    mu_quantum_cm2Vs: [167, 200]   # estimated from oscillation onset, 50-60 T
+    mu_quantum_cm2Vs: [167, 200]   # estimated from oscillation onset, 50-60 T; see heavy_hole_quantum_mobility
     tau_q_ps: [0.17, 0.24]
     mu_hall_cm2Vs: 400             # T = 3 K
     mu_hall_fit_range_cm2Vs: [381, 464]
@@ -476,3 +476,41 @@ temperature_dependence:
   caveat: "Read from the arXiv version. The published erratum has not been
     checked. Independent support for the n_2 = 1 value used in this project,
     which was derived from the two-dimensional acoustic deformation potential."
+
+# ---------------------------------------------------------------------------
+# The heavy-hole quantum mobility re-derived from the oscillation amplitudes
+# (scripts/run_heavy_quantum_mobility.py, scripts/run_revised_mobilities.py).
+# ---------------------------------------------------------------------------
+heavy_hole_quantum_mobility:
+  how_reported: "For the heavy holes, the relatively small signal-to-noise
+    ratio of the oscillation amplitudes precludes a reliable extraction of
+    quantum mobility using this method; instead, the onset of their
+    oscillations in the approximate range of 50~60 T gives an estimated
+    quantum mobility of 167~200 cm2V-1s-1"
+  reported_ratios: "Both quantum mobilities are smaller than the Hall
+    mobilities, with a muHall/muq ratio of ~5 for light holes and 2~2.5 for
+    the heavy holes."
+  note_on_onset: "167 and 200 cm2/Vs are 1/(60 T) and 1/(50 T): the estimate
+    corresponds to omega_c tau_q = mu_q B = 1 at the onset. The paper does not
+    write this relation; it is inferred from the numbers."
+  figure_2: "Figure 2a shows the background-subtracted Rxx ... A good fit
+    (dashed lines in Fig. 2a) is obtained for the low-frequency,
+    large-amplitude oscillations. We then subtract out the low-frequency fit
+    to retain only the high-frequency, small-amplitude oscillations"
+  layer_sequence: "Then, the 15 nm GaN layer was grown without interruption at
+    the GaN/AlN interface. The last 5 nm of the GaN layer is heavily doped with
+    Mg to enable low-resistance metal contacts with the 2DHG."
+  used_as: "The ionized acceptors are modelled as a uniform distribution 10 to
+    15 nm from the interface."
+  digitized_amplitudes: "data/chang2026_fig2_digitized.json (Fig. 2a and 2c
+    of arXiv:2501.16213v1, 1.8 K and 2.1 K; method, resolution and residuals
+    recorded there). Check: the eleven 1.8 K light-hole amplitudes give a
+    Dingle mobility of 393 cm2/Vs against the reported 368 +/- 14."
+  derived_not_published: "The heavy-to-light amplitude ratio (0.145 to 0.185
+    at 60 to 67 T) and the heavy-hole quantum mobility derived from it
+    (115 cm2/Vs for the self-consistent disorder; 113 to 146 over all
+    self-consistent models; 78 to 204 over all single-mechanism weights) are
+    results of this work, not published values."
+  source: chang2026
+  read_from: "arXiv:2501.16213v1 full text"
+  verified: true
