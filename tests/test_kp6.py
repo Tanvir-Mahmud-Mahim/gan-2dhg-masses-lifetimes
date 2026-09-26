@@ -843,3 +843,59 @@ def test_rpa_mass_reproduces_published_value_at_rs_1():
     n = 1.0 / (np.pi * 0.0529177 ** 2)
     r = R.mass_ratio(R.System([R.Species(1.0, n)], eps=1.0), 0)
     assert abs(r - 1.033) < 0.01
+
+
+# ---------------------------------------------------------------------------
+# Resistance weighting of the two oscillations
+# ---------------------------------------------------------------------------
+
+def test_single_carrier_resistance_follows_its_scattering_rate():
+    """For one carrier rho_xx = 1/(n e mu) at any field, so
+    d ln rho_xx / d ln(1/tau) = 1; a vanishing second carrier contributes 0."""
+    from gan2dhg import sdh
+    for B in (1.0, 30.0, 70.0):
+        s = sdh.sensitivities(B, (1e-9, 1.0), (0.19, 0.04))
+        assert abs(s[1] - 1.0) < 1e-6 and abs(s[0]) < 1e-6
+
+
+def test_density_of_states_weights_without_intersubband_scattering():
+    """Diagonal rate matrices give W = identity; any matrices give rows
+    that sum to one (a common scale of all rates scales every lifetime)."""
+    from gan2dhg import sdh
+    v = np.array([1.0, 2.0])
+    A = np.diag([3.0, 5.0]); B = np.diag([1.0, 0.5])
+    assert np.allclose(sdh.dos_weights(A, B, v), np.eye(2), atol=1e-8)
+    A = np.array([[3.0, 1.0], [0.6, 5.0]]); B = np.array([[1.0, 0.2], [0.1, 0.5]])
+    assert np.allclose(sdh.dos_weights(A, B, v).sum(axis=1), 1.0, atol=1e-8)
+
+
+def test_heavy_quantum_mobility_inverts_the_amplitude_ratio():
+    from gan2dhg import sdh
+    K = (0.2, 0.8)
+    r = sdh.amplitude_ratio(63.0, 1.8, K, (0.0368, 0.0115), (0.53, 1.92))
+    mu = sdh.heavy_quantum_mobility(r, 63.0, 1.8, K, 0.0368, (0.53, 1.92))
+    assert abs(mu - 0.0115) < 1e-7
+
+
+def test_polarization_fluctuations_reduce_to_point_charges():
+    """For xi -> 0 at fixed dsig^2 pi xi^2 = N the kernel equals that of N
+    uncorrelated charges per area at zero standoff."""
+    xi = 1e-12
+    N = 1e12
+    dsig = np.sqrt(N / (np.pi * (xi * 1e2) ** 2))      # cm^-2, xi in cm
+    q = np.array([1e7, 1e8, 1e9])
+    a = S.w_polarization_fluctuation(q, dsig, xi, 5.7e9, 10.4)
+    b = S.w_remote_impurity(q, N, 0.0, 5.7e9, 10.4)
+    assert np.allclose(a, b, rtol=1e-6)
+
+
+def test_digitized_light_hole_amplitudes_reproduce_the_reported_dingle_slope():
+    """The digitized 1.8 K light-hole amplitudes of Chang et al. must return
+    their Dingle mobility, 368 +/- 14 cm^2/Vs, to within ten percent."""
+    import json
+    D = json.load(open(os.path.join(os.path.dirname(__file__), "..", "data",
+                                    "chang2026_fig2_digitized.json")))
+    x = np.array(D["light_1p8K"]["inv_B_T"])
+    a = np.array(D["light_1p8K"]["amp_ohm"])
+    s, _ = np.polyfit(x, np.log(a), 1)
+    assert abs(-np.pi / s * 1e4 / 368.0 - 1) < 0.10
