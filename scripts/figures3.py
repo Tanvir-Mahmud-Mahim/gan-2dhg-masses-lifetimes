@@ -295,10 +295,11 @@ def figure2():
         else:
             ax.plot(x, y, ls, color=c, lw=1.3, label=lab)
     rv = json.load(open(os.path.join(RES, "revised_mobilities.json")))
-    tr = rv["best_pair_trajectory"]
+    tr = rv["best_trajectory"]
     x = np.array([p["ratios"][0] for p in tr["points"]])
     y = np.array([p["ratios"][1] for p in tr["points"]])
-    ax.plot(x, y, color="#6a3d9a", lw=1.1, ls="-.", label="roughness + line charges")
+    ax.plot(x, y, color="#6a3d9a", lw=1.1, ls="-.",
+            label=r"roughness + $q^{-%.2f}$ component" % tr["exponent"])
     (l_lo, l_hi), (h_lo, h_hi) = MS.TARGET_BOX
     ax.add_patch(matplotlib.patches.Rectangle(
         (l_lo, h_lo), l_hi - l_lo, h_hi - h_lo, facecolor=C_G, alpha=0.20,
@@ -308,16 +309,14 @@ def figure2():
                 yerr=[[MS.R_H - MS.R_H_RANGE[0]], [MS.R_H_RANGE[1] - MS.R_H]],
                 fmt="D", color="black", ms=4.0, mfc="white", mew=1.0,
                 capsize=2.0, lw=0.9, zorder=6, label="reported")
-    # heavy-hole quantum mobility from the measured amplitudes
-    # (results/heavy_quantum_mobility.json, run_revised_mobilities.py):
-    # nominal value for the best fit, range over every self-consistent model
-    # combined with the range of the Hall fit
-    hq = json.load(open(os.path.join(RES, "heavy_quantum_mobility.json")))
-    muH = hq["self_consistent"]["mu_q_H_cm2Vs"]
-    allH = [m["mu_q_H"] for m in rv["pairs"] + rv["singles"]]
+    # heavy-hole quantum mobility from the measured oscillations
+    # (results/revised_mobilities.json): adopted value, and the spread of the
+    # three routes combined with the range of the Hall fit
+    muH = rv["adopted_mu_q_H"]
+    lo, hi = rv["adopted_range"]
     rH = MS.MU_HALL_H / muH
-    rH_lo = MS.MU_HALL_H_RANGE[0] / max(allH)
-    rH_hi = MS.MU_HALL_H_RANGE[1] / min(allH)
+    rH_lo = MS.MU_HALL_H_RANGE[0] / hi
+    rH_hi = MS.MU_HALL_H_RANGE[1] / lo
     ax.errorbar([MS.R_L], [rH],
                 xerr=[[MS.R_L - MS.R_L_RANGE[0]], [MS.R_L_RANGE[1] - MS.R_L]],
                 yerr=[[rH - rH_lo], [rH_hi - rH]],

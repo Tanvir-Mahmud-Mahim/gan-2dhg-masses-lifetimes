@@ -261,8 +261,8 @@ def figure():
          "not strain or polarization charge"),
         (5.30, 1.35, 4.55, 1.75, "lifetime ratios not reproduced",
          "$\\tau_{\\mathrm{tr}}/\\tau_{\\mathrm{q}}$: $5.2$ and $2.2$ reported", C_G,
-         "heavy-hole value overestimated;\n"
-         "roughness + line charges fit"),
+         "heavy-hole quantum mobility $95$, not\n"
+         "$167$ to $200$; disorder spectrum $q^{-3.5}$"),
     ]
     for (x, y, w, h, title, sub, col, res) in dis:
         ax.add_patch(FancyBboxPatch((x, y), w, h,

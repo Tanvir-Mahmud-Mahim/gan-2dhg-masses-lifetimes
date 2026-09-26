@@ -1,207 +1,176 @@
-"""The four mobilities with the heavy-hole quantum mobility from the amplitudes.
+"""The four mobilities with the heavy-hole quantum mobility from the oscillations.
 
-results/heavy_quantum_mobility.json gives the heavy-hole quantum mobility that
-the measured amplitude ratio of the two oscillations implies.  The value
-depends on the density-of-states weights W of the disorder, so each disorder
-model is tested self-consistently: its two amplitudes are fitted to the four
-mobilities (Hall 1900 and 400, quantum 368 and mu_H), its weights W are
-computed (src/gan2dhg/sdh.py), mu_H is recomputed from the amplitudes with
-these weights, and the loop is repeated until mu_H no longer changes.
+Reads results/heavy_quantum_mobility.json (ratio route, first order, and the
+raw envelope route) and results/forward_calibration.json (envelope route
+calibrated, ratio route without the first-order approximation).  The adopted
+heavy-hole quantum mobility is the mean of the three central values; its range
+is the spread of the three.
 
-Models: every single mechanism of run_tension.families; every pair of them;
-and short-range roughness together with two candidate sources of long-range
-potential in this structure,
-  - the ionized acceptors of the Mg-doped top of the GaN layer, a uniform
-    distribution 10 to 15 nm from the interface (Methods of Chang et al.: a
-    15 nm GaN layer whose last 5 nm is heavily doped with Mg),
-  - fluctuations of the interface polarization charge with a Gaussian
-    correlation length xi (scatter2d.w_polarization_fluctuation).
-
-Also reported: the ratio of the two quantum mobilities that each mechanism
-gives on its own, the closest single mechanism to the revised ratios, and the
-trajectory of the best pair across the plane of the two ratios (Fig. 3c).
+Then, for the four measured mobilities (Hall 1900 and 400, quantum 368 and the
+heavy-hole value):
+  1. interface roughness plus a long-range component with a power-law
+     spectrum |V(q)|^2 ~ q^-p: the exponent p that fits, as a function of the
+     heavy-hole quantum mobility (the four mobilities fix p once mu_q,H is
+     known);
+  2. roughness plus one named mechanism (remote charge, the Mg-doped layer,
+     polarization-charge fluctuations, long-range roughness, background
+     impurities, threading line charges, in-plane misfit lines) at the adopted
+     value and across a grid of heavy-hole values;
+  3. roughness plus two named long-range mechanisms at the adopted value and
+     at the ends of its range; misfit-line amplitudes are converted to the
+     relaxed fraction of the GaN mismatch;
+  4. every single mechanism, the quantum-mobility ratio each gives on its
+     own, and the closest single mechanism in the plane of the two lifetime
+     ratios;
+  5. the trajectory of roughness plus the best power-law component across the
+     plane of the two ratios (Fig. 3c).
 
 Outputs results/revised_mobilities.json.
 """
 
-import itertools
 import json
 import os
 import sys
 
 import numpy as np
-from scipy.optimize import least_squares
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
-sys.path.insert(0, os.path.dirname(__file__))
+HERE = os.path.dirname(__file__)
+sys.path.insert(0, os.path.join(HERE, '..', 'src'))
+sys.path.insert(0, HERE)
 
-import run_mixtures as RM                                  # noqa: E402
-import run_tension as RT                                   # noqa: E402
-import run_heavy_quantum_mobility as HQ                    # noqa: E402
-from gan2dhg import measured as MS, scatter2d as S, sdh    # noqa: E402
-from gan2dhg.constants import Q                            # noqa: E402
+import disorder_fit as DF                                  # noqa: E402
+from gan2dhg import measured as MS                         # noqa: E402
 
-RES = os.path.join(os.path.dirname(__file__), '..', 'results')
-BASE = {"interface roughness": ("rms height (nm)", 0.3),
-        "remote ionised charge": ("sheet density (cm^-2)", 5e12),
-        "charged dislocations": ("N f^2 (cm^-2)", 1e4),
-        "background impurities": ("volume density (cm^-3)", 1e17),
-        "Mg-doped layer": ("ionized acceptors (cm^-2)", 5e12),
-        "polarization fluctuations": ("rms of the interface charge (cm^-2)", 1e11)}
-MG_RANGE_NM = (10.0, 15.0)
-
-
-def phys(name, a):
-    label, base = BASE[name]
-    if name in ("interface roughness", "polarization fluctuations"):
-        return label, base * np.sqrt(a)
-    return label, base * a
+RES = os.path.join(HERE, '..', 'results')
 
 
 def main():
-    ov_fn, bands, b, F_EFF, v, m_kg = RM.setup()
-    fam = RT.families(b, F_EFF, fine=True)
-    D = json.load(open(HQ.DATA))
-    ratios = HQ.measured_ratios(D)
     hq = json.load(open(os.path.join(RES, "heavy_quantum_mobility.json")))
-    muH0 = hq["self_consistent"]["mu_q_H_cm2Vs"]
+    fc = json.load(open(os.path.join(RES, "forward_calibration.json")))
+    est = {"ratio route, first order": hq["ratio_route"]["self_consistent"]["full_response_spin"]["mean"],
+           "envelope route, calibrated": fc["envelope_calibrated"]["central"],
+           "ratio route, non-perturbative": fc["ratio_nonperturbative"]["mean"]}
+    muA = float(np.mean(list(est.values())))
+    rng = [float(min(est.values())), float(max(est.values()))]
+    out = {"estimates": est, "adopted_mu_q_H": muA, "adopted_range": rng}
+    print("adopted mu_q,H %.1f (%.1f to %.1f)" % (muA, *rng), flush=True)
 
-    def solve(A, Bk):
-        tau = sdh.coupled_tau(A, Bk, v)
-        tq = 1.0 / A.sum(1)
-        return tau / tq, Q * tau / m_kg * 1e4, Q * tq / m_kg * 1e4
+    lib = DF.library()
+    rough = [e for e in lib["interface roughness"] if e[0] <= 2.01]
+    rough3 = [e for e in lib["interface roughness"] if e[0] <= 3.01]
 
-    def cm(w):
-        return S.coupling_matrices(bands, w, RT.EPS_R, b, overlap_fn=ov_fn)
-
-    grids = {"interface roughness": np.linspace(0.2, 12, 60),
-             "remote ionised charge": np.linspace(0.2, 30, 60),
-             "charged dislocations": [1.0], "background impurities": [1.0]}
-    lib = {k: [(float(p), cm(fam[k][2](p))) for p in g] for k, g in grids.items()}
-    # Mg-doped layer: 12 sheets spread uniformly over the layer, total 5e12 cm^-2
-    ds = np.linspace(*MG_RANGE_NM, 12)
-    mg = [cm(lambda q, d=d: S.w_remote_impurity(q, 5e12 / len(ds), d * 1e-9, b,
-                                                RT.EPS_R)) for d in ds]
-    lib["Mg-doped layer"] = [(0.0, (sum(m[0] for m in mg), sum(m[1] for m in mg)))]
-    lib["polarization fluctuations"] = [
-        (float(xi), cm(lambda q, xi=xi: S.w_polarization_fluctuation(
-            q, 1e11, xi * 1e-9, b, RT.EPS_R))) for xi in (2.0, 5.0, 10.0, 20.0, 40.0, 80.0)]
-
-    out = {"mu_q_H_start": muH0}
-
-    # quantum-mobility ratio of each mechanism on its own
-    alone = []
-    for name, L in lib.items():
-        for p, (A, Bk) in L:
-            r, mt, mq = solve(A, Bk)
-            alone.append({"mechanism": name, "parameter": p, "ratios": r.tolist(),
-                          "mu_q_L_over_mu_q_H": float(mq[0] / mq[1])})
-    out["single_mechanism_quantum_ratio"] = alone
-    base = [a["mu_q_L_over_mu_q_H"] for a in alone
-            if a["mechanism"] in grids]
-    out["quantum_ratio_range_over_scans"] = [float(min(base)), float(max(base))]
-
-    def fit(entries, target):
-        """Best fit of the amplitudes over the parameter grids."""
-        meas = np.array([MS.MU_HALL_L, MS.MU_HALL_H, MS.MU_Q_L, target])
-        best = None
-        for combo in entries:
-            mats = [c[1] for c in combo]
-
-            def res(x):
-                a = np.exp(x)
-                A = sum(ai * m[0] for ai, m in zip(a, mats))
-                Bk = sum(ai * m[1] for ai, m in zip(a, mats))
-                _, mt, mq = solve(A, Bk)
-                return np.log(np.r_[mt, mq] / meas)
-            starts = [(0,), (2,), (-2,), (4,), (-4,)] if len(mats) == 1 else \
-                [(0, 0), (2, -2), (-2, 2), (4, 0), (0, 4)]
-            s_ = min((least_squares(res, np.array(x0, float)) for x0 in starts),
-                     key=lambda z: z.cost)
-            if best is None or s_.cost < best[0].cost:
-                best = (s_, combo)
-        return best
-
-    def selfconsistent(names, entries):
-        muH = muH0
-        for it in range(8):
-            s_, combo = fit(entries, muH)
-            a = np.exp(s_.x)
-            A = sum(ai * c[1][0] for ai, c in zip(a, combo))
-            Bk = sum(ai * c[1][1] for ai, c in zip(a, combo))
-            W = sdh.dos_weights(A, Bk, v)
-            new = float(np.mean(HQ.mu_H_for(W, ratios)))
-            if abs(new - muH) < 0.5:
-                muH = new
-                break
-            muH = new
-        s_, combo = fit(entries, muH)
-        a = np.exp(s_.x)
-        A = sum(ai * c[1][0] for ai, c in zip(a, combo))
-        Bk = sum(ai * c[1][1] for ai, c in zip(a, combo))
-        r, mt, mq = solve(A, Bk)
-        parts = []
-        for ai, c, n in zip(a, combo, names):
-            _, mta, mqa = solve(ai * c[1][0], ai * c[1][1])
-            parts.append({"mechanism": n, "parameter": c[0],
-                          "amplitude": list(phys(n, ai)),
-                          "mu_tr_alone": mta.tolist(), "mu_q_alone": mqa.tolist(),
-                          "share_of_quantum_rate": ((ai * c[1][0]).sum(1) / A.sum(1)).tolist()})
-        return {"mechanisms": list(names), "mu_q_H": muH,
-                "worst_factor": float(np.exp(np.max(np.abs(s_.fun)))),
-                "mu_tr": mt.tolist(), "mu_q": mq.tolist(), "ratios": r.tolist(),
-                "W": sdh.dos_weights(A, Bk, v).tolist(), "components": parts}
-
-    singles = []
-    for n in grids:
-        res_ = selfconsistent([n], [[e] for e in lib[n]])
-        singles.append(res_)
-        print("single", n, "mu_H %.1f worst %.3f" % (res_["mu_q_H"], res_["worst_factor"]),
+    # 1. power-law exponent against the heavy-hole value
+    P = np.arange(2.8, 5.21, 0.05)
+    plib = DF.power_library(P)
+    grid = sorted(set([float(v) for v in (60, 70, 75, 80, 85, 90, 95, 100, 105, 110, 115, 130, 150,
+                                          167, 185, 200)] + [round(muA, 1)] + [round(v, 1) for v in rng]))
+    scan = {}
+    for tH in grid:
+        meas = DF.measured(tH)
+        rows = []
+        for pe in plib:
+            r = DF.fit([[e1, pe] for e1 in rough], meas)
+            rows.append({"p": pe[0], "worst": r["worst_factor"], "roughness_nm": r["parameters"][0],
+                         "shares": r["shares_of_quantum_rate"][1]})
+        b = min(rows, key=lambda z: z["worst"])
+        ok = [z["p"] for z in rows if z["worst"] <= 1.05]
+        scan[str(tH)] = {"best": b, "p_within_5_percent": [min(ok), max(ok)] if ok else None,
+                         "rows": rows}
+        print("mu_q,H %6.1f  best p %.2f  worst %.3f  p(5%%) %s" % (tH, b["p"], b["worst"],
+                                                                scan[str(tH)]["p_within_5_percent"]),
               flush=True)
-    out["singles"] = sorted(singles, key=lambda z: z["worst_factor"])
+    out["exponent_scan"] = scan
 
-    pairs = []
-    names = list(grids) + ["Mg-doped layer", "polarization fluctuations"]
-    for n1, n2 in itertools.combinations_with_replacement(names, 2):
-        if n1 == n2 and n1 not in ("interface roughness", "remote ionised charge"):
-            continue
-        if n1 in ("Mg-doped layer", "polarization fluctuations") or \
-                n2 in ("Mg-doped layer", "polarization fluctuations"):
-            if "interface roughness" not in (n1, n2):
-                continue
-        entries = [[e1, e2] for i, e1 in enumerate(lib[n1]) for j, e2 in enumerate(lib[n2])
-                   if not (n1 == n2 and j <= i)]
-        res_ = selfconsistent([n1, n2], entries)
-        pairs.append(res_)
-        print("pair", n1, "+", n2, "mu_H %.1f worst %.3f" % (res_["mu_q_H"], res_["worst_factor"]),
-              [ (p["mechanism"], "%.3g" % p["amplitude"][1]) for p in res_["components"]], flush=True)
-    out["pairs"] = sorted(pairs, key=lambda z: z["worst_factor"])
+    # 2. roughness plus one named mechanism
+    rough_long = [e for e in lib["interface roughness"] if e[0] >= 4.0][::2]
+    named = {"threading line charges": lib["charged dislocations"],
+             "remote ionised charge": lib["remote ionised charge"][::2],
+             "Mg-doped layer": lib["Mg-doped layer"],
+             "polarization fluctuations": lib["polarization fluctuations"],
+             "long-range roughness": rough_long,
+             "background impurities": lib["background impurities"],
+             "misfit lines": lib["misfit lines"]}
+    libname = {"threading line charges": "charged dislocations", "long-range roughness": "interface roughness"}
+    pairs = {}
+    for tH in sorted(set([float(v) for v in (60, 70, 80, 90, 100, 115, 130, 150, 170, 200)]
+                         + [round(muA, 1)])):
+        pairs[str(tH)] = {}
+        for name, L2 in named.items():
+            r = DF.fit([[e1, e2] for e1 in rough3 for e2 in L2], DF.measured(tH))
+            nm = libname.get(name, name)
+            r = DF.strip(r)
+            r["amplitude_physical"] = [list(DF.physical("interface roughness", r["amplitudes"][0])),
+                                       list(DF.physical(nm, r["amplitudes"][1]))]
+            if name == "misfit lines":
+                r["relaxed_fraction_f1"] = DF.relaxation_from_misfit(r["amplitude_physical"][1][1])
+            pairs[str(tH)][name] = r
+        print("pairs at %.1f:" % tH, {k: round(v["worst_factor"], 3) for k, v in pairs[str(tH)].items()},
+              flush=True)
+    out["pairs"] = pairs
 
-    # closest single mechanism to the revised ratios (light, heavy)
-    rH = MS.MU_HALL_H / out["pairs"][0]["mu_q_H"]
-    tgt = np.array([MS.R_L, rH])
-    best = min(((float(np.max(np.abs(np.log(np.array(a["ratios"]) / tgt)))), a)
-                for a in alone if a["mechanism"] in grids), key=lambda z: z[0])
+    # 3. roughness plus two named long-range mechanisms
+    pol40 = [e for e in lib["polarization fluctuations"] if e[0] == 40.0]
+    combos = {"misfit lines + threading line charges": (lib["misfit lines"], lib["charged dislocations"],
+                                                        "misfit lines", "charged dislocations"),
+              "Mg-doped layer + threading line charges": (lib["Mg-doped layer"], lib["charged dislocations"],
+                                                          "Mg-doped layer", "charged dislocations"),
+              "polarization fluctuations (40 nm) + threading line charges": (pol40, lib["charged dislocations"],
+                                                                             "polarization fluctuations",
+                                                                             "charged dislocations"),
+              "Mg-doped layer + misfit lines": (lib["Mg-doped layer"], lib["misfit lines"],
+                                                "Mg-doped layer", "misfit lines"),
+              "polarization fluctuations (40 nm) + misfit lines": (pol40, lib["misfit lines"],
+                                                                   "polarization fluctuations", "misfit lines")}
+    three = {}
+    for tH in sorted(set([round(muA, 1)] + [round(v, 1) for v in rng])):
+        three[str(tH)] = {}
+        for name, (L2, L3, n2, n3) in combos.items():
+            r = DF.strip(DF.fit([[e1, e2, e3] for e1 in rough for e2 in L2 for e3 in L3], DF.measured(tH)))
+            r["amplitude_physical"] = [list(DF.physical("interface roughness", r["amplitudes"][0])),
+                                       list(DF.physical(n2, r["amplitudes"][1])),
+                                       list(DF.physical(n3, r["amplitudes"][2]))]
+            if n2 == "misfit lines":
+                r["relaxed_fraction_f1"] = DF.relaxation_from_misfit(r["amplitude_physical"][1][1])
+            if n3 == "misfit lines":
+                r["relaxed_fraction_f1"] = DF.relaxation_from_misfit(r["amplitude_physical"][2][1])
+            three[str(tH)][name] = r
+        print("three at %.1f:" % tH, {k: round(v["worst_factor"], 3) for k, v in three[str(tH)].items()},
+              flush=True)
+    out["three_components"] = three
+
+    # 4. single mechanisms
+    singles = {}
+    for name in ("interface roughness", "remote ionised charge", "charged dislocations",
+                 "background impurities"):
+        singles[name] = DF.strip(DF.fit([[e] for e in lib[name]], DF.measured(muA)))
+    out["singles"] = singles
+    alone = []
+    for name in ("interface roughness", "remote ionised charge", "charged dislocations",
+                 "background impurities", "Mg-doped layer", "polarization fluctuations", "misfit lines"):
+        for p, (A, Bk) in lib[name]:
+            mt, mq = DF.solve(A, Bk)
+            alone.append({"mechanism": name, "parameter": p, "ratios": (mt / mq).tolist(),
+                          "mu_q_L_over_mu_q_H": float(mq[0] / mq[1])})
+    out["single_mechanism_ratios"] = alone
+    tgt = np.array([MS.R_L, MS.MU_HALL_H / muA])
+    best = min(((float(np.max(np.abs(np.log(np.array(a["ratios"]) / tgt)))), a) for a in alone
+                if a["mechanism"] in ("interface roughness", "remote ionised charge",
+                                      "charged dislocations", "background impurities")),
+               key=lambda z: z[0])
     out["revised_ratio_target"] = tgt.tolist()
-    out["closest_single_mechanism_ratio"] = {"factor": float(np.exp(best[0])),
-                                             "mechanism": best[1]["mechanism"],
-                                             "parameter": best[1]["parameter"],
-                                             "ratios": best[1]["ratios"]}
+    out["closest_single_mechanism_ratio"] = {"factor": float(np.exp(best[0])), **best[1]}
 
-    # trajectory of the best pair as its relative weight varies (Fig. 3c)
-    top = out["pairs"][0]
-    c1, c2 = top["components"]
-    e1 = dict(lib[c1["mechanism"]])[c1["parameter"]]
-    e2 = dict(lib[c2["mechanism"]])[c2["parameter"]]
+    # 5. trajectory of roughness plus the best power-law component (Fig. 3c)
+    b = scan[str(round(muA, 1))]["best"]
+    e1 = dict(lib["interface roughness"])[b["roughness_nm"]]
+    e2 = dict(DF.power_library([b["p"]]))[b["p"]]
     n1, n2 = e1[0].sum(1)[0], e2[0].sum(1)[0]
     traj = []
     for w in np.logspace(-4, 4, 161):
-        r, _, _ = solve(e1[0] / n1 + w * e2[0] / n2, e1[1] / n1 + w * e2[1] / n2)
-        traj.append({"weight": float(w), "ratios": r.tolist()})
-    out["best_pair_trajectory"] = {"mechanisms": [c1["mechanism"], c2["mechanism"]],
-                                   "parameters": [c1["parameter"], c2["parameter"]],
-                                   "points": traj}
-    json.dump(out, open(os.path.join(RES, "revised_mobilities.json"), "w"), indent=1)
+        mt, mq = DF.solve(e1[0] / n1 + w * e2[0] / n2, e1[1] / n1 + w * e2[1] / n2)
+        traj.append({"weight": float(w), "ratios": (mt / mq).tolist()})
+    out["best_trajectory"] = {"roughness_nm": b["roughness_nm"], "exponent": b["p"], "points": traj}
+    json.dump(out, open(os.path.join(RES, "revised_mobilities.json"), "w"), indent=1, default=float)
     print("WROTE results/revised_mobilities.json")
 
 
