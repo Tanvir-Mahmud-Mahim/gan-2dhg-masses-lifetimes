@@ -20,9 +20,9 @@ the subband-resolved parameters they return do not agree. This repository
 contains the analysis: the heavy-hole mass and the difference between the two
 heavy-hole masses are accounted for; the light-hole mass and occupation are
 shown to be one zero-field discrepancy, traced to the band parameter A6; the
-heavy-hole quantum mobility is re-derived from the measured amplitudes of the
-two oscillations; and the four measured mobilities are shown to require two
-coexisting scattering mechanisms.
+heavy-hole quantum mobility is re-derived from a Dingle analysis of the
+published oscillations and from the ratio of their amplitudes; and the four
+measured mobilities are shown to fix the spectrum of the long-range disorder.
 
 | module | purpose |
 | --- | --- |
@@ -30,9 +30,9 @@ coexisting scattering mechanisms.
 | `src/gan2dhg/kp6_well.py` | Self-consistent envelope-function solution of the polarization well with a hard wall: `k_z -> -i d/dz` coupled to Poisson at fixed sheet density |
 | `src/gan2dhg/kp6_het.py` | The same problem with a finite AlN barrier: position-dependent band parameters, symmetric (BenDaniel-Duke) discretization, vector in-plane wavevector, interband Bloch overlap computed from the spinors, optional strain state and interface charge |
 | `src/gan2dhg/landau.py` | Landau levels of the six-band envelope operator in a field along the growth axis: exact separation into blocks by the ladder-operator structure, free-electron and scanned valence-band Zeeman terms |
-| `src/gan2dhg/scatter2d.py` | Two-dimensional elastic scattering: transport and quantum lifetimes for remote charge, interface roughness, background impurities, dislocations and fluctuations of the interface polarization charge, screened, with the coupled two-subband Boltzmann equation and an angle-dependent overlap |
+| `src/gan2dhg/scatter2d.py` | Two-dimensional elastic scattering: transport and quantum lifetimes for remote charge, interface roughness, background impurities, threading dislocations, charged lines in the interface (misfit dislocations), fluctuations of the interface polarization charge and a power-law spectrum, screened, with the coupled two-subband Boltzmann equation and an angle-dependent overlap |
 | `src/gan2dhg/measured.py` | The published values used in the scattering comparison, including the mass-free measured ratio of Hall to quantum mobility |
-| `src/gan2dhg/sdh.py` | How strongly each subband's density-of-states oscillation appears in `rho_xx` of a two-carrier gas, and the heavy-hole quantum mobility implied by a measured ratio of the two oscillation amplitudes |
+| `src/gan2dhg/sdh.py` | How strongly each subband's density-of-states oscillation appears in `rho_xx` of a two-carrier gas (through the scattering rates and through the density-of-states factor of sigma_xx), the heavy-hole quantum mobility implied by a measured ratio of the two oscillation amplitudes, the spin factor from two harmonics, and a non-perturbative `rho_xx` with Lorentzian Landau levels to all harmonics |
 | `src/gan2dhg/rpa2d.py` | On-shell RPA (GW) quasiparticle mass of a multicomponent two-dimensional gas, checked against published values for the electron gas |
 
 GaN parameters are taken from Extended Data Table 1 of Chang *et al.*,
@@ -79,8 +79,10 @@ python scripts/run_robust2.py                  # -> results/robust2.json        
 python scripts/run_beyond.py                   # -> results/beyond.json             exact Boltzmann, inelastic bounds, correlated disorder
 python scripts/run_phaseshift.py               # -> results/phaseshift.json         beyond the Born approximation
 python scripts/run_mixtures.py                 # -> results/mixtures.json           two coexisting mechanisms, inhomogeneity
-python scripts/run_heavy_quantum_mobility.py   # -> results/heavy_quantum_mobility.json heavy-hole quantum mobility from the amplitudes
-python scripts/run_revised_mobilities.py       # -> results/revised_mobilities.json  self-consistent fits with the revised value
+python scripts/run_heavy_quantum_mobility.py   # -> results/heavy_quantum_mobility.json digitization checks, envelope and ratio routes
+python scripts/run_forward_calibration.py      # -> results/forward_calibration.json  non-perturbative calibration of both routes
+python scripts/run_revised_mobilities.py       # -> results/revised_mobilities.json  adopted value, spectral exponent, combinations
+python scripts/run_light_corrected.py          # -> results/light_corrected_fits.json same with the light-hole value corrected
 
 python scripts/figures3.py                     # -> figures/prb_fig1, prb_fig2 at 1000 dpi
 python scripts/figure_overview.py              # -> figures/prb_fig0 at 1000 dpi
@@ -90,10 +92,13 @@ Run the scripts in the order listed: later ones read the converged potential
 (`results/well_het.json`) and the computed Bloch overlap
 (`results/barrier.json`). The Landau-level script caches its levels in
 `results/landau_levels*.json`; deleting the cache forces a full recomputation,
-which takes about an hour and a half on two cores. The oscillation amplitudes
-used by `run_heavy_quantum_mobility.py` were digitized from Fig. 2 of Chang
-*et al.*; `data/chang2026_fig2_digitized.json` records the method, the
-resolution and the check against the reported light-hole Dingle mobility. Figures read from the JSON
+which takes about an hour and a half on two cores. The oscillations
+used by `run_heavy_quantum_mobility.py` were read from Fig. 2 of Chang
+*et al.* at the native resolution of the image embedded in the arXiv PDF
+(2498 x 1677 pixels, 0.24 ohm per pixel, ten temperatures);
+`data/chang2026_fig2_digitized.json` records the calibration and the traces.
+`scripts/disorder_fit.py` holds the shared fitting of disorder models to the
+four mobilities. Figures read from the JSON
 written by the analysis scripts, so no figure can drift from a number quoted in
 the text.
 
@@ -135,22 +140,30 @@ the text.
   magnetic field shows that the two-carrier Hall analysis is not the cause.
 - The heavy-hole quantum mobility of 167 to 200 cm2/Vs was estimated from the
   field at which the heavy-hole oscillations appear. At 60 to 67 T the heavy
-  holes carry 95 percent of sigma_xx, and the same relative oscillation moves
-  `rho_xx` 3.5 times more for the heavy holes (22 times without intersubband
-  scattering). The measured amplitude ratio, 0.14 to 0.19 (digitized; the
-  digitized light-hole amplitudes give a Dingle mobility of 393 against the
-  reported 368), then gives 115 cm2/Vs (113 to 117) for the disorder that fits
-  the four mobilities, and 113 to 146 cm2/Vs for every disorder model fitted
-  self-consistently; over all single-mechanism weights the range is 78 to 204.
-  The heavy-hole ratio becomes 3.5.
-- With this value, interface roughness (correlation length 0.8 nm, rms height
-  0.08 nm) plus a line-charge (dislocation-form) component reproduces all four
-  mobilities within 5 percent, the line charges supplying 80 to 84 percent of
-  both quantum rates. The ionized acceptors of the Mg-doped layer and
-  fluctuations of the interface polarization charge fit only within 31 to 33
-  percent and need implausible strengths. The line-charge strength,
-  N f^2 = 7e9 cm^-2, is far above the threading-dislocation density of the
-  substrate; its origin is open.
+  holes carry 95 percent of sigma_xx; with the density-of-states factor in
+  sigma_xx (Dmitriev et al., Rev. Mod. Phys. 84, 1709 (2012)) the same relative
+  oscillation moves `rho_xx` 6.0 times more for the heavy holes. The
+  native-resolution digitization of Fig. 2 of Chang et al. returns their
+  light-hole Dingle mobility (352 to 385 cm2/Vs at 1.8 to 6.0 K, reported
+  368 +/- 14) and heavy-hole mass (1.97 +/- 0.13 m0, reported 1.92 +/- 0.16).
+  A joint Dingle fit of the heavy-hole oscillation at seven temperatures gives
+  74 cm2/Vs (95 percent range 58 to 97), which a non-perturbative model of
+  `rho_xx` calibrates to 94 (77 to 113); the heavy-to-light amplitude ratio,
+  with the light-hole spin factor 0.745 measured from the second harmonic,
+  gives 95 (90 to 101) to first order and 96 (87 to 106) without that
+  approximation. The adopted value is 95 cm2/Vs; the heavy-hole ratio becomes
+  4.2.
+- A spread of the local Fermi level cannot replace long-range scattering: it
+  would make the heavy-hole oscillation 4 to 20 times weaker than measured.
+- With interface roughness, a long-range component with |V(q)|^2 ~ q^-p fits
+  the four mobilities within 3 percent for any heavy-hole value from 75 to
+  200 cm2/Vs, with p rising monotonically; at 95, p = 3.55 (3.2 if the
+  light-hole value is corrected like the heavy-hole one), between charged lines
+  in the interface (p = 3) and charged lines threading the gas (p = 4).
+  Combinations that fit within 2 percent all contain threading line charges
+  with N f^2 = 2 to 4e9 cm^-2, far above the substrate dislocation density; a
+  relaxation of the GaN by 0.35 to 0.5 percent would create both misfit and
+  threading lines. Their origin is open.
 
 ## Tests
 
@@ -171,8 +184,12 @@ Born limit of the variable-phase solver and the exact solution of the
 linearized Boltzmann equation; for the oscillation amplitudes, the resistance
 of a single carrier, the density-of-states weights without intersubband
 scattering, the inversion of the amplitude ratio, the reduction of the
-polarization-fluctuation spectrum to point charges and the reported Dingle
-slope from the digitized amplitudes; the piezoelectric polarization formula; the
+polarization-fluctuation spectrum to point charges, the reported Dingle
+mobility and heavy-hole mass from the digitization, the factor 2 of the full
+response for one carrier in a strong field, the closed-form Lorentzian density
+of states, the spin factor from two harmonics, the exponent 3 of the
+misfit-line kernel and the reduction of the non-perturbative `rho_xx` to first
+order; the piezoelectric polarization formula; the
 parameter override, the bound on A6 and the parabolic density condition; and,
 for the many-body mass, the limits of the Lindhard function and the published
 on-shell mass of the two-dimensional electron gas.
