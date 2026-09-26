@@ -203,6 +203,35 @@ def w_dislocation(q, N_dis_cm2, c_lat_m, f_occ, eps_r, b_fh):
     return N * (v * form_factor_carrier(q, b_fh)) ** 2
 
 
+def w_misfit_lines(q, L_A_cm1, f_occ, a_lat_m, eps_r, b_fh):
+    """Charged lines lying in the interface plane (misfit dislocations).
+
+    A straight line of linear charge f_occ * e / a in the interface scatters only
+    across itself; its in-plane potential has the one-dimensional transform
+    lambda e / (2 eps q).  For randomly oriented lines of total length L_A per
+    area the orientation average of the delta function across the line gives
+    2 / q, so the isotropic kernel is L_A (lambda e / 2 eps q)^2 (2 / q) with the
+    interface form factor.  Its small-q exponent is 3, between point charges
+    (2) and threading lines (4).
+    """
+    L_A = L_A_cm1 * 100.0
+    lam_lin = f_occ * Q / a_lat_m
+    v = lam_lin * Q / (2.0 * eps_r * EPS0 * q)
+    return L_A * v ** 2 * (2.0 / q) * form_factor_remote(q, b_fh) ** 2
+
+
+def w_power_law(q, p, b_fh, scale=1e-40, q0=1e9):
+    """Long-range potential with a power-law spectrum, scale (q0/q)^p.
+
+    Used to ask which small-q exponent the measured mobilities require; the
+    interface form factor is applied, and screening is applied by the caller as
+    for every other kernel.  Uncorrelated point charges in the plane have p = 2,
+    randomly oriented in-plane charged lines 3 (w_misfit_lines) and charged lines
+    threading the gas 4 (w_dislocation).
+    """
+    return scale * (q0 / q) ** p * form_factor_remote(q, b_fh) ** 2
+
+
 # ---------------------------------------------------------------------------
 # Lifetimes
 # ---------------------------------------------------------------------------
