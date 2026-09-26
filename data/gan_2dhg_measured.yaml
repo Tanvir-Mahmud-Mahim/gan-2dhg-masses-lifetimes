@@ -502,15 +502,31 @@ heavy_hole_quantum_mobility:
     Mg to enable low-resistance metal contacts with the 2DHG."
   used_as: "The ionized acceptors are modelled as a uniform distribution 10 to
     15 nm from the interface."
-  digitized_amplitudes: "data/chang2026_fig2_digitized.json (Fig. 2a and 2c
-    of arXiv:2501.16213v1, 1.8 K and 2.1 K; method, resolution and residuals
-    recorded there). Check: the eleven 1.8 K light-hole amplitudes give a
-    Dingle mobility of 393 cm2/Vs against the reported 368 +/- 14."
-  derived_not_published: "The heavy-to-light amplitude ratio (0.145 to 0.185
-    at 60 to 67 T) and the heavy-hole quantum mobility derived from it
-    (115 cm2/Vs for the self-consistent disorder; 113 to 146 over all
-    self-consistent models; 78 to 204 over all single-mechanism weights) are
-    results of this work, not published values."
+  figure_1a_layers: "Fig. 1a of the same PDF draws 5.5 nm of p-GaN above 10 nm of
+    UID GaN; the Methods text gives a 15 nm GaN layer whose last 5 nm is Mg
+    doped. Both descriptions are recorded; the fits change by less than 2
+    percent between them."
+  digitized_amplitudes: "data/chang2026_fig2_digitized.json: Fig. 2a and 2c of
+    arXiv:2501.16213v1 read at the native resolution of the embedded image
+    (2498 x 1677 pixels, 0.24 ohm per pixel), ten temperatures, together with
+    the normalized heavy-hole points of Fig. 2f. Checks (scripts/
+    run_heavy_quantum_mobility.py): light-hole Dingle mobility 352 to 385 cm2/Vs
+    at 1.8 to 6.0 K (reported 368 +/- 14); heavy-hole LK mass 1.97 +/- 0.13 m0
+    (reported 1.92 +/- 0.16); Fig. 2f points reproduced within 0.07."
+  derived_not_published: "The heavy-to-light amplitude ratio (0.14 to 0.19 at
+    60 to 67 T and 1.8 to 2.1 K), the envelope (Dingle) fit of the heavy-hole
+    oscillation (74 cm2/Vs raw, 94 calibrated), the light-hole spin factor
+    (0.745 from the second harmonic) and the adopted heavy-hole quantum
+    mobility (95 cm2/Vs) are results of this work, not published values."
+  response_model_source: "Dmitriev, Mirlin, Polyakov and Zudov, Rev. Mod. Phys.
+    84, 1709 (2012), doi:10.1103/RevModPhys.84.1709, Sec. II.C.2 (equation
+    numbers of arXiv:1111.2176): Eq. 31, Delta nu/nu_0 = -2 delta
+    cos(2 pi e/omega_c); Eq. 38, 1/tau_B(e) = (1/tau) nu(e)/nu_0; Eq. 39,
+    sigma_xx with the factor nu(e) tau_B(e); the text states that Landau
+    quantization enters Eq. 39 through the renormalization tau -> tau_B(e) and
+    through the additional factor nu(e)/nu_0; Eq. 40 carries the thermal factor
+    X/sinh X. Together these give the standard amplitude 4 delta X/sinh X in a
+    strong field. Bibliographic fields checked against Crossref."
   source: chang2026
   read_from: "arXiv:2501.16213v1 full text"
   verified: true
