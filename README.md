@@ -19,8 +19,10 @@ been applied to polarization-induced GaN/AlN two-dimensional hole gases, and
 the subband-resolved parameters they return do not agree. This repository
 contains the analysis: the heavy-hole mass and the difference between the two
 heavy-hole masses are accounted for; the light-hole mass and occupation are
-shown to be one zero-field discrepancy, traced to the band parameter A6; and
-the lifetime ratios are shown to require two coexisting scattering mechanisms.
+shown to be one zero-field discrepancy, traced to the band parameter A6; the
+heavy-hole quantum mobility is re-derived from the measured amplitudes of the
+two oscillations; and the four measured mobilities are shown to require two
+coexisting scattering mechanisms.
 
 | module | purpose |
 | --- | --- |
@@ -28,8 +30,9 @@ the lifetime ratios are shown to require two coexisting scattering mechanisms.
 | `src/gan2dhg/kp6_well.py` | Self-consistent envelope-function solution of the polarization well with a hard wall: `k_z -> -i d/dz` coupled to Poisson at fixed sheet density |
 | `src/gan2dhg/kp6_het.py` | The same problem with a finite AlN barrier: position-dependent band parameters, symmetric (BenDaniel-Duke) discretization, vector in-plane wavevector, interband Bloch overlap computed from the spinors, optional strain state and interface charge |
 | `src/gan2dhg/landau.py` | Landau levels of the six-band envelope operator in a field along the growth axis: exact separation into blocks by the ladder-operator structure, free-electron and scanned valence-band Zeeman terms |
-| `src/gan2dhg/scatter2d.py` | Two-dimensional elastic scattering: transport and quantum lifetimes for remote charge, interface roughness, background impurities and dislocations, screened, with the coupled two-subband Boltzmann equation and an angle-dependent overlap |
+| `src/gan2dhg/scatter2d.py` | Two-dimensional elastic scattering: transport and quantum lifetimes for remote charge, interface roughness, background impurities, dislocations and fluctuations of the interface polarization charge, screened, with the coupled two-subband Boltzmann equation and an angle-dependent overlap |
 | `src/gan2dhg/measured.py` | The published values used in the scattering comparison, including the mass-free measured ratio of Hall to quantum mobility |
+| `src/gan2dhg/sdh.py` | How strongly each subband's density-of-states oscillation appears in `rho_xx` of a two-carrier gas, and the heavy-hole quantum mobility implied by a measured ratio of the two oscillation amplitudes |
 | `src/gan2dhg/rpa2d.py` | On-shell RPA (GW) quasiparticle mass of a multicomponent two-dimensional gas, checked against published values for the electron gas |
 
 GaN parameters are taken from Extended Data Table 1 of Chang *et al.*,
@@ -67,6 +70,7 @@ python scripts/run_a6.py apply                 # -> results/a6_apply.json, resul
 python scripts/run_landau.py well_het_pol03.json landau_pol03.json         # Landau levels, published A6, 0.3 eV
 python scripts/run_landau.py well_het_pol03_A6.json landau_pol03_A6.json   # the same with the rescaled A6
 python scripts/run_landau_dingle.py            # -> results/landau_dingle.json       level width fixed by the Dingle slope
+python scripts/run_landau_lorentz.py           # -> results/landau_lorentz.json      Lorentzian levels of known lifetime
 python scripts/run_many_body.py                # -> results/many_body.json           RPA mass of the two-component gas
 python scripts/run_tension.py                  # -> results/tension.json            coupled two-subband lifetimes, scans, two-carrier fit
 python scripts/run_overlap_lifetimes.py        # -> results/overlap_lifetimes.json
@@ -75,6 +79,8 @@ python scripts/run_robust2.py                  # -> results/robust2.json        
 python scripts/run_beyond.py                   # -> results/beyond.json             exact Boltzmann, inelastic bounds, correlated disorder
 python scripts/run_phaseshift.py               # -> results/phaseshift.json         beyond the Born approximation
 python scripts/run_mixtures.py                 # -> results/mixtures.json           two coexisting mechanisms, inhomogeneity
+python scripts/run_heavy_quantum_mobility.py   # -> results/heavy_quantum_mobility.json heavy-hole quantum mobility from the amplitudes
+python scripts/run_revised_mobilities.py       # -> results/revised_mobilities.json  self-consistent fits with the revised value
 
 python scripts/figures3.py                     # -> figures/prb_fig1, prb_fig2 at 1000 dpi
 python scripts/figure_overview.py              # -> figures/prb_fig0 at 1000 dpi
@@ -84,7 +90,10 @@ Run the scripts in the order listed: later ones read the converged potential
 (`results/well_het.json`) and the computed Bloch overlap
 (`results/barrier.json`). The Landau-level script caches its levels in
 `results/landau_levels*.json`; deleting the cache forces a full recomputation,
-which takes about an hour and a half on two cores. Figures read from the JSON
+which takes about an hour and a half on two cores. The oscillation amplitudes
+used by `run_heavy_quantum_mobility.py` were digitized from Fig. 2 of Chang
+*et al.*; `data/chang2026_fig2_digitized.json` records the method, the
+resolution and the check against the reported light-hole Dingle mobility. Figures read from the JSON
 written by the analysis scripts, so no figure can drift from a number quoted in
 the text.
 
@@ -117,14 +126,31 @@ the text.
 - Interactions with the heavy-hole Fermi sea (two-component RPA) enhance the
   light-hole mass by 12 to 23 percent and the heavy-hole mass by 11 to 39
   percent.
+- With Lorentzian Landau levels of known lifetime the emulated Dingle analysis
+  returns 348 to 430 cm2/Vs for an input of 368 (rescaled A6, fixed chemical
+  potential), so the band structure does not produce the light-hole Dingle
+  slope.
 - The measured ordering of the lifetime ratios (light 5.2, heavy 2.2) cannot
-  arise from any single mechanism. Two coexisting mechanisms of different range
-  reproduce both ratios within 6 percent and all four mobilities within 21
-  percent, but only with an implausibly strong long-range component, which
-  supplies three quarters of both quantum rates; the light-hole quantum
-  mobility remains the open anomaly. Solving the coupled
-  Boltzmann equation in a magnetic field shows that the two-carrier Hall
-  analysis is not the cause.
+  arise from any single mechanism. Solving the coupled Boltzmann equation in a
+  magnetic field shows that the two-carrier Hall analysis is not the cause.
+- The heavy-hole quantum mobility of 167 to 200 cm2/Vs was estimated from the
+  field at which the heavy-hole oscillations appear. At 60 to 67 T the heavy
+  holes carry 95 percent of sigma_xx, and the same relative oscillation moves
+  `rho_xx` 3.5 times more for the heavy holes (22 times without intersubband
+  scattering). The measured amplitude ratio, 0.14 to 0.19 (digitized; the
+  digitized light-hole amplitudes give a Dingle mobility of 393 against the
+  reported 368), then gives 115 cm2/Vs (113 to 117) for the disorder that fits
+  the four mobilities, and 113 to 146 cm2/Vs for every disorder model fitted
+  self-consistently; over all single-mechanism weights the range is 78 to 204.
+  The heavy-hole ratio becomes 3.5.
+- With this value, interface roughness (correlation length 0.8 nm, rms height
+  0.08 nm) plus a line-charge (dislocation-form) component reproduces all four
+  mobilities within 5 percent, the line charges supplying 80 to 84 percent of
+  both quantum rates. The ionized acceptors of the Mg-doped layer and
+  fluctuations of the interface polarization charge fit only within 31 to 33
+  percent and need implausible strengths. The line-charge strength,
+  N f^2 = 7e9 cm^-2, is far above the threading-dislocation density of the
+  substrate; its origin is open.
 
 ## Tests
 
@@ -142,7 +168,11 @@ disorder amplitude and mass, the two-carrier form of the coupled
 magnetoconductivity against an explicit least-squares fit, the reduction to
 independent Drude channels, the `s`-wave identity of the cross sections, the
 Born limit of the variable-phase solver and the exact solution of the
-linearized Boltzmann equation; the piezoelectric polarization formula; the
+linearized Boltzmann equation; for the oscillation amplitudes, the resistance
+of a single carrier, the density-of-states weights without intersubband
+scattering, the inversion of the amplitude ratio, the reduction of the
+polarization-fluctuation spectrum to point charges and the reported Dingle
+slope from the digitized amplitudes; the piezoelectric polarization formula; the
 parameter override, the bound on A6 and the parabolic density condition; and,
 for the many-body mass, the limits of the Lindhard function and the published
 on-shell mass of the two-dimensional electron gas.
@@ -159,6 +189,9 @@ on-shell mass of the two-dimensional electron gas.
    they must be followed by eigenvector continuity.
 4. The measured lifetime ratio should be formed from the two mobilities, which
    need no mass, not from separately quoted lifetimes.
+5. In a two-carrier gas the two oscillations do not appear in `rho_xx` with
+   equal weight, so the field at which an oscillation first becomes visible is
+   not a measure of its Dingle factor alone.
 
 ## Licence
 
