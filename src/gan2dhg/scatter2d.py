@@ -153,6 +153,23 @@ def w_remote_impurity(q, N_i_cm2, d_m, b_fh, eps_r):
     return N_i * (v * np.exp(-q * d_m) * form_factor_remote(q, b_fh)) ** 2
 
 
+def w_polarization_fluctuation(q, dsig_cm2, xi_m, b_fh, eps_r):
+    """Fluctuations of the bound polarization charge at the interface.
+
+    The sheet charge density at the GaN/AlN interface is taken to fluctuate
+    about its mean with rms dsig (charges per area) and a Gaussian correlation
+    function exp(-r^2 / xi^2), whose two-dimensional spectrum is
+    dsig^2 pi xi^2 exp(-q^2 xi^2 / 4).  The charges lie at the interface, the
+    edge of the hole distribution, so the remote form factor applies with zero
+    standoff.  For xi -> 0 at fixed dsig^2 pi xi^2 = N the kernel becomes that
+    of N uncorrelated point charges per area (w_remote_impurity at d = 0).
+    """
+    ds = dsig_cm2 * 1.0e4
+    spec = ds ** 2 * PI * xi_m ** 2 * np.exp(-(q * xi_m) ** 2 / 4.0)
+    v = Q**2 / (2.0 * eps_r * EPS0 * q)
+    return spec * (v * form_factor_remote(q, b_fh)) ** 2
+
+
 def w_background_impurity(q, N_b_cm3, b_fh, eps_r):
     """Background ionised impurities distributed through the channel."""
     N_b = N_b_cm3 * 1.0e6
