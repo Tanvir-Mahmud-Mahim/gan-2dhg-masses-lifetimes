@@ -282,20 +282,23 @@ def figure2():
              "charged dislocations": (C_T, "-", "dislocations"),
              "background impurities": ("black", "o", "background")}
     for f in d["figure"]:
-        if f["name"] == "charged dislocations":
-            continue          # ratios above 300 for both subbands, off scale
         c, ls, lab = style[f["name"]]
+        if f["name"] == "charged dislocations":
+            # the occupation scales the amplitude only: one point
+            ax.plot([f["ratio_light"][0]], [f["ratio_heavy"][0]], "^", color=c,
+                    ms=3.6, mfc="white", mew=0.9, label=lab, zorder=4)
+            continue
         x, y = np.array(f["ratio_light"]), np.array(f["ratio_heavy"])
         if ls == "o":
             ax.plot(x, y, "o", color=c, ms=3.2, mfc="white", mew=0.9,
                     label=lab, zorder=4)
         else:
             ax.plot(x, y, ls, color=c, lw=1.3, label=lab)
-    mx = json.load(open(os.path.join(RES, "mixtures.json")))
-    tr = mx["closest_pair_trajectory"]
+    rv = json.load(open(os.path.join(RES, "revised_mobilities.json")))
+    tr = rv["best_pair_trajectory"]
     x = np.array([p["ratios"][0] for p in tr["points"]])
     y = np.array([p["ratios"][1] for p in tr["points"]])
-    ax.plot(x, y, color="#6a3d9a", lw=1.1, ls="-.", label="two mechanisms")
+    ax.plot(x, y, color="#6a3d9a", lw=1.1, ls="-.", label="roughness + line charges")
     (l_lo, l_hi), (h_lo, h_hi) = MS.TARGET_BOX
     ax.add_patch(matplotlib.patches.Rectangle(
         (l_lo, h_lo), l_hi - l_lo, h_hi - h_lo, facecolor=C_G, alpha=0.20,
@@ -304,16 +307,31 @@ def figure2():
                 xerr=[[MS.R_L - MS.R_L_RANGE[0]], [MS.R_L_RANGE[1] - MS.R_L]],
                 yerr=[[MS.R_H - MS.R_H_RANGE[0]], [MS.R_H_RANGE[1] - MS.R_H]],
                 fmt="D", color="black", ms=4.0, mfc="white", mew=1.0,
-                capsize=2.0, lw=0.9, zorder=6, label="measured")
+                capsize=2.0, lw=0.9, zorder=6, label="reported")
+    # heavy-hole quantum mobility from the measured amplitudes
+    # (results/heavy_quantum_mobility.json, run_revised_mobilities.py):
+    # nominal value for the best fit, range over every self-consistent model
+    # combined with the range of the Hall fit
+    hq = json.load(open(os.path.join(RES, "heavy_quantum_mobility.json")))
+    muH = hq["self_consistent"]["mu_q_H_cm2Vs"]
+    allH = [m["mu_q_H"] for m in rv["pairs"] + rv["singles"]]
+    rH = MS.MU_HALL_H / muH
+    rH_lo = MS.MU_HALL_H_RANGE[0] / max(allH)
+    rH_hi = MS.MU_HALL_H_RANGE[1] / min(allH)
+    ax.errorbar([MS.R_L], [rH],
+                xerr=[[MS.R_L - MS.R_L_RANGE[0]], [MS.R_L_RANGE[1] - MS.R_L]],
+                yerr=[[rH - rH_lo], [rH_hi - rH]],
+                fmt="s", color="#6a3d9a", ms=3.8, mfc="#6a3d9a", mew=0.8,
+                capsize=2.0, lw=0.9, zorder=7, label="heavy value revised")
     ax.plot([0.3, 3e3], [0.3, 3e3], color=C_G, lw=0.6, ls=":", zorder=0)
     ax.set_xscale("log")
     ax.set_yscale("log")
     ax.set_xlim(0.5, 1.0e3)
-    ax.set_ylim(0.5, 1.0e3)
+    ax.set_ylim(0.5, 1.0e4)
     ax.set_xlabel(r"$\tau_{\mathrm{tr}}/\tau_{\mathrm{q}}$, light subband")
     ax.set_ylabel(r"$\tau_{\mathrm{tr}}/\tau_{\mathrm{q}}$, heavy subband")
     ax.legend(loc="upper left", handlelength=1.3, labelspacing=0.2,
-              fontsize=6.0, borderaxespad=0.35)
+              fontsize=5.6, borderaxespad=0.3)
     ax.set_title("(c)", loc="left", fontsize=9)
     for s_ in ax.spines.values():
         s_.set_color("black")

@@ -112,7 +112,7 @@ def figure():
         slab(ax, y + per * 0.72, per * 0.28, W, AlGaN, z=3 + 3 * i)
         y += per
     y_sl1 = y
-    slab(ax, y, 1.30, W, GaN, z=40); y_gan = y; y += 1.30
+    slab(ax, y, 0.92, W, GaN, z=40); y_gan = y; y += 0.92
     slab(ax, y, 0.46, W, GaNMg, z=44); y_cap = y; y += 0.46
 
     # broken-scale symbol across the substrate
@@ -144,10 +144,10 @@ def figure():
                             "2-3 ML / AlN spacer, 25 nm]")
     lab(y_gan, "2DHG, $p_{\\mathrm{s}}=4.6\\times10^{13}$ cm$^{-2}$",
         col=C_L)
-    lab(y_gan + 0.80, "GaN, 15 nm\n"
+    lab(y_gan + 0.50, "undoped GaN, 10 nm\n"
                       "$\\varepsilon_\\perp=-2.42$ %,"
                       " $\\varepsilon_{zz}=+1.29$ %")
-    lab(y_cap + 0.23, "GaN:Mg cap, 5 nm")
+    lab(y_cap + 0.23, "GaN:Mg, 5 nm")
     ax.text(W / 2 + DX / 2, -0.55, "vertical scale broken", fontsize=6.0,
             color=C_G, ha="center", va="top")
 
@@ -260,9 +260,9 @@ def figure():
          "same discrepancy as the light mass,\n"
          "not strain or polarization charge"),
         (5.30, 1.35, 4.55, 1.75, "lifetime ratios not reproduced",
-         "$\\tau_{\\mathrm{tr}}/\\tau_{\\mathrm{q}}$: $5.2$ and $2.2$ measured", C_G,
-         "need two mechanisms; the light-hole\n"
-         "quantum mobility stays anomalous"),
+         "$\\tau_{\\mathrm{tr}}/\\tau_{\\mathrm{q}}$: $5.2$ and $2.2$ reported", C_G,
+         "heavy-hole value overestimated;\n"
+         "roughness + line charges fit"),
     ]
     for (x, y, w, h, title, sub, col, res) in dis:
         ax.add_patch(FancyBboxPatch((x, y), w, h,
