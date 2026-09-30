@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code or its derived data, please cite it as below. The people listed are the copyright holders named in LICENSE; no author list, journal reference or DOI for the manuscript is recorded in this repository."
+title: "gan-2dhg-masses-lifetimes: code and derived data for \"Origin of the conflicting hole masses in the GaN/AlN two-dimensional hole gas\""
+# Authors: the copyright holders named in LICENSE, in that order. The
+# manuscript's author list is not recorded in the repository. The repository
+# records no affiliations; BRAC University is T. M. Mahim's affiliation.
+authors:
+  - family-names: Mahim
+    given-names: Tanvir M.
+    affiliation: BRAC University
+  - family-names: Mohsin
+    given-names: A.S.M.
+  - family-names: Rahman
+    given-names: M. Mosaddequr
+license: Apache-2.0
+repository-code: "https://github.com/Tanvir-Mahmud-Mahim/gan-2dhg-masses-lifetimes"
+# The version string of src/gan2dhg/__init__.py; no release or tag has been made.
+version: "2.0.0"
+keywords:
+  - GaN
+  - AlN
+  - two-dimensional hole gas
+  - k.p
+  - effective mass
+  - quantum oscillations
+  - cyclotron resonance
