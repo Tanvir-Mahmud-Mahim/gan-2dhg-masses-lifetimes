@@ -6,6 +6,26 @@ package carries the version string `2.0.0` (`src/gan2dhg/__init__.py`) since
 5 August 2026. Every entry before the documentation entry is read from the
 git history.
 
+## Fixes (30 September 2026)
+
+- `requirements.txt`: `numpy>=1.24` changed to `numpy>=2.0`. The code calls
+  `numpy.trapezoid` (in `kp6_well.py`, `kp6_het.py`, several scripts and the
+  tests), which exists only from NumPy 2.0, so with NumPy 1.x the package
+  could be installed but not run. With NumPy 2.0 as the minimum,
+  `scipy>=1.10` became `scipy>=1.13` and `matplotlib>=3.7` became
+  `matplotlib>=3.8.4`, the first releases that work with NumPy 2 (older
+  SciPy releases and Matplotlib 3.7.3 to 3.8.3 declare `numpy<2` or a
+  similar limit; Matplotlib 3.7.0 to 3.7.2 declare none but fail to import
+  with NumPy 2). `pyyaml` and `pytest` are
+  unchanged. No code, data or result changed.
+- README: installation section gives the new minimum versions with the
+  reason and records a test run with exactly these versions (61 tests
+  passed); the requirements item was removed from the list of known
+  inconsistencies.
+- README, Section 7: the relative difference between the CODATA 2018 and
+  CODATA 2022 electron mass is about 1.4e-9, not about 1e-8 as written
+  before.
+
 ## Documentation (30 September 2026)
 
 Documentation only; no code, data or result changed.

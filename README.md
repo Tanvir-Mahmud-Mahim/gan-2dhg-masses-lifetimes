@@ -221,13 +221,27 @@ not state a minimum Python version.
 pip install -r requirements.txt
 ```
 
-This installs `numpy>=1.24`, `scipy>=1.10`, `matplotlib>=3.7`, `pyyaml>=6.0`
+This installs `numpy>=2.0`, `scipy>=1.13`, `matplotlib>=3.8.4`, `pyyaml>=6.0`
 and `pytest>=7.0`. On 2026-09-30 it installed numpy 2.4.6, scipy 1.17.1,
 matplotlib 3.11.2, pyyaml 6.0.3 and pytest 9.1.1.
 
-**NumPy 2.0 or newer is needed in practice.** The code calls
-`numpy.trapezoid`, which first appeared in NumPy 2.0, although
-`requirements.txt` still allows `numpy>=1.24`.
+**Why these minimum versions.** The code calls `numpy.trapezoid`, which
+first appeared in NumPy 2.0, so NumPy 2.0 is the minimum. SciPy 1.13 and
+Matplotlib 3.8.4 are the first releases that work with NumPy 2. Older
+SciPy releases and Matplotlib 3.7.3 to 3.8.3 declare `numpy<2` or a similar
+limit; Matplotlib 3.7.0 to 3.7.2 declare none but fail to import with
+NumPy 2.
+
+**Checked with the minimum versions.** On 30 September 2026 the tests were
+also run with exactly numpy 2.0.0, scipy 1.13.0 and matplotlib 3.8.4
+(Python 3.11): `61 passed in 1294.03s (0:21:34)` on the same heavily loaded
+2-core machine. With these versions `run_a6.py ellipticity` reproduced its
+committed file exactly, and `run_overlap_lifetimes.py`, `run_formfactor.py`
+and `run_robust2.py` reproduced theirs to within 1.6e-9 (relative). These
+last differences come from SciPy, not NumPy: SciPy 1.13 provides the
+CODATA 2018 constants and SciPy 1.17.1 the CODATA 2022 ones (for example
+the electron mass differs by 1.4e-9 relative), and `constants.py` reads
+whichever is installed (Section 7). Both figure scripts ran.
 
 `pyyaml` is not imported by any script; it is there for reading
 `data/gan_2dhg_measured.yaml`. There is no installable package: the scripts
@@ -386,7 +400,7 @@ Each figure is written as `.png` and `.pdf`.
 | `src/gan2dhg/measured.py` | The published values used in the scattering comparison, including the mass-free measured ratio of Hall to quantum mobility |
 | `src/gan2dhg/sdh.py` | How strongly each subband's density-of-states oscillation appears in `rho_xx` of a two-carrier gas (through the scattering rates and through the density-of-states factor of sigma_xx), the heavy-hole quantum mobility implied by a measured ratio of the two oscillation amplitudes, the spin factor from two harmonics, and a non-perturbative `rho_xx` with Lorentzian Landau levels to all harmonics |
 | `src/gan2dhg/rpa2d.py` | On-shell RPA (GW) quasiparticle mass of a multicomponent two-dimensional gas, checked against published values for the electron gas |
-| `src/gan2dhg/constants.py` | Physical constants read from `scipy.constants` at run time, and unit helpers. Its docstring says "CODATA 2018", but the values are whatever the installed SciPy provides (SciPy 1.17.1, used here, provides CODATA 2022). `kp6.py`, `figures3.py` and the tests instead write the electron mass in directly as 9.1093837015e-31 kg (the CODATA 2018 value); SciPy 1.17.1 gives 9.1093837139e-31 kg, a relative difference of about 1e-8 |
+| `src/gan2dhg/constants.py` | Physical constants read from `scipy.constants` at run time, and unit helpers. Its docstring says "CODATA 2018", but the values are whatever the installed SciPy provides (SciPy 1.17.1, used here, provides CODATA 2022). `kp6.py`, `figures3.py` and the tests instead write the electron mass in directly as 9.1093837015e-31 kg (the CODATA 2018 value); SciPy 1.17.1 gives 9.1093837139e-31 kg, a relative difference of about 1.4e-9 |
 | `src/gan2dhg/__init__.py` | Package docstring and `__version__ = "2.0.0"` |
 
 ---
@@ -605,11 +619,10 @@ on-shell mass of the two-dimensional electron gas.
   written by the analysis scripts; some measured points and labels are written
   into the figure scripts (listed in Section 6).
 
-**Known inconsistencies in the repository** (found while writing this guide;
-not changed, because this update touches documentation only):
+**Known inconsistencies in the repository** (found while writing this guide
+and not changed; the wrong NumPy minimum in `requirements.txt`, listed here
+before, was fixed on 30 September 2026):
 
-- `requirements.txt` allows `numpy>=1.24`, but the code needs NumPy 2.0 or
-  newer (`numpy.trapezoid`; Section 3).
 - The docstring of `scripts/figure_overview.py` says panel (a) draws "the
   heterostructure that all three experiments were performed on", and the
   docstring of `src/gan2dhg/scatter2d.py` says the three experiments were made
@@ -658,6 +671,7 @@ details are in [CHANGELOG.md](CHANGELOG.md).
 
 | Date | Stage | Tests |
 |---|---|---|
+| 30 Sep 2026 | Fix: `requirements.txt` corrected to NumPy 2.0 or newer (with SciPy 1.13 and Matplotlib 3.8.4); code, data and results unchanged | 61 |
 | 30 Sep 2026 | Documentation: this README restructured, CHANGELOG and CITATION added; code, data and results unchanged | 61 |
 | 26 Sep 2026 | Heavy-hole quantum mobility from the digitized oscillations (`sdh.py`, digitized Fig. 2, forward calibration, revised mobilities) | 61 |
 | 25 Sep 2026 | Revision: Landau levels, coupled magnetotransport, strain and polarization, second citation audit, light-hole analysis (A6, many-body mass); obsolete scripts removed | 51 |
