@@ -2,27 +2,28 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-Code and derived data for the manuscript **"Origin of the conflicting hole
-masses in the GaN/AlN two-dimensional hole gas"**. The figure script calls it
-a Letter for *Physical Review B*, with Supplemental Material. No journal
-reference or DOI is recorded in this repository.
+This repository holds the code and derived data for the manuscript
+**"Origin of the conflicting hole masses in the GaN/AlN two-dimensional hole
+gas"**. The figure script calls it a Letter for *Physical Review B*, with
+Supplemental Material. You will not find a journal reference or DOI in this
+repository.
 
-Code copyright: Tanvir M. Mahim, A.S.M. Mohsin, and M. Mosaddequr Rahman (the
-copyright holders named in [`LICENSE`](LICENSE)). The author list of the
-manuscript is not recorded in this repository.
+The code copyright belongs to Tanvir M. Mahim, A.S.M. Mohsin, and M. Mosaddequr
+Rahman (the copyright holders named in [`LICENSE`](LICENSE)). The author list
+of the manuscript is not recorded here.
 
 - Repository: https://github.com/Tanvir-Mahmud-Mahim/gan-2dhg-masses-lifetimes
 - Record of every published number used, with its source and the citation audit:
   [`data/gan_2dhg_measured.yaml`](data/gan_2dhg_measured.yaml)
 
-No experiment was performed for this work. Every experimental number used is a
-published value, and every one is recorded in
-[`data/gan_2dhg_measured.yaml`](data/gan_2dhg_measured.yaml) together with its
+No experiment was done for this work. Every experimental number here is a
+published value. You can find each one in
+[`data/gan_2dhg_measured.yaml`](data/gan_2dhg_measured.yaml), together with its
 source and a note of whether the full text or only the abstract was available
-when it was read. That file also carries the record of the citation audit: each
-DOI resolved and compared field by field against the bibliography, and each
-claim attributed to a reference checked against the primary text
-(summarised in [Section 8](#8-where-the-numbers-come-from)).
+when it was read. That file also keeps the record of the citation audit. Each
+DOI was resolved and compared field by field against the bibliography, and each
+claim attributed to a reference was checked against the primary text. I
+summarize this in [Section 8](#8-where-the-numbers-come-from).
 
 ---
 
@@ -46,42 +47,44 @@ claim attributed to a reference checked against the primary text
 
 ## 1. The idea in one minute
 
-When a thin layer of gallium nitride (GaN) is grown on aluminium nitride (AlN),
+When a thin layer of gallium nitride (GaN) is grown on aluminum nitride (AlN),
 the built-in electric polarization of the two crystals pulls a thin sheet of
-mobile positive charge carriers, called **holes** (missing electrons), against
-the interface. This sheet is a **two-dimensional hole gas** (2DHG). It forms
-without acceptor doping.
+mobile positive charge carriers against the interface. These carriers are
+called **holes** (missing electrons). The sheet is a
+**two-dimensional hole gas** (2DHG). It forms without acceptor doping.
 
-The holes fall into two groups, **heavy holes** and **light holes**, which
+The holes fall into two groups, **heavy holes** and **light holes**. They
 behave as if they had different masses. This apparent mass is the
 **effective mass**, written in units of the free-electron mass m0. Each group
-fills its own **subband** (a set of allowed energies). How fast the holes lose
-their motion to disorder is described by a **lifetime**, or equivalently a
-**mobility**.
+fills its own **subband** (a set of allowed energies). A **lifetime**, or
+equivalently a **mobility**, tells you how fast the holes lose their motion to
+disorder.
 
 Three kinds of published measurement have probed this gas:
 
 - **quantum oscillations**: the resistance oscillates in a strong magnetic
-  field (up to 72 T), and the pattern gives each subband's density, mass and
+  field (up to 72 T). The pattern gives each subband's density, mass and
   "quantum mobility" (Chang *et al.*, 2026). The quantum mobility measures how
   long a hole keeps its quantum state before any scattering event, small-angle
   or large;
-- **a two-carrier Hall analysis** on the same sample, which gives each
-  subband's "Hall mobility" (how easily holes drift in an electric field;
-  small-angle scattering hardly reduces it) from low-field data (up to 9 T) (Chang *et al.*,
-  using the fitting procedure of Dill *et al.*, 2025);
+- **a two-carrier Hall analysis** on the same sample. It gives each subband's
+  "Hall mobility" from low-field data (up to 9 T) (Chang *et al.*, using the
+  fitting procedure of Dill *et al.*, 2025). The Hall mobility tells you how
+  easily holes drift in an electric field, and small-angle scattering hardly
+  reduces it;
 - **terahertz cyclotron resonance**: absorption of terahertz light at a
-  frequency set by the mass, in fields up to 31 T, on a second sample of similar
-  design and density (Wang *et al.*, 2025).
+  frequency set by the mass, in fields up to 31 T. This was measured on a
+  second sample of similar design and density (Wang *et al.*, 2025).
 
-The subband-resolved numbers they return do not agree. This repository contains
+The numbers they give for each subband do not agree. This repository holds
 the analysis of these disagreements. It computes the band structure of the gas
-from a **six-band k·p model** (Chuang and Chang, 1996): a 6 x 6 matrix formula
-for the energies of the valence-band states near the top of the valence band,
-controlled by tabulated parameters such as A1 to A6. It solves this together with
-the electrostatics of the gas, computes the energy levels in a magnetic field
-(**Landau levels**), models the scattering of holes by several kinds of
-disorder, and re-analyses the published oscillation data.
+from a **six-band k·p model** (Chuang and Chang, 1996). This model is a 6 x 6
+matrix formula for the energies of the valence-band states near the top of the
+valence band, controlled by tabulated parameters such as A1 to A6. The code
+solves it together with the electrostatics of the gas. It also computes the
+energy levels in a magnetic field (**Landau levels**), models how several kinds
+of disorder scatter the holes, and analyzes the published oscillation data
+again.
 
 In the words of the original description: the heavy-hole mass and the
 difference between the two heavy-hole masses are accounted for; the light-hole
@@ -93,8 +96,8 @@ long-range disorder.
 
 ### Principal results
 
-These are the results as stated in the README before this documentation
-update, kept word for word.
+Here are the results exactly as the README stated them before this
+documentation update. I kept them word for word.
 
 - With the published parameters and a finite barrier, the calculation gives a
   heavy-hole mass of 1.92 to 1.99 m0 across the published range of the valence
@@ -157,16 +160,20 @@ update, kept word for word.
   relaxation of the GaN by 0.35 to 0.5 percent would create both misfit and
   threading lines. Their origin is open.
 
-A few terms used above, explained once: the **Fermi level** is the energy up to
-which the subbands are filled; **Lifshitz-Kosevich (LK)** analysis extracts a
-mass from how the oscillations weaken with temperature; a **Dingle** analysis
-extracts the quantum mobility from how they weaken at lower field; **RPA**
-(random phase approximation) is a common approximation for the interaction
-between holes; `rho_xx` and `sigma_xx` are the longitudinal resistivity and
-conductivity; `omega_c tau` is the number of cyclotron turns a hole makes
-before it scatters (below about 1 a resonance is overdamped, that is,
-smeared out); the **Zeeman** splitting is the energy splitting of the two spin
-states in a magnetic field, and the "Zeeman parameter" sets its size.
+Some terms above may be new to you, so here they are, explained once:
+
+- the **Fermi level** is the energy up to which the subbands are filled;
+- a **Lifshitz-Kosevich (LK)** analysis extracts a mass from how the
+  oscillations weaken with temperature;
+- a **Dingle** analysis extracts the quantum mobility from how they weaken at
+  lower field;
+- **RPA** (random phase approximation) is a common approximation for the
+  interaction between holes;
+- `rho_xx` and `sigma_xx` are the longitudinal resistivity and conductivity;
+- `omega_c tau` is the number of cyclotron turns a hole makes before it
+  scatters (below about 1 a resonance is overdamped, that is, smeared out);
+- the **Zeeman** splitting is the energy splitting of the two spin states in a
+  magnetic field, and the "Zeeman parameter" sets its size.
 
 ---
 
@@ -204,54 +211,54 @@ gan-2dhg-masses-lifetimes/
     `-- test_kp6.py         61 physics tests (pytest)
 ```
 
-`results/` is part of the repository: the computed numbers can be read from
-it, and the figures redrawn from it, without recomputing anything. The largest files there are the
-cached Landau levels (`results/landau_levels*.json`, 0.6 to 2.7 MB each).
-The figure scripts write to a folder `figures/`, which they create; it is not
-stored in the repository.
+`results/` is part of the repository. You can read the computed numbers from
+it and redraw the figures from it without recomputing anything. The largest
+files there are the cached Landau levels (`results/landau_levels*.json`, 0.6 to
+2.7 MB each). The figure scripts write to a folder `figures/`, which they
+create. It is not stored in the repository.
 
 ---
 
 ## 3. Installation
 
-The code was checked here with **Python 3.11** (3.11.15). The repository does
-not state a minimum Python version.
+I checked the code with **Python 3.11** (3.11.15). The repository does not
+state a minimum Python version.
 
 ```
 pip install -r requirements.txt
 ```
 
 This installs `numpy>=2.0`, `scipy>=1.13`, `matplotlib>=3.8.4`, `pyyaml>=6.0`
-and `pytest>=7.0`. On 2026-09-30 it installed numpy 2.4.6, scipy 1.17.1,
-matplotlib 3.11.2, pyyaml 6.0.3 and pytest 9.1.1.
+and `pytest>=7.0`. When I ran it on 2026-09-30, it installed numpy 2.4.6,
+scipy 1.17.1, matplotlib 3.11.2, pyyaml 6.0.3 and pytest 9.1.1.
 
 **Why these minimum versions.** The code calls `numpy.trapezoid`, which
-first appeared in NumPy 2.0, so NumPy 2.0 is the minimum. SciPy 1.13 and
+first appeared in NumPy 2.0. So NumPy 2.0 is the minimum. SciPy 1.13 and
 Matplotlib 3.8.4 are the first releases that work with NumPy 2. Older
 SciPy releases and Matplotlib 3.7.3 to 3.8.3 declare `numpy<2` or a similar
-limit; Matplotlib 3.7.0 to 3.7.2 declare none but fail to import with
-NumPy 2.
+limit. Matplotlib 3.7.0 to 3.7.2 declare no limit, but they fail to import
+with NumPy 2.
 
-**Checked with the minimum versions.** On 30 September 2026 the tests were
-also run with exactly numpy 2.0.0, scipy 1.13.0 and matplotlib 3.8.4
-(Python 3.11): `61 passed in 1294.03s (0:21:34)` on the same heavily loaded
-2-core machine. With these versions `run_a6.py ellipticity` reproduced its
-committed file exactly, and `run_overlap_lifetimes.py`, `run_formfactor.py`
-and `run_robust2.py` reproduced theirs to within 1.6e-9 (relative). These
-last differences come from SciPy, not NumPy: SciPy 1.13 provides the
-CODATA 2018 constants and SciPy 1.17.1 the CODATA 2022 ones (for example
-the electron mass differs by 1.4e-9 relative), and `constants.py` reads
-whichever is installed (Section 7). Both figure scripts ran.
+**Checked with the minimum versions.** On 30 September 2026 I also ran the
+tests with exactly numpy 2.0.0, scipy 1.13.0 and matplotlib 3.8.4
+(Python 3.11). The result was `61 passed in 1294.03s (0:21:34)` on the same
+heavily loaded 2-core machine. With these versions, `run_a6.py ellipticity`
+reproduced its committed file exactly. `run_overlap_lifetimes.py`,
+`run_formfactor.py` and `run_robust2.py` reproduced theirs to within 1.6e-9
+(relative). These last differences come from SciPy, not NumPy. SciPy 1.13
+provides the CODATA 2018 constants and SciPy 1.17.1 the CODATA 2022 ones
+(for example, the electron mass differs by 1.4e-9 relative). `constants.py`
+reads whichever is installed (Section 7). Both figure scripts ran.
 
-`pyyaml` is not imported by any script; it is there for reading
-`data/gan_2dhg_measured.yaml`. There is no installable package: the scripts
-that use it and the test file add `src/` to the Python path themselves, and
-all file paths are relative to the script, so the commands work from any
-working directory.
+No script imports `pyyaml`. It is there so you can read
+`data/gan_2dhg_measured.yaml`. There is no installable package, so the scripts
+that use it and the test file add `src/` to the Python path themselves. All
+file paths are relative to the script, so the commands work from any working
+directory.
 
-**Fonts (optional).** The figure scripts ask for the serif font "Nimbus Roman"
-and fall back to "Liberation Serif" or "DejaVu Serif" when it is missing; in
-that case matplotlib prints `findfont` warnings and the figures are still
+**Fonts (optional).** The figure scripts ask for the serif font "Nimbus Roman".
+When it is missing, they fall back to "Liberation Serif" or "DejaVu Serif". In
+that case matplotlib prints `findfont` warnings, but the figures are still
 written.
 
 ---
@@ -266,9 +273,9 @@ Run all commands from the repository folder.
 python -m pytest tests/ -q
 ```
 
-All 61 tests must pass. Measured here: `61 passed in 643.26s (0:10:43)` on a
-shared 2-core machine that was heavily loaded by other jobs; times on another
-machine will differ.
+All 61 tests must pass. When I ran them, the result was
+`61 passed in 643.26s (0:10:43)` on a shared 2-core machine that was heavily
+loaded by other jobs. Times on your machine will differ.
 
 ### Way B: redraw the figures from the committed results (about 20 seconds)
 
@@ -277,29 +284,30 @@ python scripts/figure_overview.py      # -> figures/prb_fig0.png and .pdf
 python scripts/figures3.py             # -> figures/prb_fig1 and prb_fig2, .png and .pdf
 ```
 
-Measured here: 7.5 s and 11.5 s. The figures are written at 1000 dpi.
+In my run they took 7.5 s and 11.5 s. The figures are written at 1000 dpi.
 
 ### Way C: recompute the results
 
 Run the scripts of [Section 5](#5-the-scripts-step-by-step) in the order
-given there, then Way B. The scripts **overwrite the committed files in
-`results/`**; `git diff --stat results/` shows what changed. Most scripts were
-not re-timed for this guide. The only run times recorded in the repository are
-those of the finite-barrier offset scan (`run_barrier.py`, whose output records a run time of 2347 s) and
-a full recomputation of the Landau levels (about an hour and a half on two
-cores; see the notes under the table in Section 5). `run_well.py` and
-`run_rashba.py` did not finish within 15 minutes on the machine used here.
+given there, then Way B. Be aware that the scripts **overwrite the committed
+files in `results/`**. You can see what changed with `git diff --stat results/`.
+I did not re-time most scripts for this guide. The repository records only two
+run times. One is for the finite-barrier offset scan (`run_barrier.py`, whose
+output records a run time of 2347 s). The other is for a full recomputation of
+the Landau levels (about an hour and a half on two cores; see the notes under
+the table in Section 5). `run_well.py` and `run_rashba.py` did not finish
+within 15 minutes on the machine I used.
 
 ---
 
 ## 5. The scripts, step by step
 
-The order below is the order of the original README, with one change:
-`run_well_polarisation.py` is moved before `run_dispersion.py`, because
+The order below follows the original README, with one change:
+`run_well_polarisation.py` now comes before `run_dispersion.py`, because
 `run_dispersion.py` reads its output (`results/well_het_pol.json`).
-"Reads" lists the files that a script needs (in `results/` unless another
-folder is given); a script that
-imports another script reads what that one reads.
+The "Reads" column lists the files that a script needs (in `results/` unless
+another folder is given). A script that imports another script reads what that
+one reads.
 
 | Step | Command | What it does | Reads (in `results/` unless a folder is given) | Time* | Writes (in `results/` unless a folder is given) |
 |---|---|---|---|---|---|
@@ -310,7 +318,7 @@ imports another script reads what that one reads.
 | 4 | `python scripts/run_rashba.py` | Spin (Rashba) splitting, with branches tracked by eigenvector continuity and checked for grid convergence | - | long (stopped unfinished after 15 min here) | `rashba.json` |
 | 5 | `python scripts/run_well_sweep.py` | Masses and occupations against sheet density (2.0 to 6.5e13 cm^-2) at offsets 0.3 and 0.7 eV | - | not re-timed | `well_sweep.json` |
 | 6 | `python scripts/run_structure_check.py` | The cyclotron-resonance sample (8.2 nm GaN, 5.25e13 cm^-2) and the AlN spin-orbit splitting (19, 21.7, 23.5 meV) | - | not re-timed | `structure_check.json` |
-| 7 | `python scripts/run_strain_polarisation.py` | Piezoelectric interface charge; strain relaxed from pseudomorphic towards relaxed | - | not re-timed | `strain_polarisation.json` |
+| 7 | `python scripts/run_strain_polarisation.py` | Piezoelectric interface charge; strain relaxed from pseudomorphic toward relaxed | - | not re-timed | `strain_polarisation.json` |
 | 8 | `python scripts/run_well_polarisation.py` | Well with the interface charge from the calculated polarization (the "polarization closure") | - | not re-timed | `well_het_pol.json` |
 | 9 | `python scripts/run_dispersion.py` | Fine in-plane dispersion of the occupied subbands, for both closures | `well_het.json`, `well_het_pol.json` | 5 min 57 s | `dispersion.json` |
 | 10 | `python scripts/run_landau.py` | Landau levels of the 0.7 eV well; Lifshitz-Kosevich emulation for three Zeeman parameters | `well_het.json` | see note** | `landau.json`, cache `landau_levels.json` |
@@ -330,7 +338,7 @@ imports another script reads what that one reads.
 | 24 | `python scripts/run_formfactor.py` | Form factors from the computed hole distribution instead of the variational (Fang-Howard) one | `well.json` | 2 s | `formfactor.json` |
 | 25 | `python scripts/run_robust2.py` | Warping, local-field factor, temperature | - | 9 s | `robust2.json` |
 | 26 | `python scripts/run_beyond.py` | Exact Boltzmann solution, inelastic bounds, correlated disorder | `barrier.json` | not re-timed | `beyond.json` |
-| 27 | `python scripts/run_phaseshift.py` | Beyond the Born approximation (which treats the disorder as a weak, first-order disturbance): exact phase shifts for a screened centre | - | 4 min 11 s | `phaseshift.json` |
+| 27 | `python scripts/run_phaseshift.py` | Beyond the Born approximation (which treats the disorder as a weak, first-order disturbance): exact phase shifts for a screened center | - | 4 min 11 s | `phaseshift.json` |
 | 28 | `python scripts/run_mixtures.py` | Two coexisting mechanisms; inhomogeneity | `tension.json` | not re-timed | `mixtures.json` |
 | 29 | `python scripts/run_heavy_quantum_mobility.py` | Heavy-hole quantum mobility from the digitized oscillations: digitization checks, envelope and ratio routes | `data/chang2026_fig2_digitized.json` | not re-timed | `heavy_quantum_mobility.json` |
 | 30 | `python scripts/run_forward_calibration.py` | Non-perturbative calibration of both routes | `heavy_quantum_mobility.json` | not re-timed | `forward_calibration.json` |
@@ -339,40 +347,41 @@ imports another script reads what that one reads.
 | 33 | `python scripts/figures3.py` | Draws `prb_fig1` and `prb_fig2` (Letter Figs. 2 and 3; Section 6) | see Section 6 | 11.5 s | `figures/prb_fig1`, `figures/prb_fig2` |
 | 34 | `python scripts/figure_overview.py` | Draws the overview figure `prb_fig0` (Letter Fig. 1) | `well_het.json` | 7.5 s | `figures/prb_fig0` |
 
-\*Times measured here on a shared 2-core machine that was also running other
-jobs (load average 2 to 4), with the committed `results/` in place;
-times on another machine will differ. "Not re-timed" means the step was not
-run for this guide. "Stopped unfinished" means the step was started here but
-stopped after 15 minutes, so its full run time is not known (`run_well.py` had
+\*I measured these times on a shared 2-core machine that was also running
+other jobs (load average 2 to 4), with the committed `results/` in place.
+Times on your machine will differ. "Not re-timed" means I did not run the step
+for this guide. "Stopped unfinished" means I started the step but stopped it
+after 15 minutes, so its full run time is not known (`run_well.py` had
 completed 3 of at most 90 self-consistency iterations by then). Every analysis
-step that finished here reproduced the committed file exactly, except
-`dispersion.json`, whose numbers differ by at most 2e-11 (floating-point
+step that finished reproduced the committed file exactly, except
+`dispersion.json`. Its numbers differ by at most 2e-11 (floating-point
 rounding).
 
 \*\*`run_landau.py` stores the computed levels in a cache file
-(`results/landau_levels*.json`, committed). With the cache present it reuses
-the levels and only repeats the analysis. Deleting the cache forces a full
-recomputation, which the authors record as taking about an hour and a half on
-two cores; the script uses two worker processes.
+(`results/landau_levels*.json`, committed). When the cache is present, the
+script reuses the levels and only repeats the analysis. If you delete the
+cache, it recomputes the levels in full. The authors record this as taking about
+an hour and a half on two cores. The script uses two worker processes.
 
-`scripts/disorder_fit.py` is not run by itself: it holds the shared fitting
-of disorder models to the four mobilities, used by steps 29 to 32.
-`run_landau_dingle.py` accepts other well files as arguments (their levels must
-first be cached by `run_landau.py`); by default it uses the two wells of step 16.
-`run_landau_lorentz.py` takes no arguments: its two wells are fixed in the
-script (the two of step 16).
+You do not run `scripts/disorder_fit.py` by itself. It holds the shared
+fitting of disorder models to the four mobilities, used by steps 29 to 32.
+`run_landau_dingle.py` accepts other well files as arguments, but their levels
+must first be cached by `run_landau.py`. By default it uses the two wells of
+step 16. `run_landau_lorentz.py` takes no arguments. Its two wells are fixed in
+the script (the two of step 16).
 
 ---
 
 ## 6. Which script makes which figure
 
-Figures read their data from the JSON written by the analysis scripts, so
+The figures read their data from the JSON written by the analysis scripts, so
 they cannot drift from the computed numbers. The exceptions are numbers written
-into the scripts themselves: the labels of `prb_fig0`; in `prb_fig1`, the
-measured points of panel (c) (1.92 +/- 0.16 and 0.53 +/- 0.01 m0, drawn at
-4.6 x 10^13 cm^-2) and the cyclotron-resonance point of panel (d) (0.57 m0 at
-31 T); and panels (a) and (b) of `prb_fig2`. The file names are those the scripts
-write. The Letter figure numbers are taken from comments in the scripts
+into the scripts themselves. These are the labels of `prb_fig0`; in
+`prb_fig1`, the measured points of panel (c) (1.92 +/- 0.16 and 0.53 +/- 0.01
+m0, drawn at 4.6 x 10^13 cm^-2) and the cyclotron-resonance point of panel (d)
+(0.57 m0 at 31 T); and panels (a) and (b) of `prb_fig2`. The file names below
+are the ones the scripts write. The Letter figure numbers come from comments in
+the scripts
 (`run_well_het.py`: "Figs. 2(a) and 2(b)"; `run_dispersion.py`: "Fig. 2(b) of
 the Letter (figures/prb_fig1, panel b)"; `run_well_sweep.py`: "Fig. 2(c)";
 `run_tension.py`: "Fig. 3(c)"), and from the provenance file, which calls the
@@ -384,7 +393,7 @@ heterostructure drawing "Fig. 1(a)".
 | `figures/prb_fig1` | Fig. 2 | (a) self-consistent well and hole distribution; (b) in-plane dispersion with the Fermi wavevectors; (c) mass against sheet density, measured points and the rescaled-A6 light mass; (d) light-hole LK mass from the computed Landau levels against the reported field dependence | `well_het.json`, `dispersion.json`, `well_sweep.json`, `a6_apply.json`, `landau_dingle.json`, `landau.json`; the measured points in (c) and the cyclotron-resonance point in (d) are written into the script | `figures3.py` (`figure1()`) |
 | `figures/prb_fig2` | Fig. 3 | (a) `omega_c tau` against field for the cyclotron-resonance masses and lifetimes; (b) angular character of scattering; (c) the two lifetime ratios, computed for each mechanism against the reported values and the revised heavy-hole value | (a) and (b) are computed inside the script from the values of Wang *et al.*; (c) `tension.json`, `revised_mobilities.json`, `src/gan2dhg/measured.py` | `figures3.py` (`figure2()`) |
 
-Each figure is written as `.png` and `.pdf`.
+You get each figure as both `.png` and `.pdf`.
 
 ---
 
@@ -409,20 +418,20 @@ Each figure is written as `.png` and `.pdf`.
 
 **The rule.** The provenance file states: "No number enters the manuscript
 unless verified: true." Each entry records the source it was read from and how
-it was read: `primary_pdf` (the full text was opened and the number read from
-it), `abstract` (only the abstract was accessible) or `bibliographic_record`.
-In its own words, "Nothing in this file was taken from memory or from a
-secondary summary."
+it was read. The options are `primary_pdf` (the full text was opened and the
+number read from it), `abstract` (only the abstract was accessible) or
+`bibliographic_record`. In the file's own words, "Nothing in this file was
+taken from memory or from a secondary summary."
 
 ### GaN band parameters (no adjustment)
 
-GaN parameters are taken from Extended Data Table 1 of Chang *et al.*,
+The GaN parameters come from Extended Data Table 1 of Chang *et al.*,
 Nat. Electron. **9**, 346 (2026), doi:10.1038/s41928-026-01590-8, read from
-the arXiv full text (arXiv:2501.16213), so that the calculation uses the same
+the arXiv full text (arXiv:2501.16213). This way the calculation uses the same
 inputs as the measurement it is compared against. That table attributes the
 A parameters to Rinke *et al.*, Phys. Rev. B **77**, 075202 (2008), and the
 deformation potentials to Yan *et al.*, Phys. Rev. B **90**, 125118 (2014).
-Values as they appear in `src/gan2dhg/kp6.py` (`GAN`):
+Here are the values as they appear in `src/gan2dhg/kp6.py` (`GAN`):
 
 | Quantity | Value |
 |---|---|
@@ -433,41 +442,41 @@ Values as they appear in `src/gan2dhg/kp6.py` (`GAN`):
 | deformation potentials acz, act, (acz - D1), (act - D2) | -11.3, -4.9, -6.07, -8.88 eV (D1 and D2 follow from these) |
 | deformation potentials D3, D4, D5, D6 | 5.38, -2.69, -2.56, -3.88 eV |
 
-GaN is taken as pseudomorphically strained to the AlN lattice constant
-(3.112 Angstrom), which gives an in-plane strain of -2.41 percent and
+The GaN is taken as pseudomorphically strained to the AlN lattice constant
+(3.112 Angstrom). This gives an in-plane strain of -2.41 percent and
 +1.29 percent along the growth axis (`kp6.biaxial_strain_on_AlN`). Chang
-*et al.* state a 2.4 percent compressive strain; the provenance file notes
-that it is stated, not measured.
+*et al.* state a 2.4 percent compressive strain. The provenance file notes
+that this value is stated, not measured.
 
 ### AlN, polarization, band offset
 
 - **AlN** (`kp6_het.ALN_KP`): A1 to A6 = -3.991, -0.311, 3.671, -1.147,
   -1.329, -1.952 and crystal-field splitting -0.295 eV from Rinke *et al.*
-  (2008). The A parameters are from Table V. For the crystal-field splitting
-  the sources in the repository disagree: `kp6_het.py` cites Table III, while
-  the provenance file lists it with the Table V values it re-checked. Rinke *et al.* do not
-  give the AlN spin-orbit splitting; it is taken as 22 meV from de Carvalho *et al.*, Appl. Phys. Lett.
-  **97**, 232101 (2010) (21.7 meV parallel, 23.5 meV perpendicular to the c
-  axis). 19, 21.7 and 23.5 meV give the same masses to four figures
-  (`results/structure_check.json`).
+  (2008). The A parameters are from Table V. For the crystal-field splitting,
+  the sources in the repository disagree. `kp6_het.py` cites Table III, while
+  the provenance file lists it with the Table V values it re-checked. Rinke
+  *et al.* do not give the AlN spin-orbit splitting. It is taken as 22 meV from
+  de Carvalho *et al.*, Appl. Phys. Lett. **97**, 232101 (2010) (21.7 meV
+  parallel, 23.5 meV perpendicular to the c axis). Using 19, 21.7 or 23.5 meV
+  gives the same masses to four figures (`results/structure_check.json`).
 - **Polarization constants**: Bernardini, Fiorentini and Vanderbilt, Phys. Rev.
   B **56**, R10024 (1997), Table II: P_sp = -0.081 and -0.029 C/m2;
   e33 = 1.46 and 0.73 C/m2; e31 = -0.60 and -0.49 C/m2 for AlN and GaN. The
   interface charge is the discontinuity of the total polarization (Ambacher
   *et al.*, J. Appl. Phys. **85**, 3222 (1999), cited only for this principle).
-- **Valence band offset**: not fixed; scanned. Rizzi *et al.* (1999) give
-  0.3 +/- 0.1 eV for this growth order; King *et al.* (1998) give 0.5 +/- 0.2
-  and 0.8 +/- 0.2 eV. The offsets scanned, 0.3 to 0.8 eV, span these central
-  values.
-- **Dielectric constant**: 10.4 is used throughout (`eps_r=10.4`); the
-  many-body script also tries 9.5. The source of these two values is not
-  recorded in the code or the provenance file.
+- **Valence band offset**: this is not fixed but scanned. Rizzi *et al.* (1999)
+  give 0.3 +/- 0.1 eV for this growth order. King *et al.* (1998) give
+  0.5 +/- 0.2 and 0.8 +/- 0.2 eV. The scanned offsets, 0.3 to 0.8 eV, span
+  these central values.
+- **Dielectric constant**: 10.4 is used throughout (`eps_r=10.4`), and the
+  many-body script also tries 9.5. Neither the code nor the provenance file
+  records the source of these two values.
 
-With these parameters nothing is adjusted. The one parameter that is then
+With these parameters, nothing is adjusted. The one parameter that is then
 rescaled, A6, is fixed by the measured light-hole density alone
 (`scripts/run_a6.py`). For comparison, Punya and Lambrecht, Phys. Rev. B
 **85**, 195147 (2012), give GaN A6 = -1.55 (-3.31 in the quasi-cubic
-approximation). The A6 value of Vurgaftman and Meyer (2003) is not quoted
+approximation). The A6 value of Vurgaftman and Meyer (2003) is not quoted,
 because that paper was not accessible.
 
 ### The measurements
@@ -480,13 +489,13 @@ The two experiments were made on **different samples**:
 | below it | 10 x [Al0.95Ga0.05N, 2-3 monolayers / 25 nm AlN], 500 nm AlN buffer, bulk Al-polar AlN (dislocations below 1e4 cm^-2) | 700 nm AlN buffer |
 | method | pulsed field to 72 T, 1.8 to 15 K; Hall fit 0 to 9 T at 3 K | time-domain terahertz spectroscopy, pulsed field to 31 T, 8 K |
 
-(Fig. 1a of Chang *et al.* draws 5.5 nm of p-GaN above 10 nm of undoped GaN;
-the Methods text gives a 15 nm GaN layer whose last 5 nm are Mg-doped. Both
-are recorded; the fits change by less than 2 percent between them.)
+(Fig. 1a of Chang *et al.* draws 5.5 nm of p-GaN above 10 nm of undoped GaN.
+The Methods text gives a 15 nm GaN layer whose last 5 nm are Mg-doped. Both
+are recorded, and the fits change by less than 2 percent between them.)
 
-Values used (from `data/gan_2dhg_measured.yaml`, sections `sdh` and
-`cyclotron_resonance`; the scattering comparison takes them from
-`src/gan2dhg/measured.py`):
+These are the values used. They come from `data/gan_2dhg_measured.yaml`,
+sections `sdh` and `cyclotron_resonance`, and the scattering comparison takes
+them from `src/gan2dhg/measured.py`:
 
 | Quantity | Light holes | Heavy holes |
 |---|---|---|
@@ -504,30 +513,34 @@ The calculations use the total sheet density 4.6 x 10^13 cm^-2
 (0.8 + 3.8). The measured lifetime ratio is formed from the two mobilities,
 which need no mass: 1900/368 = 5.16 for the light holes, 400/(167 to 200) =
 2.00 to 2.40 for the heavy holes. The quoted light-hole quantum lifetime,
-0.15 ps, is not consistent with 368 cm2/Vs at 0.53 m0 (which gives 0.111 ps),
-so it is not used. Theory values quoted by Chang *et al.* (light 0.29 m0 k.p,
+0.15 ps, is not consistent with 368 cm2/Vs at 0.53 m0 (which gives 0.111 ps).
+So it is not used. Theory values quoted by Chang *et al.* (light 0.29 m0 k.p,
 0.27 m0 GW; heavy 1.6 to 2.1 m0 k.p, 1.93 m0 GW) are recorded separately and
 marked as theory, not measurement.
 
 **Digitized data.** `data/chang2026_fig2_digitized.json` holds Fig. 2a and 2c
-of arXiv:2501.16213v1 read at the native resolution of the image embedded in
+of arXiv:2501.16213v1, read at the native resolution of the image embedded in
 the PDF (2498 x 1677 pixels, 0.24 ohm per pixel, ten temperatures), with the
-axis calibration, together with the normalized heavy-hole points of Fig. 2f.
-It replaces an earlier digitization at 1224 x 1584 pixels. The heavy-to-light
-amplitude ratio, the envelope fit (74 cm2/Vs raw, 94 calibrated), the
-light-hole spin factor (0.745) and the adopted heavy-hole quantum mobility
-(95 cm2/Vs) are results of this work, not published values.
+axis calibration. It also holds the normalized heavy-hole points of Fig. 2f.
+It replaces an earlier digitization at 1224 x 1584 pixels. Please note that
+some numbers here are results of this work, not published values. These are
+the heavy-to-light amplitude ratio, the envelope fit (74 cm2/Vs raw, 94
+calibrated), the light-hole spin factor (0.745) and the adopted heavy-hole
+quantum mobility (95 cm2/Vs).
 
-**Other sources used as benchmarks or models.** Asgari *et al.*, Phys. Rev. B
-**71**, 045323 (2005), Table I (on-shell RPA masses of the 2D electron gas,
-1.033, 1.168, 1.322, 1.696 at r_s = 1, 2, 3, 5), used only as a numerical
-benchmark. Dmitriev, Mirlin, Polyakov and Zudov, Rev. Mod. Phys. **84**, 1709
-(2012), Sec. II.C.2, for the response of sigma_xx to the density-of-states
-oscillation. Dill *et al.*, J. Appl. Phys. **137**, 025702 (2025), read from
-the arXiv version, for the two-carrier fitting procedure and the observation
-that both mobilities saturate below 20 K; its erratum (J. Appl. Phys. **139**,
-249901 (2026)) was not accessible, and no number in the manuscript is taken
-from Dill *et al.* or its erratum.
+**Other sources used as benchmarks or models.**
+
+- Asgari *et al.*, Phys. Rev. B **71**, 045323 (2005), Table I (on-shell RPA
+  masses of the 2D electron gas, 1.033, 1.168, 1.322, 1.696 at
+  r_s = 1, 2, 3, 5). This is used only as a numerical benchmark.
+- Dmitriev, Mirlin, Polyakov and Zudov, Rev. Mod. Phys. **84**, 1709 (2012),
+  Sec. II.C.2. This is used for the response of sigma_xx to the
+  density-of-states oscillation.
+- Dill *et al.*, J. Appl. Phys. **137**, 025702 (2025), read from the arXiv
+  version. This is used for the two-carrier fitting procedure and the
+  observation that both mobilities saturate below 20 K. Its erratum
+  (J. Appl. Phys. **139**, 249901 (2026)) was not accessible. No number in the
+  manuscript is taken from Dill *et al.* or its erratum.
 
 ### The citation audits recorded in the provenance file
 
@@ -538,43 +551,47 @@ from Dill *et al.* or its erratum.
 | `second_revision_audit` | 2026-09-25 | Every citation and attributed claim re-read against the primary text where accessible; all nineteen DOIs through the Crossref REST API | All matched. Corrections: King *et al.* offsets 0.5 +/- 0.2 and 0.8 +/- 0.2 eV (0.86 had been a text-extraction artifact); Rizzi *et al.* value 0.3 +/- 0.1 eV; the three experiments were not made on one sample (text, Fig. 1 caption and Sec. S8 corrected; new calculation for the cyclotron-resonance sample); the reported Hall-fit ranges added to the ratio ranges; wording on spin degeneracy, strain, Costa *et al.*, Huang and Wu, Bader *et al.*, and an unverifiable superlative corrected. |
 | `light_hole_revision` | 2026-09-25 | Statements added with the light-hole and two-mechanism analysis | Wang *et al.* and Chang *et al.* procedures quoted; Rinke *et al.* GaN A6 = -3.202; Punya and Lambrecht (2012) and Asgari *et al.* (2005) read and checked against Crossref; Vurgaftman and Meyer (2003) not accessible, so its A6 is not quoted. |
 
-The file also records, with quotations, three open questions stated in print by
-the original authors (the field-dependent light-hole mass, the disagreement of
-the two heavy-hole masses, and the unidentified elastic scattering mechanism)
-and a caveat on the temperature exponent taken from the arXiv version of Dill
-*et al.*.
+The file also records, with quotations, three open questions that the
+original authors stated in print. These are the field-dependent light-hole
+mass, the disagreement of the two heavy-hole masses, and the unidentified
+elastic scattering mechanism. It also records a caveat on the temperature
+exponent taken from the arXiv version of Dill *et al.*.
 
 ---
 
 ## 9. Built-in checks
 
 **`tests/test_kp6.py`** (61 tests, run with `python -m pytest tests/ -q`).
-The suite checks quantities known independently of the implementation rather
-than merely exercising it: Hermiticity, time-reversal symmetry, closed-form
-zone-center eigenvalues, accepted splittings, basal-plane isotropy, the
-reported strain, the occupation rule `n = k_F^2 / 4 pi` for a single
-spin-resolved branch, the reduction of the heterostructure operator to the
-hard-wall one, the agreement of the sparse and dense eigen-solvers, the
-normalization of the computed Bloch overlap and the continuity of the tracked
-spin splitting; for the Landau levels, the parabolic limit, equality of the
-spectra at `B` and `-B`, the Onsager count of states (the number of states each Landau level holds) and the grid truncation;
-for transport, the exact limits `tau_tr/tau_q = 1` and `1/2`, invariance under
-disorder amplitude and mass, the two-carrier form of the coupled
-magnetoconductivity against an explicit least-squares fit, the reduction to
-independent Drude channels, the `s`-wave identity of the cross sections, the
-Born limit of the variable-phase solver and the exact solution of the
-linearized Boltzmann equation; for the oscillation amplitudes, the resistance
-of a single carrier, the density-of-states weights without intersubband
-scattering, the inversion of the amplitude ratio, the reduction of the
-polarization-fluctuation spectrum to point charges, the reported Dingle
-mobility and heavy-hole mass from the digitization, the factor 2 of the full
-response for one carrier in a strong field, the closed-form Lorentzian density
-of states, the spin factor from two harmonics, the exponent 3 of the
-misfit-line kernel and the reduction of the non-perturbative `rho_xx` to first
-order; the piezoelectric polarization formula; the
-parameter override, the bound on A6 and the parabolic density condition; and,
-for the many-body mass, the limits of the Lindhard function and the published
-on-shell mass of the two-dimensional electron gas.
+The suite checks quantities that are known independently of the
+implementation, rather than merely exercising the code. Here is what it covers.
+
+- Hermiticity, time-reversal symmetry, closed-form zone-center eigenvalues,
+  accepted splittings, basal-plane isotropy, the reported strain, the
+  occupation rule `n = k_F^2 / 4 pi` for a single spin-resolved branch, the
+  reduction of the heterostructure operator to the hard-wall one, the
+  agreement of the sparse and dense eigen-solvers, the normalization of the
+  computed Bloch overlap and the continuity of the tracked spin splitting.
+- For the Landau levels: the parabolic limit, equality of the spectra at `B`
+  and `-B`, the Onsager count of states (the number of states each Landau
+  level holds) and the grid truncation.
+- For transport: the exact limits `tau_tr/tau_q = 1` and `1/2`, invariance
+  under disorder amplitude and mass, the two-carrier form of the coupled
+  magnetoconductivity against an explicit least-squares fit, the reduction to
+  independent Drude channels, the `s`-wave identity of the cross sections, the
+  Born limit of the variable-phase solver and the exact solution of the
+  linearized Boltzmann equation.
+- For the oscillation amplitudes: the resistance of a single carrier, the
+  density-of-states weights without intersubband scattering, the inversion of
+  the amplitude ratio, the reduction of the polarization-fluctuation spectrum
+  to point charges, the reported Dingle mobility and heavy-hole mass from the
+  digitization, the factor 2 of the full response for one carrier in a strong
+  field, the closed-form Lorentzian density of states, the spin factor from two
+  harmonics, the exponent 3 of the misfit-line kernel and the reduction of the
+  non-perturbative `rho_xx` to first order.
+- The piezoelectric polarization formula.
+- The parameter override, the bound on A6 and the parabolic density condition.
+- For the many-body mass: the limits of the Lindhard function and the
+  published on-shell mass of the two-dimensional electron gas.
 
 **Checks inside the scripts.**
 
@@ -583,7 +600,7 @@ on-shell mass of the two-dimensional electron gas.
   light- and heavy-hole LK masses, the normalized amplitudes of their Fig. 2f).
 - `run_many_body.py` benchmarks the RPA mass against Table I of Asgari *et al.*
 - `run_phaseshift.py` checks that the exact phase-shift result approaches the
-  Born value when the potential is scaled towards zero.
+  Born value when the potential is scaled toward zero.
 - `run_landau_lorentz.py` applies the same Dingle analysis to a single
   sinusoid with the Lifshitz-Kosevich factors as a control.
 - `run_barrier.py` records the sensitivity of the finite-barrier result to each
@@ -595,39 +612,39 @@ on-shell mass of the two-dimensional electron gas.
 
 - **Conventions** (`kp6_well.py`). Energies are hole energies in eV, increasing
   downward from the valence band maximum, so the ground subband is the lowest
-  eigenvalue. The coordinate z runs in nanometres from the GaN/AlN interface.
+  eigenvalue. The coordinate z runs in nanometers from the GaN/AlN interface.
   In-plane wavevectors are in 1/nm. `rpa2d.py` uses meV and nm.
 - **Electrostatic closure.** The Letter closes the electrostatics at the
-  measured sheet density: the interface charge that the gas balances is set
+  measured sheet density. The interface charge that the gas balances is set
   equal to the hole density, so the field vanishes beyond the gas
   (`results/well_het.json`). The alternative "polarization closure" sets the
   interface charge from the calculated spontaneous plus piezoelectric
-  polarization and places the excess far from the interface
-  (`results/well_het_pol.json`); both are reported.
+  polarization, and places the excess far from the interface
+  (`results/well_het_pol.json`). Both are reported.
 - **Finite barrier.** The published valence band offset spans a wide range, so
   it is scanned rather than chosen. The 0.7 eV well (`results/well_het.json`)
   is the default potential of the Landau-level, dispersion and overlap
-  calculations; the A6 analysis adds two polarization-closure wells at 0.3 eV.
+  calculations. The A6 analysis adds two polarization-closure wells at 0.3 eV.
 - **The linear-in-k term A7** is taken as zero, and the shear deformation
   terms D5 and D6 vanish for the biaxial strain treated here (`kp6.py`).
-- **Landau levels.** Computed on a grid uniform in 1/B from 25 to 125 T, with
-  the zero-field potential held fixed; the grid is truncated at -2 nm and +8 nm,
-  which moves the relevant levels by less than 0.03 meV (tested). The
-  valence-band magnetic parameter has no measured value for GaN holes, so it is
-  scanned (0, -2 and +2 by default) and never fitted.
+- **Landau levels.** These are computed on a grid uniform in 1/B from 25 to
+  125 T, with the zero-field potential held fixed. The grid is truncated at
+  -2 nm and +8 nm, which moves the relevant levels by less than 0.03 meV
+  (tested). The valence-band magnetic parameter has no measured value for GaN
+  holes, so it is scanned (0, -2 and +2 by default) and never fitted.
 - **Figures follow the numbers.** The computed curves read from the JSON
-  written by the analysis scripts; some measured points and labels are written
+  written by the analysis scripts. Some measured points and labels are written
   into the figure scripts (listed in Section 6).
 
-**Known inconsistencies in the repository** (found while writing this guide
-and not changed; the wrong NumPy minimum in `requirements.txt`, listed here
-before, was fixed on 30 September 2026):
+**Known inconsistencies in the repository.** I found these while writing this
+guide and did not change them. (The wrong NumPy minimum in `requirements.txt`,
+listed here before, was fixed on 30 September 2026.)
 
 - The docstring of `scripts/figure_overview.py` says panel (a) draws "the
   heterostructure that all three experiments were performed on", and the
   docstring of `src/gan2dhg/scatter2d.py` says the three experiments were made
   "on the same" gas. The second citation audit in the provenance file retracts
-  this: the cyclotron-resonance sample was a different one.
+  this. The cyclotron-resonance sample was a different one.
 - `src/gan2dhg/constants.py` says "CODATA 2018" but reads whatever
   `scipy.constants` provides (CODATA 2022 in SciPy 1.17.1), while `kp6.py`,
   `figures3.py` and the tests write in the CODATA 2018 electron mass
@@ -635,7 +652,7 @@ before, was fixed on 30 September 2026):
 - The source table for the AlN crystal-field splitting: Table III of Rinke
   *et al.* in `kp6_het.py`, Table V in the provenance file (Section 8).
 - A comment in `kp6_het.py` says the midpoint of 21.7 and 23.5 meV is used
-  for the AlN spin-orbit splitting; the code uses 22 meV, which
+  for the AlN spin-orbit splitting. The code uses 22 meV, which
   `run_structure_check.py` and the provenance file describe as the rounded
   21.7 meV.
 - `figure_overview.py` labels the in-plane strain -2.42 percent;
@@ -666,8 +683,8 @@ before, was fixed on 30 September 2026):
 
 No release or git tag has been made. The package carries the version string
 `2.0.0` (`src/gan2dhg/__init__.py`), set when the package was renamed on
-5 August 2026. The development stages below are read from the git history;
-details are in [CHANGELOG.md](CHANGELOG.md).
+5 August 2026. The development stages below come from the git history. You can
+find the details in [CHANGELOG.md](CHANGELOG.md).
 
 | Date | Stage | Tests |
 |---|---|---|
@@ -685,7 +702,7 @@ details are in [CHANGELOG.md](CHANGELOG.md).
 No journal reference, DOI or author list for the manuscript is recorded in
 this repository. Until one exists, please cite the repository. The names
 below are the copyright holders named in `LICENSE`, not a recorded author
-list of the manuscript. GitHub shows a
+list of the manuscript. On GitHub you will also see a
 **"Cite this repository"** button in the right-hand column, which reads
 `CITATION.cff`.
 
@@ -694,9 +711,9 @@ list of the manuscript. GitHub shows a
 > GaN/AlN two-dimensional hole gas" (2026),
 > https://github.com/Tanvir-Mahmud-Mahim/gan-2dhg-masses-lifetimes
 
-When using the published values, please also cite the original measurements
+If you use the published values, please also cite the original measurements
 (Chang *et al.*, Nat. Electron. 9, 346 (2026); Wang *et al.*, Appl. Phys. Lett.
-126, 213102 (2025)); their full references are in
+126, 213102 (2025)). You can find their full references in
 `data/gan_2dhg_measured.yaml`.
 
 ---
@@ -705,5 +722,6 @@ When using the published values, please also cite the original measurements
 
 Code: Apache License 2.0 (see [`LICENSE`](LICENSE)).
 
-Questions and bug reports: please open an issue on this repository, or
-contact Tanvir M. Mahim, BRAC University (tanvir.mahim@bracu.ac.bd).
+If you have a question or find a bug, please open an issue on this
+repository, or contact me, Tanvir M. Mahim, BRAC University
+(tanvir.mahim@bracu.ac.bd).
