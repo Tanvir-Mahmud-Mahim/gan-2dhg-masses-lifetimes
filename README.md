@@ -2,17 +2,24 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
-This repository holds the code and derived data for the manuscript
+This repository holds the code and derived data for the paper
 **"Origin of the conflicting hole masses in the GaN/AlN two-dimensional hole
-gas"**. The figure script calls it a Letter for *Physical Review B*, with
-Supplemental Material. You will not find a journal reference or DOI in this
+gas"** by Tanvir M. Mahim, Abu S. M. Mohsin and M. Mosaddequr Rahman
+(Department of Electrical and Electronic Engineering, BRAC University). The
+paper was accepted for publication in *Physical Review B* on 28 October 2026,
+DOI [10.1103/zn44-nmx8](https://doi.org/10.1103/zn44-nmx8). The volume and
+article number had not been assigned when this note was written; the DOI link
+will lead to the published version. The paper itself is not in this
 repository.
 
-The code copyright belongs to Tanvir M. Mahim, A.S.M. Mohsin, and M. Mosaddequr
-Rahman (the copyright holders named in [`LICENSE`](LICENSE)). The author list
-of the manuscript is not recorded here.
+The code copyright belongs to the same three people (the copyright holders
+named in [`LICENSE`](LICENSE)).
 
+- Paper: https://doi.org/10.1103/zn44-nmx8 (accepted paper page:
+  https://journals.aps.org/prb/accepted/10.1103/zn44-nmx8)
 - Repository: https://github.com/Tanvir-Mahmud-Mahim/gan-2dhg-masses-lifetimes
+- Archived versions on Zenodo: https://doi.org/10.5281/zenodo.21791358 (this
+  DOI always resolves to the latest version)
 - Record of every published number used, with its source and the citation audit:
   [`data/gan_2dhg_measured.yaml`](data/gan_2dhg_measured.yaml)
 
@@ -188,17 +195,22 @@ holds:
 
 ## 12. How to cite
 
-No journal reference, DOI or author list for the manuscript is recorded in
-this repository. Until one exists, please cite the repository. The names
-below are the copyright holders named in `LICENSE`, not a recorded author
-list of the manuscript. On GitHub you will also see a
-**"Cite this repository"** button in the right-hand column, which reads
-`CITATION.cff`.
+If you use this code or its derived data, please cite the paper:
 
-> T. M. Mahim, A.S.M. Mohsin, and M. M. Rahman, gan-2dhg-masses-lifetimes:
-> code and derived data for "Origin of the conflicting hole masses in the
-> GaN/AlN two-dimensional hole gas" (2026),
-> https://github.com/Tanvir-Mahmud-Mahim/gan-2dhg-masses-lifetimes
+> T. M. Mahim, A. S. M. Mohsin, and M. M. Rahman, "Origin of the conflicting
+> hole masses in the GaN/AlN two-dimensional hole gas," Phys. Rev. B
+> (accepted 28 October 2026), https://doi.org/10.1103/zn44-nmx8
+
+The volume and article number will be added here once the paper is published.
+To cite the code itself, use the Zenodo archive:
+
+> T. M. Mahim, A. S. M. Mohsin, and M. M. Rahman, Code and derived data for
+> "Origin of the conflicting hole masses in the GaN/AlN two-dimensional hole
+> gas", Zenodo (2026), https://doi.org/10.5281/zenodo.21791358
+
+On GitHub you will also see a **"Cite this repository"** button in the
+right-hand column. It reads `CITATION.cff` and gives the paper as the
+preferred citation.
 
 If you use the published values, please also cite the original measurements
 (Chang *et al.*, Nat. Electron. 9, 346 (2026); Wang *et al.*, Appl. Phys. Lett.

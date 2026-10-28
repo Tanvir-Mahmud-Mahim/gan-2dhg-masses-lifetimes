@@ -6,6 +6,24 @@ package carries the version string `2.0.0` (`src/gan2dhg/__init__.py`) since
 5 August 2026. Every entry before the documentation entry is read from the
 git history.
 
+## Paper accepted (28 October 2026)
+
+Documentation only; no code, data or result changed.
+
+- The paper was accepted for publication in *Physical Review B* on
+  28 October 2026, DOI 10.1103/zn44-nmx8 (checked on the accepted-paper page
+  of the journal and in the Crossref record of the DOI). Volume and article
+  number were not yet assigned.
+- README: the paper, its authors and its DOI are now given in the
+  introduction and in "How to cite"; the statements that no journal
+  reference, DOI or author list is recorded were removed; the Zenodo concept
+  DOI (10.5281/zenodo.21791358) is listed.
+- `CITATION.cff`: the paper added as `preferred-citation` (status
+  `in-press`); the Zenodo concept DOI added; A.S.M. Mohsin written as
+  Abu S. M. Mohsin and all three affiliations given as BRAC University, as
+  in the paper. The file validates against the CFF 1.2.0 schema.
+- DETAILS.md: version history updated.
+
 ## Fixes (30 September 2026)
 
 - `requirements.txt`: `numpy>=1.24` changed to `numpy>=2.0`. The code calls

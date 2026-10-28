@@ -1,19 +1,22 @@
 cff-version: 1.2.0
-message: "If you use this code or its derived data, please cite it as below. The people listed are the copyright holders named in LICENSE; no author list, journal reference or DOI for the manuscript is recorded in this repository."
+message: "If you use this code or its derived data, please cite the paper given under preferred-citation. The code itself is archived on Zenodo under the DOI below."
 title: "gan-2dhg-masses-lifetimes: code and derived data for \"Origin of the conflicting hole masses in the GaN/AlN two-dimensional hole gas\""
-# Authors: the copyright holders named in LICENSE, in that order. The
-# manuscript's author list is not recorded in the repository. The repository
-# records no affiliations; BRAC University is T. M. Mahim's affiliation.
+# Authors: the copyright holders named in LICENSE, in that order; they are
+# also the authors of the paper. Affiliations as printed in the paper.
 authors:
   - family-names: Mahim
     given-names: Tanvir M.
     affiliation: BRAC University
   - family-names: Mohsin
-    given-names: A.S.M.
+    given-names: Abu S. M.
+    affiliation: BRAC University
   - family-names: Rahman
     given-names: M. Mosaddequr
+    affiliation: BRAC University
 license: Apache-2.0
 repository-code: "https://github.com/Tanvir-Mahmud-Mahim/gan-2dhg-masses-lifetimes"
+# Zenodo concept DOI: it always resolves to the latest archived version.
+doi: 10.5281/zenodo.21791358
 # The version string of src/gan2dhg/__init__.py; no release or tag has been made.
 version: "2.0.0"
 keywords:
@@ -24,3 +27,25 @@ keywords:
   - effective mass
   - quantum oscillations
   - cyclotron resonance
+# Accepted in Physical Review B on 28 October 2026. Volume and article
+# number had not been assigned when this file was written.
+preferred-citation:
+  type: article
+  title: "Origin of the conflicting hole masses in the GaN/AlN two-dimensional hole gas"
+  authors:
+    - family-names: Mahim
+      given-names: Tanvir M.
+      affiliation: "Department of Electrical and Electronic Engineering, BRAC University, Dhaka 1212, Bangladesh"
+    - family-names: Mohsin
+      given-names: Abu S. M.
+      affiliation: "Department of Electrical and Electronic Engineering, BRAC University, Dhaka 1212, Bangladesh"
+    - family-names: Rahman
+      given-names: M. Mosaddequr
+      affiliation: "Department of Electrical and Electronic Engineering, BRAC University, Dhaka 1212, Bangladesh"
+  journal: "Physical Review B"
+  publisher:
+    name: "American Physical Society"
+  year: 2026
+  status: in-press
+  doi: 10.1103/zn44-nmx8
+  url: "https://doi.org/10.1103/zn44-nmx8"

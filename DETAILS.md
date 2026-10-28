@@ -660,6 +660,7 @@ find the details in [CHANGELOG.md](CHANGELOG.md).
 
 | Date | Stage | Tests |
 |---|---|---|
+| 28 Oct 2026 | Paper accepted in *Physical Review B* (DOI 10.1103/zn44-nmx8); README, `CITATION.cff` and CHANGELOG updated; code, data and results unchanged | 61 |
 | 30 Sep 2026 | Fix: `requirements.txt` corrected to NumPy 2.0 or newer (with SciPy 1.13 and Matplotlib 3.8.4); code, data and results unchanged | 61 |
 | 30 Sep 2026 | Documentation: this README restructured, CHANGELOG and CITATION added; code, data and results unchanged | 61 |
 | 26 Sep 2026 | Heavy-hole quantum mobility from the digitized oscillations (`sdh.py`, digitized Fig. 2, forward calibration, revised mobilities) | 61 |
